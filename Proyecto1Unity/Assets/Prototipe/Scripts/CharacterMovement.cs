@@ -58,6 +58,7 @@ public class CharacterMovement : MonoBehaviour
 
     public void Jump()
     {
+        _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
         _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
     }
 }

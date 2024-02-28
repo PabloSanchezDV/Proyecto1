@@ -76,14 +76,12 @@ public class CharacterAbilities : MonoBehaviour
             _tongueCollider.enabled = false;
             _rb.isKinematic = false;
 
-            _rb.velocity = Vector3.zero;
             GetComponent<CharacterMovement>().Jump();
         }
         else
         {
             _tongueCollider.enabled = false;
             _rb.isKinematic = false;
-            _rb.velocity = savedVelocity;
 
             while (thrownDistance > 0)
             {
