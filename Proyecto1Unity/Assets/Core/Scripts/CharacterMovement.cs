@@ -17,6 +17,7 @@ public class CharacterMovement : MonoBehaviour
 
     [Header("Properties")]
     [SerializeField] private float _runForce = 1f;
+    [SerializeField] private float _decelerationForce = 2f;
     [SerializeField] private float _jumpForce = 5f;
     [SerializeField] private float _cancelJumpForce = 2.5f;
     [SerializeField] private float _maxRunSpeed = 5f;
@@ -63,8 +64,16 @@ public class CharacterMovement : MonoBehaviour
     private void FixedUpdate()
     {
         //Apply forces
-        _forceDirection += _move.ReadValue<Vector2>().x * GetCameraRight(_playerCamera) * _runForce;
-        _forceDirection += _move.ReadValue<Vector2>().y * GetCameraForward(_playerCamera) * _runForce;      
+        if(_move.ReadValue<Vector2>().magnitude > 0f)
+        {
+            _forceDirection += _move.ReadValue<Vector2>().x * GetCameraRight(_playerCamera) * _runForce;
+            _forceDirection += _move.ReadValue<Vector2>().y * GetCameraForward(_playerCamera) * _runForce;      
+        }
+        else
+        {
+            Vector3 velocityDirectionInversed = -_rb.velocity.normalized;
+            _forceDirection += new Vector3(velocityDirectionInversed.x, 0, velocityDirectionInversed.z) * _decelerationForce;
+        }
         _rb.AddForce(_forceDirection, ForceMode.Impulse);
         _forceDirection = Vector3.zero;
 
@@ -95,12 +104,15 @@ public class CharacterMovement : MonoBehaviour
         //Coyote Time & Jump Buffer
         if(IsGrounded())
         {
-            _coyoteTimeCounter = _coyoteTime;
+            if(_rb.velocity.y < 0f)
+            {
+                _coyoteTimeCounter = _coyoteTime;
+            }
             if (_jumpBufferCounter > 0f)
             {
-                InputAction.CallbackContext ctx = new InputAction.CallbackContext();
-                Jump(ctx);
                 _jumpBufferCounter = 0f;
+                _canDoubleJump = true;
+                DoJump();
             }
         }
         else
@@ -137,26 +149,28 @@ public class CharacterMovement : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-        if(IsGrounded() || _coyoteTimeCounter > 0f || _jumpBufferCounter > 0f)
+        _jumpBufferCounter = _jumpBuffer;
+        if (IsGrounded() || _coyoteTimeCounter > 0f)
         {
+            _coyoteTimeCounter = 0f;
+            _jumpBufferCounter = 0f;
+
             if (!_canDoubleJump)
                 _canDoubleJump = true;
 
-            _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
-            _forceDirection += Vector3.up * _jumpForce;
-            _coyoteTimeCounter = 0f;    
+            DoJump();
         }
         else if(_canDoubleJump)
         {
             _canDoubleJump = false;
-            _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
-            _forceDirection += Vector3.up * _jumpForce;
+            DoJump();
         }
-        else
-        {
-            _jumpBufferCounter = _jumpBuffer;
-            Time.timeScale = 0.2f;
-        }
+    }
+
+    private void DoJump()
+    {
+        _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
+        _forceDirection += Vector3.up * _jumpForce;
     }
 
     private void CancelJump(InputAction.CallbackContext context)
