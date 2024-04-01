@@ -14,6 +14,9 @@ public class FaceToCamera : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.LookAt(_camera.transform.position);
+        if (CharacterManager.CanMove)
+        {   
+            transform.LookAt(_camera.transform.position);
+        }
     }
 }

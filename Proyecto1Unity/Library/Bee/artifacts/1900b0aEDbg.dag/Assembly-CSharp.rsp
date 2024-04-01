@@ -363,7 +363,21 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Core/InputActions.cs"
 "Assets/Core/Scripts/Camera/FaceToCamera.cs"
-"Assets/Core/Scripts/CharacterMovement.cs"
+"Assets/Core/Scripts/Character/CharacterAbilities.cs"
+"Assets/Core/Scripts/Character/CharacterManager.cs"
+"Assets/Core/Scripts/Character/CharacterMovement.cs"
+"Assets/Core/Scripts/Character/Tongue/TongueCollision.cs"
+"Assets/Core/Scripts/Character/Tongue/TongueCollisionType.cs"
+"Assets/Core/Scripts/Character/TongueTip.cs"
+"Assets/Core/Scripts/Collectibles/Banana.cs"
+"Assets/Core/Scripts/Collectibles/Base/CollectibleBase.cs"
+"Assets/Core/Scripts/Collectibles/Big.cs"
+"Assets/Core/Scripts/Collectibles/Health.cs"
+"Assets/Core/Scripts/InteractiveElements/AnimationButtonInteractiveElement.cs"
+"Assets/Core/Scripts/InteractiveElements/IInteractable.cs"
+"Assets/Core/Scripts/InteractiveElements/LeverInteractiveElement.cs"
+"Assets/Core/Scripts/InteractiveElements/PressurePlate.cs"
+"Assets/Core/Scripts/InteractiveElements/TimeTrialInteactiveElement.cs"
 -langversion:9.0
 
 /deterministic

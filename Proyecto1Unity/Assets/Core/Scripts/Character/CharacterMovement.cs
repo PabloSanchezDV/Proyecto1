@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-    private InputActions _inputActions;
     private InputAction _move;
 
     private Rigidbody _rb;
@@ -14,6 +13,7 @@ public class CharacterMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] private Camera _playerCamera;
     [SerializeField] private GameObject _shadow;
+    [SerializeField] private LayerMask[] _groundLayers;
 
     [Header("Properties")]
     [SerializeField] private float _runForce = 1f;
@@ -22,12 +22,12 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float _cancelJumpForce = 2.5f;
     [SerializeField] private float _maxRunSpeed = 5f;
     [SerializeField] private float _maxWalkSpeed = 3f;
+    [SerializeField] private float _maxDraggingSpeed = 3f;
     [SerializeField] private float _fallingSpeedMultiplier = 3f;
     [SerializeField] private float _coyoteTime = 0.2f;
     [SerializeField] private float _jumpBuffer = 0.2f;
 
     private Vector3 _forceDirection = Vector3.zero;
-    private LayerMask _ground;
 
     private bool _isWalking = false;
     private bool _canDoubleJump = true;
@@ -38,31 +38,31 @@ public class CharacterMovement : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
-        _inputActions = new InputActions();
-
-        _ground = LayerMask.GetMask("Ground");
     }
 
     private void OnEnable()
     {
-        _inputActions.Gameplay.Jump.started += Jump;
-        _inputActions.Gameplay.Jump.canceled += CancelJump;
-        _inputActions.Gameplay.Run.started += TurnOnWalk;
-        _inputActions.Gameplay.Run.canceled += TurnOffWalk;
-        _move = _inputActions.Gameplay.Move;
-        _inputActions.Gameplay.Enable();
+        CharacterManager.InputActions.Gameplay.Jump.started += Jump;
+        CharacterManager.InputActions.Gameplay.Jump.canceled += CancelJump;
+        CharacterManager.InputActions.Gameplay.Run.started += TurnOnWalk;
+        CharacterManager.InputActions.Gameplay.Run.canceled += TurnOffWalk;
+        _move = CharacterManager.InputActions.Gameplay.Move;
+        CharacterManager.InputActions.Gameplay.Enable();
     }
 
     private void OnDisable()
     {
-        _inputActions.Gameplay.Jump.started -= Jump;
-        _inputActions.Gameplay.Run.started -= TurnOnWalk;
-        _inputActions.Gameplay.Run.canceled -= TurnOffWalk;
-        _inputActions.Gameplay.Disable();
+        CharacterManager.InputActions.Gameplay.Jump.started -= Jump;
+        CharacterManager.InputActions.Gameplay.Run.started -= TurnOnWalk;
+        CharacterManager.InputActions.Gameplay.Run.canceled -= TurnOffWalk;
+        CharacterManager.InputActions.Gameplay.Disable();
     }
 
     private void FixedUpdate()
     {
+        if (!CharacterManager.CanMove)
+            return;
+
         //Apply forces
         if(_move.ReadValue<Vector2>().magnitude > 0f)
         {
@@ -86,18 +86,29 @@ public class CharacterMovement : MonoBehaviour
         //Cap max speed
         Vector3 horizontalVelocity = _rb.velocity;
         horizontalVelocity.y = 0f;
-        if(IsRunning())
+
+        if (CharacterManager.IsDragging)
         {
-            if(horizontalVelocity.sqrMagnitude > _maxRunSpeed * _maxRunSpeed) 
+            if (horizontalVelocity.sqrMagnitude > _maxDraggingSpeed * _maxDraggingSpeed)
             {
-                _rb.velocity = horizontalVelocity.normalized * _maxRunSpeed + Vector3.up * _rb.velocity.y;
+                _rb.velocity = horizontalVelocity.normalized * _maxDraggingSpeed + Vector3.up * _rb.velocity.y;
             }
         }
         else
         {
-            if (horizontalVelocity.sqrMagnitude > _maxWalkSpeed * _maxWalkSpeed)
+            if (IsRunning())
             {
-                _rb.velocity = horizontalVelocity.normalized * _maxWalkSpeed + Vector3.up * _rb.velocity.y;
+                if (horizontalVelocity.sqrMagnitude > _maxRunSpeed * _maxRunSpeed)
+                {
+                    _rb.velocity = horizontalVelocity.normalized * _maxRunSpeed + Vector3.up * _rb.velocity.y;
+                }
+            }
+            else
+            {
+                if (horizontalVelocity.sqrMagnitude > _maxWalkSpeed * _maxWalkSpeed)
+                {
+                    _rb.velocity = horizontalVelocity.normalized * _maxWalkSpeed + Vector3.up * _rb.velocity.y;
+                }
             }
         }
 
@@ -114,6 +125,9 @@ public class CharacterMovement : MonoBehaviour
                 _canDoubleJump = true;
                 DoJump();
             }
+
+            if(!CharacterManager.IsThrowingTongue)
+                CharacterManager.CanThrowTongue = true;
         }
         else
         {
@@ -125,11 +139,14 @@ public class CharacterMovement : MonoBehaviour
     private void LateUpdate()
     {
         Ray ray = new Ray(this.transform.position + Vector3.up * 0.25f, Vector3.down);
-        if (Physics.Raycast(ray, out RaycastHit hit, _ground))
+        foreach (LayerMask layer in _groundLayers)
         {
-            _shadow.transform.position = hit.point + new Vector3(0, 0.001f, 0);
-            float distanceToGround = Map(transform.position.y - _shadow.transform.position.y, 0f, 3f, 0.01f, 0.025f);
-            _shadow.transform.localScale = new Vector3(distanceToGround, distanceToGround, 1);
+            if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layer))
+            {
+                _shadow.transform.position = hit.point + new Vector3(0, 0.001f, 0);
+                float distanceToGround = Map(transform.position.y - _shadow.transform.position.y, 0f, 10f, 0.025f, 0.01f);
+                _shadow.transform.localScale = new Vector3(distanceToGround, distanceToGround, 1);
+            }
         }
     }
 
@@ -173,22 +190,45 @@ public class CharacterMovement : MonoBehaviour
         _forceDirection += Vector3.up * _jumpForce;
     }
 
+    public void JumpOnHomingAttack()
+    {
+        _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
+        _forceDirection += Vector3.up * _jumpForce;
+        _canDoubleJump = true;
+    }
+
     private void CancelJump(InputAction.CallbackContext context)
     {
         _forceDirection -= Vector3.up * _cancelJumpForce;
     }
 
+    public void DisableJumpOnStartDragging()
+    {
+        CharacterManager.InputActions.Gameplay.Jump.started -= Jump;
+    }
+
+    public void EnableJumpOnEndDragging()
+    {
+        CharacterManager.InputActions.Gameplay.Jump.started += Jump;
+    }
+
     private bool IsGrounded()
     {
         Ray ray = new Ray(this.transform.position + Vector3.up * 0.25f, Vector3.down);
-        if(Physics.Raycast(ray, out RaycastHit hit, 0.3f, _ground))
+        bool isGrounded = false;
+        foreach(LayerMask layer in _groundLayers)
         {
-            return true;
+            if (Physics.Raycast(ray, out RaycastHit hit, 0.3f, layer))
+            {
+                isGrounded = true; 
+                break;
+            }
+            else
+            {
+                isGrounded = false;
+            }
         }
-        else
-        {
-            return false;
-        }
+        return isGrounded;
     }
 
     private float Map(float x, float in_min, float in_max, float out_min, float out_max)

@@ -62,6 +62,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ThrowTongue"",
+                    ""type"": ""Button"",
+                    ""id"": ""848f1680-1ed9-4d19-ad70-adda6a98e2c9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -185,6 +194,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3b96ff9-4599-4386-b4e4-8efe43529f3a"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThrowTongue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cc108cd2-a7a0-443f-82a2-d23f7b193a1f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ThrowTongue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -225,6 +256,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Run = m_Gameplay.FindAction("Run", throwIfNotFound: true);
+        m_Gameplay_ThrowTongue = m_Gameplay.FindAction("ThrowTongue", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -293,6 +325,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Run;
+    private readonly InputAction m_Gameplay_ThrowTongue;
     public struct GameplayActions
     {
         private @InputActions m_Wrapper;
@@ -301,6 +334,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @Run => m_Wrapper.m_Gameplay_Run;
+        public InputAction @ThrowTongue => m_Wrapper.m_Gameplay_ThrowTongue;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -322,6 +356,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Run.started += instance.OnRun;
             @Run.performed += instance.OnRun;
             @Run.canceled += instance.OnRun;
+            @ThrowTongue.started += instance.OnThrowTongue;
+            @ThrowTongue.performed += instance.OnThrowTongue;
+            @ThrowTongue.canceled += instance.OnThrowTongue;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -338,6 +375,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Run.started -= instance.OnRun;
             @Run.performed -= instance.OnRun;
             @Run.canceled -= instance.OnRun;
+            @ThrowTongue.started -= instance.OnThrowTongue;
+            @ThrowTongue.performed -= instance.OnThrowTongue;
+            @ThrowTongue.canceled -= instance.OnThrowTongue;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -407,6 +447,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
+        void OnThrowTongue(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
