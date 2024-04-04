@@ -13,7 +13,7 @@ public class TongueTip : MonoBehaviour
         //Collision against homing attackable elements
         if (other.CompareTag("HomingAttackable"))
         {
-            other.GetComponent<Collider>().enabled = false;
+            //other.GetComponent<Collider>().enabled = false;
         }
         //Collision against dragable object
         if (other.CompareTag("Dragable"))

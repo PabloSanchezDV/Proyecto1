@@ -97,7 +97,7 @@ public class CharacterAbilities : MonoBehaviour
     private TongueCollision CheckTongueCollision()
     {
         _tongue.rotation = Quaternion.Euler(0f, _character.rotation.eulerAngles.y + 90f, 0f);
-        Debug.DrawRay(transform.position, _tongue.right * _raycastTongueCheckerDistance, Color.red, 10f);
+        //Debug.DrawRay(transform.position, _tongue.right * _raycastTongueCheckerDistance, Color.red, 10f);
         if (Physics.Raycast(_tongue.transform.position, _tongue.right, out RaycastHit hit, _raycastTongueCheckerDistance, _tongueInteractiveLayerMask))
         {
             TongueCollision collision = new TongueCollision(TongueCollisionType.Enemy, hit.transform.gameObject);
