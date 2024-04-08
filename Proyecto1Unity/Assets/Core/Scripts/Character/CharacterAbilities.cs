@@ -20,6 +20,7 @@ public class CharacterAbilities : MonoBehaviour
     [SerializeField] private float _tongueSpeed;
     [SerializeField] private float _homingAttackDistance;
     [SerializeField] private float _maxDragableObjectDistance;
+    [SerializeField] private float _homingAttackTongueDistanceModifier = 1.65f;
     [SerializeField] private LayerMask _tongueInteractiveLayerMask;
     [SerializeField] private LayerMask _tongueDragableLayerMask;
 
@@ -29,7 +30,6 @@ public class CharacterAbilities : MonoBehaviour
     private Rigidbody _rb;
 
     private float _raycastTongueCheckerDistance;
-    private float _homingAttackTongueDistanceModifier = 1.65f;
 
     // Start is called before the first frame update
     void Awake()
@@ -97,7 +97,7 @@ public class CharacterAbilities : MonoBehaviour
     private TongueCollision CheckTongueCollision()
     {
         _tongue.rotation = Quaternion.Euler(0f, _character.rotation.eulerAngles.y + 90f, 0f);
-        Debug.DrawRay(transform.position, _tongue.right * _raycastTongueCheckerDistance, Color.red, 10f);
+        //Debug.DrawRay(transform.position, _tongue.right * _raycastTongueCheckerDistance, Color.red, 10f);
         if (Physics.Raycast(_tongue.transform.position, _tongue.right, out RaycastHit hit, _raycastTongueCheckerDistance, _tongueInteractiveLayerMask))
         {
             TongueCollision collision = new TongueCollision(TongueCollisionType.Enemy, hit.transform.gameObject);
@@ -243,6 +243,7 @@ public class CharacterAbilities : MonoBehaviour
 
     IEnumerator HomingAttack(Vector3 target)
     {
+        //Time.timeScale = 0.1f;
         _tongueTip.GetComponent<SphereCollider>().enabled = false;
         Vector3 direction;
         while (_tongue.transform.localScale.x > _homingAttackDistance)

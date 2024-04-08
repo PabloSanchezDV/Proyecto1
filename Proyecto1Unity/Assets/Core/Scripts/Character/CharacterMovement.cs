@@ -214,6 +214,7 @@ public class CharacterMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
+        //Debug.DrawRay(this.transform.position + Vector3.up * 0.25f, Vector3.down, Color.red);
         Ray ray = new Ray(this.transform.position + Vector3.up * 0.25f, Vector3.down);
         bool isGrounded = false;
         foreach(LayerMask layer in _groundLayers)
