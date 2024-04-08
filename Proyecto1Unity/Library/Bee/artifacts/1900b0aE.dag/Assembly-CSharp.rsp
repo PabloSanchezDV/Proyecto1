@@ -387,6 +387,7 @@
 "Assets/Core/Scripts/InteractiveElements/LeverInteractiveElement.cs"
 "Assets/Core/Scripts/InteractiveElements/PressurePlate.cs"
 "Assets/Core/Scripts/InteractiveElements/TimeTrialInteactiveElement.cs"
+"Assets/Z - TO DELETE/DELETE.cs"
 -langversion:9.0
 
 /deterministic
