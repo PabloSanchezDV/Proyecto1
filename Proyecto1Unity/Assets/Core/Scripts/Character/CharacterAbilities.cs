@@ -169,6 +169,8 @@ public class CharacterAbilities : MonoBehaviour
 
         TongueCollision tongueCollision = CheckTongueCollision();
 
+        CharacterManager.StartThrowTongue();
+
         switch (tongueCollision.Type)
         {
             case (TongueCollisionType.Enemy):
@@ -196,11 +198,13 @@ public class CharacterAbilities : MonoBehaviour
                 }
 
                 AttachDragableObject(tongueCollision.Target);
+                CharacterManager.StartDragging();
                 CharacterManager.CanMove = true;
                 _rb.isKinematic = false;
                 _provider.enabled = true;
 
                 yield return new WaitUntil(() => CharacterManager.IsDragging == false);
+                CharacterManager.EndDragging();
 
                 StartCoroutine(TongueInCoroutine());
                 break;
@@ -231,6 +235,8 @@ public class CharacterAbilities : MonoBehaviour
             yield return null;
         }
 
+        CharacterManager.EndThrowTongue();
+
         _tongueTipScript.HasCollided = false;
         _tongueTip.gameObject.SetActive(false);
         _provider.enabled = true;
@@ -243,9 +249,10 @@ public class CharacterAbilities : MonoBehaviour
 
     IEnumerator HomingAttack(Vector3 target)
     {
-        //Time.timeScale = 0.1f;
         _tongueTip.GetComponent<SphereCollider>().enabled = false;
         Vector3 direction;
+        CharacterManager.StartHomingAttack();
+
         while (_tongue.transform.localScale.x > _homingAttackDistance)
         {
             direction = (target - transform.position).normalized;
@@ -258,6 +265,7 @@ public class CharacterAbilities : MonoBehaviour
             yield return null;
         }
 
+        CharacterManager.EndHomingAttack();
         _tongueTipScript.HasCollided = false;
         _tongueTip.gameObject.SetActive(false);
         _provider.enabled = true;
