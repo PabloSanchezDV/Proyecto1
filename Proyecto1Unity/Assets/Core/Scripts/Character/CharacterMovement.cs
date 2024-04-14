@@ -31,6 +31,7 @@ public class CharacterMovement : MonoBehaviour
 
     private bool _isWalking = false;
     private bool _canDoubleJump = true;
+    private bool _isFalling = false;
 
     private float _coyoteTimeCounter = 0f;
     private float _jumpBufferCounter = 0f;
@@ -80,7 +81,12 @@ public class CharacterMovement : MonoBehaviour
         //Increase falling speed
         if(_rb.velocity.y < 0f)
         {
+            CharacterManager.EndElevating();
             _rb.velocity -= Vector3.down * Physics.gravity.y * Time.fixedDeltaTime * _fallingSpeedMultiplier;
+        }
+        else
+        {
+            CharacterManager.ResetElevating();
         }
 
         //Cap max speed
@@ -112,9 +118,12 @@ public class CharacterMovement : MonoBehaviour
             }
         }
 
-        //Coyote Time & Jump Buffer
+        //Coyote Time, Jump Buffer & Falling Checks
         if(IsGrounded())
         {
+            if (_isFalling)
+                EndFall();
+
             if(_rb.velocity.y < 0f)
             {
                 _coyoteTimeCounter = _coyoteTime;
@@ -131,6 +140,9 @@ public class CharacterMovement : MonoBehaviour
         }
         else
         {
+            if (!_isFalling)
+               StartFall();            
+
             _coyoteTimeCounter -= Time.fixedDeltaTime;
             _jumpBufferCounter -= Time.fixedDeltaTime;
         }
@@ -175,11 +187,13 @@ public class CharacterMovement : MonoBehaviour
             if (!_canDoubleJump)
                 _canDoubleJump = true;
 
+            CharacterManager.Jump();
             DoJump();
         }
         else if(_canDoubleJump)
         {
             _canDoubleJump = false;
+            CharacterManager.DoubleJump();
             DoJump();
         }
     }
@@ -264,5 +278,17 @@ public class CharacterMovement : MonoBehaviour
     private void TurnOffWalk(InputAction.CallbackContext context)
     {
         _isWalking = false;
+    }
+
+    private void StartFall()
+    {
+        _isFalling = true;
+        CharacterManager.StartFalling();
+    }
+
+    private void EndFall()
+    {
+        _isFalling = false;
+        CharacterManager.EndFalling();
     }
 }

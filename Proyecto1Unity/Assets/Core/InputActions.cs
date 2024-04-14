@@ -71,6 +71,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Bite"",
+                    ""type"": ""Button"",
+                    ""id"": ""532fd488-5592-4dbb-8e91-8e5c216b22ca"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -216,6 +225,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""ThrowTongue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""80efcedd-543f-4aca-b075-6d6688b30183"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Bite"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e561652a-488a-40f8-a089-2818594b2525"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Bite"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -257,6 +288,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Run = m_Gameplay.FindAction("Run", throwIfNotFound: true);
         m_Gameplay_ThrowTongue = m_Gameplay.FindAction("ThrowTongue", throwIfNotFound: true);
+        m_Gameplay_Bite = m_Gameplay.FindAction("Bite", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -326,6 +358,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Run;
     private readonly InputAction m_Gameplay_ThrowTongue;
+    private readonly InputAction m_Gameplay_Bite;
     public struct GameplayActions
     {
         private @InputActions m_Wrapper;
@@ -335,6 +368,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @Run => m_Wrapper.m_Gameplay_Run;
         public InputAction @ThrowTongue => m_Wrapper.m_Gameplay_ThrowTongue;
+        public InputAction @Bite => m_Wrapper.m_Gameplay_Bite;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -359,6 +393,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @ThrowTongue.started += instance.OnThrowTongue;
             @ThrowTongue.performed += instance.OnThrowTongue;
             @ThrowTongue.canceled += instance.OnThrowTongue;
+            @Bite.started += instance.OnBite;
+            @Bite.performed += instance.OnBite;
+            @Bite.canceled += instance.OnBite;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -378,6 +415,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @ThrowTongue.started -= instance.OnThrowTongue;
             @ThrowTongue.performed -= instance.OnThrowTongue;
             @ThrowTongue.canceled -= instance.OnThrowTongue;
+            @Bite.started -= instance.OnBite;
+            @Bite.performed -= instance.OnBite;
+            @Bite.canceled -= instance.OnBite;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -448,6 +488,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnThrowTongue(InputAction.CallbackContext context);
+        void OnBite(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {

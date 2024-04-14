@@ -374,6 +374,8 @@
 "Assets/Core/InputActions.cs"
 "Assets/Core/Scripts/Camera/FaceToCamera.cs"
 "Assets/Core/Scripts/Character/CharacterAbilities.cs"
+"Assets/Core/Scripts/Character/CharacterAnimatorController.cs"
+"Assets/Core/Scripts/Character/CharacterBite.cs"
 "Assets/Core/Scripts/Character/CharacterManager.cs"
 "Assets/Core/Scripts/Character/CharacterMovement.cs"
 "Assets/Core/Scripts/Character/Tongue/TongueCollision.cs"
