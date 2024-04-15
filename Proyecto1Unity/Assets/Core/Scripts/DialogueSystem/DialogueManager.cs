@@ -8,7 +8,8 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
-    private List<DialogueDatabase> _dialogueDatabaseList;
+    [SerializeField] private int _currentLevel;
+    private DialogueBST _dialogueBST;
     private bool _doNextDialogue = false;
     private bool _isInDialogue = false;
     public bool DoNextDialogue { get { return _doNextDialogue; } set {  _doNextDialogue = value; } }
@@ -25,32 +26,19 @@ public class DialogueManager : MonoBehaviour
             Destroy(this);
         }
 
-        _dialogueDatabaseList = DialogueBuilder.BuildDialogueDatabaseList();
+        _dialogueBST = new DialogueBST(DialogueBuilder.BuildDialogueListsList(_currentLevel));
     }
 
-    public void TriggerDialogue(int level, int id)
+    public void TriggerDialogue(int id)
     {
         _isInDialogue = true;
-        List<DialogueNode> dialogueNodes = GetDialogueNodeList(level, id);
+        List<DialogueNode> dialogueNodes = GetDialogueNodeList(id);
         StartCoroutine(SendDialoguesToUIManager(dialogueNodes));
     }
 
-    private List<DialogueNode> GetDialogueNodeList(int level, int id)
+    private List<DialogueNode> GetDialogueNodeList(int id)
     {
-        foreach(DialogueDatabase dialogueDatabase in _dialogueDatabaseList)
-        {
-            if(dialogueDatabase.Level == level)
-            {
-                foreach(DialogueList dialogueList in dialogueDatabase.List)
-                {
-                    if(dialogueList.ID == id)
-                    {
-                        return dialogueList.DialogueNodeList;
-                    }
-                }
-            }
-        }
-        throw new Exception($"Dialogue (level: {level}, id: {id}) doesn't exist.");
+        return _dialogueBST.Search(id);
     }
 
     IEnumerator SendDialoguesToUIManager(List<DialogueNode> dialogueNodes)
