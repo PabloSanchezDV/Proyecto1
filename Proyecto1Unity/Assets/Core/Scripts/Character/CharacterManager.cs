@@ -63,76 +63,90 @@ public class CharacterManager : MonoBehaviour
     #region Movement - Animation Controller
     public static void Jump()
     {
-        _characterAnimatorController.Jump();
+        if(_characterAnimatorController != null)
+            _characterAnimatorController.Jump();
     }
 
     public static void DoubleJump()
     {
-        _characterAnimatorController.DoubleJump();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.DoubleJump();
     }
 
     public static void EndElevating()
     {
-        _characterAnimatorController.EndElevating();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.EndElevating();
     }
 
     public static void ResetElevating()
     {
-        _characterAnimatorController.ResetElevating();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.ResetElevating();
     }
 
     public static void StartFalling()
     {
-        _characterAnimatorController.StartFalling();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.StartFalling();
     }
 
     public static void EndFalling()
     {
-        _characterAnimatorController.EndFalling();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.EndFalling();
     }
     #endregion
 
     #region Abilities - Animation Controller
     public static void StartThrowTongue()
     {
-        _characterAnimatorController.StartThrowTongue();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.StartThrowTongue();
     }
 
     public static void EndThrowTongue()
     {
-        _characterAnimatorController.EndThrowTongue();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.EndThrowTongue();
     }
 
     public static void StartHomingAttack()
     {
-        _characterAnimatorController.StartHomingAttack();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.StartHomingAttack();
     }
 
     public static void EndHomingAttack()
     {
-        _characterAnimatorController.EndHomingAttack();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.EndHomingAttack();
     }
 
     public static void StartDragging()
     {
-        _characterAnimatorController.StartDragging();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.StartDragging();
     }
 
     public static void EndDragging()
     {
-        _characterAnimatorController.EndDragging();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.EndDragging();
     }
     #endregion
 
     #region Health - Animation Controller
     public static void Hurt()
     {
-        _characterAnimatorController.Hurt();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.Hurt();
     }
 
     public static void IsDead()
     {
-        _characterAnimatorController.IsDead();
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.IsDead();
     }
     #endregion
     #endregion
