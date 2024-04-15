@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [SerializeField] private int _level;
     [SerializeField] private int _id;
     [SerializeField] private bool _overwriteAtEnd;
     [SerializeField] private int _newID;
 
     private void StartDialogue()
     {
-        DialogueManager.instance.TriggerDialogue(_level, _id);
+        DialogueManager.instance.TriggerDialogue(_id);
     }
 
     private void Update()

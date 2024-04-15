@@ -5,18 +5,16 @@ using UnityEngine;
 
 public static class DialogueBuilder
 {
-    public static List<DialogueDatabase> BuildDialogueDatabaseList()
+    public static List<DialogueList> BuildDialogueListsList(int currentLevel)
     {
         string csv = CSVImporter.ImportCSV("DialogueCSV");
         List<string[]> parsedCSV = CSVParser.ParseCSV(csv);
         
         List<DialogueNode> dialogueNodesList = BuildDialogueNodesList(parsedCSV);
 
-        List<DialogueList> dialogueListsList = BuildDialogueListsList(dialogueNodesList);
+        List<DialogueList> dialogueListsList = BuildDialogueListsList(currentLevel, dialogueNodesList);
 
-        List<DialogueDatabase> dialogueDatabasesList = BuildDialogueDatabasesList(dialogueListsList);
-
-        return dialogueDatabasesList;
+        return dialogueListsList;
     }
 
     private static List<DialogueNode> BuildDialogueNodesList(List<string[]> parsedCSV)
@@ -30,53 +28,32 @@ public static class DialogueBuilder
         return dialogueNodesList;
     }
 
-    private static List<DialogueList> BuildDialogueListsList(List<DialogueNode> dialogueNodesList) 
+    private static List<DialogueList> BuildDialogueListsList(int currentLevel, List<DialogueNode> dialogueNodesList) 
     {
         List<DialogueList> dialogueListsList = new List<DialogueList>();
 
-        int currentLevel = 1;
         int currentID = 1;
-        DialogueList currentDialogueList = new DialogueList(1, 1);
+        DialogueList currentDialogueList = new DialogueList(currentLevel, currentID);
+        dialogueListsList.Add(currentDialogueList);
 
-        foreach(DialogueNode node in dialogueNodesList)
+        foreach (DialogueNode node in dialogueNodesList)
         {
-            if(currentDialogueList.Level != node.Level)
+            if(currentLevel == node.Level)
             {
-                currentLevel++;
-                currentID = 1;
-                currentDialogueList = new DialogueList(currentLevel, currentID);
-                dialogueListsList.Add(currentDialogueList);
+                if(currentDialogueList.ID != node.ID)
+                {
+                    currentID++;
+                    currentDialogueList = new DialogueList(currentLevel, currentID);
+                    dialogueListsList.Add(currentDialogueList);
+                }
+                currentDialogueList.Add(node);
             }
-            else if(currentDialogueList.ID != node.ID)
-            {                
-                currentID++;
-                currentDialogueList = new DialogueList(currentLevel, currentID);
-                dialogueListsList.Add(currentDialogueList);
+            else if (currentLevel < node.Level)
+            {
+                break;
             }
-            currentDialogueList.Add(node);
         }
 
         return dialogueListsList;
-    }
-
-    private static List<DialogueDatabase> BuildDialogueDatabasesList(List<DialogueList> dialogueListsList)
-    {
-        List<DialogueDatabase> dialogueDatabasesList = new List<DialogueDatabase>();
-
-        int currentLevel = 1;
-        DialogueDatabase currentDialogueDatabase = new DialogueDatabase(currentLevel);
-
-        foreach(DialogueList dialogueList in dialogueListsList)
-        {
-            if(currentDialogueDatabase.Level != dialogueList.Level)
-            {
-                currentLevel++;
-                currentDialogueDatabase = new DialogueDatabase(currentLevel);
-                dialogueDatabasesList.Add(currentDialogueDatabase);
-            }
-            currentDialogueDatabase.Add(dialogueList);
-        }
-
-        return dialogueDatabasesList;
     }
 }
