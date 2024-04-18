@@ -5,6 +5,7 @@ using UnityEngine;
 public class FaceToCamera : MonoBehaviour
 {
     private Camera _camera;
+    [SerializeField] private Vector3 _offset;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class FaceToCamera : MonoBehaviour
         if (CharacterManager.CanMove)
         {   
             transform.LookAt(_camera.transform.position);
+            transform.Rotate(_offset, Space.Self);
         }
     }
 }

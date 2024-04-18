@@ -19,6 +19,9 @@ public class CharacterManager : MonoBehaviour
     private static bool _isThrowingTongue = false;
     public static bool IsThrowingTongue { get { return _isThrowingTongue; } set { _isThrowingTongue = value; } }
 
+    private static EnemyAnimatorController _enemyAnimatorControllerOnHomingAttack;
+    public static EnemyAnimatorController EnemyAnimatorControllerOnHomingAttack { get { return _enemyAnimatorControllerOnHomingAttack; } set { _enemyAnimatorControllerOnHomingAttack = value; } }
+
 
     private static InputActions _inputActions;
     public static InputActions InputActions { get { return _inputActions;} }
@@ -121,6 +124,8 @@ public class CharacterManager : MonoBehaviour
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.EndHomingAttack();
+        if(_enemyAnimatorControllerOnHomingAttack != null)
+            _enemyAnimatorControllerOnHomingAttack.Death();
     }
 
     public static void StartDragging()
