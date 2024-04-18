@@ -174,6 +174,7 @@ public class CharacterAbilities : MonoBehaviour
         switch (tongueCollision.Type)
         {
             case (TongueCollisionType.Enemy):
+                CharacterManager.EnemyAnimatorControllerOnHomingAttack = tongueCollision.Target.GetComponent<EnemyAnimatorController>();
                 while (_tongue.transform.localScale.x < _maxTongueDistance && (_tongueTip.transform.position - tongueCollision.Target.transform.position).magnitude > 0.1f)
                 {
                     _tongue.position = _tongueReference.position;
