@@ -8,8 +8,8 @@ public class CharacterBite : MonoBehaviour
     {
         if(other.CompareTag("HomingAttackable"))
         {
-            other.gameObject.SetActive(false);
-            Debug.Log(other.name + " detected and deactivated.");
+            EnemyAnimatorController controller = other.GetComponent<EnemyAnimatorController>();
+            controller.Death();
         }
     }
 }
