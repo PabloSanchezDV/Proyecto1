@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.17f1 (4fc78088f837) revision 5228416'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22631) 64bit Professional' Language: 'es' Physical Memory: 32581 MB
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'es' Physical Memory: 16335 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,13 +11,13 @@ C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/Usuario/Documents/GitHub/Proyecto1/Proyecto1Unity
+C:/Users/Usuario/OneDrive/Escritorio/MAIN PROYECTO/Proyecto1/Proyecto1Unity
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-56332
-Successfully changed project path to: C:/Users/Usuario/Documents/GitHub/Proyecto1/Proyecto1Unity
-C:/Users/Usuario/Documents/GitHub/Proyecto1/Proyecto1Unity
+50978
+Successfully changed project path to: C:/Users/Usuario/OneDrive/Escritorio/MAIN PROYECTO/Proyecto1/Proyecto1Unity
+C:/Users/Usuario/OneDrive/Escritorio/MAIN PROYECTO/Proyecto1/Proyecto1Unity
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -49,72 +49,71 @@ C:/Users/Usuario/Documents/GitHub/Proyecto1/Proyecto1Unity
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [2360] Host "[IP] 192.168.1.37 [Port] 0 [Flags] 2 [Guid] 3459293543 [EditorId] 3459293543 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-CM1QIIF) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [21508] Host "[IP] 192.168.1.33 [Port] 0 [Flags] 2 [Guid] 848427655 [EditorId] 848427655 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-N0P0HHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [2360] Host "[IP] 192.168.1.37 [Port] 0 [Flags] 2 [Guid] 3459293543 [EditorId] 3459293543 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-CM1QIIF) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [21508] Host "[IP] 192.168.1.33 [Port] 0 [Flags] 2 [Guid] 848427655 [EditorId] 848427655 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-N0P0HHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 68.86 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 21.10 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.17f1 (4fc78088f837)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/Usuario/Documents/GitHub/Proyecto1/Proyecto1Unity/Assets
+[Subsystems] Discovering subsystems at path C:/Users/Usuario/OneDrive/Escritorio/MAIN PROYECTO/Proyecto1/Proyecto1Unity/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 4060 (ID=0x2882)
-    Vendor:   NVIDIA
-    VRAM:     7971 MB
-    Driver:   31.0.15.3640
+    Renderer: Radeon RX 590 Series (ID=0x67df)
+    Vendor:   ATI
+    VRAM:     8170 MB
+    Driver:   31.0.12027.9001
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56484
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56432
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.009792 seconds.
-- Loaded All Assemblies, in  0.862 seconds
-Native extension for UWP target not found
+Registered in 0.052251 seconds.
+- Loaded All Assemblies, in  0.654 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 341 ms
+Android Extension - Scanning For ADB Devices 479 ms
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.703 seconds
-Domain Reload Profiling: 1564ms
-	BeginReloadAssembly (92ms)
+- Finished resetting the current domain, in  0.978 seconds
+Domain Reload Profiling: 1622ms
+	BeginReloadAssembly (186ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (163ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (58ms)
-	LoadAllAssembliesAndSetupDomain (539ms)
-		LoadAssemblies (91ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (152ms)
+	LoadAllAssembliesAndSetupDomain (238ms)
+		LoadAssemblies (178ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (537ms)
-			TypeCache.Refresh (535ms)
-				TypeCache.ScanAssembly (311ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
+		AnalyzeDomain (233ms)
+			TypeCache.Refresh (231ms)
+				TypeCache.ScanAssembly (213ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (703ms)
+	FinalizeReload (979ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (645ms)
+		SetupLoadedEditorAssemblies (900ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (482ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (671ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (107ms)
-			ProcessInitializeOnLoadMethodAttributes (51ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (154ms)
+			ProcessInitializeOnLoadMethodAttributes (67ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -122,13 +121,8 @@ Domain Reload Profiling: 1564ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-Symbol file data-0000018610893950 doesn't match image C:\Users\Usuario\Documents\GitHub\Proyecto1\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001860D32ACF0 doesn't match image C:\Users\Usuario\Documents\GitHub\Proyecto1\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  2.216 seconds
-Refreshing native plugins compatible for Editor in 2.30 ms, found 3 plugins.
-Native extension for UWP target not found
+- Loaded All Assemblies, in  1.212 seconds
+Refreshing native plugins compatible for Editor in 11.14 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
@@ -137,140 +131,175 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.821 seconds
-Domain Reload Profiling: 3035ms
-	BeginReloadAssembly (143ms)
+- Finished resetting the current domain, in  1.085 seconds
+Domain Reload Profiling: 2278ms
+	BeginReloadAssembly (239ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (26ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (90ms)
+	LoadAllAssembliesAndSetupDomain (798ms)
+		LoadAssemblies (643ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (304ms)
+			TypeCache.Refresh (262ms)
+				TypeCache.ScanAssembly (241ms)
+			ScanForSourceGeneratedMonoScriptInfo (31ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (1085ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (829ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (54ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (156ms)
+			ProcessInitializeOnLoadAttributes (496ms)
+			ProcessInitializeOnLoadMethodAttributes (81ms)
+			AfterProcessingInitializeOnLoad (36ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 16.04 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5172 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 68 unused Assets / (474.4 KB). Loaded Objects now: 5636.
+Memory consumption went from 185.6 MB to 185.1 MB.
+Total: 5.852300 ms (FindLiveObjects: 0.496700 ms CreateObjectMapping: 0.194600 ms MarkObjects: 4.798200 ms  DeleteObjects: 0.361300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 51550.683870 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8227f544c686db913e8d0bbc5dc24a96') in 0.111035 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 76.398772 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e63715a8adba553647f2c8d1f5e72a3') in 0.012512 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 83.267588 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97d78ff9dbbb1f48b9c0a49bdc0485b6') in 0.011805 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 95.197355 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '103a401488ca30f7cd9a93fa33343c13') in 0.011930 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 335.718937 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '226258c187c5beae49165fb929a8f764') in 0.018884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 238.831247 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad8793742c9beeaa0b85c7d133c18337') in 0.002884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 89.289077 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '840b363d5eee38f2d5bf7f3f37ff3aac') in 0.015145 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.925 seconds
+Refreshing native plugins compatible for Editor in 11.67 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.546 seconds
+Domain Reload Profiling: 3452ms
+	BeginReloadAssembly (260ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (23ms)
-	RebuildCommonClasses (30ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (38ms)
-	LoadAllAssembliesAndSetupDomain (1992ms)
-		LoadAssemblies (1721ms)
+		CreateAndSetChildDomain (48ms)
+	RebuildCommonClasses (54ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (507ms)
+		LoadAssemblies (636ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (354ms)
-			TypeCache.Refresh (316ms)
-				TypeCache.ScanAssembly (256ms)
-			ScanForSourceGeneratedMonoScriptInfo (26ms)
+		AnalyzeDomain (20ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (11ms)
-	FinalizeReload (822ms)
+	FinalizeReload (2547ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (650ms)
+		SetupLoadedEditorAssemblies (867ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (23ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (60ms)
+			SetLoadedEditorAssemblies (6ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (124ms)
-			ProcessInitializeOnLoadAttributes (431ms)
-			ProcessInitializeOnLoadMethodAttributes (62ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			BeforeProcessingInitializeOnLoad (163ms)
+			ProcessInitializeOnLoadAttributes (515ms)
+			ProcessInitializeOnLoadMethodAttributes (85ms)
+			AfterProcessingInitializeOnLoad (38ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 3.63 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5172 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 68 unused Assets / (465.3 KB). Loaded Objects now: 5636.
-Memory consumption went from 185.8 MB to 185.4 MB.
-Total: 3.128000 ms (FindLiveObjects: 0.282000 ms CreateObjectMapping: 0.196700 ms MarkObjects: 2.468900 ms  DeleteObjects: 0.179300 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 72630.358918 seconds.
-  path: Assets/Core/Scripts/Character/CharacterBite.cs
-  artifactKey: Guid(0d46d4f1141129748a63935d547fc97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Core/Scripts/Character/CharacterBite.cs using Guid(0d46d4f1141129748a63935d547fc97e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '423dc7831285992331cb7ada0ec6f89e') in 0.003006 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 1.133374 seconds.
-  path: Assets/Core/Scripts/Character/Tongue/TongueTip.cs
-  artifactKey: Guid(9536598fc2f5e224b807ed210921002a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Core/Scripts/Character/Tongue/TongueTip.cs using Guid(9536598fc2f5e224b807ed210921002a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f510229834c883fc271276643f68d55') in 0.000534 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-Symbol file data-000001860F74E020 doesn't match image C:\Users\Usuario\Documents\GitHub\Proyecto1\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000186107FA010 doesn't match image C:\Users\Usuario\Documents\GitHub\Proyecto1\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.529 seconds
-Refreshing native plugins compatible for Editor in 3.64 ms, found 3 plugins.
-Native extension for UWP target not found
-Native extension for WindowsStandalone target not found
-Native extension for Android target not found
-Native extension for WebGL target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.163 seconds
-Domain Reload Profiling: 1689ms
-	BeginReloadAssembly (157ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (41ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (29ms)
-	LoadAllAssembliesAndSetupDomain (302ms)
-		LoadAssemblies (338ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (40ms)
-			TypeCache.Refresh (13ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (20ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (1163ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (577ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (26ms)
-			SetLoadedEditorAssemblies (4ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (113ms)
-			ProcessInitializeOnLoadAttributes (384ms)
-			ProcessInitializeOnLoadMethodAttributes (45ms)
-			AfterProcessingInitializeOnLoad (5ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
-Refreshing native plugins compatible for Editor in 2.83 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (17ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 14.04 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5130 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (452.7 KB). Loaded Objects now: 5651.
+Unloading 34 unused Assets / (445.3 KB). Loaded Objects now: 5662.
 Memory consumption went from 177.6 MB to 177.1 MB.
-Total: 2.768600 ms (FindLiveObjects: 0.263800 ms CreateObjectMapping: 0.166600 ms MarkObjects: 2.173900 ms  DeleteObjects: 0.163500 ms)
+Total: 6.067800 ms (FindLiveObjects: 0.660900 ms CreateObjectMapping: 0.608100 ms MarkObjects: 4.501900 ms  DeleteObjects: 0.295100 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
@@ -285,13 +314,8 @@ AssetImportParameters requested are different than current active one (requested
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-Symbol file data-0000018619B2E060 doesn't match image C:\Users\Usuario\Documents\GitHub\Proyecto1\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000018610BA3030 doesn't match image C:\Users\Usuario\Documents\GitHub\Proyecto1\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.467 seconds
-Refreshing native plugins compatible for Editor in 3.14 ms, found 3 plugins.
-Native extension for UWP target not found
+- Loaded All Assemblies, in  0.904 seconds
+Refreshing native plugins compatible for Editor in 13.15 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
@@ -299,51 +323,51 @@ Native extension for WebGL target not found
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.259 seconds
-Domain Reload Profiling: 1723ms
-	BeginReloadAssembly (140ms)
+- Finished resetting the current domain, in  2.591 seconds
+Domain Reload Profiling: 3476ms
+	BeginReloadAssembly (242ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (33ms)
-	RebuildCommonClasses (29ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (27ms)
-	LoadAllAssembliesAndSetupDomain (256ms)
-		LoadAssemblies (314ms)
+		CreateAndSetChildDomain (45ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (69ms)
+	LoadAllAssembliesAndSetupDomain (510ms)
+		LoadAssemblies (624ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (15ms)
-			TypeCache.Refresh (7ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (8ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (1259ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (2592ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (624ms)
+		SetupLoadedEditorAssemblies (888ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (31ms)
+			InitializePlatformSupportModulesInManaged (60ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (124ms)
-			ProcessInitializeOnLoadAttributes (399ms)
-			ProcessInitializeOnLoadMethodAttributes (59ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			BeforeProcessingInitializeOnLoad (170ms)
+			ProcessInitializeOnLoadAttributes (522ms)
+			ProcessInitializeOnLoadMethodAttributes (92ms)
+			AfterProcessingInitializeOnLoad (39ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Refreshing native plugins compatible for Editor in 2.70 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (20ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 10.95 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5131 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (444.9 KB). Loaded Objects now: 5666.
-Memory consumption went from 179.8 MB to 179.3 MB.
-Total: 2.942600 ms (FindLiveObjects: 0.314800 ms CreateObjectMapping: 0.188000 ms MarkObjects: 2.294500 ms  DeleteObjects: 0.144400 ms)
+Unloading 5130 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (445.5 KB). Loaded Objects now: 5677.
+Memory consumption went from 179.5 MB to 179.1 MB.
+Total: 5.756800 ms (FindLiveObjects: 0.789800 ms CreateObjectMapping: 0.367400 ms MarkObjects: 4.230500 ms  DeleteObjects: 0.367300 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
@@ -356,15 +380,226 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+Received Import Request.
+  Time since last request: 284.697562 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '023ab8cda2c67d40c19bddc606c77930') in 0.099232 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 61.326919 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78173a6eb894136ea044cc01ba95588b') in 0.012983 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 25.807967 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a549a7d2b4ea62d3614a93bc937a0f24') in 0.012838 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 63.462115 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f39c8481f76976ca924e3aa49e4a287f') in 0.015839 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 3.125811 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcd807096a76bf577831518220815ca0') in 0.012511 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 97.043667 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '422b3c8efde3430afe4164c88add71d6') in 0.013718 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 10.199412 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d4bb969c67f325d523db6407386cb43') in 0.012622 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 98.730175 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4819b467bab802d8a9178d9934a82333') in 0.013691 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 3.917034 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f267fbf2a72dcafe5cc31d1da251eb67') in 0.012544 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 60.244588 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '936821289237f98f21324c98be4a1950') in 0.012318 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 34.795783 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55445304680897da76b1e07b673b7028') in 0.017654 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 64.934345 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5408cea89605ac4edaf34ea5d65b1432') in 0.015436 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 4.862572 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e908eee52f05a6deded61e51a5e8ea5') in 0.011774 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 103.494374 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b9ea8a19b76b21325c04bf11573cc2d') in 0.013825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 2.827684 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ce9990c057a7952d6c475d9d5211eb6') in 0.012484 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 110.615871 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3d2f510ebab34805aec8917f868e3e9') in 0.014409 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 3.729680 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '939faf94bb8e35e074752ac58232f429') in 0.011237 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 172.767645 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9f19c44542128b2fd6876d4f851bbb9') in 0.013823 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 2.899896 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffe12c5e9bc98605496eca168c044e3a') in 0.012116 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 110.212081 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f46afe8536bb44e4082fff94a92fdf7') in 0.012479 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 4.463910 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37e13117ce6c2919b26f761020542934') in 0.011673 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 76.002537 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '112389d2b6c75726ef93f7583ff5f8e2') in 0.011686 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 2.938998 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ba8aafa5caaffc421d84aee19ba0689') in 0.011670 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 50.071632 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6530909b2748a557a6b7a62db210d71d') in 0.011778 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 2.269159 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '621b42bdadebb0e86d62003cdde11844') in 0.011326 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 41.524960 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '669e29d65f915219847ae39dbf4fc926') in 0.015058 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 2.644338 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2a24d5d3bd2ad9b1ae89ce434cad56e') in 0.012736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-Symbol file data-000001861B4F0C30 doesn't match image C:\Users\Usuario\Documents\GitHub\Proyecto1\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001860EB00080 doesn't match image C:\Users\Usuario\Documents\GitHub\Proyecto1\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
-Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.509 seconds
-Refreshing native plugins compatible for Editor in 3.43 ms, found 3 plugins.
-Native extension for UWP target not found
+- Loaded All Assemblies, in  0.910 seconds
+Refreshing native plugins compatible for Editor in 14.12 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
@@ -372,51 +607,51 @@ Native extension for WebGL target not found
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.440 seconds
-Domain Reload Profiling: 1947ms
-	BeginReloadAssembly (156ms)
+- Finished resetting the current domain, in  2.548 seconds
+Domain Reload Profiling: 3438ms
+	BeginReloadAssembly (247ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
+		DisableScriptedObjects (7ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (43ms)
-	RebuildCommonClasses (33ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (26ms)
-	LoadAllAssembliesAndSetupDomain (279ms)
-		LoadAssemblies (337ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (515ms)
+		LoadAssemblies (631ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (14ms)
+		AnalyzeDomain (20ms)
 			TypeCache.Refresh (7ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (6ms)
-	FinalizeReload (1441ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (2548ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (689ms)
+		SetupLoadedEditorAssemblies (867ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (30ms)
+			InitializePlatformSupportModulesInManaged (63ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (124ms)
-			ProcessInitializeOnLoadAttributes (461ms)
-			ProcessInitializeOnLoadMethodAttributes (63ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			BeforeProcessingInitializeOnLoad (168ms)
+			ProcessInitializeOnLoadAttributes (509ms)
+			ProcessInitializeOnLoadMethodAttributes (87ms)
+			AfterProcessingInitializeOnLoad (35ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Refreshing native plugins compatible for Editor in 3.80 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (17ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 13.70 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5131 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (452.7 KB). Loaded Objects now: 5681.
-Memory consumption went from 181.7 MB to 181.3 MB.
-Total: 4.276800 ms (FindLiveObjects: 0.355600 ms CreateObjectMapping: 0.201600 ms MarkObjects: 3.503500 ms  DeleteObjects: 0.215000 ms)
+Unloading 5130 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (429.1 KB). Loaded Objects now: 5692.
+Memory consumption went from 181.5 MB to 181.0 MB.
+Total: 4.816300 ms (FindLiveObjects: 0.585500 ms CreateObjectMapping: 0.197600 ms MarkObjects: 3.781400 ms  DeleteObjects: 0.250300 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
@@ -428,3 +663,195 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 377.498530 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac090eccf4dad1b38ecf1921de72950d') in 0.105480 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 5.875967 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80b408906fa8b73806e63ae7caba25f3') in 0.013382 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.032 seconds
+Refreshing native plugins compatible for Editor in 10.96 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.824 seconds
+Domain Reload Profiling: 3838ms
+	BeginReloadAssembly (273ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (54ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (78ms)
+	LoadAllAssembliesAndSetupDomain (595ms)
+		LoadAssemblies (724ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (2825ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (887ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (59ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (186ms)
+			ProcessInitializeOnLoadAttributes (505ms)
+			ProcessInitializeOnLoadMethodAttributes (92ms)
+			AfterProcessingInitializeOnLoad (40ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (19ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 11.92 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5130 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (437.1 KB). Loaded Objects now: 5707.
+Memory consumption went from 183.4 MB to 183.0 MB.
+Total: 5.156800 ms (FindLiveObjects: 0.512500 ms CreateObjectMapping: 0.183500 ms MarkObjects: 4.202100 ms  DeleteObjects: 0.257000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 359.709988 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc5b79add2e78edd47ac050c9b3b8e74') in 0.112043 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 6.379468 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx
+  artifactKey: Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Platforms and terrains/Definitive/PuenteCollider_Terreno_Lvl2.fbx using Guid(3623d32df2fac0e43ae55b09b9d5baa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcc4884f2c20a100893a7616c344cb61') in 0.012515 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.921 seconds
+Refreshing native plugins compatible for Editor in 13.61 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  2.860 seconds
+Domain Reload Profiling: 3763ms
+	BeginReloadAssembly (244ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (44ms)
+	RebuildCommonClasses (47ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (527ms)
+		LoadAssemblies (644ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (21ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (2860ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (877ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (56ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (179ms)
+			ProcessInitializeOnLoadAttributes (506ms)
+			ProcessInitializeOnLoadMethodAttributes (91ms)
+			AfterProcessingInitializeOnLoad (41ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (22ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 11.16 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5130 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 34 unused Assets / (453.4 KB). Loaded Objects now: 5722.
+Memory consumption went from 185.4 MB to 184.9 MB.
+Total: 4.906600 ms (FindLiveObjects: 0.576500 ms CreateObjectMapping: 0.255400 ms MarkObjects: 3.833100 ms  DeleteObjects: 0.240300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 77.826803 seconds.
+  path: Assets/Core/Prefabs/Player/FreeLook Camera.prefab
+  artifactKey: Guid(fe652c5df3945064baa09cea34e92a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Player/FreeLook Camera.prefab using Guid(fe652c5df3945064baa09cea34e92a58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b669f1100a218b1c69abf07d9d21542b') in 0.053607 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 32
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Core/Prefabs/Player/TongueTip.prefab
+  artifactKey: Guid(159adb7fc887b0c4cbc89fb35eeed1d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Player/TongueTip.prefab using Guid(159adb7fc887b0c4cbc89fb35eeed1d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '296a59004358d9cdc917d0b1ed3eda8c') in 0.071133 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 20
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Core/Prefabs/Player/Player.prefab
+  artifactKey: Guid(8fafda6fe296fb246ab8580fbd6ec731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Player/Player.prefab using Guid(8fafda6fe296fb246ab8580fbd6ec731) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4763f9966e4559ed63e1de38bb0fb576') in 0.031913 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 56
