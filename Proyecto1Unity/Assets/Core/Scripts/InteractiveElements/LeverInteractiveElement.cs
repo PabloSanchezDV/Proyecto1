@@ -5,9 +5,18 @@ using UnityEngine;
 public class LeverInteractiveElement : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject[] _leverGameObjects;
+    private Animator _animator;
+
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
 
     public void Interact()
     {
+        if (_animator != null)
+            _animator.SetTrigger("ChangeState");
+
         EnableDisableGameObjects();
     }
 

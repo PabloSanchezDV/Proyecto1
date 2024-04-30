@@ -8,6 +8,13 @@ public class PressurePlate : MonoBehaviour
     [SerializeField] private GameObject _box;
     [SerializeField] private bool _isSolved = false;
 
+    private Animator _animator;
+
+    private void Start()
+    {
+        _animator = transform.parent.parent.GetComponent<Animator>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == _box)
@@ -26,6 +33,8 @@ public class PressurePlate : MonoBehaviour
 
     private void Interact(bool state)
     {
+        if (_animator != null)
+            _animator.SetTrigger("ChangeState");
         _isSolved = state;
         Debug.Log("Box detected: " + _isSolved);
     }

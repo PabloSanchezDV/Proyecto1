@@ -40,7 +40,7 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _Density: 20
+    - _Density: 100
     - _Speed: 1.5
     m_Colors:
     - _DarkerColor: {r: 0.05882353, g: 0.48823518, b: 0.6, a: 1}
