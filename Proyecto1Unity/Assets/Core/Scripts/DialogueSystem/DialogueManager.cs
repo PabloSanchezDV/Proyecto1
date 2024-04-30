@@ -43,18 +43,18 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator SendDialoguesToUIManager(List<DialogueNode> dialogueNodes)
     {
-        foreach(DialogueNode node in dialogueNodes)
+        UIManager.instance.ShowDialoguePanel();
+        foreach (DialogueNode node in dialogueNodes)
         {
-            //UIManager.StartDialogue();
             string character = node.Character;
             string text = node.Text;
+            UIManager.instance.UpdateDialoguePanel(character, text);
             Debug.Log(character + ": " + text);
-            //UIManager.ShowDialogue(character, text);
             while(!_doNextDialogue)
                 yield return null;
             _doNextDialogue = false;
         }
-        //UIManager.EndDialogue();
+        UIManager.instance.HideDialoguePanel();
         _isInDialogue = false;
     }
 }
