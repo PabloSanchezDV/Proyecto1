@@ -11,6 +11,11 @@ public class AudioDatabase : ScriptableObject
     [Range(0, 1)] public float testSoundVolume;
     [NonSerialized] public float testSoundCurrentVolume;
 
+    [Header("Test Dialogues AudioClips")]
+    public AudioClip testDialogueAC;
+    [Range(0, 1)] public float testDialogueVolume;
+    [NonSerialized] public float testDialogueCurrentVolume;
+
     [Header("Test Music AudioClips")]
     public AudioClip testMusicAC;
     [Range(0, 1)] public float testMusicVolume;

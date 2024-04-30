@@ -9,13 +9,15 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    [SerializeField] private AudioDatabase audioDatabase;
-    [NonSerialized] private float musicVolumeModifier;
-    [NonSerialized] private float soundsVolumeModifier;
+    [SerializeField] private AudioDatabase _audioDatabase;
+    [NonSerialized] private float _musicVolumeModifier;
+    [NonSerialized] private float _soundsVolumeModifier;
+    [NonSerialized] private float _dialogueVolumeModifier;
 
     //To add a new sound create an AudioSource, a Play method and a Stop method and add the Volume and Audioclip to AudioDatabase scriptableObject
     #region AudioSources
     [NonSerialized] public AudioSource testSoundAS;
+    [NonSerialized] public AudioSource testDialogueAS;
     [NonSerialized] public AudioSource testMusicAS;
     #endregion
 
@@ -23,6 +25,8 @@ public class AudioManager : MonoBehaviour
     public bool AreSoundsEnabled { get { return _areSoundsEnabled; } }
     private bool _isMusicEnabled = true;
     public bool IsMusicEnabled { get { return _isMusicEnabled;} }
+    private bool _areDialoguesEnabled = true;
+    public bool AreDialoguesEnabled { get { return _areDialoguesEnabled; } }
 
     private List<AudioSource> aSList = new List<AudioSource>();
 
@@ -39,8 +43,9 @@ public class AudioManager : MonoBehaviour
         _areSoundsEnabled = PrefsManager.instance.GetBool(Pref.AreSoundsEnabled);
         _isMusicEnabled = PrefsManager.instance.GetBool(Pref.IsMusicEnabled);
 
-        musicVolumeModifier = 1;
-        soundsVolumeModifier = 1;
+        _musicVolumeModifier = 1;
+        _soundsVolumeModifier = 1;
+        _dialogueVolumeModifier = 1;
     }
 
     #region Settings Methods
@@ -71,6 +76,19 @@ public class AudioManager : MonoBehaviour
         ChangeMainTitleMusicVolume();
     }
 
+    public void EnableDisableDialogues()
+    {
+        if (!_areDialoguesEnabled)
+        {
+            _areDialoguesEnabled = true;
+        }
+        else
+        {
+            _areDialoguesEnabled = false;
+        }
+        PrefsManager.instance.SetBool(Pref.AreDialoguesEnabled, _areDialoguesEnabled);
+    }
+
     public void SetMusicVolumeModifier(float mod)
     {
         if(mod < 0)
@@ -82,7 +100,8 @@ public class AudioManager : MonoBehaviour
             mod = 1;
         }
 
-        musicVolumeModifier = mod;
+        _musicVolumeModifier = mod;
+        PrefsManager.instance.SetFloat(Pref.MusicVolume, mod);
 
         ChangeMainTitleMusicVolume();
     }
@@ -98,14 +117,30 @@ public class AudioManager : MonoBehaviour
             mod = 1;
         }
 
-        soundsVolumeModifier = mod;
+        _soundsVolumeModifier = mod;
+        PrefsManager.instance.SetFloat(Pref.SoundsVolume, mod);
+    }
+
+    public void SetDialogueVolumeModifier(float mod)
+    {
+        if (mod < 0)
+        {
+            mod = 0;
+        }
+        else if (mod > 1)
+        {
+            mod = 1;
+        }
+
+        _dialogueVolumeModifier = mod;
+        PrefsManager.instance.SetFloat(Pref.DialoguesVolume, mod);
     }
 
     private void ChangeMainTitleMusicVolume()
     {
         if(MusicManager.instance.testMusicAS != null)
         {
-            MusicManager.instance.testMusicAS.volume = ChangeMusicVolumeAsPerModifier(audioDatabase.testMusicVolume);
+            MusicManager.instance.testMusicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.testMusicVolume);
         }
     }
 
@@ -115,14 +150,20 @@ public class AudioManager : MonoBehaviour
     #region Player Movement
     public AudioSource TestSound(GameObject go)
     {
-        audioDatabase.testSoundCurrentVolume = ChangeSoundsVolumeAsPerModifier(audioDatabase.testSoundVolume);
-        return CreateAudioSource(go, audioDatabase.testSoundAC, audioDatabase.testSoundCurrentVolume, true);
+        _audioDatabase.testSoundCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.testSoundVolume);
+        return CreateAudioSource(go, _audioDatabase.testSoundAC, _audioDatabase.testSoundCurrentVolume, true);
+    }
+
+    public AudioSource TestDialogue(GameObject go)
+    {
+        _audioDatabase.testDialogueCurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.testDialogueVolume);
+        return CreateAudioSource(go, _audioDatabase.testDialogueAC, _audioDatabase.testDialogueCurrentVolume);
     }
 
     public AudioSource TestMusic()
     {
-        audioDatabase.testMusicCurrentVolume = ChangeSoundsVolumeAsPerModifier(audioDatabase.testMusicVolume);
-        return CreateMusicAudioSource(audioDatabase.testMusicAC, audioDatabase.testMusicCurrentVolume);
+        _audioDatabase.testMusicCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.testMusicVolume);
+        return CreateMusicAudioSource(_audioDatabase.testMusicAC, _audioDatabase.testMusicCurrentVolume);
     }
     #endregion
     #endregion
@@ -151,7 +192,7 @@ public class AudioManager : MonoBehaviour
     {
         if (_isMusicEnabled)
         {
-            return originalVolume * musicVolumeModifier;
+            return originalVolume * _musicVolumeModifier;
         }
         else
         {
@@ -163,12 +204,24 @@ public class AudioManager : MonoBehaviour
     {
         if (_areSoundsEnabled)
         {
-            return originalVolume * soundsVolumeModifier;
+            return originalVolume * _soundsVolumeModifier;
         }
         else
         {
             return 0;
         }        
+    }
+
+    private float ChangeDialoguesVolumeAsPerModifier(float originalVolume)
+    {
+        if (_areSoundsEnabled)
+        {
+            return originalVolume * _dialogueVolumeModifier;
+        }
+        else
+        {
+            return 0;
+        }
     }
 
     private AudioSource CreateMusicAudioSource(AudioClip audioclip, float volume)

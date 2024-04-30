@@ -5,5 +5,9 @@ using UnityEngine;
 public enum Pref
 {
     AreSoundsEnabled,
-    IsMusicEnabled
+    IsMusicEnabled,
+    AreDialoguesEnabled,
+    SoundsVolume,
+    MusicVolume,
+    DialoguesVolume
 }
