@@ -7,6 +7,11 @@ public class DELETE : MonoBehaviour
 {
     private bool slowTime = false;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))

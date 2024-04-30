@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         _movementDirection = (player.transform.position + new Vector3(0, 0.25f, 0)) - transform.position;
-        StartCoroutine(DestroyAfter());
+        StartCoroutine(DeactivateAfter());
     }
 
     private void Update()
@@ -21,10 +21,11 @@ public class Projectile : MonoBehaviour
         transform.Translate(_movementDirection.normalized * _speed * Time.deltaTime, Space.World);
     }
 
-    IEnumerator DestroyAfter()
+    IEnumerator DeactivateAfter()
     {
         yield return new WaitForSeconds(_destroyAfterTime);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        ProjectilePooling.instance.ReturnBullet(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,6 +35,7 @@ public class Projectile : MonoBehaviour
             Debug.Log("Damage");
             //DoDamage
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        ProjectilePooling.instance.ReturnBullet(gameObject);
     }
 }
