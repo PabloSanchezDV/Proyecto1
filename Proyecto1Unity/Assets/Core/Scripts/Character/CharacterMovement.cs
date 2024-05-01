@@ -41,22 +41,30 @@ public class CharacterMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
+    private void Start()
+    {
+        EventHolder.instance.onPause.AddListener(DisableInputsOnPause);
+        EventHolder.instance.onUnpause.AddListener(EnableInputsOnUnpause);
+    }
+
     private void OnEnable()
     {
+        EventHolder.instance.onPause.AddListener(DisableInputsOnPause);
+        EventHolder.instance.onUnpause.AddListener(EnableInputsOnUnpause);
         CharacterManager.InputActions.Gameplay.Jump.started += Jump;
         CharacterManager.InputActions.Gameplay.Jump.canceled += CancelJump;
         CharacterManager.InputActions.Gameplay.Run.started += TurnOnWalk;
         CharacterManager.InputActions.Gameplay.Run.canceled += TurnOffWalk;
         _move = CharacterManager.InputActions.Gameplay.Move;
-        CharacterManager.InputActions.Gameplay.Enable();
     }
 
     private void OnDisable()
     {
+        EventHolder.instance.onPause.RemoveListener(DisableInputsOnPause);
+        EventHolder.instance.onUnpause.RemoveListener(EnableInputsOnUnpause);
         CharacterManager.InputActions.Gameplay.Jump.started -= Jump;
         CharacterManager.InputActions.Gameplay.Run.started -= TurnOnWalk;
         CharacterManager.InputActions.Gameplay.Run.canceled -= TurnOffWalk;
-        CharacterManager.InputActions.Gameplay.Disable();
     }
 
     private void FixedUpdate()
@@ -160,6 +168,22 @@ public class CharacterMovement : MonoBehaviour
                 _shadow.transform.localScale = new Vector3(distanceToGround, distanceToGround, 1);
             }
         }
+    }
+
+    private void DisableInputsOnPause()
+    {
+        CharacterManager.InputActions.Gameplay.Jump.started -= Jump;
+        CharacterManager.InputActions.Gameplay.Jump.canceled -= CancelJump;
+        CharacterManager.InputActions.Gameplay.Run.started -= TurnOnWalk;
+        CharacterManager.InputActions.Gameplay.Run.canceled -= TurnOffWalk;
+    }
+
+    private void EnableInputsOnUnpause()
+    {
+        CharacterManager.InputActions.Gameplay.Jump.started += Jump;
+        CharacterManager.InputActions.Gameplay.Jump.canceled += CancelJump;
+        CharacterManager.InputActions.Gameplay.Run.started += TurnOnWalk;
+        CharacterManager.InputActions.Gameplay.Run.canceled += TurnOffWalk;
     }
 
     private Vector3 GetCameraForward(Camera playerCamera)
