@@ -407,6 +407,8 @@
 "Assets/Core/Scripts/Enemies/Projectiles/Projectile.cs"
 "Assets/Core/Scripts/Enemies/Projectiles/ProjectilePooling.cs"
 "Assets/Core/Scripts/Enemies/RangedEnemyManager.cs"
+"Assets/Core/Scripts/Global/EventHolder.cs"
+"Assets/Core/Scripts/Global/GameManager.cs"
 "Assets/Core/Scripts/InteractiveElements/AnimationButtonInteractiveElement.cs"
 "Assets/Core/Scripts/InteractiveElements/IInteractable.cs"
 "Assets/Core/Scripts/InteractiveElements/LeverInteractiveElement.cs"
