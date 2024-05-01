@@ -39,9 +39,6 @@ public class CharacterAbilities : MonoBehaviour
 
     private void Start()
     {
-        EventHolder.instance.onPause.AddListener(DisableInputsOnPause);
-        EventHolder.instance.onUnpause.AddListener(EnableInputsOnUnpause);
-
         _tongueReference = _character.GetChild(0).GetChild(0).transform;
         _tongueTipReference = _tongue.GetChild(0).transform;
 
@@ -56,15 +53,11 @@ public class CharacterAbilities : MonoBehaviour
     private void OnEnable()
     {
         CharacterManager.InputActions.Gameplay.ThrowTongue.started += ThrowTongue;
-        EventHolder.instance.onPause.AddListener(DisableInputsOnPause);
-        EventHolder.instance.onUnpause.AddListener(EnableInputsOnUnpause);
     }
 
     private void OnDisable()
     {
         CharacterManager.InputActions.Gameplay.ThrowTongue.started -= ThrowTongue;
-        EventHolder.instance.onPause.RemoveListener(DisableInputsOnPause);
-        EventHolder.instance.onUnpause.RemoveListener(EnableInputsOnUnpause);
     }
 
     private void FixedUpdate()
@@ -79,16 +72,6 @@ public class CharacterAbilities : MonoBehaviour
             _tongueTip.rotation = Quaternion.Euler(rotation);
             CheckDragableObjectDistance();
         }
-    }
-
-    private void DisableInputsOnPause()
-    {
-        CharacterManager.InputActions.Gameplay.ThrowTongue.started -= ThrowTongue;
-    }
-
-    private void EnableInputsOnUnpause()
-    {
-        CharacterManager.InputActions.Gameplay.ThrowTongue.started += ThrowTongue;
     }
 
     private void ThrowTongue(InputAction.CallbackContext context)

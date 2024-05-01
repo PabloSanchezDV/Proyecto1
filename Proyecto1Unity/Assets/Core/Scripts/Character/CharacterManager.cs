@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro.EditorUtilities;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -43,25 +42,6 @@ public class CharacterManager : MonoBehaviour
         _characterMovement.enabled = true;
         _characterAbilities.enabled = true;
         _characterAnimatorController.enabled = true;
-
-        _inputActions.Gameplay.Pause.performed += Pause;
-    }
-
-    private void Pause(InputAction.CallbackContext context)
-    {
-        EventHolder.instance.onPause?.Invoke();
-    }
-
-    private void OnEnable()
-    {
-        _inputActions.Gameplay.Pause.performed += Pause;
-        _inputActions.Gameplay.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _inputActions.Gameplay.Pause.performed -= Pause;
-        _inputActions.Gameplay.Disable();
     }
 
     #region Communications
