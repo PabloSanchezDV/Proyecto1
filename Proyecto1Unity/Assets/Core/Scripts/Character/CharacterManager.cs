@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -42,6 +42,42 @@ public class CharacterManager : MonoBehaviour
         _characterMovement.enabled = true;
         _characterAbilities.enabled = true;
         _characterAnimatorController.enabled = true;
+
+        _inputActions.Gameplay.Pause.started += Pause;
+        _inputActions.Menu.ClosePause.started += UnpauseByInput;
+    }
+
+    private void Start()
+    {
+        EventHolder.instance.onUnpause.AddListener(Unpause);
+    }
+
+    private void OnEnable()
+    {
+        _inputActions.Gameplay.Pause.started += Pause;
+    }
+
+    private void OnDisable()
+    {
+        _inputActions.Gameplay.Pause.started -= Pause;
+    }
+
+    private void Pause(InputAction.CallbackContext context)
+    {
+        _inputActions.Gameplay.Disable();
+        _inputActions.Menu.Enable();
+        EventHolder.instance.onPause?.Invoke();
+    }
+
+    private void Unpause()
+    {
+        _inputActions.Gameplay.Enable();
+        _inputActions.Menu.Disable();
+    }
+    private void UnpauseByInput(InputAction.CallbackContext context)
+    {
+        Unpause();
+        EventHolder.instance.onUnpause?.Invoke();
     }
 
     #region Communications
