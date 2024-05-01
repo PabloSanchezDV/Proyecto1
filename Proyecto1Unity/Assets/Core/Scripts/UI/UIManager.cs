@@ -45,6 +45,23 @@ public class UIManager : MonoBehaviour
     {
         _optionsPanel = GetComponent<OptionsUI>();
         _saveGameUI = GetComponent<SaveGameUI>();
+        EventHolder.instance.onPause.AddListener(ShowPausePanel);
+        EventHolder.instance.onUnpause.AddListener(HidePausePanel);
+    }
+
+    private void OnEnable()
+    {
+        if(EventHolder.instance != null)
+        {
+            EventHolder.instance.onPause.AddListener(ShowPausePanel);
+            EventHolder.instance.onUnpause.AddListener(HidePausePanel);
+        }
+    }
+
+    private void OnDisable()
+    {
+        EventHolder.instance.onPause.RemoveListener(ShowPausePanel);
+        EventHolder.instance.onUnpause.RemoveListener(HidePausePanel);
     }
 
     #region Update Panels
@@ -194,8 +211,7 @@ public class UIManager : MonoBehaviour
     #region Pause Panel
     public void ResumeGame()
     {
-        _pausePanel.SetActive(false);
-        //GameManager.Unpause();
+        EventHolder.instance.onUnpause?.Invoke();
     }
 
     public void GoToMainMenu()

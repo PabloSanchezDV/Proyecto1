@@ -228,6 +228,7 @@ public class AudioManager : MonoBehaviour
     {
         AudioSource aS = gameObject.AddComponent<AudioSource>();
         aS.clip = audioclip;
+        aS.ignoreListenerPause = true;
         if (_isMusicEnabled)
         {
             aS.volume = volume;

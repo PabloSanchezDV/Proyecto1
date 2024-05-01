@@ -74,6 +74,16 @@ public class CharacterAbilities : MonoBehaviour
         }
     }
 
+    //private void DisableInputsOnPause()
+    //{
+    //    CharacterManager.InputActions.Gameplay.ThrowTongue.started -= ThrowTongue;
+    //}
+
+    //private void EnableInputsOnUnpause()
+    //{
+    //    CharacterManager.InputActions.Gameplay.ThrowTongue.started += ThrowTongue;
+    //}
+
     private void ThrowTongue(InputAction.CallbackContext context)
     {
         if (!CharacterManager.CanThrowTongue)
