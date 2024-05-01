@@ -11,18 +11,34 @@ public class CharacterAnimatorController : MonoBehaviour
 
     private void Start()
     {
+        EventHolder.instance.onPause.AddListener(DisableInputsOnPause);
+        EventHolder.instance.onUnpause.AddListener(EnableInputsOnUnpause);
         _anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
     }
 
     private void OnEnable()
     {
+        EventHolder.instance.onPause.AddListener(DisableInputsOnPause);
+        EventHolder.instance.onUnpause.AddListener(EnableInputsOnUnpause);
         _move = CharacterManager.InputActions.Gameplay.Move;
         CharacterManager.InputActions.Gameplay.Bite.performed += Hit;
     }
 
     private void OnDisable()
     {
+        EventHolder.instance.onPause.RemoveListener(DisableInputsOnPause);
+        EventHolder.instance.onUnpause.RemoveListener(EnableInputsOnUnpause);
         CharacterManager.InputActions.Gameplay.Bite.performed -= Hit;
+    }
+
+    private void DisableInputsOnPause()
+    {
+        CharacterManager.InputActions.Gameplay.Bite.performed -= Hit;
+    }
+
+    private void EnableInputsOnUnpause()
+    {
+        CharacterManager.InputActions.Gameplay.Bite.performed += Hit;
     }
 
     private void Update()
