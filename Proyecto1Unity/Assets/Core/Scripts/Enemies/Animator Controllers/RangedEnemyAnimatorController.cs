@@ -6,6 +6,7 @@ public class RangedEnemyAnimatorController : EnemyAnimatorController
 {
     [HideInInspector]
     public RangedEnemyManager enemyManager;
+    private bool _isDead = false;
 
     private void Start()
     {
@@ -35,5 +36,14 @@ public class RangedEnemyAnimatorController : EnemyAnimatorController
     public void Attack()
     {
         _animator.SetTrigger("Attack");
+    }
+
+    public void DisableOnDeathAnim()
+    {
+        if(!_isDead)
+        {
+            enemyManager.DisableOnDeath();
+            _isDead = true;
+        }
     }
 }

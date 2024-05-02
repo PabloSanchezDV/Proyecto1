@@ -148,10 +148,16 @@ public class AudioManager : MonoBehaviour
 
     #region Play Sounds Methods
     #region Player Movement
-    public AudioSource TestSound(GameObject go)
+    public AudioSource PlayTestSound(GameObject go)
     {
         _audioDatabase.testSoundCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.testSoundVolume);
-        return CreateAudioSource(go, _audioDatabase.testSoundAC, _audioDatabase.testSoundCurrentVolume, true);
+        return CreateAudioSource(go, _audioDatabase.testSoundAC, _audioDatabase.testSoundCurrentVolume);
+    }
+
+    public AudioSource PlayBufoJump(GameObject go)
+    {
+        _audioDatabase.bufoJumpCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoJumpVolume);
+        return CreateAudioSource(go, _audioDatabase.bufoJumpAC, _audioDatabase.bufoJumpCurrentVolume);
     }
 
     public AudioSource TestDialogue(GameObject go)
