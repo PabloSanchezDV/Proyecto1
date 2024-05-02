@@ -11,6 +11,10 @@ public class AudioDatabase : ScriptableObject
     [Range(0, 1)] public float testSoundVolume;
     [NonSerialized] public float testSoundCurrentVolume;
 
+    public AudioClip bufoJumpAC;
+    [Range(0, 1)] public float bufoJumpVolume;
+    [NonSerialized] public float bufoJumpCurrentVolume;
+
     [Header("Test Dialogues AudioClips")]
     public AudioClip testDialogueAC;
     [Range(0, 1)] public float testDialogueVolume;
