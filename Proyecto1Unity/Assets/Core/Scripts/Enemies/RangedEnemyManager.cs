@@ -8,6 +8,8 @@ public class RangedEnemyManager : MonoBehaviour
     private RangedEnemyAnimatorController _animatorController;
     private RangedEnemyMovement _enemyMovement;
 
+    [SerializeField] private float _despawnAfterTime;
+
     [HideInInspector]
     public float FleeRange { get { return _AI.FleeRange; } }
     public Transform Player {  get { return _AI.Player; } }
@@ -59,5 +61,19 @@ public class RangedEnemyManager : MonoBehaviour
         if(_animatorController != null)
             _animatorController.Attack();
     }
+
+    public void DisableOnDeath()
+    {
+        _enemyMovement.enabled = false;
+        _AI.enabled = false;
+        enabled = false;
+        StartCoroutine(DespawnAfterTime());
+    }
     #endregion
+
+    IEnumerator DespawnAfterTime()
+    {
+        yield return new WaitForSeconds(_despawnAfterTime);
+        gameObject.SetActive(false);
+    }
 }
