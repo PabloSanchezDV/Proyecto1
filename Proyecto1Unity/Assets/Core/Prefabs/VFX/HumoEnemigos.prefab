@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6856922027189220235}
   - component: {fileID: 8048129099358839479}
   - component: {fileID: 8323869718258680056}
-  - component: {fileID: 1371031916345976450}
+  - component: {fileID: 132482479809607772}
   m_Layer: 0
   m_Name: HumoEnemigos
   m_TagString: Untagged
@@ -4831,7 +4831,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &1371031916345976450
+--- !u!114 &132482479809607772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4840,7 +4840,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4037632981018951544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1098a7b96e582d4693cdea76415ce32, type: 3}
+  m_Script: {fileID: 11500000, guid: fd955bc9f4f50cc498504344a976c3d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToDisable: 2
+  _disableAfterTime: 0

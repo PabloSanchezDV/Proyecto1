@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6041880382749648881}
   - component: {fileID: 5805245557495974879}
   - component: {fileID: 992512247237262137}
-  - component: {fileID: 3921375826668553209}
+  - component: {fileID: 369287539595868486}
   m_Layer: 0
   m_Name: Chispas
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8659715022603546213}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.70961744, y: -0, z: -0, w: 0.7045873}
+  m_LocalRotation: {x: -0.70960754, y: 0, z: 0, w: 0.7045972}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4831,7 +4831,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &3921375826668553209
+--- !u!114 &369287539595868486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4840,7 +4840,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8659715022603546213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1098a7b96e582d4693cdea76415ce32, type: 3}
+  m_Script: {fileID: 11500000, guid: fd955bc9f4f50cc498504344a976c3d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _secondsToDisable: 0
+  _disableAfterTime: 0

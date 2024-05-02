@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8650333930446172054}
   - component: {fileID: 6845868493454601255}
   - component: {fileID: 3077112499990282076}
+  - component: {fileID: 4436326755814286333}
   m_Layer: 0
   m_Name: OndaDobleSalto
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6168325696921107917}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.42439702, y: -0.31452924, z: 0.6519798, w: 0.5439493}
+  m_LocalRotation: {x: 0.42439553, y: -0.31452528, z: 0.65198106, w: 0.5439513}
   m_LocalPosition: {x: 5.34, y: -7.76, z: 4.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4897,3 +4898,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4436326755814286333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6168325696921107917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd955bc9f4f50cc498504344a976c3d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _disableAfterTime: 0
