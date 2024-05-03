@@ -12,7 +12,6 @@ public class CharacterAbilities : MonoBehaviour
     [SerializeField] private Transform _character;
     [SerializeField] private Transform _tongueTip;
     [SerializeField] private Transform _tongue;
-    [SerializeField] private CinemachineInputProvider _provider;
 
     [Header("Properties")]
     [SerializeField] private float _maxTongueDistance;
@@ -24,6 +23,7 @@ public class CharacterAbilities : MonoBehaviour
     [SerializeField] private LayerMask _tongueInteractiveLayerMask;
     [SerializeField] private LayerMask _tongueDragableLayerMask;
 
+    private CinemachineInputProvider _provider;
     private Transform _tongueReference;
     private Transform _tongueTipReference;
     private TongueTip _tongueTipScript;
@@ -43,6 +43,7 @@ public class CharacterAbilities : MonoBehaviour
         _tongueTipReference = _tongue.GetChild(0).transform;
 
         _tongueTipScript = _tongueTip.GetComponent<TongueTip>();
+        _provider = GetComponent<CharacterManager>().InputProvider;
 
         _tongue.gameObject.SetActive(false);
         _tongueTip.gameObject.SetActive(false);
@@ -73,16 +74,6 @@ public class CharacterAbilities : MonoBehaviour
             CheckDragableObjectDistance();
         }
     }
-
-    //private void DisableInputsOnPause()
-    //{
-    //    CharacterManager.InputActions.Gameplay.ThrowTongue.started -= ThrowTongue;
-    //}
-
-    //private void EnableInputsOnUnpause()
-    //{
-    //    CharacterManager.InputActions.Gameplay.ThrowTongue.started += ThrowTongue;
-    //}
 
     private void ThrowTongue(InputAction.CallbackContext context)
     {

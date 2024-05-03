@@ -10,6 +10,9 @@ public class EventHolder : MonoBehaviour
 
     [NonSerialized] public UnityEvent onPause;
     [NonSerialized] public UnityEvent onUnpause;
+    [NonSerialized] public UnityEvent onHurt;
+    [NonSerialized] public UnityEvent onDeath;
+    [NonSerialized] public UnityEvent onRespawn;
 
     void Awake()
     {
@@ -20,5 +23,9 @@ public class EventHolder : MonoBehaviour
 
         onPause = new UnityEvent();
         onUnpause = new UnityEvent();
+
+        onHurt = new UnityEvent();
+        onDeath = new UnityEvent();
+        onRespawn = new UnityEvent();
     }
 }

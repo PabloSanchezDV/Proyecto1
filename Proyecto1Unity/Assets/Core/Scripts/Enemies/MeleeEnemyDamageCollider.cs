@@ -15,7 +15,10 @@ public class MeleeEnemyDamageCollider : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            //DoDamage();
+            CharacterManager cm = other.transform.GetComponent<CharacterManager>();
+            if (cm != null)
+                cm.HittingEnemy = transform;
+            GameManager.instance.TakeDamage(1);
             _collider.enabled = false;
         }
     }
