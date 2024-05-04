@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class DELETE : MonoBehaviour
 {
     private bool slowTime = false;
+    [SerializeField] Animator animator;
 
     private void Start()
     {
@@ -36,15 +37,6 @@ public class DELETE : MonoBehaviour
                 Time.timeScale = 0.25f;
                 slowTime = true;
             }
-        }
-
-        if(Input.GetKeyDown (KeyCode.H))
-        {
-            CharacterManager.Hurt();
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            CharacterManager.IsDead();
         }
     }
 }

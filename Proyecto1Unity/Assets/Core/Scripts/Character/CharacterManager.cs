@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,9 @@ using UnityEngine.InputSystem;
 public class CharacterManager : MonoBehaviour
 {
     #region Variables
+    [SerializeField] private CinemachineInputProvider _inputProvider;
+    public CinemachineInputProvider InputProvider { get { return _inputProvider; } }
+
     private static bool _canMove = true;
     public static bool CanMove { get { return _canMove; } set { _canMove = value; } }
 
@@ -22,6 +26,9 @@ public class CharacterManager : MonoBehaviour
     private static EnemyAnimatorController _enemyAnimatorControllerOnHomingAttack;
     public static EnemyAnimatorController EnemyAnimatorControllerOnHomingAttack { get { return _enemyAnimatorControllerOnHomingAttack; } set { _enemyAnimatorControllerOnHomingAttack = value; } }
 
+    
+    private Transform _hittingEnemy;
+    public Transform HittingEnemy { set { _hittingEnemy = value; } }
 
     private static InputActions _inputActions;
     public static InputActions InputActions { get { return _inputActions;} }
@@ -29,6 +36,7 @@ public class CharacterManager : MonoBehaviour
     private static CharacterMovement _characterMovement;
     private static CharacterAbilities _characterAbilities;
     private static CharacterAnimatorController _characterAnimatorController;
+    private static CharacterDamage _characterDamage;
     #endregion
 
     // Start is called before the first frame update
@@ -38,28 +46,47 @@ public class CharacterManager : MonoBehaviour
         _characterMovement = GetComponent<CharacterMovement>();
         _characterAbilities = GetComponent<CharacterAbilities>();
         _characterAnimatorController = GetComponent<CharacterAnimatorController>();
+        _characterDamage = GetComponent<CharacterDamage>();
 
         _characterMovement.enabled = true;
         _characterAbilities.enabled = true;
         _characterAnimatorController.enabled = true;
-
-        _inputActions.Gameplay.Pause.started += Pause;
-        _inputActions.Menu.ClosePause.started += UnpauseByInput;
+        _characterDamage.enabled = true;
     }
 
     private void Start()
     {
+        _inputActions.Gameplay.Pause.started += Pause;
+        _inputActions.Menu.ClosePause.started += UnpauseByInput;
+        
         EventHolder.instance.onUnpause.AddListener(Unpause);
+        EventHolder.instance.onHurt.AddListener(ActivateHurt);
+        EventHolder.instance.onDeath.AddListener(ActivateDeath);
+        EventHolder.instance.onRespawn.AddListener(ActivateMovementOnRespawn);
+        EventHolder.instance.onRespawn.AddListener(GoToIdleAfterRespawn);
     }
 
     private void OnEnable()
     {
         _inputActions.Gameplay.Pause.started += Pause;
+        if(EventHolder.instance != null)
+        {
+            EventHolder.instance.onUnpause.AddListener(Unpause);
+            EventHolder.instance.onHurt.AddListener(ActivateHurt);
+            EventHolder.instance.onDeath.AddListener(ActivateDeath);
+            EventHolder.instance.onRespawn.AddListener(ActivateMovementOnRespawn);
+            EventHolder.instance.onRespawn.AddListener(GoToIdleAfterRespawn);
+        }
     }
 
     private void OnDisable()
     {
         _inputActions.Gameplay.Pause.started -= Pause;
+        EventHolder.instance.onUnpause.RemoveListener(Unpause);
+        EventHolder.instance.onHurt.RemoveListener(ActivateHurt);
+        EventHolder.instance.onDeath.RemoveListener(ActivateDeath);
+        EventHolder.instance.onRespawn.RemoveListener(ActivateMovementOnRespawn);
+        EventHolder.instance.onRespawn.RemoveListener(GoToIdleAfterRespawn);
     }
 
     private void Pause(InputAction.CallbackContext context)
@@ -74,6 +101,7 @@ public class CharacterManager : MonoBehaviour
         _inputActions.Gameplay.Enable();
         _inputActions.Menu.Disable();
     }
+
     private void UnpauseByInput(InputAction.CallbackContext context)
     {
         Unpause();
@@ -176,20 +204,36 @@ public class CharacterManager : MonoBehaviour
             _characterAnimatorController.EndDragging();
     }
     #endregion
+    #endregion
+    #endregion
 
-    #region Health - Animation Controller
-    public static void Hurt()
+    private void ActivateHurt()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.Hurt();
+        if(_characterDamage != null)
+            _characterDamage.ActivateInvincibilityFrames();
+        if (_characterMovement != null)
+            _characterMovement.KnockbackCharacter(_hittingEnemy);
     }
 
-    public static void IsDead()
+    private void ActivateDeath()
     {
+        _inputProvider.enabled = false;
+        _canMove = false;
         if (_characterAnimatorController != null)
             _characterAnimatorController.IsDead();
     }
-    #endregion
-    #endregion
-    #endregion
+
+    private void ActivateMovementOnRespawn()
+    {
+        _canMove = true;
+        _inputProvider.enabled = true;
+    }
+
+    private void GoToIdleAfterRespawn()
+    {
+        if (_characterAnimatorController != null)
+            _characterAnimatorController.Respawn();
+    }
 }

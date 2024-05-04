@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _dialoguePanel;
     [SerializeField] private GameObject _HUDCompletePanel;
     [SerializeField] private GameObject _pausePanel;
+    [SerializeField] private GameObject _fader;
 
     [Header("Dialogue Panel")]
     [SerializeField] private TextMeshProUGUI _characterText;
@@ -28,8 +29,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Color _2hitsColor;
     [SerializeField] private Color _1hitColor;
 
+    [Header("Properties")]
+    [SerializeField] private float _hideHUDTime;
+
+    [Header("Fader")]
+    [SerializeField] private Animator _faderAnimator;
+    [SerializeField] private float _deathFadeOutTime;
+
     private OptionsUI _optionsPanel;
     private SaveGameUI _saveGameUI;
+
 
     public static UIManager instance;
 
@@ -47,6 +56,10 @@ public class UIManager : MonoBehaviour
         _saveGameUI = GetComponent<SaveGameUI>();
         EventHolder.instance.onPause.AddListener(ShowPausePanel);
         EventHolder.instance.onUnpause.AddListener(HidePausePanel);
+        EventHolder.instance.onHurt.AddListener(UpdateAndShowHealthHUD);
+        EventHolder.instance.onDeath.AddListener(UpdateHealth);
+        EventHolder.instance.onDeath.AddListener(FadeOutAfterDeath);
+        EventHolder.instance.onRespawn.AddListener(FadeIn);
     }
 
     private void OnEnable()
@@ -55,6 +68,10 @@ public class UIManager : MonoBehaviour
         {
             EventHolder.instance.onPause.AddListener(ShowPausePanel);
             EventHolder.instance.onUnpause.AddListener(HidePausePanel);
+            EventHolder.instance.onHurt.AddListener(UpdateAndShowHealthHUD);
+            EventHolder.instance.onDeath.AddListener(UpdateHealth);
+            EventHolder.instance.onDeath.AddListener(FadeOutAfterDeath);
+            EventHolder.instance.onRespawn.AddListener(FadeIn);
         }
     }
 
@@ -62,6 +79,10 @@ public class UIManager : MonoBehaviour
     {
         EventHolder.instance.onPause.RemoveListener(ShowPausePanel);
         EventHolder.instance.onUnpause.RemoveListener(HidePausePanel);
+        EventHolder.instance.onHurt.RemoveListener(UpdateAndShowHealthHUD);
+        EventHolder.instance.onDeath.RemoveListener(UpdateHealth);
+        EventHolder.instance.onDeath.RemoveListener(FadeOutAfterDeath);
+        EventHolder.instance.onRespawn.RemoveListener(FadeIn);
     }
 
     #region Update Panels
@@ -71,26 +92,26 @@ public class UIManager : MonoBehaviour
         _dialogueText.text = text;
     }
 
-    public void UpdateHUD(int health, int bananas, int collectibles)
+    public void UpdateHUD()
     {
-        UpdateHealth(health);
-        _bananasText.text = bananas + "x";
-        _collectiblesText.text = collectibles + " / " + _maxCollectibles;
+        UpdateHealth();
+        _bananasText.text = GameManager.instance.Bananas + "x";
+        _collectiblesText.text = GameManager.instance.Collectibles + " / " + _maxCollectibles;
     }
 
-    private void UpdateHealth(int health)
+    private void UpdateHealth()
     {
-        switch (health)
+        switch (GameManager.instance.CurrentHealth)
         {
             case 0:
                 _healthImage.fillAmount = 0;
                 break;
             case 1:
-                _healthImage.fillAmount = 0.677f;
+                _healthImage.fillAmount = 0.36f;
                 _healthImage.color = _1hitColor;
                 break;
             case 2:
-                _healthImage.fillAmount = 0.36f;
+                _healthImage.fillAmount = 0.677f;
                 _healthImage.color = _2hitsColor;
                 break;
             case 3:
@@ -98,8 +119,14 @@ public class UIManager : MonoBehaviour
                 _healthImage.color = _maxHealthColor;
                 break;
             default:
-                throw new System.Exception("Health is out of bounds for UI updating. Health amount: " + health.ToString());
+                throw new System.Exception("Health is out of bounds for UI updating. Health amount: " + GameManager.instance.CurrentHealth.ToString());
         }
+    }
+    
+    private void UpdateAndShowHealthHUD()
+    {
+        UpdateHealth();
+        ShowHealthHUD();
     }
     #endregion
 
@@ -117,6 +144,7 @@ public class UIManager : MonoBehaviour
     public void ShowCompleteHUD()
     {
         _HUDAnimator.SetTrigger("ShowComplete");
+        Invoke("HideHUD", _hideHUDTime);
     }
 
     public void HideHUD()
@@ -127,16 +155,19 @@ public class UIManager : MonoBehaviour
     public void ShowHealthHUD()
     {
         _HUDAnimator.SetTrigger("ShowHealth");
+        Invoke("HideHUD", _hideHUDTime);
     }
 
     public void ShowCollectiblesHUD()
     {
         _HUDAnimator.SetTrigger("ShowCollectibles");
+        Invoke("HideHUD", _hideHUDTime);
     }
 
     public void ShowBananasHUD()
     {
         _HUDAnimator.SetTrigger("ShowBananas");
+        Invoke("HideHUD", _hideHUDTime);
     }
 
     public void ShowPausePanel()
@@ -224,6 +255,29 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Quitting game...");
         Application.Quit();
+    }
+    #endregion
+
+    #region Fade
+    public void FadeOut()
+    {
+        _faderAnimator.SetTrigger("FadeOut");
+    }
+
+    public void FadeOutAfterDeath()
+    {
+        StartCoroutine(FadeOutAfterTime());
+    }
+
+    IEnumerator FadeOutAfterTime()
+    {
+        yield return new WaitForSeconds(_deathFadeOutTime);
+        FadeOut();
+    }
+
+    public void FadeIn()
+    {
+        _faderAnimator.SetTrigger("FadeIn");
     }
     #endregion
 }

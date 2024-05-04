@@ -26,6 +26,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float _fallingSpeedMultiplier = 3f;
     [SerializeField] private float _coyoteTime = 0.2f;
     [SerializeField] private float _jumpBuffer = 0.2f;
+    [SerializeField] private float _knockbackForce;
+    [SerializeField] private float _knockbackVerticalForce;
 
     private Vector3 _forceDirection = Vector3.zero;
 
@@ -290,5 +292,13 @@ public class CharacterMovement : MonoBehaviour
     {
         _isFalling = false;
         CharacterManager.EndFalling();
+    }
+
+    public void KnockbackCharacter(Transform hittingEnemy)
+    {
+        Vector3 direction = transform.position - hittingEnemy.position;
+        direction.y = 0;
+        _rb.AddForce(direction.normalized * _knockbackForce, ForceMode.Impulse);
+        _rb.AddForce(Vector3.up *  _knockbackVerticalForce, ForceMode.Impulse);
     }
 }

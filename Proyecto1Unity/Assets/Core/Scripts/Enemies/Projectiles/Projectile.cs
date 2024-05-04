@@ -39,8 +39,10 @@ public class Projectile : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            Debug.Log("Damage");
-            //DoDamage
+            CharacterManager cm = other.transform.GetComponent<CharacterManager>();
+            if (cm != null)
+                cm.HittingEnemy = transform;
+            GameManager.instance.TakeDamage(1);
         }
         ProjectilePooling.instance.ReturnBullet(gameObject);
         gameObject.SetActive(false);

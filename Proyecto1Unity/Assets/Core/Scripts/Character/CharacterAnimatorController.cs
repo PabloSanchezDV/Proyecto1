@@ -136,6 +136,11 @@ public class CharacterAnimatorController : MonoBehaviour
 
     public void IsDead()
     {
-        _anim.SetBool("isDead", true);
+        _anim.SetTrigger("Die");
+    }
+
+    public void Respawn()
+    {
+        _anim.SetTrigger("Respawn");
     }
 }
