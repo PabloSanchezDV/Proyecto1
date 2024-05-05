@@ -95,7 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _box: {fileID: 0}
-  _isSolved: 0
+  _doorAnimator: {fileID: 0}
+  _particleSystemManager: {fileID: 2882627860154290476}
+  _isConditionComplete: 1
+  _canDoorOpenCompletely: 1
 --- !u!1 &1816042909406215393
 GameObject:
   m_ObjectHideFlags: 0
@@ -213,6 +216,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8141007730796557575}
+  - {fileID: 9135496842577137563}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6965704222419358277
@@ -286,3 +290,80 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &3251282046423853162
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4719529634765127980}
+    m_Modifications:
+    - target: {fileID: 5805245557495974879, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8659715022603546213, guid: 126a05cab4966b748b50676178471336, type: 3}
+      propertyPath: m_Name
+      value: Chispas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 126a05cab4966b748b50676178471336, type: 3}
+--- !u!114 &2882627860154290476 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 369287539595868486, guid: 126a05cab4966b748b50676178471336, type: 3}
+  m_PrefabInstance: {fileID: 3251282046423853162}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd955bc9f4f50cc498504344a976c3d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &9135496842577137563 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6041880382749648881, guid: 126a05cab4966b748b50676178471336, type: 3}
+  m_PrefabInstance: {fileID: 3251282046423853162}
+  m_PrefabAsset: {fileID: 0}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,7 @@ public class CharacterMovement : MonoBehaviour
     [Header("References")]
     [SerializeField] private Camera _playerCamera;
     [SerializeField] private GameObject _shadow;
+    [SerializeField] private ParticleSystemManager _particleSystemManager;
     [SerializeField] private LayerMask[] _groundLayers;
 
     [Header("Properties")]
@@ -26,6 +28,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float _fallingSpeedMultiplier = 3f;
     [SerializeField] private float _coyoteTime = 0.2f;
     [SerializeField] private float _jumpBuffer = 0.2f;
+    [SerializeField] private float _trailSpawningRate = 0.75f;
     [SerializeField] private float _knockbackForce;
     [SerializeField] private float _knockbackVerticalForce;
 
@@ -37,6 +40,7 @@ public class CharacterMovement : MonoBehaviour
 
     private float _coyoteTimeCounter = 0f;
     private float _jumpBufferCounter = 0f;
+    private float _trailCounter = 0f;
 
     private void Awake()
     {
@@ -70,12 +74,14 @@ public class CharacterMovement : MonoBehaviour
         if(_move.ReadValue<Vector2>().magnitude > 0f)
         {
             _forceDirection += _move.ReadValue<Vector2>().x * GetCameraRight(_playerCamera) * _runForce;
-            _forceDirection += _move.ReadValue<Vector2>().y * GetCameraForward(_playerCamera) * _runForce;      
+            _forceDirection += _move.ReadValue<Vector2>().y * GetCameraForward(_playerCamera) * _runForce;
+            _trailCounter += Time.deltaTime;
         }
         else
         {
             Vector3 velocityDirectionInversed = -_rb.velocity.normalized;
             _forceDirection += new Vector3(velocityDirectionInversed.x, 0, velocityDirectionInversed.z) * _decelerationForce;
+            _trailCounter = 0;
         }
         _rb.AddForce(_forceDirection, ForceMode.Impulse);
         _forceDirection = Vector3.zero;
@@ -148,6 +154,16 @@ public class CharacterMovement : MonoBehaviour
             _coyoteTimeCounter -= Time.fixedDeltaTime;
             _jumpBufferCounter -= Time.fixedDeltaTime;
         }
+
+        //Spawn trail
+        if(IsGrounded() && _trailCounter > _trailSpawningRate)
+        {
+            GameObject trail = TrailPooling.instance.GetTrail();
+            trail.transform.position = transform.position + new Vector3(0, 0.1f, 0);
+            trail.SetActive(true);
+            trail.GetComponent<ReturnTrailToPooling>().ReturnToPoolOnEnd();
+            _trailCounter = 0;
+        }
     }
 
     private void LateUpdate()
@@ -195,6 +211,7 @@ public class CharacterMovement : MonoBehaviour
         else if(_canDoubleJump)
         {
             _canDoubleJump = false;
+            _particleSystemManager.PlayAndDettachParentWhilePlaying();
             CharacterManager.DoubleJump();
             DoJump();
         }

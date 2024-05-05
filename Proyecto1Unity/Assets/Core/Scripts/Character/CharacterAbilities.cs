@@ -127,7 +127,7 @@ public class CharacterAbilities : MonoBehaviour
 
     private void DettachDragableObjectIA(InputAction.CallbackContext context)
     {
-        DettachDragableObject(_tongueTip.GetChild(0).gameObject);
+        DettachDragableObject(_tongueTip.GetChild(1).gameObject);
     }
 
     private void DettachDragableObject(GameObject dragableObject)
@@ -149,7 +149,7 @@ public class CharacterAbilities : MonoBehaviour
         {
             if ((_tongueTip.GetChild(0).transform.position - _tongueTip.transform.position).magnitude > _maxDragableObjectDistance)
             {
-                DettachDragableObject(_tongueTip.GetChild(0).gameObject);
+                DettachDragableObject(_tongueTip.GetChild(1).gameObject);
             }
         }
     }
