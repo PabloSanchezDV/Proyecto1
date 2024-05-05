@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8474766602714166249}
   - component: {fileID: 5942671348211894051}
   - component: {fileID: 7804505429645662366}
+  - component: {fileID: 1429947531092100216}
   m_Layer: 0
   m_Name: PuertaValla_elementosDecorativos_T
   m_TagString: Untagged
@@ -105,3 +106,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.2755823, y: 0.18509386, z: 6.1603975}
   m_Center: {x: -2.054438, y: -0.0006580352, z: -3.0802178}
+--- !u!95 &1429947531092100216
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5294087375484380918}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cfec8a9729b20be4b86ac6ec9afb553a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

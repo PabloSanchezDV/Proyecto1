@@ -9,6 +9,7 @@ public class MeleeEnemyManager : MonoBehaviour
     private MeleeEnemyMovement _enemyMovement;
 
     [SerializeField] private float _despawnAfterTime;
+    [SerializeField] private ParticleSystemManager _particleSystemManager;
 
     [HideInInspector]
     public Transform Player { get { return _AI.Player; } }
@@ -77,7 +78,10 @@ public class MeleeEnemyManager : MonoBehaviour
 
     IEnumerator DespawnAfterTime()
     {
-        yield return new WaitForSeconds(_despawnAfterTime);
+        yield return new WaitForSeconds(_despawnAfterTime - 0.5f);
+        _particleSystemManager.PlayParticleSystem();
+        yield return new WaitForSeconds(0.5f);
+        _particleSystemManager.transform.parent = null;
         gameObject.SetActive(false);
     }
 }

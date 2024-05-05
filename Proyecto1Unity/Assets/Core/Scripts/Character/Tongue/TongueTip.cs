@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class TongueTip : MonoBehaviour
 {
+    [SerializeField] private ParticleSystemManager _particleSystemManager;
+
     private bool _hasCollided;
     public bool HasCollided { get { return _hasCollided; } set { _hasCollided = value; } }
 
@@ -14,12 +16,13 @@ public class TongueTip : MonoBehaviour
         if (other.CompareTag("HomingAttackable"))
         {
             EnemyAnimatorController controller = other.GetComponent<EnemyAnimatorController>();
+            _particleSystemManager.PlayParticleSystem();
             controller.Stun();
         }
         //Collision against dragable object
         if (other.CompareTag("Dragable"))
         {
-            other.GetComponent<Collider>().enabled = false;
+            _particleSystemManager.PlayParticleSystem();
         }
         //Collision against interactable elements
         if (other.GetComponent<IInteractable>() != null)
@@ -31,5 +34,10 @@ public class TongueTip : MonoBehaviour
         {
             _hasCollided = true;
         }
+    }
+
+    private void OnEnable()
+    {
+        _particleSystemManager.gameObject.SetActive(false);
     }
 }

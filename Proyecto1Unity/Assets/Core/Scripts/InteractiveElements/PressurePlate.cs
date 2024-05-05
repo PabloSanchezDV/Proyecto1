@@ -6,13 +6,18 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     [SerializeField] private GameObject _box;
-    [SerializeField] private bool _isSolved = false;
+    [SerializeField] private Animator _doorAnimator;
+    [SerializeField] private ParticleSystemManager _particleSystemManager;
+    [SerializeField] private bool _isConditionComplete = true;
+    [SerializeField] private bool _canDoorOpenCompletely = true;
 
     private Animator _animator;
+    private Vector3 _boxResetPosition;
 
     private void Start()
     {
         _animator = transform.parent.parent.GetComponent<Animator>();
+        _boxResetPosition = _box.transform.position;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,7 +40,28 @@ public class PressurePlate : MonoBehaviour
     {
         if (_animator != null)
             _animator.SetTrigger("ChangeState");
-        _isSolved = state;
-        Debug.Log("Box detected: " + _isSolved);
+
+        if (state)
+        {
+            if (!_isConditionComplete)
+            {
+                _particleSystemManager.PlayParticleSystem();
+            }
+            else
+            {
+                if(_doorAnimator != null)
+                {
+                    if (_doorAnimator.enabled)
+                    {
+                        _doorAnimator.SetTrigger("Open");
+                    }
+                }
+            }
+        }
+    }
+
+    public void ResetBox()
+    {
+        _box.transform.position = _boxResetPosition;
     }
 }

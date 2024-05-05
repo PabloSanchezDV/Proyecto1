@@ -5,9 +5,11 @@ using UnityEngine;
 public class MosquitoAnimatorController : EnemyAnimatorController
 {
     [SerializeField] private float _timeToRespawn;
+    [SerializeField] private ParticleSystemManager _particleSystemManager;
 
     public void DisableOnDeath()
     {
+        _particleSystemManager.PlayParticleSystem();
         SetComponentsAs(false);
         StartCoroutine(RespawnAfter());
     }
