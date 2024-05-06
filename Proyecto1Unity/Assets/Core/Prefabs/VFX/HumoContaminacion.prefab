@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5469805156948563349}
   - component: {fileID: 4116237575688648203}
   - component: {fileID: 2367050465147691560}
-  - component: {fileID: 3466941011474031907}
   m_Layer: 0
   m_Name: HumoContaminacion
   m_TagString: Untagged
@@ -4831,16 +4830,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &3466941011474031907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2094119914301542492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd955bc9f4f50cc498504344a976c3d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _disableAfterTime: 0
