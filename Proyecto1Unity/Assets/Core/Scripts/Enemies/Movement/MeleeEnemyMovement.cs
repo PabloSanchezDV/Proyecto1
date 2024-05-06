@@ -8,7 +8,6 @@ public class MeleeEnemyMovement : MonoBehaviour
     [HideInInspector]
     public MeleeEnemyManager enemyManager;
 
-    [SerializeField] private float _distanceToStop = 0.25f;
     [SerializeField] private float _checkingTime = 0.25f;
 
     private NavMeshAgent _agent;

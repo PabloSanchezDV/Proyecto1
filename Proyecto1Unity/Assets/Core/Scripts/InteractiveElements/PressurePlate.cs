@@ -9,7 +9,6 @@ public class PressurePlate : MonoBehaviour
     [SerializeField] private Animator _doorAnimator;
     [SerializeField] private ParticleSystemManager _particleSystemManager;
     [SerializeField] private bool _isConditionComplete = true;
-    [SerializeField] private bool _canDoorOpenCompletely = true;
 
     private Animator _animator;
     private Vector3 _boxResetPosition;
