@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,6 +29,10 @@ public class GameManager : MonoBehaviour
     public Vector3 LastRespawnPosition { get {  return _lastRespawnPosition; } set { _lastRespawnPosition = value; } }
 
     private GameObject _player;
+
+    private Cinematic _nextCinematic;
+
+    public Cinematic NextCinematic { get {  return _nextCinematic; } }
 
     private void Awake()
     {
@@ -112,6 +118,25 @@ public class GameManager : MonoBehaviour
         _currentHealth = _maxHealth;
         UIManager.instance.UpdateHUD();
         EventHolder.instance.onRespawn?.Invoke();
+    }
+    #endregion
+
+    #region Scene Management
+    public void NextScene()
+    {
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        //TODO - LoadSceneAsync always.
+        //  Show LoadingScreen when in Gameplay.
+        //  Check if the next scene is loaded once the cinematic is done.
+        //  If not, show LoadingScreen until then. 
+
+        //  Also set _nextCinematic as it should on every load
+        switch(sceneIndex)
+        {
+            default:
+                throw new NotImplementedException("GameManager Scene Management method still not available");
+        }
     }
     #endregion
 }
