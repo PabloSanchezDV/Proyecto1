@@ -1939,7 +1939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4045386993133902113, guid: f195b8e12cf9d4f4ba9e2f918918c377, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.139999
+      value: 4.63
       objectReference: {fileID: 0}
     - target: {fileID: 4045386993133902113, guid: f195b8e12cf9d4f4ba9e2f918918c377, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4129,6 +4129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _respawnTime: 2
+  Player: {fileID: 0}
 --- !u!4 &348347257
 Transform:
   m_ObjectHideFlags: 0
@@ -15358,6 +15359,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FreeLook Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 80129221404853879, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
+      propertyPath: m_TagString
+      value: VirtualCamera
+      objectReference: {fileID: 0}
     - target: {fileID: 3715220962233038043, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.5161018
@@ -15388,11 +15393,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4225799695205205790, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_FollowOffset.y
-      value: 2.412563
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4225799695205205790, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -12.30562
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 4617880940899430644, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_Follow
@@ -15432,11 +15437,11 @@ PrefabInstance:
       objectReference: {fileID: 489385420}
     - target: {fileID: 5521073681772036051, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_FollowOffset.y
-      value: 2.412563
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5521073681772036051, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -12.30562
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 6459893212270161343, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15468,11 +15473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7339003277644500169, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_FollowOffset.y
-      value: 2.412563
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7339003277644500169, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_FollowOffset.z
-      value: -12.30562
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 7981711096574588516, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_ComponentOwner
@@ -15553,14 +15558,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 80129221404853879, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2051363536}
   m_SourcePrefab: {fileID: 100100000, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
 --- !u!114 &1378641430 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8392648573700019441, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
   m_PrefabInstance: {fileID: 1378641429}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2051363533}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb7194dc27b9df64c8beca7482ee8e0d, type: 3}
@@ -21696,6 +21704,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasInGame
       objectReference: {fileID: 0}
+    - target: {fileID: 42205652542003792, guid: a757dc39be0f68446b5a725df9013544, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7151066835494595717, guid: a757dc39be0f68446b5a725df9013544, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -24459,6 +24471,8 @@ SceneRoots:
   - {fileID: 153580451}
   - {fileID: 348347257}
   - {fileID: 291678822}
+  - {fileID: 1038946549}
+  - {fileID: 1431440974}
   - {fileID: 104683657}
   - {fileID: 463325525}
   - {fileID: 133958205}
@@ -24470,3 +24484,4 @@ SceneRoots:
   - {fileID: 255878337}
   - {fileID: 500697710}
   - {fileID: 620799501}
+  - {fileID: 6945971783085476932}

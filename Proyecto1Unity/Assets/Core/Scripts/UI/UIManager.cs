@@ -60,6 +60,7 @@ public class UIManager : MonoBehaviour
         EventHolder.instance.onDeath.AddListener(UpdateHealth);
         EventHolder.instance.onDeath.AddListener(FadeOutAfterDeath);
         EventHolder.instance.onRespawn.AddListener(FadeIn);
+        EventHolder.instance.onEndDialogue.AddListener(HideDialoguePanel);
     }
 
     private void OnEnable()
@@ -72,6 +73,7 @@ public class UIManager : MonoBehaviour
             EventHolder.instance.onDeath.AddListener(UpdateHealth);
             EventHolder.instance.onDeath.AddListener(FadeOutAfterDeath);
             EventHolder.instance.onRespawn.AddListener(FadeIn);
+            EventHolder.instance.onEndDialogue.AddListener(HideDialoguePanel);
         }
     }
 
@@ -83,6 +85,7 @@ public class UIManager : MonoBehaviour
         EventHolder.instance.onDeath.RemoveListener(UpdateHealth);
         EventHolder.instance.onDeath.RemoveListener(FadeOutAfterDeath);
         EventHolder.instance.onRespawn.RemoveListener(FadeIn);
+        EventHolder.instance.onEndDialogue.RemoveListener(HideDialoguePanel);
     }
 
     #region Update Panels

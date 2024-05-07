@@ -48,13 +48,15 @@ public class DialogueManager : MonoBehaviour
         {
             string character = node.Character;
             string text = node.Text;
+            // Animate character
             UIManager.instance.UpdateDialoguePanel(character, text);
-            Debug.Log(character + ": " + text);
             while(!_doNextDialogue)
                 yield return null;
+            // Stop animated character
             _doNextDialogue = false;
         }
         UIManager.instance.HideDialoguePanel();
         _isInDialogue = false;
+        EventHolder.instance.onEndDialogue?.Invoke();
     }
 }

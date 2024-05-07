@@ -9,6 +9,8 @@ public class CharacterAnimatorController : MonoBehaviour
     private Animator _anim;
     private InputAction _move;
 
+    [NonSerialized] public CharacterManager characterManager;
+
     private void Start()
     {
         _anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
@@ -16,13 +18,13 @@ public class CharacterAnimatorController : MonoBehaviour
 
     private void OnEnable()
     {
-        _move = CharacterManager.InputActions.Gameplay.Move;
-        CharacterManager.InputActions.Gameplay.Bite.performed += Hit;
+        _move = characterManager.InputActions.Gameplay.Move;
+        characterManager.InputActions.Gameplay.Bite.performed += Hit;
     }
 
     private void OnDisable()
     {
-        CharacterManager.InputActions.Gameplay.Bite.performed -= Hit;
+        characterManager.InputActions.Gameplay.Bite.performed -= Hit;
     }
 
     private void Update()

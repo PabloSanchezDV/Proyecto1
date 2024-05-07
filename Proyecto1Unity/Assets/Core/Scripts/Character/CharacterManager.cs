@@ -11,32 +11,32 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] private CinemachineInputProvider _inputProvider;
     public CinemachineInputProvider InputProvider { get { return _inputProvider; } }
 
-    private static bool _canMove = true;
-    public static bool CanMove { get { return _canMove; } set { _canMove = value; } }
+    private bool _canMove = true;
+    public bool CanMove { get { return _canMove; } set { _canMove = value; } }
 
-    private static bool _isDragging = false;
-    public static bool IsDragging { get { return _isDragging; } set { _isDragging = value; } }
+    private bool _isDragging = false;
+    public bool IsDragging { get { return _isDragging; } set { _isDragging = value; } }
 
-    private static bool _canThrowTongue = true;
-    public static bool CanThrowTongue { get { return _canThrowTongue; } set { _canThrowTongue = value; } }
+    private bool _canThrowTongue = true;
+    public bool CanThrowTongue { get { return _canThrowTongue; } set { _canThrowTongue = value; } }
 
-    private static bool _isThrowingTongue = false;
-    public static bool IsThrowingTongue { get { return _isThrowingTongue; } set { _isThrowingTongue = value; } }
+    private bool _isThrowingTongue = false;
+    public bool IsThrowingTongue { get { return _isThrowingTongue; } set { _isThrowingTongue = value; } }
 
-    private static EnemyAnimatorController _enemyAnimatorControllerOnHomingAttack;
-    public static EnemyAnimatorController EnemyAnimatorControllerOnHomingAttack { get { return _enemyAnimatorControllerOnHomingAttack; } set { _enemyAnimatorControllerOnHomingAttack = value; } }
+    private EnemyAnimatorController _enemyAnimatorControllerOnHomingAttack;
+    public EnemyAnimatorController EnemyAnimatorControllerOnHomingAttack { get { return _enemyAnimatorControllerOnHomingAttack; } set { _enemyAnimatorControllerOnHomingAttack = value; } }
 
     
     private Transform _hittingEnemy;
     public Transform HittingEnemy { set { _hittingEnemy = value; } }
 
-    private static InputActions _inputActions;
-    public static InputActions InputActions { get { return _inputActions;} }
+    private InputActions _inputActions;
+    public InputActions InputActions { get { return _inputActions;} }
        
-    private static CharacterMovement _characterMovement;
-    private static CharacterAbilities _characterAbilities;
-    private static CharacterAnimatorController _characterAnimatorController;
-    private static CharacterDamage _characterDamage;
+    private CharacterMovement _characterMovement;
+    private CharacterAbilities _characterAbilities;
+    private CharacterAnimatorController _characterAnimatorController;
+    private CharacterDamage _characterDamage;
     #endregion
 
     // Start is called before the first frame update
@@ -48,6 +48,11 @@ public class CharacterManager : MonoBehaviour
         _characterAnimatorController = GetComponent<CharacterAnimatorController>();
         _characterDamage = GetComponent<CharacterDamage>();
 
+        _characterMovement.characterManager = this;
+        _characterAbilities.characterManager = this;
+        _characterAnimatorController.characterManager = this;
+        _characterDamage.characterManager = this;
+
         _characterMovement.enabled = true;
         _characterAbilities.enabled = true;
         _characterAnimatorController.enabled = true;
@@ -58,35 +63,54 @@ public class CharacterManager : MonoBehaviour
     {
         _inputActions.Gameplay.Pause.started += Pause;
         _inputActions.Menu.ClosePause.started += UnpauseByInput;
+        _inputActions.Dialogue.NextDialogue.started += NextDialogue;
         
         EventHolder.instance.onUnpause.AddListener(Unpause);
         EventHolder.instance.onHurt.AddListener(ActivateHurt);
         EventHolder.instance.onDeath.AddListener(ActivateDeath);
         EventHolder.instance.onRespawn.AddListener(ActivateMovementOnRespawn);
         EventHolder.instance.onRespawn.AddListener(GoToIdleAfterRespawn);
+        EventHolder.instance.onStartDialogue.AddListener(StopMovement);
+        EventHolder.instance.onStartDialogue.AddListener(ChangeInputModeToDialogue);
+        EventHolder.instance.onEndDialogue.AddListener(ChangeInputModeToGamePlay);
+        EventHolder.instance.onEndDialogue.AddListener(ResumeMovement);
+
+        GameManager.instance.Player = gameObject;
     }
 
     private void OnEnable()
     {
         _inputActions.Gameplay.Pause.started += Pause;
-        if(EventHolder.instance != null)
+        _inputActions.Menu.ClosePause.started += UnpauseByInput;
+        _inputActions.Dialogue.NextDialogue.started += NextDialogue;
+        if (EventHolder.instance != null)
         {
             EventHolder.instance.onUnpause.AddListener(Unpause);
             EventHolder.instance.onHurt.AddListener(ActivateHurt);
             EventHolder.instance.onDeath.AddListener(ActivateDeath);
             EventHolder.instance.onRespawn.AddListener(ActivateMovementOnRespawn);
             EventHolder.instance.onRespawn.AddListener(GoToIdleAfterRespawn);
+            EventHolder.instance.onStartDialogue.AddListener(StopMovement);
+            EventHolder.instance.onStartDialogue.AddListener(ChangeInputModeToDialogue);
+            EventHolder.instance.onEndDialogue.AddListener(ChangeInputModeToGamePlay);
+            EventHolder.instance.onEndDialogue.AddListener(ResumeMovement);
         }
     }
 
     private void OnDisable()
     {
         _inputActions.Gameplay.Pause.started -= Pause;
+        _inputActions.Menu.ClosePause.started -= UnpauseByInput;
+        _inputActions.Dialogue.NextDialogue.started -= NextDialogue;
         EventHolder.instance.onUnpause.RemoveListener(Unpause);
         EventHolder.instance.onHurt.RemoveListener(ActivateHurt);
         EventHolder.instance.onDeath.RemoveListener(ActivateDeath);
         EventHolder.instance.onRespawn.RemoveListener(ActivateMovementOnRespawn);
         EventHolder.instance.onRespawn.RemoveListener(GoToIdleAfterRespawn);
+        EventHolder.instance.onStartDialogue.RemoveListener(StopMovement);
+        EventHolder.instance.onStartDialogue.RemoveListener(ChangeInputModeToDialogue);
+        EventHolder.instance.onEndDialogue.RemoveListener(ChangeInputModeToGamePlay);
+        EventHolder.instance.onEndDialogue.RemoveListener(ResumeMovement);
     }
 
     private void Pause(InputAction.CallbackContext context)
@@ -108,19 +132,48 @@ public class CharacterManager : MonoBehaviour
         EventHolder.instance.onUnpause?.Invoke();
     }
 
+    private void ResumeMovement()
+    {
+        _canMove = true;
+    }
+
+    private void StopMovement()
+    {
+        _canMove = false;
+        _characterMovement.StopMovement();
+    }
+
+    private void ChangeInputModeToDialogue()
+    {
+        _inputActions.Gameplay.Disable();
+        _inputActions.Dialogue.Enable();
+    }
+
+    private void ChangeInputModeToGamePlay()
+    {
+        _inputActions.Dialogue.Disable();
+        _inputActions.Gameplay.Enable();
+    }
+
+    private void NextDialogue(InputAction.CallbackContext context)
+    {
+        if (!DialogueManager.instance.DoNextDialogue)
+            DialogueManager.instance.DoNextDialogue = true;
+    }
+
     #region Communications
     #region Movement - Abilities
-    public static void JumpOnHomingAttack()
+    public void JumpOnHomingAttack()
     {
         _characterMovement.JumpOnHomingAttack();
     }
 
-    public static void EnableJumpOnEndDragging()
+    public void EnableJumpOnEndDragging()
     {
         _characterMovement.EnableJumpOnEndDragging();
     }
 
-    public static void DisableJumpOnStartDragging()
+    public void DisableJumpOnStartDragging()
     {
         _characterMovement.DisableJumpOnStartDragging();
     }
@@ -128,37 +181,37 @@ public class CharacterManager : MonoBehaviour
 
     #region Animation Communications
     #region Movement - Animation Controller
-    public static void Jump()
+    public void Jump()
     {
         if(_characterAnimatorController != null)
             _characterAnimatorController.Jump();
     }
 
-    public static void DoubleJump()
+    public void DoubleJump()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.DoubleJump();
     }
 
-    public static void EndElevating()
+    public void EndElevating()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.EndElevating();
     }
 
-    public static void ResetElevating()
+    public void ResetElevating()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.ResetElevating();
     }
 
-    public static void StartFalling()
+    public void StartFalling()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.StartFalling();
     }
 
-    public static void EndFalling()
+    public void EndFalling()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.EndFalling();
@@ -166,25 +219,25 @@ public class CharacterManager : MonoBehaviour
     #endregion
 
     #region Abilities - Animation Controller
-    public static void StartThrowTongue()
+    public void StartThrowTongue()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.StartThrowTongue();
     }
 
-    public static void EndThrowTongue()
+    public void EndThrowTongue()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.EndThrowTongue();
     }
 
-    public static void StartHomingAttack()
+    public void StartHomingAttack()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.StartHomingAttack();
     }
 
-    public static void EndHomingAttack()
+    public void EndHomingAttack()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.EndHomingAttack();
@@ -192,13 +245,13 @@ public class CharacterManager : MonoBehaviour
             _enemyAnimatorControllerOnHomingAttack.Death();
     }
 
-    public static void StartDragging()
+    public void StartDragging()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.StartDragging();
     }
 
-    public static void EndDragging()
+    public void EndDragging()
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.EndDragging();

@@ -42,6 +42,8 @@ public class CharacterMovement : MonoBehaviour
     private float _jumpBufferCounter = 0f;
     private float _trailCounter = 0f;
 
+    [NonSerialized] public CharacterManager characterManager;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -49,25 +51,65 @@ public class CharacterMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        CharacterManager.InputActions.Gameplay.Jump.started += Jump;
-        CharacterManager.InputActions.Gameplay.Jump.canceled += CancelJump;
-        CharacterManager.InputActions.Gameplay.Run.started += TurnOnWalk;
-        CharacterManager.InputActions.Gameplay.Run.canceled += TurnOffWalk;
-        _move = CharacterManager.InputActions.Gameplay.Move;
-        CharacterManager.InputActions.Gameplay.Enable();
+        characterManager.InputActions.Gameplay.Jump.started += Jump;
+        characterManager.InputActions.Gameplay.Jump.canceled += CancelJump;
+        characterManager.InputActions.Gameplay.Run.started += TurnOnWalk;
+        characterManager.InputActions.Gameplay.Run.canceled += TurnOffWalk;
+        _move = characterManager.InputActions.Gameplay.Move;
+        characterManager.InputActions.Gameplay.Enable();
     }
 
     private void OnDisable()
     {
-        CharacterManager.InputActions.Gameplay.Jump.started -= Jump;
-        CharacterManager.InputActions.Gameplay.Run.started -= TurnOnWalk;
-        CharacterManager.InputActions.Gameplay.Run.canceled -= TurnOffWalk;
-        CharacterManager.InputActions.Gameplay.Disable();
+        characterManager.InputActions.Gameplay.Jump.started -= Jump;
+        characterManager.InputActions.Gameplay.Run.started -= TurnOnWalk;
+        characterManager.InputActions.Gameplay.Run.canceled -= TurnOffWalk;
+        characterManager.InputActions.Gameplay.Disable();
     }
 
     private void FixedUpdate()
     {
-        if (!CharacterManager.CanMove)
+        //Coyote Time, Jump Buffer & Falling Checks
+        if (IsGrounded())
+        {
+            if (_isFalling)
+                EndFall();
+
+            if (_rb.velocity.y < 0f)
+            {
+                _coyoteTimeCounter = _coyoteTime;
+            }
+            if (_jumpBufferCounter > 0f)
+            {
+                _jumpBufferCounter = 0f;
+                _canDoubleJump = true;
+                DoJump();
+            }
+
+            if (!characterManager.IsThrowingTongue)
+                characterManager.CanThrowTongue = true;
+        }
+        else
+        {
+            if (!_isFalling)
+                StartFall();
+
+            _coyoteTimeCounter -= Time.fixedDeltaTime;
+            _jumpBufferCounter -= Time.fixedDeltaTime;
+        }
+
+        //Increase falling speed
+        if (_rb.velocity.y < 0f)
+        {
+            characterManager.EndElevating();
+            _rb.velocity -= Vector3.down * Physics.gravity.y * Time.fixedDeltaTime * _fallingSpeedMultiplier;
+        }
+        else
+        {
+            characterManager.ResetElevating();
+        }
+
+        if (!characterManager.CanMove)
             return;
 
         //Apply forces
@@ -86,22 +128,11 @@ public class CharacterMovement : MonoBehaviour
         _rb.AddForce(_forceDirection, ForceMode.Impulse);
         _forceDirection = Vector3.zero;
 
-        //Increase falling speed
-        if(_rb.velocity.y < 0f)
-        {
-            CharacterManager.EndElevating();
-            _rb.velocity -= Vector3.down * Physics.gravity.y * Time.fixedDeltaTime * _fallingSpeedMultiplier;
-        }
-        else
-        {
-            CharacterManager.ResetElevating();
-        }
-
         //Cap max speed
         Vector3 horizontalVelocity = _rb.velocity;
         horizontalVelocity.y = 0f;
 
-        if (CharacterManager.IsDragging)
+        if (characterManager.IsDragging)
         {
             if (horizontalVelocity.sqrMagnitude > _maxDraggingSpeed * _maxDraggingSpeed)
             {
@@ -124,35 +155,6 @@ public class CharacterMovement : MonoBehaviour
                     _rb.velocity = horizontalVelocity.normalized * _maxWalkSpeed + Vector3.up * _rb.velocity.y;
                 }
             }
-        }
-
-        //Coyote Time, Jump Buffer & Falling Checks
-        if(IsGrounded())
-        {
-            if (_isFalling)
-                EndFall();
-
-            if(_rb.velocity.y < 0f)
-            {
-                _coyoteTimeCounter = _coyoteTime;
-            }
-            if (_jumpBufferCounter > 0f)
-            {
-                _jumpBufferCounter = 0f;
-                _canDoubleJump = true;
-                DoJump();
-            }
-
-            if(!CharacterManager.IsThrowingTongue)
-                CharacterManager.CanThrowTongue = true;
-        }
-        else
-        {
-            if (!_isFalling)
-               StartFall();            
-
-            _coyoteTimeCounter -= Time.fixedDeltaTime;
-            _jumpBufferCounter -= Time.fixedDeltaTime;
         }
 
         //Spawn trail
@@ -180,6 +182,11 @@ public class CharacterMovement : MonoBehaviour
         }
     }
 
+    public void StopMovement()
+    {
+        _rb.velocity = new Vector3(0, _rb.velocity.y, 0);
+    }
+
     private Vector3 GetCameraForward(Camera playerCamera)
     {
         Vector3 forward = playerCamera.transform.forward;
@@ -205,14 +212,14 @@ public class CharacterMovement : MonoBehaviour
             if (!_canDoubleJump)
                 _canDoubleJump = true;
 
-            CharacterManager.Jump();
+            characterManager.Jump();
             DoJump();
         }
         else if(_canDoubleJump)
         {
             _canDoubleJump = false;
             _particleSystemManager.PlayAndDettachParentWhilePlaying();
-            CharacterManager.DoubleJump();
+            characterManager.DoubleJump();
             DoJump();
         }
     }
@@ -237,12 +244,12 @@ public class CharacterMovement : MonoBehaviour
 
     public void DisableJumpOnStartDragging()
     {
-        CharacterManager.InputActions.Gameplay.Jump.started -= Jump;
+        characterManager.InputActions.Gameplay.Jump.started -= Jump;
     }
 
     public void EnableJumpOnEndDragging()
     {
-        CharacterManager.InputActions.Gameplay.Jump.started += Jump;
+        characterManager.InputActions.Gameplay.Jump.started += Jump;
     }
 
     private bool IsGrounded()
@@ -302,13 +309,13 @@ public class CharacterMovement : MonoBehaviour
     private void StartFall()
     {
         _isFalling = true;
-        CharacterManager.StartFalling();
+        characterManager.StartFalling();
     }
 
     private void EndFall()
     {
         _isFalling = false;
-        CharacterManager.EndFalling();
+        characterManager.EndFalling();
     }
 
     public void KnockbackCharacter(Transform hittingEnemy)

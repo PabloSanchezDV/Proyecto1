@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class CharacterDamage : MonoBehaviour
 {
     [SerializeField] private float _invincibilityTime;
+
+    [NonSerialized] public CharacterManager characterManager;
 
     public void ActivateInvincibilityFrames()
     {
