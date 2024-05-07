@@ -37,6 +37,7 @@ public class CharacterMovement : MonoBehaviour
     private bool _isWalking = false;
     private bool _canDoubleJump = true;
     private bool _isFalling = false;
+    private bool _isFacingRight = true;
 
     private float _coyoteTimeCounter = 0f;
     private float _jumpBufferCounter = 0f;
@@ -44,9 +45,12 @@ public class CharacterMovement : MonoBehaviour
 
     [NonSerialized] public CharacterManager characterManager;
 
+    private Transform _renderPlane;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
+        _renderPlane = transform.GetChild(0).GetChild(0);
     }
 
     private void OnEnable()
@@ -118,6 +122,25 @@ public class CharacterMovement : MonoBehaviour
             _forceDirection += _move.ReadValue<Vector2>().x * GetCameraRight(_playerCamera) * _runForce;
             _forceDirection += _move.ReadValue<Vector2>().y * GetCameraForward(_playerCamera) * _runForce;
             _trailCounter += Time.deltaTime;
+
+            if (_move.ReadValue<Vector2>().x < 0f)
+            {
+                if (_isFacingRight)
+                {
+                    _renderPlane.localScale = new Vector3(-0.102255f, 0.102255f, 0.102255f);
+                    _renderPlane.GetChild(0).localPosition = new Vector3(0, -6.240017f, 0);
+                    _isFacingRight = false;
+                }
+            }
+            else
+            {
+                if (!_isFacingRight)
+                {
+                    _renderPlane.localScale = new Vector3(0.102255f, 0.102255f, 0.102255f);
+                    _renderPlane.GetChild(0).localPosition = new Vector3(0, -6.240017f, 0);
+                    _isFacingRight = true;
+                }
+            }
         }
         else
         {
