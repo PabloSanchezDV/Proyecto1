@@ -41,7 +41,7 @@ public class CharacterAbilities : MonoBehaviour
 
     private void Start()
     {
-        _tongueReference = _character.GetChild(0).GetChild(0).transform;
+        _tongueReference = _character.GetChild(1).transform;
         _tongueTipReference = _tongue.GetChild(0).transform;
 
         _tongueTipScript = _tongueTip.GetComponent<TongueTip>();
