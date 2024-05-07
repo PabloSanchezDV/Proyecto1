@@ -31,6 +31,8 @@ public class CharacterAbilities : MonoBehaviour
 
     private float _raycastTongueCheckerDistance;
 
+    [NonSerialized] public CharacterManager characterManager;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -53,17 +55,17 @@ public class CharacterAbilities : MonoBehaviour
 
     private void OnEnable()
     {
-        CharacterManager.InputActions.Gameplay.ThrowTongue.started += ThrowTongue;
+        characterManager.InputActions.Gameplay.ThrowTongue.started += ThrowTongue;
     }
 
     private void OnDisable()
     {
-        CharacterManager.InputActions.Gameplay.ThrowTongue.started -= ThrowTongue;
+        characterManager.InputActions.Gameplay.ThrowTongue.started -= ThrowTongue;
     }
 
     private void FixedUpdate()
     {
-        if (CharacterManager.IsDragging)
+        if (characterManager.IsDragging)
         {
             _tongue.position = _tongueReference.position;
             _tongueTip.position = _tongueTipReference.position;
@@ -77,10 +79,10 @@ public class CharacterAbilities : MonoBehaviour
 
     private void ThrowTongue(InputAction.CallbackContext context)
     {
-        if (!CharacterManager.CanThrowTongue)
+        if (!characterManager.CanThrowTongue)
             return;
 
-        CharacterManager.CanThrowTongue = false;
+        characterManager.CanThrowTongue = false;
         StartCoroutine(TongueOutCoroutine());
     }
 
@@ -120,9 +122,9 @@ public class CharacterAbilities : MonoBehaviour
     {
         dragableObject.transform.SetParent(_tongueTip, true);
         _tongueTip.GetComponent<Collider>().enabled = false;
-        CharacterManager.IsDragging = true;
-        CharacterManager.DisableJumpOnStartDragging();
-        CharacterManager.InputActions.Gameplay.ThrowTongue.started += DettachDragableObjectIA;
+        characterManager.IsDragging = true;
+        characterManager.DisableJumpOnStartDragging();
+        characterManager.InputActions.Gameplay.ThrowTongue.started += DettachDragableObjectIA;
     }
 
     private void DettachDragableObjectIA(InputAction.CallbackContext context)
@@ -132,20 +134,20 @@ public class CharacterAbilities : MonoBehaviour
 
     private void DettachDragableObject(GameObject dragableObject)
     {
-        CharacterManager.InputActions.Gameplay.ThrowTongue.started -= DettachDragableObjectIA;
+        characterManager.InputActions.Gameplay.ThrowTongue.started -= DettachDragableObjectIA;
 
         dragableObject.transform.parent = null;
-        CharacterManager.EnableJumpOnEndDragging();
-        CharacterManager.CanMove = false;
+        characterManager.EnableJumpOnEndDragging();
+        characterManager.CanMove = false;
         _rb.isKinematic = true;
         _provider.enabled = false;
 
-        CharacterManager.IsDragging = false;
+        characterManager.IsDragging = false;
     }
 
     private void CheckDragableObjectDistance()
     {
-        if (CharacterManager.IsDragging)
+        if (characterManager.IsDragging)
         {
             if ((_tongueTip.GetChild(0).transform.position - _tongueTip.transform.position).magnitude > _maxDragableObjectDistance)
             {
@@ -156,8 +158,8 @@ public class CharacterAbilities : MonoBehaviour
 
     IEnumerator TongueOutCoroutine()
     {
-        CharacterManager.CanMove = false;
-        CharacterManager.IsThrowingTongue = true;
+        characterManager.CanMove = false;
+        characterManager.IsThrowingTongue = true;
         _provider.enabled = false;
         _rb.isKinematic = true;
         _tongue.transform.localScale = new Vector3(_minTongueDistance, _tongue.transform.localScale.y, _tongue.transform.localScale.z);
@@ -170,12 +172,12 @@ public class CharacterAbilities : MonoBehaviour
 
         TongueCollision tongueCollision = CheckTongueCollision();
 
-        CharacterManager.StartThrowTongue();
+        characterManager.StartThrowTongue();
 
         switch (tongueCollision.Type)
         {
             case (TongueCollisionType.Enemy):
-                CharacterManager.EnemyAnimatorControllerOnHomingAttack = tongueCollision.Target.GetComponent<EnemyAnimatorController>();
+                characterManager.EnemyAnimatorControllerOnHomingAttack = tongueCollision.Target.GetComponent<EnemyAnimatorController>();
                 while (_tongue.transform.localScale.x < _maxTongueDistance && (_tongueTip.transform.position - tongueCollision.Target.transform.position).magnitude > 0.1f)
                 {
                     _tongue.position = _tongueReference.position;
@@ -200,13 +202,13 @@ public class CharacterAbilities : MonoBehaviour
                 }
 
                 AttachDragableObject(tongueCollision.Target);
-                CharacterManager.StartDragging();
-                CharacterManager.CanMove = true;
+                characterManager.StartDragging();
+                characterManager.CanMove = true;
                 _rb.isKinematic = false;
                 _provider.enabled = true;
 
-                yield return new WaitUntil(() => CharacterManager.IsDragging == false);
-                CharacterManager.EndDragging();
+                yield return new WaitUntil(() => characterManager.IsDragging == false);
+                characterManager.EndDragging();
 
                 StartCoroutine(TongueInCoroutine());
                 break;
@@ -237,14 +239,14 @@ public class CharacterAbilities : MonoBehaviour
             yield return null;
         }
 
-        CharacterManager.EndThrowTongue();
+        characterManager.EndThrowTongue();
 
         _tongueTipScript.HasCollided = false;
         _tongueTip.gameObject.SetActive(false);
         _provider.enabled = true;
         _tongue.gameObject.SetActive(false);
-        CharacterManager.CanMove = true;
-        CharacterManager.IsThrowingTongue = false;
+        characterManager.CanMove = true;
+        characterManager.IsThrowingTongue = false;
         _rb.isKinematic = false;
         yield return null;
     }
@@ -253,7 +255,7 @@ public class CharacterAbilities : MonoBehaviour
     {
         _tongueTip.GetComponent<SphereCollider>().enabled = false;
         Vector3 direction;
-        CharacterManager.StartHomingAttack();
+        characterManager.StartHomingAttack();
 
         while (_tongue.transform.localScale.x > _homingAttackDistance)
         {
@@ -267,16 +269,16 @@ public class CharacterAbilities : MonoBehaviour
             yield return null;
         }
 
-        CharacterManager.EndHomingAttack();
+        characterManager.EndHomingAttack();
         _tongueTipScript.HasCollided = false;
         _tongueTip.gameObject.SetActive(false);
         _provider.enabled = true;
         _tongue.gameObject.SetActive(false);
-        CharacterManager.CanMove = true;
+        characterManager.CanMove = true;
         _rb.isKinematic = false;
-        CharacterManager.CanThrowTongue = true;
-        CharacterManager.IsThrowingTongue = false;
-        CharacterManager.JumpOnHomingAttack();
+        characterManager.CanThrowTongue = true;
+        characterManager.IsThrowingTongue = false;
+        characterManager.JumpOnHomingAttack();
         yield return null;
     }
 }

@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class FaceToCamera : MonoBehaviour
 {
-    private Camera _camera;
     [SerializeField] private Vector3 _offset;
+
+    private Camera _camera;
+    private CharacterManager _characterManager;
 
     private void Start()
     {
         _camera = FindFirstObjectByType<Camera>();
+        _characterManager = FindFirstObjectByType<CharacterManager>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (CharacterManager.CanMove)
-        {   
-            transform.LookAt(_camera.transform.position);
-            transform.Rotate(_offset, Space.Self);
-        }
+        transform.LookAt(_camera.transform.position);
+        transform.Rotate(_offset, Space.Self);
     }
 }

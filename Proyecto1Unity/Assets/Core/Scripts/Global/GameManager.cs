@@ -1,3 +1,4 @@
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,10 +30,14 @@ public class GameManager : MonoBehaviour
     public Vector3 LastRespawnPosition { get {  return _lastRespawnPosition; } set { _lastRespawnPosition = value; } }
 
     private GameObject _player;
+    public GameObject Player;
 
     private Cinematic _nextCinematic;
 
     public Cinematic NextCinematic { get {  return _nextCinematic; } }
+
+    private CinemachineVirtualCameraBase _playerCamera;
+    public CinemachineVirtualCameraBase PlayerCamera { get { return _playerCamera; } set { _playerCamera = value; } }
 
     private void Awake()
     {
