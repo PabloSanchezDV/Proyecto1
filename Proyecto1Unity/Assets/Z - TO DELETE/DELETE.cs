@@ -7,6 +7,7 @@ public class DELETE : MonoBehaviour
 {
     private bool slowTime = false;
     [SerializeField] Animator animator;
+    [SerializeField] int currentScene;
 
     private void Start()
     {
@@ -22,7 +23,7 @@ public class DELETE : MonoBehaviour
         
         if(Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(currentScene);
         }
 
         if(Input.GetKeyDown(KeyCode.P))
