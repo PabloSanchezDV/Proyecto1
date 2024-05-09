@@ -379,6 +379,8 @@
 "Assets/Core/Scripts/Audio/AudioManager.cs"
 "Assets/Core/Scripts/Audio/MusicManager.cs"
 "Assets/Core/Scripts/Camera/FaceToCamera.cs"
+"Assets/Core/Scripts/CameraSwitcher/CameraSwitcher.cs"
+"Assets/Core/Scripts/CameraSwitcher/PlayerCameraAsigner.cs"
 "Assets/Core/Scripts/Character/CharacterAbilities.cs"
 "Assets/Core/Scripts/Character/CharacterAnimatorController.cs"
 "Assets/Core/Scripts/Character/CharacterBite.cs"
