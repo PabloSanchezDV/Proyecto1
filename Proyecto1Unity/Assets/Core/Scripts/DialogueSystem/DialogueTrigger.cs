@@ -5,29 +5,29 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [SerializeField] private CinemachineVirtualCamera _virtualCamera;
-    [SerializeField] private int _id;
-    [SerializeField] private bool _overwriteAtEnd;
-    [SerializeField] private int _newID;
+    [SerializeField] protected CinemachineVirtualCamera _virtualCamera;
+    [SerializeField] protected int _id;
+    [SerializeField] protected bool _overwriteAtEnd;
+    [SerializeField] protected int _newID;
 
-    private Transform _cameraRef;
+    protected Transform _cameraRef;
 
     private void Start()
     {
         _cameraRef = transform.GetChild(0);
     }
 
-    private void StartDialogue()
+    protected void StartDialogue()
     {
         DialogueManager.instance.TriggerDialogue(_id);
     }
 
-    private void OverwriteAtEnd()
+    protected void OverwriteAtEnd()
     {
         _id = _newID;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {

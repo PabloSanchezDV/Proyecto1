@@ -15,6 +15,9 @@ public class EventHolder : MonoBehaviour
     [NonSerialized] public UnityEvent onRespawn;
     [NonSerialized] public UnityEvent onStartDialogue;
     [NonSerialized] public UnityEvent onEndDialogue;
+    [NonSerialized] public UnityEvent onBananaColleted;
+    [NonSerialized] public UnityEvent onBigCollectibleCollected;
+    [NonSerialized] public UnityEvent onAllCollectiblesCollected;
 
     void Awake()
     {
@@ -32,5 +35,9 @@ public class EventHolder : MonoBehaviour
 
         onStartDialogue = new UnityEvent();
         onEndDialogue = new UnityEvent();
+
+        onBananaColleted = new UnityEvent();
+        onBigCollectibleCollected = new UnityEvent();
+        onAllCollectiblesCollected = new UnityEvent();
     }
 }

@@ -24,7 +24,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Image _healthImage;
     [SerializeField] private TextMeshProUGUI _bananasText;
     [SerializeField] private TextMeshProUGUI _collectiblesText;
-    [SerializeField] private int _maxCollectibles;
     [SerializeField] private Color _maxHealthColor;
     [SerializeField] private Color _2hitsColor;
     [SerializeField] private Color _1hitColor;
@@ -99,7 +98,7 @@ public class UIManager : MonoBehaviour
     {
         UpdateHealth();
         _bananasText.text = GameManager.instance.Bananas + "x";
-        _collectiblesText.text = GameManager.instance.Collectibles + " / " + _maxCollectibles;
+        _collectiblesText.text = GameManager.instance.Collectibles + " / " + GameManager.instance.MaxCollectibles;
     }
 
     private void UpdateHealth()

@@ -6,9 +6,10 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     [SerializeField] private GameObject _box;
-    [SerializeField] private Animator _doorAnimator;
+    [SerializeField] private ActivableObject[] _activableObjects;
     [SerializeField] private ParticleSystemManager _particleSystemManager;
-    [SerializeField] private bool _isConditionComplete = true;
+    
+    private bool _isConditionComplete = false;
 
     private Animator _animator;
     private Vector3 _boxResetPosition;
@@ -48,19 +49,26 @@ public class PressurePlate : MonoBehaviour
             }
             else
             {
-                if(_doorAnimator != null)
-                {
-                    if (_doorAnimator.enabled)
-                    {
-                        _doorAnimator.SetTrigger("Open");
-                    }
-                }
+                ActivateObjects();
             }
+        }
+    }
+
+    private void ActivateObjects()
+    {
+        foreach(ActivableObject activableObject in  _activableObjects)
+        {
+            activableObject.Activate();
         }
     }
 
     public void ResetBox()
     {
         _box.transform.position = _boxResetPosition;
+    }
+
+    public void SetConditionCompleteAs(bool state)
+    {
+        _isConditionComplete = state;
     }
 }
