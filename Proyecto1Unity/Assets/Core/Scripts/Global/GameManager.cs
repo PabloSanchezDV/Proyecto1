@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     public int Bananas {  get { return _bananas; } }
     private int _collectibles = 0;
     public int Collectibles { get { return _collectibles; } }
+    private int _maxCollectibles = 0;
+    public int MaxCollectibles { get { return _maxCollectibles; } }
 
     private bool _isInvincible = false;
     public bool IsInvincible { get { return _isInvincible; } set { _isInvincible = value; } }
@@ -54,10 +56,14 @@ public class GameManager : MonoBehaviour
         EventHolder.instance.onUnpause.AddListener(Unpause);
         EventHolder.instance.onDeath.AddListener(Respawn);
 
+        EventHolder.instance.onBananaColleted.AddListener(AddBanana);
+        EventHolder.instance.onBigCollectibleCollected.AddListener(AddBigCollectible);
+
         _player = GameObject.FindGameObjectWithTag("Player");
         if (_player != null)
             _lastRespawnPosition = _player.transform.position;
         _currentHealth = _maxHealth;
+        SetMaxCollectiblesAmount();
         UIManager.instance.UpdateHUD();
     }
 
@@ -129,6 +135,7 @@ public class GameManager : MonoBehaviour
     #region Scene Management
     public void NextScene()
     {
+        UIManager.instance.FadeOut();
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         //TODO - LoadSceneAsync always.
@@ -142,6 +149,31 @@ public class GameManager : MonoBehaviour
             default:
                 throw new NotImplementedException("GameManager Scene Management method still not available");
         }
+    }
+    #endregion
+
+    #region Collectibles
+    private void AddBanana()
+    {
+        _bananas++;
+        UIManager.instance.UpdateHUD();
+        UIManager.instance.ShowBananasHUD();
+    }
+
+    private void AddBigCollectible()
+    {
+        _collectibles++;
+
+        if(_collectibles >= _maxCollectibles)
+            EventHolder.instance.onAllCollectiblesCollected?.Invoke();
+
+        UIManager.instance.UpdateHUD();
+        UIManager.instance.ShowCollectiblesHUD();
+    }
+
+    private void SetMaxCollectiblesAmount()
+    {
+        _maxCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;
     }
     #endregion
 }

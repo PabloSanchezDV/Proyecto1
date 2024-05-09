@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4991175593949831599}
   - component: {fileID: 1487852191787353948}
-  - component: {fileID: 8649111392794440014}
+  - component: {fileID: 4560634952015517469}
   m_Layer: 0
   m_Name: FenceDoor
   m_TagString: Untagged
@@ -55,7 +55,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8649111392794440014
+--- !u!114 &4560634952015517469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6229167476589165066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aab9de89ab649234ea0dcf4e54f99cc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 40a7cb9935caf1b4da6864c4332091dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7303637497220943376
