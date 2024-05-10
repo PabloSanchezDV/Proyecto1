@@ -22,7 +22,7 @@ public static class DialogueBuilder
         List<DialogueNode> dialogueNodesList = new List<DialogueNode>();
         foreach (string[] row in parsedCSV)
         {
-            DialogueNode node = new DialogueNode(Convert.ToInt32(row[0]), Convert.ToInt32(row[1]), row[2], row[3]);
+            DialogueNode node = new DialogueNode(Convert.ToInt32(row[0]), Convert.ToInt32(row[1]), row[2], row[3].Remove(row[3].Length - 1));
             dialogueNodesList.Add(node);
         }
         return dialogueNodesList;

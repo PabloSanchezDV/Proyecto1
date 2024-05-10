@@ -19,7 +19,11 @@
 2;8;Pau;Test 2-8 D
 2;8;Pau;Test 2-8 E
 2;8;Pau;Test 2-8 F
-2;9;Pau;Test 2-9
+2;9;Pau;Test 2-9 Pre
+2;9;*;VirtualCamera3
+2;9;Pau;Test 2-9 In
+2;9;*;Reset
+2;9;Pau;Test 2-9 Post
 2;10;Pau;Test 2-10
 2;11;Pau;Test 2-11
 3;12;Pau;Test 3-12

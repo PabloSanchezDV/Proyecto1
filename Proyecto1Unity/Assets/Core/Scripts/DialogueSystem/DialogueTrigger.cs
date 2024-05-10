@@ -19,7 +19,7 @@ public class DialogueTrigger : MonoBehaviour
 
     protected void StartDialogue()
     {
-        DialogueManager.instance.TriggerDialogue(_id);
+        DialogueManager.instance.TriggerDialogue(_id, _virtualCamera);
     }
 
     protected void OverwriteAtEnd()

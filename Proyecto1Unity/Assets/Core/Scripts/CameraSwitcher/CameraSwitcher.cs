@@ -8,6 +8,7 @@ public class CameraSwitcher : MonoBehaviour
     public static CameraSwitcher instance;
 
     private CinemachineVirtualCameraBase[] _virtualCameras;
+    public CinemachineVirtualCameraBase[] VirtualCameras {  get { return _virtualCameras; } }
 
     private void Awake()
     {
@@ -26,14 +27,15 @@ public class CameraSwitcher : MonoBehaviour
         }
     }
 
-    public void SwitchCamera(CinemachineVirtualCameraBase virtualCamera, Transform lookAt)
+    public void SwitchCamera(CinemachineVirtualCameraBase virtualCamera, Transform lookAt = null)
     {
         foreach(var vCamera in _virtualCameras)
         {
             if(vCamera == virtualCamera)
             {
                 vCamera.enabled = true;
-                vCamera.LookAt = lookAt;
+                if(lookAt != null)
+                    vCamera.LookAt = lookAt;
                 continue;
 
             }
