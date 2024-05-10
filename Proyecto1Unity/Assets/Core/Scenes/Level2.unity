@@ -7947,6 +7947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1658026531}
+  currentScene: 1
 --- !u!4 &620799501
 Transform:
   m_ObjectHideFlags: 0
@@ -23292,7 +23293,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1704151219}
+  - {fileID: 6140477371861247807}
   - {fileID: 1075907475}
   - {fileID: 1521187696}
   - {fileID: 805001695}
@@ -25908,8 +25909,8 @@ SceneRoots:
   - {fileID: 1859433583}
   - {fileID: 1657609755}
   - {fileID: 2002688566}
-  - {fileID: 153580451}
-  - {fileID: 348347257}
+  - {fileID: 2152170043454268132}
+  - {fileID: 3374878268990997268}
   - {fileID: 291678822}
   - {fileID: 2121340764}
   - {fileID: 1882914141}
