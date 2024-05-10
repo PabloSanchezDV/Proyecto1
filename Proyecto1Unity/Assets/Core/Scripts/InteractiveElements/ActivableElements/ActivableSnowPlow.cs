@@ -12,7 +12,7 @@ public class ActivableSnowPlow : ActivableObject
 
     private void Start()
     {
-        _renderer = transform.GetChild(0).GetComponent<MeshRenderer>();
+        _renderer = transform.GetChild(1).GetComponent<MeshRenderer>();
     }
 
     public override void Activate()
@@ -21,7 +21,7 @@ public class ActivableSnowPlow : ActivableObject
         {
             _smoke.SetActive(true);
             _lights.SetActive(true);
-            //_renderer.material = _material;
+            _renderer.material = _material;
         }
     }
 }
