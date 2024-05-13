@@ -82,9 +82,6 @@ public class DialogueManager : MonoBehaviour
                     throw new Exception("Camera is not found in scene. Confirm the name of the camera both in the CSV file and in the scene");
 
                 CameraSwitcher.instance.SwitchCamera(newCamera);
-                while (!_doNextDialogue)
-                    yield return null;
-                _doNextDialogue = false;
             }
         }
         UIManager.instance.HideDialoguePanel();
