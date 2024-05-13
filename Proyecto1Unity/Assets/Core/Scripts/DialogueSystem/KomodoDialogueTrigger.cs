@@ -6,6 +6,7 @@ public class KomodoDialogueTrigger : DialogueTrigger
 {
     [SerializeField] private PressurePlate[] _pressurePlates;
     [SerializeField] private int _idAfterCompletion;
+    private bool _arePressurePlatesEnabled = false;
 
     private new void OnTriggerEnter(Collider other)
     {
@@ -20,7 +21,8 @@ public class KomodoDialogueTrigger : DialogueTrigger
             StartDialogue();
             if (_overwriteAtEnd)
                 OverwriteAtEnd();
-            EnablePressurePlatesAtEnd();
+            if(!_arePressurePlatesEnabled)
+                EnablePressurePlatesAtEnd();
         }
     }
 
@@ -32,6 +34,7 @@ public class KomodoDialogueTrigger : DialogueTrigger
             pressurePlate.ResetBox();
         }
 
+        _arePressurePlatesEnabled = true;
         EventHolder.instance.onAllCollectiblesCollected.AddListener(ChangeDialogueLines);
     }
 
