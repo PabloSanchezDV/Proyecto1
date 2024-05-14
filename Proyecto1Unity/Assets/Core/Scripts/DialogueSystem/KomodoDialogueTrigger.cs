@@ -26,7 +26,7 @@ public class KomodoDialogueTrigger : DialogueTrigger
         }
     }
 
-    private void EnablePressurePlatesAtEnd()
+    public void EnablePressurePlatesAtEnd()
     {
         foreach(PressurePlate pressurePlate in _pressurePlates)
         {

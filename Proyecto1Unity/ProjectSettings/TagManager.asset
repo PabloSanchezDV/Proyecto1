@@ -8,6 +8,7 @@ TagManager:
   - Dragable
   - VirtualCamera
   - Collectible
+  - Banana
   layers:
   - Default
   - TransparentFX

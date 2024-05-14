@@ -36,7 +36,7 @@ public class PressurePlate : MonoBehaviour
         }
     }
 
-    private void Interact(bool state)
+    public void Interact(bool state)
     {
         if (_animator != null)
             _animator.SetTrigger("ChangeState");

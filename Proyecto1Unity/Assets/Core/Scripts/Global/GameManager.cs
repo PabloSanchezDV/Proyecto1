@@ -20,10 +20,22 @@ public class GameManager : MonoBehaviour
 
     private int _bananas = 0;
     public int Bananas {  get { return _bananas; } }
+    private int _maxBananas = 0;
+    public int MaxBananas { get { return _maxBananas; } }
     private int _collectibles = 0;
     public int Collectibles { get { return _collectibles; } }
     private int _maxCollectibles = 0;
     public int MaxCollectibles { get { return _maxCollectibles; } }
+
+    [SerializeField] private Banana[] _bananasArray;
+
+    private int _lastBananaID;
+    public int LastBananaID { get { return _lastBananaID; } set { _lastBananaID = value; } }
+
+    [SerializeField] private Big[] _bigArray;
+
+    private int _lastCollectibleID;
+    public int LastCollectibleID { get { return _lastCollectibleID; } set { _lastCollectibleID = value; } }
 
     private bool _isInvincible = false;
     public bool IsInvincible { get { return _isInvincible; } set { _isInvincible = value; } }
@@ -40,6 +52,9 @@ public class GameManager : MonoBehaviour
 
     private CinemachineVirtualCameraBase _playerCamera;
     public CinemachineVirtualCameraBase PlayerCamera { get { return _playerCamera; } set { _playerCamera = value; } }
+
+    private int _levelID;
+    public int LevelID { get { return _levelID;} }
 
     private void Awake()
     {
@@ -63,7 +78,11 @@ public class GameManager : MonoBehaviour
         if (_player != null)
             _lastRespawnPosition = _player.transform.position;
         _currentHealth = _maxHealth;
+        _levelID = 2;
         SetMaxCollectiblesAmount();
+        SetMaxBananasAmount();
+        SaveDatabase.instance.CreateNewData();
+        UIManager.instance.UpdateAllSlots();
         UIManager.instance.UpdateHUD();
     }
 
@@ -158,6 +177,7 @@ public class GameManager : MonoBehaviour
         _bananas++;
         UIManager.instance.UpdateHUD();
         UIManager.instance.ShowBananasHUD();
+        SaveDatabase.instance.AddBanana(LastBananaID);
     }
 
     private void AddBigCollectible()
@@ -169,11 +189,41 @@ public class GameManager : MonoBehaviour
 
         UIManager.instance.UpdateHUD();
         UIManager.instance.ShowCollectiblesHUD();
+        SaveDatabase.instance.AddBig(LastCollectibleID);
     }
 
     private void SetMaxCollectiblesAmount()
     {
-        _maxCollectibles = GameObject.FindGameObjectsWithTag("Collectible").Length;
+        _bigArray = FindObjectsByType<Big>(FindObjectsSortMode.None);
+        Array.Sort(_bigArray, (x,y) => x.id.CompareTo(y.id));
+        SceneLoader.instance.bigCollectibles = _bigArray;
+        _maxCollectibles = _bigArray.Length;
+    }
+
+    private void SetMaxBananasAmount()
+    {
+        _bananasArray = FindObjectsByType<Banana>(FindObjectsSortMode.None);
+        Array.Sort(_bananasArray, (x,y) => x.id.CompareTo(y.id));
+        SceneLoader.instance.bananas = _bananasArray;
+        _maxBananas = GameObject.FindGameObjectsWithTag("Banana").Length;
+    }
+
+    public void UpdateCollectibles(Data data)
+    {
+        foreach(bool big in data.bigCollectibles)
+        {
+            if(big)
+            {
+                _collectibles++;
+            }
+        }
+        foreach (bool banana in data.bananas)
+        {
+            if (banana)
+            {
+                _bananas++;
+            }
+        }
     }
     #endregion
 }

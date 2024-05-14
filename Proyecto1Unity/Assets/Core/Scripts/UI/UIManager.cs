@@ -130,6 +130,11 @@ public class UIManager : MonoBehaviour
         UpdateHealth();
         ShowHealthHUD();
     }
+
+    public void UpdateAllSlots()
+    {
+        _saveGameUI.UpdateAllSlots();
+    }
     #endregion
 
     #region Show / Hide Panels
