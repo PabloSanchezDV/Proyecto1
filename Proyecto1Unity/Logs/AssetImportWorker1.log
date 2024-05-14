@@ -15,7 +15,7 @@ D:/MAIN PROYECTO/Proyecto1/Proyecto1Unity/Proyecto1Unity
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-52720
+50109
 Successfully changed project path to: D:/MAIN PROYECTO/Proyecto1/Proyecto1Unity/Proyecto1Unity
 D:/MAIN PROYECTO/Proyecto1/Proyecto1Unity/Proyecto1Unity
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ D:/MAIN PROYECTO/Proyecto1/Proyecto1Unity/Proyecto1Unity
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [22332] Host "[IP] 192.168.1.33 [Port] 0 [Flags] 2 [Guid] 2433840486 [EditorId] 2433840486 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-N0P0HHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [19760] Host "[IP] 192.168.1.33 [Port] 0 [Flags] 2 [Guid] 3445961670 [EditorId] 3445961670 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-N0P0HHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [22332] Host "[IP] 192.168.1.33 [Port] 0 [Flags] 2 [Guid] 2433840486 [EditorId] 2433840486 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-N0P0HHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [19760] Host "[IP] 192.168.1.33 [Port] 0 [Flags] 2 [Guid] 3445961670 [EditorId] 3445961670 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-N0P0HHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
-Refreshing native plugins compatible for Editor in 9.97 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 10.11 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.17f1 (4fc78088f837)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Resources/UnitySubsystems
@@ -71,49 +71,49 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56536
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56916
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.026227 seconds.
-- Loaded All Assemblies, in  0.540 seconds
+Registered in 0.026752 seconds.
+- Loaded All Assemblies, in  0.524 seconds
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 429 ms
+Android Extension - Scanning For ADB Devices 488 ms
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.908 seconds
-Domain Reload Profiling: 1442ms
-	BeginReloadAssembly (160ms)
+- Finished resetting the current domain, in  0.940 seconds
+Domain Reload Profiling: 1457ms
+	BeginReloadAssembly (150ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (49ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (109ms)
-	LoadAllAssembliesAndSetupDomain (201ms)
-		LoadAssemblies (155ms)
+	RebuildCommonClasses (48ms)
+	RebuildNativeTypeToScriptingClass (20ms)
+	initialDomainReloadingComplete (107ms)
+	LoadAllAssembliesAndSetupDomain (191ms)
+		LoadAssemblies (146ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (197ms)
-			TypeCache.Refresh (195ms)
-				TypeCache.ScanAssembly (179ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
+		AnalyzeDomain (188ms)
+			TypeCache.Refresh (186ms)
+				TypeCache.ScanAssembly (170ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (1ms)
-	FinalizeReload (909ms)
+	FinalizeReload (941ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (833ms)
+		SetupLoadedEditorAssemblies (866ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (601ms)
-			SetLoadedEditorAssemblies (6ms)
+			InitializePlatformSupportModulesInManaged (653ms)
+			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (3ms)
-			ProcessInitializeOnLoadAttributes (156ms)
-			ProcessInitializeOnLoadMethodAttributes (67ms)
+			ProcessInitializeOnLoadAttributes (149ms)
+			ProcessInitializeOnLoadMethodAttributes (57ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -121,108 +121,108 @@ Domain Reload Profiling: 1442ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-Symbol file data-0000017792723070 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+Symbol file data-000001D90A61C820 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792723070 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file data-000001D90A61C820 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779330F010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll
+Symbol file data-000001D90B0B8010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779334A620 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
+Symbol file data-000001D90B15C010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177932935C0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.dll
+Symbol file data-000001D8E89AF7E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770759760 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file data-000001D90B15C010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177932935C0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Stl.dll
+Symbol file data-000001D8E89AF7E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Stl.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770D833B0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.dll
+Symbol file data-000001D90B15C010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770D833B0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file data-000001D90B15C010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177932935C0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file data-000001D8E89AF7E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792D48020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll
+Symbol file data-000001D8E8D08010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177932935C0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file data-000001D8E89AF7E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792D1AE30 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file data-000001D8E7953E20 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177932935C0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file data-000001D8E7953E20 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770D833B0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file data-000001D8E8C78FD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770D833B0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file data-000001D8E8C78FD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177930EEA60 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file data-000001D8E7953E20 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779336C030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll
+Symbol file data-000001D8E89AF7E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177930EEA60 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file data-000001D90B195830 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779329B5D0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Csg.dll
+Symbol file data-000001D8E7953E20 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Csg.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017793B287D0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll
+Symbol file data-000001D8E8D08010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177930EEA60 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file data-000001D8E8533960 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792BF3430 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file data-000001D8E8D3F620 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792DAB030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file data-000001D8E8533960 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792DAB030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file data-000001D90B195830 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770E1B010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-000001D8E8AA6020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017793B5FDE0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll
+Symbol file data-000001D90AB07430 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779329B5D0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file data-000001D8E795BE30 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017793112870 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll
+Symbol file data-000001D8E89B41F0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792DAB030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file data-000001D8E795BE30 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792DAB030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file data-000001D90B195830 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017793112870 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll
+Symbol file data-000001D8E8B35A40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792DAB030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file data-000001D8E8D80A30 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792DAB030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll
+Symbol file data-000001D8E8B35A40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792DB4C40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Poly2Tri.dll
+Symbol file data-000001D90B195830 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Poly2Tri.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770434490 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file data-000001D8E8353090 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177704552A0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file data-000001D8E8CBA7E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770DEDDE0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file data-000001D8E8CD2FF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177704552A0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file data-000001D90B1B6A40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Settings.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001777045A4B0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.KdTree.dll
+Symbol file data-000001D90B1B6A40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.KdTree.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792E64010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file data-000001D90AD8A420 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792C0BC40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file data-000001D90AD8A420 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792C0BC40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll
+Symbol file data-000001D8E8373EA0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792C19450 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll
+Symbol file data-000001D8E8373EA0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792AD3420 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll
+Symbol file data-000001D90AB3FE40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792ADB230 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file data-000001D90AB3FE40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792AE1240 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll
+Symbol file data-000001D90B1B6A40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792520080 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Cinemachine.dll
+Symbol file data-000001D8E8DFE030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Cinemachine.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792AE1240 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file data-000001D90B1B6A40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792AE1240 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Utilities.dll
+Symbol file data-000001D8E8D8A640 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Utilities.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  1.111 seconds
-Refreshing native plugins compatible for Editor in 3.33 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.945 seconds
+Refreshing native plugins compatible for Editor in 2.81 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
@@ -231,48 +231,48 @@ Package Manager log level set to [2]
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.140 seconds
-Domain Reload Profiling: 2244ms
-	BeginReloadAssembly (223ms)
+- Finished resetting the current domain, in  0.957 seconds
+Domain Reload Profiling: 1895ms
+	BeginReloadAssembly (200ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (8ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (30ms)
-	RebuildCommonClasses (59ms)
-	RebuildNativeTypeToScriptingClass (18ms)
-	initialDomainReloadingComplete (68ms)
-	LoadAllAssembliesAndSetupDomain (734ms)
-		LoadAssemblies (492ms)
+		CreateAndSetChildDomain (24ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (65ms)
+	LoadAllAssembliesAndSetupDomain (613ms)
+		LoadAssemblies (431ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (374ms)
-			TypeCache.Refresh (318ms)
-				TypeCache.ScanAssembly (287ms)
-			ScanForSourceGeneratedMonoScriptInfo (43ms)
-			ResolveRequiredComponents (11ms)
-	FinalizeReload (1141ms)
+		AnalyzeDomain (304ms)
+			TypeCache.Refresh (264ms)
+				TypeCache.ScanAssembly (243ms)
+			ScanForSourceGeneratedMonoScriptInfo (30ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (957ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (860ms)
+		SetupLoadedEditorAssemblies (729ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (45ms)
+			InitializePlatformSupportModulesInManaged (38ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (122ms)
-			ProcessInitializeOnLoadAttributes (569ms)
-			ProcessInitializeOnLoadMethodAttributes (96ms)
-			AfterProcessingInitializeOnLoad (23ms)
+			BeforeProcessingInitializeOnLoad (100ms)
+			ProcessInitializeOnLoadAttributes (481ms)
+			ProcessInitializeOnLoadMethodAttributes (83ms)
+			AfterProcessingInitializeOnLoad (24ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (10ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 3.72 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 2.94 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 5252 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 68 unused Assets / (473.7 KB). Loaded Objects now: 5718.
-Memory consumption went from 192.7 MB to 192.2 MB.
-Total: 5.782900 ms (FindLiveObjects: 0.524300 ms CreateObjectMapping: 0.232900 ms MarkObjects: 4.651100 ms  DeleteObjects: 0.372900 ms)
+Unloading 68 unused Assets / (482.4 KB). Loaded Objects now: 5718.
+Memory consumption went from 192.6 MB to 192.1 MB.
+Total: 4.206300 ms (FindLiveObjects: 0.560600 ms CreateObjectMapping: 0.149800 ms MarkObjects: 3.215800 ms  DeleteObjects: 0.278800 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -289,125 +289,117 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 42206.666046 seconds.
-  path: Assets/Core/Prefabs/EventHolder.prefab
-  artifactKey: Guid(c11c3521842871543ad67da6b322cc01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Core/Prefabs/EventHolder.prefab using Guid(c11c3521842871543ad67da6b322cc01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd857ee5fbf142d6c85a3b0421f1f5638') in 0.043563 seconds
+  Time since last request: 2323.108282 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/No Collider/Helecho_2_elementosDecorativos_T (1) Variant.prefab
+  artifactKey: Guid(f0eca5a4557362c41a2594f47f688f8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/No Collider/Helecho_2_elementosDecorativos_T (1) Variant.prefab using Guid(f0eca5a4557362c41a2594f47f688f8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9aea1dc4dd2e7e56cf772cef3565d284') in 0.100446 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 5
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Core/Prefabs/Enemies/RangedEnemy.prefab
-  artifactKey: Guid(6b739a4b52759584ab1aad1bbdcb8def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Core/Prefabs/Enemies/RangedEnemy.prefab using Guid(6b739a4b52759584ab1aad1bbdcb8def) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a93adb317600dfe538e3b65f55dc5aa1') in 0.901316 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 86
+Number of asset objects unloaded after import = 17
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-Symbol file data-000001779441D030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+Symbol file data-000001D90A76BA70 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779441D030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file data-000001D90A82C420 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779D1BA030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll
+Symbol file data-000001D918061DF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017793F3ADD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
+Symbol file data-000001D90A5CE040 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779441D030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.dll
+Symbol file data-000001D90BEE0B50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779DA32020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file data-000001D90AE6B020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779441D030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Stl.dll
+Symbol file data-000001D90BEE0B50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Stl.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779DA32020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.dll
+Symbol file data-000001D8E8B3BDD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177949D1010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file data-000001D90B0B8010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779441D030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file data-000001D8E92B5CC0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770E1B010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll
+Symbol file data-000001D8E82F0080 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779441D030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file data-000001D8E79DA4E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770B48010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file data-000001D9153DE020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001776FB3E7B0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file data-000001D90BEE0B50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770EA2FD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file data-000001D8E8C2FAF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770D13FF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file data-000001D916016010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001776FB3E7B0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file data-000001D90ADB1E50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779441D030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll
+Symbol file data-000001D90A76BA70 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792978030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file data-000001D8E8B3BDD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.UI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779E28B020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Csg.dll
+Symbol file data-000001D8E92B5CC0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Csg.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779DEA4020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll
+Symbol file data-000001D90AE6B020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177A00BC020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file data-000001D90AC2E420 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779E09C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file data-000001D8E86DFCA0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177A00BC020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file data-000001D915D9E020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001776FAF4020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file data-000001D90ACCC470 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770E1B010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file data-000001D8E82F0080 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779E09C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll
+Symbol file data-000001D917FC0920 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779E28B020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file data-000001D9156DD030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779E28B020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll
+Symbol file data-000001D90A76BA70 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779DBC2E90 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file data-000001D9156DD030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177A00BC020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file data-000001D915D9E020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779DBC2E90 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll
+Symbol file data-000001D90A76BA70 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770D68400 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file data-000001D8E92B5CC0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770D68400 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll
+Symbol file data-000001D8E92B5CC0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779DEDB630 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Poly2Tri.dll
+Symbol file data-000001D90ADB1E50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Poly2Tri.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017770B48010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file data-000001D9153DE020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-0000017792717050 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file data-000001D914BBB010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001776FB3E7B0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file data-000001D90ADB1E50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-00000177A00D4830 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file data-000001D8E8BB8820 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Settings.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001776FB3E7B0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.KdTree.dll
+Symbol file data-000001D8E8BB8820 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.KdTree.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779E5CC020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file data-000001D90C92B030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779D78F250 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file data-000001D90BF24E40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779E604A30 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll
+Symbol file data-000001D90C096A50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779E604A30 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll
+Symbol file data-000001D90C096A50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779FD75020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll
+Symbol file data-000001D90C096A50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779FD7CE30 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file data-000001D91606A420 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779DD2F010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll
+Symbol file data-000001D916070430 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779D51E020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Cinemachine.dll
+Symbol file data-000001D90C92B030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Cinemachine.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779CF90010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file data-000001D916070430 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-Symbol file data-000001779CF90010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Utilities.dll
+Symbol file data-000001D90AC46C30 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Utilities.dll
 Symbol file LoadedFromMemory is not a mono symbol file
-- Loaded All Assemblies, in  0.647 seconds
-Refreshing native plugins compatible for Editor in 2.97 ms, found 3 plugins.
+- Loaded All Assemblies, in  0.668 seconds
+Refreshing native plugins compatible for Editor in 2.87 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
@@ -415,47 +407,551 @@ Native extension for WebGL target not found
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.752 seconds
-Domain Reload Profiling: 2392ms
-	BeginReloadAssembly (220ms)
+- Finished resetting the current domain, in  1.636 seconds
+Domain Reload Profiling: 2295ms
+	BeginReloadAssembly (217ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (47ms)
+		CreateAndSetChildDomain (45ms)
 	RebuildCommonClasses (44ms)
 	RebuildNativeTypeToScriptingClass (15ms)
-	initialDomainReloadingComplete (50ms)
-	LoadAllAssembliesAndSetupDomain (312ms)
-		LoadAssemblies (417ms)
+	initialDomainReloadingComplete (54ms)
+	LoadAllAssembliesAndSetupDomain (329ms)
+		LoadAssemblies (434ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (6ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1637ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (786ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (44ms)
+			SetLoadedEditorAssemblies (5ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (119ms)
+			ProcessInitializeOnLoadAttributes (505ms)
+			ProcessInitializeOnLoadMethodAttributes (88ms)
+			AfterProcessingInitializeOnLoad (25ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 3.95 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5196 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 35 unused Assets / (454.3 KB). Loaded Objects now: 5740.
+Memory consumption went from 181.5 MB to 181.1 MB.
+Total: 4.818600 ms (FindLiveObjects: 0.509000 ms CreateObjectMapping: 0.216600 ms MarkObjects: 3.841000 ms  DeleteObjects: 0.250300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D90C64F010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C64F010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915318020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D914CB8040 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915F6C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918061DF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915F6C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Stl.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8B3BDD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90B0B8010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E92B5CC0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E82F0080 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E92B5CC0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915744010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90BEE0B50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D916150FA0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D916016010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90BEE0B50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E92B5CC0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D91538A040 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915F6C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Csg.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918061DF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90A5CE040 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90A5F4800 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C440020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90ACCC470 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E82F0080 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8C78FD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9156DD030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9156DD030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915F6C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C440020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915F6C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E90BE030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E90BE030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918099400 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Poly2Tri.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90AF81010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D914BBB010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90ADB1E50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E90BE030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918099400 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.KdTree.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8B3BDD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918044020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8CB19E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8CB19E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8CB19E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8BB8820 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8BBE830 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9160DB020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Cinemachine.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D91606A420 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8BBE830 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Utilities.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.636 seconds
+Refreshing native plugins compatible for Editor in 2.95 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.688 seconds
+Domain Reload Profiling: 2316ms
+	BeginReloadAssembly (213ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (7ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (307ms)
+		LoadAssemblies (410ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (19ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (1688ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (847ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (47ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (141ms)
+			ProcessInitializeOnLoadAttributes (544ms)
+			ProcessInitializeOnLoadMethodAttributes (88ms)
+			AfterProcessingInitializeOnLoad (23ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 3.32 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5197 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 35 unused Assets / (438.3 KB). Loaded Objects now: 5755.
+Memory consumption went from 183.7 MB to 183.3 MB.
+Total: 4.626600 ms (FindLiveObjects: 0.524000 ms CreateObjectMapping: 0.170700 ms MarkObjects: 3.670000 ms  DeleteObjects: 0.260700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D917944020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D917944020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915318020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90A768040 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915C32010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918061DF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915C32010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Stl.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8B3BDD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90B0B8010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915C32010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E82F0080 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915C32010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90AFA0B30 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D914F3A020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D917FBC910 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8C78FD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D914F3A020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915C32010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E72DBCB0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C8BF030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Csg.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918061DF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90A5CE040 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8D5C010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C440020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90ACCC470 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E82F0080 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8C2FAF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8CCD3E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8CCD3E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9156DD030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C440020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9156DD030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918099400 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918099400 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918099400 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Poly2Tri.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90A440080 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D914BBB010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90ADB1E50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918099400 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D917F0CD40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.KdTree.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8B3BDD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8B9C010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C096A50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C096A50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C096A50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D917A39010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D917A3F020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C0EDE20 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Cinemachine.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9152D4030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D917A3F020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Utilities.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.648 seconds
+Refreshing native plugins compatible for Editor in 3.06 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.690 seconds
+Domain Reload Profiling: 2331ms
+	BeginReloadAssembly (212ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (49ms)
+	LoadAllAssembliesAndSetupDomain (313ms)
+		LoadAssemblies (410ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (18ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1691ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (833ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (50ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (134ms)
+			ProcessInitializeOnLoadAttributes (525ms)
+			ProcessInitializeOnLoadMethodAttributes (95ms)
+			AfterProcessingInitializeOnLoad (24ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Refreshing native plugins compatible for Editor in 3.87 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5197 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 35 unused Assets / (438.3 KB). Loaded Objects now: 5770.
+Memory consumption went from 185.6 MB to 185.2 MB.
+Total: 4.877300 ms (FindLiveObjects: 0.624600 ms CreateObjectMapping: 0.241600 ms MarkObjects: 3.753000 ms  DeleteObjects: 0.256700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Symbol file data-000001D8E873E020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E873E020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915318020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915EABF00 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9180F3070 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918061DF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9180F3070 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Stl.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8B3BDD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90B0B8010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E873E020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E82F0080 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E873E020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9159EA020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90BEE0B50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D917FBC910 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8C78FD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90BEE0B50 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E873E020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E72DBCB0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9180F3070 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Csg.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D918061DF0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90AE6B020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90A5F4800 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90AE6B020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90ACCC470 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E82F0080 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915A38030 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9180F3070 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D9180F3070 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.InputSystem.ForUI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8CCD3E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90AE6B020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Performance.Profile-Analyzer.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8CCD3E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8CCD3E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8CCD3E0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915286020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.Poly2Tri.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D916099400 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90AC2E420 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915286020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D91574C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Settings.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D91574C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.KdTree.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D8E8B3BDD0 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90BF24E40 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D91574C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.Searcher.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D91574C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D91574C020 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C64F010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915C32010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D90C0EDE20 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Cinemachine.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915C32010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-000001D915C32010 doesn't match image D:\MAIN PROYECTO\Proyecto1\Proyecto1Unity\Proyecto1Unity\Library\ScriptAssemblies\Unity.ShaderGraph.Utilities.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+- Loaded All Assemblies, in  0.646 seconds
+Refreshing native plugins compatible for Editor in 2.90 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.712 seconds
+Domain Reload Profiling: 2351ms
+	BeginReloadAssembly (210ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (5ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (45ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (54ms)
+	LoadAllAssembliesAndSetupDomain (315ms)
+		LoadAssemblies (415ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
 		AnalyzeDomain (19ms)
 			TypeCache.Refresh (6ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (11ms)
-	FinalizeReload (1753ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (1712ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (884ms)
+		SetupLoadedEditorAssemblies (836ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (49ms)
+			InitializePlatformSupportModulesInManaged (51ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (129ms)
-			ProcessInitializeOnLoadAttributes (575ms)
-			ProcessInitializeOnLoadMethodAttributes (100ms)
-			AfterProcessingInitializeOnLoad (26ms)
+			BeforeProcessingInitializeOnLoad (122ms)
+			ProcessInitializeOnLoadAttributes (548ms)
+			ProcessInitializeOnLoadMethodAttributes (86ms)
+			AfterProcessingInitializeOnLoad (25ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (9ms)
 Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
-Refreshing native plugins compatible for Editor in 3.45 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.19 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5196 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 35 unused Assets / (445.1 KB). Loaded Objects now: 5742.
-Memory consumption went from 181.7 MB to 181.3 MB.
-Total: 4.606300 ms (FindLiveObjects: 0.495900 ms CreateObjectMapping: 0.161900 ms MarkObjects: 3.699200 ms  DeleteObjects: 0.248100 ms)
+Unloading 5197 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 35 unused Assets / (438.2 KB). Loaded Objects now: 5785.
+Memory consumption went from 187.5 MB to 187.1 MB.
+Total: 5.048200 ms (FindLiveObjects: 0.672700 ms CreateObjectMapping: 0.311200 ms MarkObjects: 3.751700 ms  DeleteObjects: 0.311000 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
