@@ -260,26 +260,26 @@ public class CharacterAbilities : MonoBehaviour
         while (_tongue.transform.localScale.x > _homingAttackDistance)
         {
             // NOT STABLE BUT WORKS
-            //direction = (target - transform.position).normalized;
-            //transform.Translate(direction * _tongueSpeed * Time.deltaTime);
-            //_tongue.position = _tongueReference.position;
-            //_tongue.LookAt(target);
-            //_tongue.Rotate(0f, -90f, 0f);
-            //_tongue.transform.localScale -= Vector3.right * _tongueSpeed * _homingAttackTongueDistanceModifier * Time.deltaTime;
-            //_tongueTip.transform.position = _tongueTipReference.transform.position;
-            //yield return null;
-
             direction = (target - transform.position).normalized;
-            Vector3 _velocityCharacter = direction * _tongueSpeed * Time.deltaTime;
-            transform.Translate(_velocityCharacter);
+            transform.Translate(direction * _tongueSpeed * Time.deltaTime);
             _tongue.position = _tongueReference.position;
             _tongue.LookAt(target);
             _tongue.Rotate(0f, -90f, 0f);
-            _homingAttackTongueDistanceModifier = (target - transform.position).magnitude / _velocityCharacter.magnitude;
-
-            _tongue.transform.localScale = new Vector3(_homingAttackTongueDistanceModifier * 2/3, 1f, 1f);
+            _tongue.transform.localScale -= Vector3.right * _tongueSpeed * _homingAttackTongueDistanceModifier * Time.deltaTime;
             _tongueTip.transform.position = _tongueTipReference.transform.position;
             yield return null;
+
+            //direction = (target - transform.position).normalized;
+            //Vector3 _velocityCharacter = direction * _tongueSpeed * Time.deltaTime;
+            //transform.Translate(_velocityCharacter);
+            //_tongue.position = _tongueReference.position;
+            //_tongue.LookAt(target);
+            //_tongue.Rotate(0f, -90f, 0f);
+            //_homingAttackTongueDistanceModifier = (target - transform.position).magnitude / _velocityCharacter.magnitude;
+
+            //_tongue.transform.localScale = new Vector3(_homingAttackTongueDistanceModifier * 2/3, 1f, 1f);
+            //_tongueTip.transform.position = _tongueTipReference.transform.position;
+            //yield return null;
         }
 
         characterManager.EndHomingAttack();

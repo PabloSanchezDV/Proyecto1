@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Banana : CollectibleBase
 {
+    public int id;
+
     public override void Collect()
     {
-        Debug.Log("Banana collected");
+        GameManager.instance.LastBananaID = id;
+        EventHolder.instance.onBananaColleted?.Invoke();
     }
 }

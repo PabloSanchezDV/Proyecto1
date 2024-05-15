@@ -148,9 +148,10 @@ public class SaveGameUI : MonoBehaviour
 
     public void ConfirmSaving()
     {
-        //SaveSystem.Save(_saveSlot);
-        Debug.Log("Saving in slot " + _saveSlot + "...");
-        UpdateSaveSlot(_saveSlot);
+        SaveDatabase.instance.AddTimeStamp(); 
+        SaveSystem.SaveFile(SaveDatabase.instance.data, _saveSlot);
+        UpdateSaveSlot(SaveDatabase.instance.data.level);
+        UpdateLoadSlot(SaveDatabase.instance.data.level, SaveDatabase.instance.data.timeStamp);
         HideSaveConfirmationPopUp();
         ShowSavedGamePopUp();
     }
@@ -177,20 +178,35 @@ public class SaveGameUI : MonoBehaviour
 
     public void ConfirmLoading()
     {
-        //SaveSystem.Load(_saveSlot);
-        Debug.Log("Loading slot " + _saveSlot + "...");
-        HideLoadConfirmationPopUp();
-        ShowLoadedGamePopUp();
+        try
+        {
+            Data data = SaveSystem.LoadFile(_saveSlot, true);
+            HideLoadConfirmationPopUp();
+            ShowLoadedGamePopUp();
+        }
+        catch(UnityException e)
+        {
+            HideLoadConfirmationPopUp();
+            ShowUnableToLoadPopUp();
+        }
     }
     #endregion
 
     #region Update Slots
-    public void UpdateAllLoadSlots(int[] levelsPerSlot, string[] timePerSlot) // [levelSlot1, levelSlot2, levelSlot3]
+    public void UpdateAllSlots()
     {
         for (int i = 1; i <= 3; i++)
         {
             _saveSlot = i;
-            UpdateLoadSlot(levelsPerSlot[i], timePerSlot[i]); // Change to Saved Data
+            try
+            {
+                Data data = SaveSystem.LoadFile(_saveSlot, false);
+                UpdateLoadSlot(data.level, data.timeStamp);
+                UpdateSaveSlotOnLoad(data.level, data.timeStamp);
+            } catch(UnityException e)
+            {
+                continue;
+            }
         }
     }
 
@@ -212,6 +228,30 @@ public class SaveGameUI : MonoBehaviour
                 _imageSaveSlot3.sprite = GetImageByLevel(level);
                 _levelTextSaveSlot3.text = GetLevelWordingByLevel(level);
                 _infoTextSaveSlot3.text = System.DateTime.Today.ToString("d") + " - " + System.DateTime.Now.ToString("t");
+                break;
+            default:
+                throw new System.Exception("Trying to save in a non existing slot");
+        }
+    }
+
+    public void UpdateSaveSlotOnLoad(int level, string timeStamp)
+    {
+        switch (_saveSlot)
+        {
+            case 1:
+                _imageSaveSlot1.sprite = GetImageByLevel(level);
+                _levelTextSaveSlot1.text = GetLevelWordingByLevel(level);
+                _infoTextSaveSlot1.text = timeStamp;
+                break;
+            case 2:
+                _imageSaveSlot2.sprite = GetImageByLevel(level);
+                _levelTextSaveSlot2.text = GetLevelWordingByLevel(level);
+                _infoTextSaveSlot2.text = timeStamp;
+                break;
+            case 3:
+                _imageSaveSlot3.sprite = GetImageByLevel(level);
+                _levelTextSaveSlot3.text = GetLevelWordingByLevel(level);
+                _infoTextSaveSlot3.text = timeStamp;
                 break;
             default:
                 throw new System.Exception("Trying to save in a non existing slot");
