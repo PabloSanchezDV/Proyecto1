@@ -16,6 +16,9 @@ public class DialogueManager : MonoBehaviour
     public bool DoNextDialogue { get { return _doNextDialogue; } set {  _doNextDialogue = value; } }
     public bool IsInDialogue { get { return _isInDialogue; } }
 
+    private Animator _bufoAnimator;
+    public Animator BufoAnimator { set { _bufoAnimator = value; } }
+
     private void Awake()
     {
         if (instance == null)
@@ -30,11 +33,11 @@ public class DialogueManager : MonoBehaviour
         _dialogueBST = new DialogueBST(DialogueBuilder.BuildDialogueListsList(_currentLevel));
     }
 
-    public void TriggerDialogue(int id, CinemachineVirtualCameraBase npcCamera)
+    public void TriggerDialogue(int id, CinemachineVirtualCameraBase npcCamera, Animator animator)
     {
         _isInDialogue = true;
         List<DialogueNode> dialogueNodes = GetDialogueNodeList(id);
-        StartCoroutine(ShowDialogues(dialogueNodes, npcCamera));
+        StartCoroutine(ShowDialogues(dialogueNodes, npcCamera, animator));
     }
 
     private List<DialogueNode> GetDialogueNodeList(int id)
@@ -42,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         return _dialogueBST.Search(id);
     }
 
-    IEnumerator ShowDialogues(List<DialogueNode> dialogueNodes, CinemachineVirtualCameraBase npcCamera)
+    IEnumerator ShowDialogues(List<DialogueNode> dialogueNodes, CinemachineVirtualCameraBase npcCamera, Animator animator)
     {
         UIManager.instance.ShowDialoguePanel();
         foreach (DialogueNode node in dialogueNodes)
@@ -51,11 +54,17 @@ public class DialogueManager : MonoBehaviour
             {
                 string character = node.Character;
                 string text = node.Text;
-                // Animate character
+                if (character != "Bufo")
+                    animator.SetBool("isTalking", true);
+                else
+                    _bufoAnimator.SetBool("isTalking", true);
                 UIManager.instance.UpdateDialoguePanel(character, text);
                 while(!_doNextDialogue)
                     yield return null;
-                // Stop animated character
+                if (character != "Bufo")
+                    animator.SetBool("isTalking", false);
+                else
+                    _bufoAnimator.SetBool("isTalking", false);
                 _doNextDialogue = false;
             }
             else

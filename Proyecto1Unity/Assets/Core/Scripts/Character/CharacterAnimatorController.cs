@@ -14,6 +14,7 @@ public class CharacterAnimatorController : MonoBehaviour
     private void Start()
     {
         _anim = transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+        DialogueManager.instance.BufoAnimator = _anim;
     }
 
     private void OnEnable()

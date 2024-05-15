@@ -289,4 +289,14 @@ public class CharacterManager : MonoBehaviour
         if (_characterAnimatorController != null)
             _characterAnimatorController.Respawn();
     }
+
+    public void ActivateTalkInput(DialogueTrigger dialogueTrigger)
+    {
+        _inputActions.Gameplay.Talk.started += dialogueTrigger.Talk;
+    }
+
+    public void DeactivateTalkInput(DialogueTrigger dialogueTrigger)
+    {
+        _inputActions.Gameplay.Talk.started -= dialogueTrigger.Talk;
+    }
 }
