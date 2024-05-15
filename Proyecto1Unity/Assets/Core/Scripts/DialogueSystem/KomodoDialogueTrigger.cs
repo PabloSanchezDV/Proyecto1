@@ -5,6 +5,7 @@ using UnityEngine;
 public class KomodoDialogueTrigger : DialogueTrigger
 {
     [SerializeField] private PressurePlate[] _pressurePlates;
+    [SerializeField] private GameObject[] _mosquitos;
     [SerializeField] private int _idAfterCompletion;
     private bool _arePressurePlatesEnabled = false;
 
@@ -22,16 +23,21 @@ public class KomodoDialogueTrigger : DialogueTrigger
             if (_overwriteAtEnd)
                 OverwriteAtEnd();
             if(!_arePressurePlatesEnabled)
-                EnablePressurePlatesAtEnd();
+                EnablePressurePlatesAndMosquitoesAtEnd();
         }
     }
 
-    public void EnablePressurePlatesAtEnd()
+    public void EnablePressurePlatesAndMosquitoesAtEnd()
     {
         foreach(PressurePlate pressurePlate in _pressurePlates)
         {
             pressurePlate.SetConditionCompleteAs(true);
             pressurePlate.ResetBox();
+        }
+
+        foreach(GameObject mosquito in _mosquitos)
+        {
+            mosquito.SetActive(true);
         }
 
         _arePressurePlatesEnabled = true;

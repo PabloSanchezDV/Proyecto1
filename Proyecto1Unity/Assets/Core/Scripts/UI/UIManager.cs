@@ -133,7 +133,8 @@ public class UIManager : MonoBehaviour
 
     public void UpdateAllSlots()
     {
-        _saveGameUI.UpdateAllSlots();
+        if(_saveGameUI != null)
+            _saveGameUI.UpdateAllSlots();
     }
     #endregion
 

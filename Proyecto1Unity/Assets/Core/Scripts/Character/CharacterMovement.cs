@@ -194,13 +194,18 @@ public class CharacterMovement : MonoBehaviour
     private void LateUpdate()
     {
         Ray ray = new Ray(this.transform.position + Vector3.up * 0.25f, Vector3.down);
+        float maxHeight = -1000f;
         foreach (LayerMask layer in _groundLayers)
         {
             if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layer))
             {
-                _shadow.transform.position = hit.point + new Vector3(0, 0.001f, 0);
-                float distanceToGround = Map(transform.position.y - _shadow.transform.position.y, 0f, 10f, 0.025f, 0.01f);
-                _shadow.transform.localScale = new Vector3(distanceToGround, distanceToGround, 1);
+                if (hit.point.y > maxHeight)
+                {
+                    _shadow.transform.position = hit.point + new Vector3(0, 0.001f, 0);
+                    float distanceToGround = Map(transform.position.y - _shadow.transform.position.y, 0f, 10f, 0.025f, 0.01f);
+                    _shadow.transform.localScale = new Vector3(distanceToGround, distanceToGround, 1);
+                    maxHeight = hit.point.y; 
+                }
             }
         }
     }
