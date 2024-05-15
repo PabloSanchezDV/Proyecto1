@@ -89,6 +89,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Talk"",
+                    ""type"": ""Button"",
+                    ""id"": ""963ee5c0-2004-4533-9ad9-946b91183b50"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -278,6 +287,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b68399b-a78c-4a36-bd6c-f0a48d83f673"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3eb769de-92b0-4a8a-bc4d-d582098f61b1"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Talk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -442,6 +473,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Gameplay_ThrowTongue = m_Gameplay.FindAction("ThrowTongue", throwIfNotFound: true);
         m_Gameplay_Bite = m_Gameplay.FindAction("Bite", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_Talk = m_Gameplay.FindAction("Talk", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Move = m_Menu.FindAction("Move", throwIfNotFound: true);
@@ -519,6 +551,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_ThrowTongue;
     private readonly InputAction m_Gameplay_Bite;
     private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_Talk;
     public struct GameplayActions
     {
         private @InputActions m_Wrapper;
@@ -530,6 +563,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @ThrowTongue => m_Wrapper.m_Gameplay_ThrowTongue;
         public InputAction @Bite => m_Wrapper.m_Gameplay_Bite;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        public InputAction @Talk => m_Wrapper.m_Gameplay_Talk;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -560,6 +594,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @Talk.started += instance.OnTalk;
+            @Talk.performed += instance.OnTalk;
+            @Talk.canceled += instance.OnTalk;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -585,6 +622,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @Talk.started -= instance.OnTalk;
+            @Talk.performed -= instance.OnTalk;
+            @Talk.canceled -= instance.OnTalk;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -727,6 +767,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnThrowTongue(InputAction.CallbackContext context);
         void OnBite(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnTalk(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
