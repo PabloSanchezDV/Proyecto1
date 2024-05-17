@@ -8,8 +8,8 @@ public class PressurePlate : MonoBehaviour
     [SerializeField] private GameObject _box;
     [SerializeField] private ActivableObject[] _activableObjects;
     [SerializeField] private ParticleSystemManager _particleSystemManager;
-    
-    private bool _isConditionComplete = false;
+
+    [SerializeField] private bool _isConditionComplete = false;
 
     private Animator _animator;
     private Vector3 _boxResetPosition;

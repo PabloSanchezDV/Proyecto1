@@ -5910,6 +5910,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1318300787}
     - target: {fileID: 2744389042303890546, guid: c4993dec39ba0534b8c9dd51103a35bd, type: 3}
+      propertyPath: _isConditionComplete
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744389042303890546, guid: c4993dec39ba0534b8c9dd51103a35bd, type: 3}
       propertyPath: _activableObjects.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -15891,6 +15895,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6625449829677736746}
     - target: {fileID: 2744389042303890546, guid: c4993dec39ba0534b8c9dd51103a35bd, type: 3}
+      propertyPath: _isConditionComplete
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744389042303890546, guid: c4993dec39ba0534b8c9dd51103a35bd, type: 3}
       propertyPath: _activableObjects.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -16585,19 +16593,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3715220962233038043, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.48011568
+      value: -0.48011565
       objectReference: {fileID: 0}
     - target: {fileID: 3715220962233038043, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.048557937
+      value: -0.04855794
       objectReference: {fileID: 0}
     - target: {fileID: 3715220962233038043, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8714147
+      value: 0.8714148
       objectReference: {fileID: 0}
     - target: {fileID: 3715220962233038043, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.08813315
+      value: -0.088133164
       objectReference: {fileID: 0}
     - target: {fileID: 4225799695205205790, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_FollowOffset.y
@@ -17363,6 +17371,10 @@ PrefabInstance:
       propertyPath: _doorAnimator
       value: 
       objectReference: {fileID: 728278817}
+    - target: {fileID: 2744389042303890546, guid: c4993dec39ba0534b8c9dd51103a35bd, type: 3}
+      propertyPath: _isConditionComplete
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2744389042303890546, guid: c4993dec39ba0534b8c9dd51103a35bd, type: 3}
       propertyPath: _activableObjects.Array.size
       value: 2
@@ -26447,7 +26459,7 @@ PrefabInstance:
       objectReference: {fileID: 1900222896}
     - target: {fileID: 2744389042303890546, guid: c4993dec39ba0534b8c9dd51103a35bd, type: 3}
       propertyPath: _isConditionComplete
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2744389042303890546, guid: c4993dec39ba0534b8c9dd51103a35bd, type: 3}
       propertyPath: _activableObjects.Array.size
