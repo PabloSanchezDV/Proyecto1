@@ -40,8 +40,8 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        _areSoundsEnabled = PrefsManager.instance.GetBool(Pref.AreSoundsEnabled);
-        _isMusicEnabled = PrefsManager.instance.GetBool(Pref.IsMusicEnabled);
+        //_areSoundsEnabled = PrefsManager.instance.GetBool(Pref.AreSoundsEnabled);
+        //_isMusicEnabled = PrefsManager.instance.GetBool(Pref.IsMusicEnabled);
 
         _musicVolumeModifier = 1;
         _soundsVolumeModifier = 1;
@@ -148,10 +148,10 @@ public class AudioManager : MonoBehaviour
 
     #region Play Sounds Methods
     #region Player Movement
-    public AudioSource PlayTestSound(GameObject go)
+    public AudioSource PlayBufoTongue(GameObject go)
     {
-        _audioDatabase.testSoundCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.testSoundVolume);
-        return CreateAudioSource(go, _audioDatabase.testSoundAC, _audioDatabase.testSoundCurrentVolume);
+        _audioDatabase.bufoTongueCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoTongueVolume);
+        return CreateAudioSource(go, _audioDatabase.bufoTongueAC, _audioDatabase.bufoTongueCurrentVolume);
     }
 
     public AudioSource PlayBufoJump(GameObject go)
@@ -159,6 +159,223 @@ public class AudioManager : MonoBehaviour
         _audioDatabase.bufoJumpCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoJumpVolume);
         return CreateAudioSource(go, _audioDatabase.bufoJumpAC, _audioDatabase.bufoJumpCurrentVolume);
     }
+
+    public AudioSource PlayBufoTongueImp(GameObject go)
+    {
+        _audioDatabase.bufoTongueImpCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoTongueImpVolume);
+        return CreateAudioSource(go, _audioDatabase.bufoTongueImpAC, _audioDatabase.bufoTongueImpCurrentVolume);
+    }
+
+    public AudioSource PlayBufoFlutter(GameObject go)
+    {
+        _audioDatabase.bufoFlutterCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoFlutterVolume);
+        return CreateAudioSource(go, _audioDatabase.bufoFlutterAC, _audioDatabase.bufoFlutterCurrentVolume, true);
+    }
+
+    public AudioSource PlayBufoShiftAir(GameObject go)
+    {
+        _audioDatabase.bufoShiftAirCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoShiftAirVolume);
+        return CreateAudioSource(go, _audioDatabase.bufoShiftAirAC, _audioDatabase.bufoShiftAirCurrentVolume);
+    }
+
+    public AudioSource PlayBufoStepsRight(GameObject go)
+    {
+        _audioDatabase.bufoStepsRightCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoStepsRightVolume);
+        return CreateAudioSource(go, _audioDatabase.bufoStepsRightAC, _audioDatabase.bufoStepsRightCurrentVolume);
+    }
+
+    public AudioSource PlayBufoStepsLeft(GameObject go)
+    {
+        _audioDatabase.bufoStepsLeftCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoStepsLeftVolume);
+        return CreateAudioSource(go, _audioDatabase.bufoStepsLeftAC, _audioDatabase.bufoStepsLeftCurrentVolume);
+    }
+
+    public AudioSource PlayBufoLanding(GameObject go) 
+    {
+        _audioDatabase.bufoLandingCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoLandingVolume);
+        return CreateAudioSource(go, _audioDatabase.bufoLandingAC, _audioDatabase.bufoLandingCurrentVolume);
+    }
+
+    public AudioSource PlayBufoDeath(GameObject go)
+    {
+        _audioDatabase.bufoDeathCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoDeathVolume);
+        return CreateAudioSource(go, _audioDatabase.bufoDeathAC, _audioDatabase.bufoDeathCurrentVolume);
+    }
+
+    public AudioSource PlayBufoBite(GameObject go)
+    {
+        _audioDatabase.bufoBiteCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoBiteVolume);
+        return CreateAudioSource(go, _audioDatabase.bufoBiteAC, _audioDatabase.bufoBiteCurrentVolume);
+    }
+
+    public AudioSource PlayBufoHurt(GameObject go)
+    {
+        int index = UnityEngine.Random.Range(1, 5);
+
+        switch(index)
+        {
+            case 1:
+                _audioDatabase.bufoHurt1CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoHurt1Volume);
+                return CreateAudioSource(go, _audioDatabase.bufoHurt1AC, _audioDatabase.bufoHurt1CurrentVolume);
+            case 2:
+                _audioDatabase.bufoHurt2CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoHurt2Volume);
+                return CreateAudioSource(go, _audioDatabase.bufoHurt2AC, _audioDatabase.bufoHurt2CurrentVolume);
+            case 3:
+                _audioDatabase.bufoHurt3CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoHurt3Volume);
+                return CreateAudioSource(go, _audioDatabase.bufoHurt3AC, _audioDatabase.bufoHurt3CurrentVolume);
+            case 4:
+                _audioDatabase.bufoHurt4CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoHurt4Volume);
+                return CreateAudioSource(go, _audioDatabase.bufoHurt4AC, _audioDatabase.bufoHurt4CurrentVolume);
+            default:
+                throw new Exception("Index out of range at AudioManager.PlayBufoHurt.");
+        }
+    }
+    #endregion
+    
+    #region Interactive Elements 
+    public AudioSource PlayLever(GameObject go)
+    {
+        _audioDatabase.leverCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.leverVolume);
+        return CreateAudioSource(go, _audioDatabase.leverAC, _audioDatabase.leverCurrentVolume);
+    }
+
+    public AudioSource PlayBoxShift(GameObject go)
+    {
+        _audioDatabase.boxShiftCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.boxShiftVolume);
+        return CreateAudioSource(go, _audioDatabase.boxShiftAC, _audioDatabase.boxShiftCurrentVolume, true);
+    }
+
+    public AudioSource PlayPressurePlate(GameObject go)
+    {
+        _audioDatabase.pressurePlateCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.pressurePlateVolume);
+        return CreateAudioSource(go, _audioDatabase.pressurePlateAC, _audioDatabase.pressurePlateCurrentVolume);
+    }
+
+    public AudioSource PlayPressurePlateBroken(GameObject go)
+    {
+        _audioDatabase.pressurePlateBrokenCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.pressurePlateBrokenVolume);
+        return CreateAudioSource(go, _audioDatabase.pressurePlateBrokenAC, _audioDatabase.pressurePlateBrokenCurrentVolume);
+    }
+
+    public AudioSource PlayCollectable(GameObject go)
+    {
+        _audioDatabase.collectableCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.collectableVolume);
+        return CreateAudioSource(go, _audioDatabase.collectableAC, _audioDatabase.collectableCurrentVolume);
+    }
+
+    public AudioSource PlayBanana(GameObject go)
+    {
+        _audioDatabase.bananaCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bananaVolume);
+        return CreateAudioSource(go, _audioDatabase.bananaAC, _audioDatabase.bananaCurrentVolume);
+    }
+
+    public AudioSource PlayButton(GameObject go)
+    {
+        _audioDatabase.buttonCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.buttonVolume);
+        return CreateAudioSource(go, _audioDatabase.buttonAC, _audioDatabase.buttonCurrentVolume);
+    }
+
+    public AudioSource PlayTimeTrialNormal(GameObject go)
+    {
+        _audioDatabase.timeTrialNormalCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.timeTrialNormalVolume);
+        return CreateAudioSource(go, _audioDatabase.timeTrialNormalAC, _audioDatabase.timeTrialNormalCurrentVolume, true);
+    }
+
+    public AudioSource PlayTimeTrialUrgent(GameObject go)
+    {
+        _audioDatabase.timeTrialUrgentCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.timeTrialUrgentVolume);
+        return CreateAudioSource(go, _audioDatabase.timeTrialUrgentAC, _audioDatabase.timeTrialUrgentCurrentVolume, true);
+    }
+
+    public AudioSource PlayTimeTrialEnd(GameObject go)
+    {
+        _audioDatabase.timeTrialEndCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.timeTrialEndVolume);
+        return CreateAudioSource(go, _audioDatabase.timeTrialEndAC, _audioDatabase.timeTrialEndCurrentVolume);
+    }
+    #endregion
+
+    #region Enemies
+    public AudioSource PlayCobraThrowingBrick(GameObject go)
+    {
+        _audioDatabase.cobraThrowingBrickCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.cobraThrowingBrickVolume);
+        return CreateAudioSource(go, _audioDatabase.cobraThrowingBrickAC, _audioDatabase.cobraThrowingBrickCurrentVolume);
+    }
+
+    public AudioSource PlayCobraFlee(GameObject go)
+    {
+        _audioDatabase.cobraFleeCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.cobraFleeVolume);
+        return CreateAudioSource(go, _audioDatabase.cobraFleeAC, _audioDatabase.cobraFleeCurrentVolume);
+    }
+
+    public AudioSource PlayCobraDetection(GameObject go)
+    {
+        _audioDatabase.cobraDetectionCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.cobraDetectionVolume);
+        return CreateAudioSource(go, _audioDatabase.cobraDetectionAC, _audioDatabase.cobraDetectionCurrentVolume);
+    }
+
+    public AudioSource PlayCobraDeath(GameObject go)
+    {
+        _audioDatabase.cobraDeathCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.cobraDeathVolume);
+        return CreateAudioSource(go, _audioDatabase.cobraDeathAC, _audioDatabase.cobraDeathCurrentVolume);
+    }
+
+    public AudioSource PlayMosquitoHum(GameObject go)
+    {
+        _audioDatabase.mosquitoHumCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.mosquitoHumVolume);
+        return CreateAudioSource(go, _audioDatabase.mosquitoHumAC, _audioDatabase.mosquitoHumCurrentVolume, true);
+    }
+
+    public AudioSource PlayMosquitoDeath(GameObject go)
+    {
+        _audioDatabase.mosquitoDeathCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.mosquitoDeathVolume);
+        return CreateAudioSource(go, _audioDatabase.mosquitoDeathAC, _audioDatabase.mosquitoDeathCurrentVolume);
+    }
+
+    public AudioSource PlayCrocodileAttack(GameObject go)
+    {
+        _audioDatabase.crocodileAttackCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.crocodileAttackVolume);
+        return CreateAudioSource(go, _audioDatabase.crocodileAttackAC, _audioDatabase.crocodileAttackCurrentVolume);
+    }
+
+    public AudioSource PlayCrocodileDetection(GameObject go)
+    {
+        _audioDatabase.crocodileDetectionCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.crocodileDetectionVolume);
+        return CreateAudioSource(go, _audioDatabase.crocodileDetectionAC, _audioDatabase.crocodileDetectionCurrentVolume);
+    }
+
+    public AudioSource PlayCrocodileDeath(GameObject go)
+    {
+        _audioDatabase.crocodileDeathCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.crocodileDeathVolume);
+        return CreateAudioSource(go, _audioDatabase.crocodileDeathAC, _audioDatabase.crocodileDeathCurrentVolume);
+    }
+    #endregion
+
+    #region Props Level 2
+    public AudioSource PlayCampfire(GameObject go)
+    {
+        _audioDatabase.campfireCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.campfireVolume);
+        return CreateAudioSource(go, _audioDatabase.campfireAC, _audioDatabase.campfireCurrentVolume, true);
+    }
+
+    public AudioSource PlayFactory(GameObject go)
+    {
+        _audioDatabase.factoryCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.factoryVolume);
+        return CreateAudioSource(go, _audioDatabase.factoryAC, _audioDatabase.factoryCurrentVolume, true);
+    }
+
+    public AudioSource PlayLightedSign(GameObject go)
+    {
+        _audioDatabase.lightedSignCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.lightedSignVolume);
+        return CreateAudioSource(go, _audioDatabase.lightedSignAC, _audioDatabase.lightedSignCurrentVolume, true);
+    }
+
+    public AudioSource PlaySnowplow(GameObject go)
+    {
+        _audioDatabase.snowplowCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.snowplowVolume);
+        return CreateAudioSource(go, _audioDatabase.snowplowAC, _audioDatabase.snowplowCurrentVolume, true);
+    }
+
+
 
     public AudioSource TestDialogue(GameObject go)
     {

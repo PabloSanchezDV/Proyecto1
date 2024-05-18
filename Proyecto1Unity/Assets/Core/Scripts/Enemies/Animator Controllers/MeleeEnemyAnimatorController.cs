@@ -41,4 +41,9 @@ public class MeleeEnemyAnimatorController : EnemyAnimatorController
             _isDead = true;
         }
     }
+
+    protected override void PlayDeathSound()
+    {
+        AudioManager.instance.PlayCrocodileDeath(gameObject);
+    }
 }

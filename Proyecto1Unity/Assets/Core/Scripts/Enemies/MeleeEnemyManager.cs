@@ -56,7 +56,7 @@ public class MeleeEnemyManager : MonoBehaviour
     public void Attack()
     {
         IsMoving = false;
-        if (_enemyMovement != null)
+        if (_animatorController != null)
             _animatorController.Attack();
     }
 

@@ -27,4 +27,9 @@ public class MosquitoAnimatorController : EnemyAnimatorController
         transform.GetChild(0).gameObject.SetActive(setAs);
         collider.enabled = setAs;
     }
+
+    protected override void PlayDeathSound()
+    {
+        AudioManager.instance.PlayMosquitoDeath(gameObject);
+    }
 }

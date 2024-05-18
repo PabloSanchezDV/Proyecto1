@@ -19,6 +19,7 @@ public class ActivableSnowPlow : ActivableObject
     {
         if(!_isActive)
         {
+            AudioManager.instance.PlaySnowplow(gameObject);
             _smoke.SetActive(true);
             _lights.SetActive(true);
             _renderer.material = _material;

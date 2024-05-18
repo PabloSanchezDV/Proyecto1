@@ -32,7 +32,10 @@ public class CharacterManager : MonoBehaviour
 
     private InputActions _inputActions;
     public InputActions InputActions { get { return _inputActions;} }
-       
+
+    private GameObject _dragableObject;
+    public GameObject DragableObject { get { return _dragableObject; } set { _dragableObject = value; } }
+
     private CharacterMovement _characterMovement;
     private CharacterAbilities _characterAbilities;
     private CharacterAnimatorController _characterAnimatorController;
@@ -67,7 +70,9 @@ public class CharacterManager : MonoBehaviour
         
         EventHolder.instance.onUnpause.AddListener(Unpause);
         EventHolder.instance.onHurt.AddListener(ActivateHurt);
+        EventHolder.instance.onHurt.AddListener(PlayHurtSound);
         EventHolder.instance.onDeath.AddListener(ActivateDeath);
+        EventHolder.instance.onDeath.AddListener(PlayDeathSound);
         EventHolder.instance.onRespawn.AddListener(ActivateMovementOnRespawn);
         EventHolder.instance.onRespawn.AddListener(GoToIdleAfterRespawn);
         EventHolder.instance.onStartDialogue.AddListener(StopMovement);
@@ -87,7 +92,9 @@ public class CharacterManager : MonoBehaviour
         {
             EventHolder.instance.onUnpause.AddListener(Unpause);
             EventHolder.instance.onHurt.AddListener(ActivateHurt);
+            EventHolder.instance.onHurt.AddListener(PlayHurtSound);
             EventHolder.instance.onDeath.AddListener(ActivateDeath);
+            EventHolder.instance.onDeath.AddListener(PlayDeathSound);
             EventHolder.instance.onRespawn.AddListener(ActivateMovementOnRespawn);
             EventHolder.instance.onRespawn.AddListener(GoToIdleAfterRespawn);
             EventHolder.instance.onStartDialogue.AddListener(StopMovement);
@@ -104,7 +111,9 @@ public class CharacterManager : MonoBehaviour
         _inputActions.Dialogue.NextDialogue.started -= NextDialogue;
         EventHolder.instance.onUnpause.RemoveListener(Unpause);
         EventHolder.instance.onHurt.RemoveListener(ActivateHurt);
+        EventHolder.instance.onHurt.RemoveListener(PlayHurtSound);
         EventHolder.instance.onDeath.RemoveListener(ActivateDeath);
+        EventHolder.instance.onDeath.RemoveListener(PlayDeathSound);
         EventHolder.instance.onRespawn.RemoveListener(ActivateMovementOnRespawn);
         EventHolder.instance.onRespawn.RemoveListener(GoToIdleAfterRespawn);
         EventHolder.instance.onStartDialogue.RemoveListener(StopMovement);
@@ -298,5 +307,15 @@ public class CharacterManager : MonoBehaviour
     public void DeactivateTalkInput(DialogueTrigger dialogueTrigger)
     {
         _inputActions.Gameplay.Talk.started -= dialogueTrigger.Talk;
+    }
+
+    private void PlayHurtSound()
+    {
+        AudioManager.instance.PlayBufoHurt(gameObject);
+    }
+
+    private void PlayDeathSound()
+    {
+        AudioManager.instance.PlayBufoDeath(gameObject);
     }
 }

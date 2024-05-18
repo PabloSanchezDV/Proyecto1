@@ -38,6 +38,7 @@ public class PressurePlate : MonoBehaviour
 
     public void Interact(bool state)
     {
+
         if (_animator != null)
             _animator.SetTrigger("ChangeState");
 
@@ -45,10 +46,12 @@ public class PressurePlate : MonoBehaviour
         {
             if (!_isConditionComplete)
             {
+                AudioManager.instance.PlayPressurePlateBroken(gameObject);
                 _particleSystemManager.PlayParticleSystem();
             }
             else
             {
+                AudioManager.instance.PlayPressurePlate(gameObject);
                 ActivateObjects();
             }
         }

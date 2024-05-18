@@ -8,6 +8,7 @@ public class Banana : CollectibleBase
 
     public override void Collect()
     {
+        AudioManager.instance.PlayBanana(GameManager.instance.MainCamera);
         GameManager.instance.LastBananaID = id;
         EventHolder.instance.onBananaColleted?.Invoke();
     }

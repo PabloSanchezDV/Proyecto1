@@ -8,6 +8,7 @@ public class DELETE : MonoBehaviour
     private bool slowTime = false;
     [SerializeField] Animator animator;
     [SerializeField] int currentScene;
+    [SerializeField] GameObject mainCamera;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class DELETE : MonoBehaviour
             SceneManager.LoadScene(currentScene);
         }
 
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             if (slowTime)
             {

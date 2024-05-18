@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAnimatorController : MonoBehaviour
+public abstract class EnemyAnimatorController : MonoBehaviour
 {
     protected Animator _animator;
 
@@ -18,7 +18,10 @@ public class EnemyAnimatorController : MonoBehaviour
 
     public void Death()
     {
+        PlayDeathSound();
         _animator.SetTrigger("Death");
         _animator.ResetTrigger("Stun");
     }
+
+    protected abstract void PlayDeathSound();
 }

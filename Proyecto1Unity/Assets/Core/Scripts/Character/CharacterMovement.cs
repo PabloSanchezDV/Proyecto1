@@ -46,6 +46,7 @@ public class CharacterMovement : MonoBehaviour
     [NonSerialized] public CharacterManager characterManager;
 
     private Transform _renderPlane;
+    private AudioSource _draggingAS;
 
     private void Awake()
     {
@@ -189,6 +190,27 @@ public class CharacterMovement : MonoBehaviour
             trail.GetComponent<ReturnTrailToPooling>().ReturnToPoolOnEnd();
             _trailCounter = 0;
         }
+
+        //Play dragging sound
+        if(characterManager.IsDragging)
+        {
+            if(_move.ReadValue<Vector2>().magnitude > 0f)
+            {
+                if(_draggingAS == null)
+                {
+                    _draggingAS = AudioManager.instance.PlayBoxShift(characterManager.DragableObject);
+                }
+            }
+            else
+            {
+                AudioManager.instance.StopAudioSource(_draggingAS);
+            }
+        }
+        else
+        {
+            if (_draggingAS != null)
+                AudioManager.instance.StopAudioSource(_draggingAS);
+        }
     }
 
     private void LateUpdate()
@@ -254,12 +276,14 @@ public class CharacterMovement : MonoBehaviour
 
     private void DoJump()
     {
+        AudioManager.instance.PlayBufoJump(gameObject);
         _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
         _forceDirection += Vector3.up * _jumpForce;
     }
 
     public void JumpOnHomingAttack()
     {
+        AudioManager.instance.PlayBufoJump(gameObject);
         _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
         _forceDirection += Vector3.up * _jumpForce;
         _canDoubleJump = true;
@@ -343,6 +367,7 @@ public class CharacterMovement : MonoBehaviour
     private void EndFall()
     {
         _isFalling = false;
+        AudioManager.instance.PlayBufoLanding(gameObject);
         characterManager.EndFalling();
     }
 
