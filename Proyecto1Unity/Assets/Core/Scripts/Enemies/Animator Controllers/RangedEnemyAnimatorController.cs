@@ -46,4 +46,9 @@ public class RangedEnemyAnimatorController : EnemyAnimatorController
             _isDead = true;
         }
     }
+
+    protected override void PlayDeathSound()
+    {
+        AudioManager.instance.PlayCobraDeath(gameObject);
+    }
 }

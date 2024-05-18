@@ -15,6 +15,7 @@ public class TongueTip : MonoBehaviour
         //Collision against homing attackable elements
         if (other.CompareTag("HomingAttackable"))
         {
+            AudioManager.instance.PlayBufoTongueImp(gameObject);
             EnemyAnimatorController controller = other.GetComponent<EnemyAnimatorController>();
             _particleSystemManager.PlayParticleSystem();
             controller.Stun();
@@ -22,11 +23,13 @@ public class TongueTip : MonoBehaviour
         //Collision against dragable object
         if (other.CompareTag("Dragable"))
         {
+            AudioManager.instance.PlayBufoTongueImp(gameObject);
             _particleSystemManager.PlayParticleSystem();
         }
         //Collision against interactable elements
         if (other.GetComponent<IInteractable>() != null)
         {
+            AudioManager.instance.PlayBufoTongueImp(gameObject);
             other.GetComponent<IInteractable>().Interact();
         }
         // Collision against any other physical object

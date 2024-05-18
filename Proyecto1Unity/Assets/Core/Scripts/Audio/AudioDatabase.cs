@@ -20,13 +20,9 @@ public class AudioDatabase : ScriptableObject
          [Range(0, 1)] public float bufoTongueImpVolume;
          [NonSerialized] public float bufoTongueImpCurrentVolume;
 
-        public AudioClip bufoFlutterRightAC;
-         [Range(0, 1)] public float bufoFlutterRightVolume;
-         [NonSerialized] public float bufoFlutterRightCurrentVolume;
-
-        public AudioClip bufoFlutterLeftAC;
-         [Range(0, 1)] public float bufoFlutterLeftVolume;
-         [NonSerialized] public float bufoFlutterLeftCurrentVolume;
+        public AudioClip bufoFlutterAC;
+         [Range(0, 1)] public float bufoFlutterVolume;
+         [NonSerialized] public float bufoFlutterCurrentVolume;
 
         public AudioClip bufoShiftAirAC;
          [Range(0, 1)] public float bufoShiftAirVolume;
@@ -52,9 +48,21 @@ public class AudioDatabase : ScriptableObject
          [Range(0, 1)] public float bufoBiteVolume;
          [NonSerialized] public float bufoBiteCurrentVolume;
 
-        public AudioClip bufoHurtAC;
-         [Range(0, 1)] public float bufoHurtVolume;
-         [NonSerialized] public float bufoHurtCurrentVolume;
+        public AudioClip bufoHurt1AC;
+         [Range(0, 1)] public float bufoHurt1Volume;
+         [NonSerialized] public float bufoHurt1CurrentVolume;
+
+        public AudioClip bufoHurt2AC;
+         [Range(0, 1)] public float bufoHurt2Volume;
+         [NonSerialized] public float bufoHurt2CurrentVolume;
+
+        public AudioClip bufoHurt3AC;
+         [Range(0, 1)] public float bufoHurt3Volume;
+         [NonSerialized] public float bufoHurt3CurrentVolume;
+
+        public AudioClip bufoHurt4AC;
+         [Range(0, 1)] public float bufoHurt4Volume;
+         [NonSerialized] public float bufoHurt4CurrentVolume;
 
     [Header("Interactive Elements AudioClips")]
 
@@ -78,11 +86,27 @@ public class AudioDatabase : ScriptableObject
          [Range(0, 1)] public float collectableVolume;
          [NonSerialized] public float collectableCurrentVolume;
 
-        public AudioClip timeTrialAC;
-         [Range(0, 1)] public float timeTrialVolume;
-         [NonSerialized] public float timeTrialCurrentVolume;
+        public AudioClip bananaAC;
+         [Range(0, 1)] public float bananaVolume;
+         [NonSerialized] public float bananaCurrentVolume;
 
-        [Header("Cobra AudioClips")]
+        public AudioClip buttonAC;
+         [Range(0, 1)] public float buttonVolume;
+         [NonSerialized] public float buttonCurrentVolume;
+
+        public AudioClip timeTrialNormalAC;
+         [Range(0, 1)] public float timeTrialNormalVolume;
+         [NonSerialized] public float timeTrialNormalCurrentVolume;
+
+        public AudioClip timeTrialUrgentAC;
+         [Range(0, 1)] public float timeTrialUrgentVolume;
+         [NonSerialized] public float timeTrialUrgentCurrentVolume;
+
+        public AudioClip timeTrialEndAC;
+         [Range(0, 1)] public float timeTrialEndVolume;
+         [NonSerialized] public float timeTrialEndCurrentVolume;
+
+    [Header("Cobra AudioClips")]
 
              public AudioClip cobraThrowingBrickAC;
               [Range(0, 1)] public float cobraThrowingBrickVolume;

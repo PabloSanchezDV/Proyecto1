@@ -38,6 +38,7 @@ public class RangedEnemyAI : MonoBehaviour
             if (!_inAttackingRange)
             {
                 _inAttackingRange = true;
+                AudioManager.instance.PlayCobraDetection(gameObject);
                 enemyManager.Detect();
             }
         }
@@ -54,6 +55,7 @@ public class RangedEnemyAI : MonoBehaviour
         {
             if (!_inFleeingRange)
             {
+                AudioManager.instance.PlayCobraFlee(gameObject);
                 _inFleeingRange = true;
                 enemyManager.Flee();
             }
@@ -82,6 +84,7 @@ public class RangedEnemyAI : MonoBehaviour
 
     public void ShootProjectile()
     {
+        AudioManager.instance.PlayCobraThrowingBrick(gameObject);
         GameObject newProjectile = ProjectilePooling.instance.GetProjectile();
         newProjectile.SetActive(true);
         newProjectile.transform.position = _shootingPoint.position;

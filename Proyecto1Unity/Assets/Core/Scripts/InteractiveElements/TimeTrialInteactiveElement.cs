@@ -20,6 +20,7 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
         if (_isActive)
             return;
 
+        AudioManager.instance.PlayButton(gameObject);
         _isActive = true;
         if(_animator != null)
             _animator.SetTrigger("ChangeState");

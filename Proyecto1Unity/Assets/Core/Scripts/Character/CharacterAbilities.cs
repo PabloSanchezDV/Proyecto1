@@ -30,6 +30,7 @@ public class CharacterAbilities : MonoBehaviour
     private Rigidbody _rb;
 
     private float _raycastTongueCheckerDistance;
+    private AudioSource _flutterAS;
 
     [NonSerialized] public CharacterManager characterManager;
 
@@ -123,6 +124,7 @@ public class CharacterAbilities : MonoBehaviour
         dragableObject.transform.SetParent(_tongueTip, true);
         _tongueTip.GetComponent<Collider>().enabled = false;
         characterManager.IsDragging = true;
+        characterManager.DragableObject = dragableObject;
         characterManager.DisableJumpOnStartDragging();
         characterManager.InputActions.Gameplay.ThrowTongue.started += DettachDragableObjectIA;
     }
@@ -137,6 +139,7 @@ public class CharacterAbilities : MonoBehaviour
         characterManager.InputActions.Gameplay.ThrowTongue.started -= DettachDragableObjectIA;
 
         dragableObject.transform.parent = null;
+        characterManager.DragableObject = null;
         characterManager.EnableJumpOnEndDragging();
         characterManager.CanMove = false;
         _rb.isKinematic = true;
@@ -173,6 +176,8 @@ public class CharacterAbilities : MonoBehaviour
         TongueCollision tongueCollision = CheckTongueCollision();
 
         characterManager.StartThrowTongue();
+        AudioManager.instance.PlayBufoTongue(gameObject);
+        _flutterAS = AudioManager.instance.PlayBufoFlutter(gameObject);
 
         switch (tongueCollision.Type)
         {
@@ -188,6 +193,7 @@ public class CharacterAbilities : MonoBehaviour
                     yield return null;
                 }
 
+                AudioManager.instance.StopAudioSource(_flutterAS);
                 StartCoroutine(HomingAttack(tongueCollision.Target.transform.position));
                 break;
             case (TongueCollisionType.Dragable):
@@ -239,6 +245,7 @@ public class CharacterAbilities : MonoBehaviour
             yield return null;
         }
 
+        AudioManager.instance.StopAudioSource(_flutterAS);
         characterManager.EndThrowTongue();
 
         _tongueTipScript.HasCollided = false;
@@ -253,6 +260,7 @@ public class CharacterAbilities : MonoBehaviour
 
     IEnumerator HomingAttack(Vector3 target)
     {
+        AudioManager.instance.PlayBufoShiftAir(gameObject);
         _tongueTip.GetComponent<SphereCollider>().enabled = false;
         Vector3 direction;
         characterManager.StartHomingAttack();

@@ -15,7 +15,10 @@ public class LeverInteractiveElement : MonoBehaviour, IInteractable
     public void Interact()
     {
         if (_animator != null)
+        {
+            AudioManager.instance.PlayLever(gameObject);
             _animator.SetTrigger("ChangeState");
+        }
 
         EnableDisableGameObjects();
     }

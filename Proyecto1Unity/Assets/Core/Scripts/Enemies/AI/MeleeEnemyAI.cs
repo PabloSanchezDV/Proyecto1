@@ -33,6 +33,7 @@ public class MeleeEnemyAI : MonoBehaviour
         {
             if (!_inDetectionRange)
             {
+                AudioManager.instance.PlayCrocodileDetection(gameObject);
                 _inDetectionRange = true;
                 enemyManager.Detect();
             }
@@ -40,6 +41,7 @@ public class MeleeEnemyAI : MonoBehaviour
             {
                 if(!_isAttacking)
                 {
+                    AudioManager.instance.PlayCrocodileAttack(gameObject);
                     enemyManager.Attack();
                     _isAttacking = true;
                 }

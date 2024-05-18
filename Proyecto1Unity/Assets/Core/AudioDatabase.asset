@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a797720ebb0236469cc179ab28fa726, type: 3}
+  m_Name: AudioDatabase
+  m_EditorClassIdentifier: 
+  bufoTongueAC: {fileID: 8300000, guid: 458975423b3a79d45834a98ae85882f3, type: 3}
+  bufoTongueVolume: 1
+  bufoJumpAC: {fileID: 8300000, guid: a6fa7161034f0a74baec24eea1f0cf06, type: 3}
+  bufoJumpVolume: 1
+  bufoTongueImpAC: {fileID: 8300000, guid: f8d64d52f544d3945b07e77b64a312b4, type: 3}
+  bufoTongueImpVolume: 1
+  bufoFlutterAC: {fileID: 8300000, guid: 0dd0741abc945ac4886057b69d97b647, type: 3}
+  bufoFlutterVolume: 1
+  bufoShiftAirAC: {fileID: 8300000, guid: 64cad855c31de4343954f31a9cde5e61, type: 3}
+  bufoShiftAirVolume: 1
+  bufoStepsRightAC: {fileID: 8300000, guid: cf650fc499b21e14487d2b8d8a17e3e8, type: 3}
+  bufoStepsRightVolume: 1
+  bufoStepsLeftAC: {fileID: 8300000, guid: defc2f9f40edc394787b0baf048c8ee4, type: 3}
+  bufoStepsLeftVolume: 1
+  bufoLandingAC: {fileID: 8300000, guid: 4489f035910478e47b1c110b6f7f7aa1, type: 3}
+  bufoLandingVolume: 1
+  bufoDeathAC: {fileID: 8300000, guid: 46a75bf847529714297b4f7b56d04b86, type: 3}
+  bufoDeathVolume: 1
+  bufoBiteAC: {fileID: 8300000, guid: 2da5d3e6d8e095044aa1640108cdb9d0, type: 3}
+  bufoBiteVolume: 1
+  bufoHurt1AC: {fileID: 8300000, guid: 539c5c0fa28c23243bc7af8e6eb3edfd, type: 3}
+  bufoHurt1Volume: 1
+  bufoHurt2AC: {fileID: 8300000, guid: baa1999e9eb9b7d458401b7278fb21c8, type: 3}
+  bufoHurt2Volume: 1
+  bufoHurt3AC: {fileID: 8300000, guid: cb0a55e6f559f0d49928e95e1b662fd9, type: 3}
+  bufoHurt3Volume: 1
+  bufoHurt4AC: {fileID: 8300000, guid: db9d2778111485a499824cfa7e3b708a, type: 3}
+  bufoHurt4Volume: 1
+  pressurePlateAC: {fileID: 8300000, guid: 695a53faa57460b4585986bbc039d3de, type: 3}
+  pressurePlateVolume: 1
+  pressurePlateBrokenAC: {fileID: 8300000, guid: 0af2a6bd50b4231408c1a891ea1fb6b1, type: 3}
+  pressurePlateBrokenVolume: 1
+  leverAC: {fileID: 8300000, guid: 7103dc46073270549a8478e89bf45b68, type: 3}
+  leverVolume: 1
+  boxShiftAC: {fileID: 8300000, guid: c3ab09702d24d1447b509a8d2b23d2b4, type: 3}
+  boxShiftVolume: 1
+  collectableAC: {fileID: 8300000, guid: 2594263aec663c84a97914eed46e1fba, type: 3}
+  collectableVolume: 1
+  bananaAC: {fileID: 8300000, guid: 2594263aec663c84a97914eed46e1fba, type: 3}
+  bananaVolume: 1
+  buttonAC: {fileID: 8300000, guid: 7103dc46073270549a8478e89bf45b68, type: 3}
+  buttonVolume: 1
+  timeTrialNormalAC: {fileID: 0}
+  timeTrialNormalVolume: 0
+  timeTrialUrgentAC: {fileID: 0}
+  timeTrialUrgentVolume: 0
+  timeTrialEndAC: {fileID: 0}
+  timeTrialEndVolume: 0
+  cobraThrowingBrickAC: {fileID: 8300000, guid: 492210157dbfa5c4a922de4ac9ee8a90, type: 3}
+  cobraThrowingBrickVolume: 1
+  cobraFleeAC: {fileID: 8300000, guid: 8c6d58bea605eb74db3f4cbcbe8c8e4c, type: 3}
+  cobraFleeVolume: 1
+  cobraDetectionAC: {fileID: 8300000, guid: 127418b6238dd0b4bb27c306e932b042, type: 3}
+  cobraDetectionVolume: 1
+  cobraDeathAC: {fileID: 8300000, guid: 743720cdcff4ee846b75f25e71b3f579, type: 3}
+  cobraDeathVolume: 1
+  mosquitoHumAC: {fileID: 0}
+  mosquitoHumVolume: 0
+  mosquitoDeathAC: {fileID: 8300000, guid: 652061b21481b414a8ca82168e903c31, type: 3}
+  mosquitoDeathVolume: 0
+  crocodileAttackAC: {fileID: 8300000, guid: 73e19bf0c4fab8e40bee345ea978c3ec, type: 3}
+  crocodileAttackVolume: 1
+  crocodileDetectionAC: {fileID: 8300000, guid: f80f587755ec8474cbc8f5e7d25e7b2c, type: 3}
+  crocodileDetectionVolume: 1
+  crocodileDeathAC: {fileID: 8300000, guid: d9eb597d24eaa71419d862a3907a8e5e, type: 3}
+  crocodileDeathVolume: 1
+  campfireAC: {fileID: 8300000, guid: fb684bbeaf7ac764d8eb511e35c78209, type: 3}
+  campfireVolume: 0.03
+  factoryAC: {fileID: 8300000, guid: 9a531ced16c1f6944891d259a86cbd5b, type: 3}
+  factoryVolume: 1
+  lightedSignAC: {fileID: 8300000, guid: 58f7a187477d6a74e90f730048670c6b, type: 3}
+  lightedSignVolume: 1
+  snowplowAC: {fileID: 8300000, guid: 0d62891a115500d4193433a62692dad7, type: 3}
+  snowplowVolume: 1
+  testDialogueAC: {fileID: 0}
+  testDialogueVolume: 0
+  testMusicAC: {fileID: 0}
+  testMusicVolume: 0

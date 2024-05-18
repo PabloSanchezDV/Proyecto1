@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     public Vector3 LastRespawnPosition { get {  return _lastRespawnPosition; } set { _lastRespawnPosition = value; } }
 
     private GameObject _player;
-    public GameObject Player;
+    public GameObject Player { get { return _player; } set { _player = value; } }
 
     private Cinematic _nextCinematic;
 
@@ -55,6 +55,9 @@ public class GameManager : MonoBehaviour
 
     private int _levelID;
     public int LevelID { get { return _levelID;} }
+
+    [SerializeField] private GameObject _mainCamera;
+    public GameObject MainCamera { get { return _mainCamera; } }
 
     private void Awake()
     {

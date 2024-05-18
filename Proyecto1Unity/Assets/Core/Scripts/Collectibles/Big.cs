@@ -8,6 +8,7 @@ public class Big : CollectibleBase
 
     public override void Collect()
     {
+        AudioManager.instance.PlayCollectable(GameManager.instance.MainCamera);
         GameManager.instance.LastCollectibleID = id;
         EventHolder.instance.onBigCollectibleCollected?.Invoke();
     }

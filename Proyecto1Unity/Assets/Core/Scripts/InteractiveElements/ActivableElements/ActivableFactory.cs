@@ -11,6 +11,7 @@ public class ActivableFactory : ActivableObject
     {
         if (!_isActive)
         {
+            AudioManager.instance.PlayFactory(gameObject);
             _smoke.SetActive(true);
         }
     }

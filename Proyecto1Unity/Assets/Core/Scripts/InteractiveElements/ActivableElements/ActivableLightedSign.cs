@@ -16,7 +16,10 @@ public class ActivableLightedSign : ActivableObject
     public override void Activate()
     {
         if (!_isActive)
+        {
+            AudioManager.instance.PlayLightedSign(gameObject);
             Debug.Log("Activating lighted screen");
             //_screen.SetActive(true);
+        }
     }
 }
