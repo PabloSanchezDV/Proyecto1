@@ -132,11 +132,12 @@ MonoBehaviour:
   _characterText: {fileID: 6442999955293491250}
   _dialogueText: {fileID: 8980884242949477830}
   _quitPopUp: {fileID: 6534670875935010760}
-  _HUDAnimator: {fileID: 4951641303173308251}
+  _healthHUDAnimator: {fileID: 406949853004921430}
+  _bananasHUDAnimator: {fileID: 7759277406886782157}
+  _collectiblesHUDAnimator: {fileID: 4884238542146827151}
   _healthImage: {fileID: 8846232354194947409}
   _bananasText: {fileID: 4972311720901503765}
   _collectiblesText: {fileID: 6377533535700210587}
-  _maxCollectibles: 0
   _maxHealthColor: {r: 0.08000002, g: 0.8, b: 0.7459212, a: 1}
   _2hitsColor: {r: 0.59025, g: 0.8, b: 0.07843137, a: 1}
   _1hitColor: {r: 0.8, g: 0.17977536, b: 0.07843137, a: 1}
@@ -2133,7 +2134,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1329198366503350627}
   - component: {fileID: 5369616991341712760}
-  - component: {fileID: 4951641303173308251}
   m_Layer: 5
   m_Name: HUDCompletePanel
   m_TagString: Untagged
@@ -2171,27 +2171,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918230986465123199}
   m_CullTransparentMesh: 1
---- !u!95 &4951641303173308251
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918230986465123199}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 358ba045bbc74d947a38361c9472a4bc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &919976453816347550
 GameObject:
   m_ObjectHideFlags: 0
@@ -6983,6 +6962,7 @@ GameObject:
   - component: {fileID: 856742096021172869}
   - component: {fileID: 3881034906459575759}
   - component: {fileID: 5012230739991524451}
+  - component: {fileID: 406949853004921430}
   m_Layer: 5
   m_Name: HealthBackgroundImage
   m_TagString: Untagged
@@ -7049,6 +7029,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &406949853004921430
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3248823905106955311}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47134a8a36dd7894fa8d7c448312cf2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3291254622395908930
 GameObject:
   m_ObjectHideFlags: 0
@@ -11948,6 +11949,7 @@ GameObject:
   - component: {fileID: 8785126468918465809}
   - component: {fileID: 7348953618527644942}
   - component: {fileID: 1021215168441660865}
+  - component: {fileID: 4884238542146827151}
   m_Layer: 5
   m_Name: BigCollectiblePanel
   m_TagString: Untagged
@@ -12014,6 +12016,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &4884238542146827151
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6448414446862726148}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c08fe11c36864b348b5f9f33a5baa296, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6514228027532665156
 GameObject:
   m_ObjectHideFlags: 0
@@ -12312,6 +12335,7 @@ GameObject:
   - component: {fileID: 4345724921437445140}
   - component: {fileID: 8029445027150067492}
   - component: {fileID: 2210001854421485767}
+  - component: {fileID: 7759277406886782157}
   m_Layer: 5
   m_Name: BananaPanel
   m_TagString: Untagged
@@ -12378,6 +12402,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &7759277406886782157
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6540776189397778130}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d5703cf2375dd8241a54f6d31aafd182, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6551244309142744615
 GameObject:
   m_ObjectHideFlags: 0
