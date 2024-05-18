@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 650050655982801904}
   - component: {fileID: 1965453335899050158}
   - component: {fileID: 3178943919094650641}
+  - component: {fileID: 7086425619661150954}
   m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -143,10 +144,10 @@ MonoBehaviour:
   volumeTrigger: {fileID: 4045386993133902113}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 1
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -155,8 +156,8 @@ MonoBehaviour:
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
+    fastMode: 1
+    keepAlpha: 1
   fog:
     enabled: 1
     excludeSkybox: 1
@@ -188,3 +189,20 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &7086425619661150954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3986076129984529359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: 569f771852b0d9e4e8bf2c0e4382e40c, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
