@@ -20,7 +20,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _quitPopUp;
 
     [Header("HUD")]
-    [SerializeField] private Animator _HUDAnimator;
+    [SerializeField] private Animator _healthHUDAnimator;
+    [SerializeField] private Animator _bananasHUDAnimator;
+    [SerializeField] private Animator _collectiblesHUDAnimator;
+
     [SerializeField] private Image _healthImage;
     [SerializeField] private TextMeshProUGUI _bananasText;
     [SerializeField] private TextMeshProUGUI _collectiblesText;
@@ -151,31 +154,50 @@ public class UIManager : MonoBehaviour
 
     public void ShowCompleteHUD()
     {
-        _HUDAnimator.SetTrigger("ShowComplete");
+        _healthHUDAnimator.SetTrigger("Show");
+        _bananasHUDAnimator.SetTrigger("Show");
+        _collectiblesHUDAnimator.SetTrigger("Show");
         Invoke("HideHUD", _hideHUDTime);
     }
 
     public void HideHUD()
     {
-        _HUDAnimator.SetTrigger("Hide");
+        _healthHUDAnimator.SetTrigger("Hide");
+        _bananasHUDAnimator.SetTrigger("Hide");
+        _collectiblesHUDAnimator.SetTrigger("Hide");
     }
 
     public void ShowHealthHUD()
     {
-        _HUDAnimator.SetTrigger("ShowHealth");
-        Invoke("HideHUD", _hideHUDTime);
+        _healthHUDAnimator.SetTrigger("Show");
+        Invoke("HideHealthHUD", _hideHUDTime);
+    }
+
+    public void HideHealthHUD()
+    {
+        _healthHUDAnimator.SetTrigger("Hide");
     }
 
     public void ShowCollectiblesHUD()
     {
-        _HUDAnimator.SetTrigger("ShowCollectibles");
-        Invoke("HideHUD", _hideHUDTime);
+        _collectiblesHUDAnimator.SetTrigger("Show");
+        Invoke("HideCollectiblesHUD", _hideHUDTime);
+    }
+
+    public void HideCollectiblesHUD()
+    {
+        _collectiblesHUDAnimator.SetTrigger("Hide");
     }
 
     public void ShowBananasHUD()
     {
-        _HUDAnimator.SetTrigger("ShowBananas");
-        Invoke("HideHUD", _hideHUDTime);
+        _bananasHUDAnimator.SetTrigger("Show");
+        Invoke("HideBananasHUD", _hideHUDTime);
+    }
+
+    public void HideBananasHUD()
+    {
+        _bananasHUDAnimator.SetTrigger("Hide");
     }
 
     public void ShowPausePanel()
