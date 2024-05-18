@@ -17,11 +17,15 @@ public class DialogueTrigger : MonoBehaviour
     protected Animator _animator;
 
     protected CharacterManager player;
+    protected float _cameraRefOriginalYPosition;
+    protected Transform _visualPlane;
 
     private void Start()
     {
         _cameraRef = transform.GetChild(0);
+        _visualPlane = transform.GetChild(2);
         _animator = GetComponent<Animator>();
+        _cameraRefOriginalYPosition = _cameraRef.localPosition.y;
     }
 
     protected void StartDialogue()
@@ -71,13 +75,30 @@ public class DialogueTrigger : MonoBehaviour
     protected virtual void Talk()
     {
         EventHolder.instance.onStartDialogue?.Invoke();
+        LookAtPlayer();
         _cameraRef.transform.localPosition = (player.transform.position - transform.position) / 2;
         _cameraRef.transform.localPosition = new Vector3(_cameraRef.transform.localPosition.x,
-                                                           -0.5f,
+                                                           _cameraRefOriginalYPosition,
                                                             _cameraRef.transform.localPosition.z);
         CameraSwitcher.instance.SwitchCamera(_virtualCamera, _cameraRef);
         StartDialogue();
         if (_overwriteAtEnd)
             OverwriteAtEnd();
+    }
+
+    protected void LookAtPlayer()
+    {
+        if ((player.transform.position - transform.position).x >= 0)
+        {
+            _visualPlane.transform.localScale = new Vector3(Mathf.Abs(_visualPlane.transform.localScale.x),
+                                               _visualPlane.transform.localScale.y,
+                                               _visualPlane.transform.localScale.z);
+        }
+        else
+        {
+            _visualPlane.transform.localScale = new Vector3(-Mathf.Abs(_visualPlane.transform.localScale.x),
+                                               _visualPlane.transform.localScale.y,
+                                               _visualPlane.transform.localScale.z);
+        }
     }
 }
