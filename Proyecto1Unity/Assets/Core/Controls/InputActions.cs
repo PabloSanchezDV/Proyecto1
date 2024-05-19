@@ -103,8 +103,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""79ce219a-f2c5-402f-9f21-7fef9d64df0a"",
-                    ""path"": ""<Mouse>/delta"",
+                    ""id"": ""da651385-e4b3-4741-ad96-a0c01bfee9ea"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -114,8 +114,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""da651385-e4b3-4741-ad96-a0c01bfee9ea"",
-                    ""path"": ""<Gamepad>/rightStick"",
+                    ""id"": ""2da50f25-d7b3-4bcf-b19f-d693fbc4a63f"",
+                    ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

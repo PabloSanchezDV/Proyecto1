@@ -8,8 +8,8 @@ using UnityEngine.InputSystem;
 public class CharacterManager : MonoBehaviour
 {
     #region Variables
-    [SerializeField] private CinemachineInputProvider _inputProvider;
-    public CinemachineInputProvider InputProvider { get { return _inputProvider; } }
+    [SerializeField] private CameraInputProvider _inputProvider;
+    public CameraInputProvider InputProvider { get { return _inputProvider; } }
 
     private bool _canMove = true;
     public bool CanMove { get { return _canMove; } set { _canMove = value; } }
