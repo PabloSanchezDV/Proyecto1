@@ -23,7 +23,7 @@ public class CharacterAbilities : MonoBehaviour
     [SerializeField] private LayerMask _tongueInteractiveLayerMask;
     [SerializeField] private LayerMask _tongueDragableLayerMask;
 
-    private CinemachineInputProvider _provider;
+    private CameraInputProvider _provider;
     private Transform _tongueReference;
     private Transform _tongueTipReference;
     private TongueTip _tongueTipScript;
