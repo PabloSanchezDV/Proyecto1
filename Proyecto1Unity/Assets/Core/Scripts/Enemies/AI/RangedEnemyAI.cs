@@ -8,7 +8,6 @@ public class RangedEnemyAI : MonoBehaviour
     [HideInInspector]
     public RangedEnemyManager enemyManager;
 
-    [SerializeField] private GameObject _projectile;
     [SerializeField] private float _detectionRange;
     [SerializeField] private float _distanceCheckTime;
     [SerializeField] private float _fleeRange;
