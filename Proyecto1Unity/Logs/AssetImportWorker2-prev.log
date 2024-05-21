@@ -1,0 +1,573 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.17f1 (4fc78088f837) revision 5228416'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'es' Physical Memory: 16335 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.17f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+D:/MAIN PROYECTO/Proyecto1/Proyecto1Unity/Proyecto1Unity/Proyecto1Unity
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+52852
+Successfully changed project path to: D:/MAIN PROYECTO/Proyecto1/Proyecto1Unity/Proyecto1Unity/Proyecto1Unity
+D:/MAIN PROYECTO/Proyecto1/Proyecto1Unity/Proyecto1Unity/Proyecto1Unity
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [16404] Host "[IP] 192.168.1.33 [Port] 0 [Flags] 2 [Guid] 1234344305 [EditorId] 1234344305 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-N0P0HHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [16404] Host "[IP] 192.168.1.33 [Port] 0 [Flags] 2 [Guid] 1234344305 [EditorId] 1234344305 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-N0P0HHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
+Refreshing native plugins compatible for Editor in 10.22 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.17f1 (4fc78088f837)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/MAIN PROYECTO/Proyecto1/Proyecto1Unity/Proyecto1Unity/Proyecto1Unity/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Radeon RX 590 Series (ID=0x67df)
+    Vendor:   ATI
+    VRAM:     8135 MB
+    Driver:   31.0.21912.14
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56504
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.17f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.027987 seconds.
+- Loaded All Assemblies, in  0.603 seconds
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 455 ms
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.945 seconds
+Domain Reload Profiling: 1542ms
+	BeginReloadAssembly (186ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (53ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (123ms)
+	LoadAllAssembliesAndSetupDomain (218ms)
+		LoadAssemblies (178ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (215ms)
+			TypeCache.Refresh (213ms)
+				TypeCache.ScanAssembly (194ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (946ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (865ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (628ms)
+			SetLoadedEditorAssemblies (4ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (160ms)
+			ProcessInitializeOnLoadMethodAttributes (70ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.145 seconds
+Refreshing native plugins compatible for Editor in 3.66 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.259 seconds
+Domain Reload Profiling: 2396ms
+	BeginReloadAssembly (232ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (56ms)
+	RebuildNativeTypeToScriptingClass (24ms)
+	initialDomainReloadingComplete (80ms)
+	LoadAllAssembliesAndSetupDomain (744ms)
+		LoadAssemblies (507ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (375ms)
+			TypeCache.Refresh (310ms)
+				TypeCache.ScanAssembly (282ms)
+			ScanForSourceGeneratedMonoScriptInfo (51ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1260ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (906ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (84ms)
+			SetLoadedEditorAssemblies (8ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (138ms)
+			ProcessInitializeOnLoadAttributes (565ms)
+			ProcessInitializeOnLoadMethodAttributes (88ms)
+			AfterProcessingInitializeOnLoad (22ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Shader Hidden/ProbeVolume/VoxelizeScene is not supported: GPU does not support conservative rasterization
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 2.98 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 80 unused Assets / (2.2 MB). Loaded Objects now: 5848.
+Memory consumption went from 207.4 MB to 205.3 MB.
+Total: 6.021800 ms (FindLiveObjects: 0.516900 ms CreateObjectMapping: 0.168800 ms MarkObjects: 4.551500 ms  DeleteObjects: 0.783100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 6d391050e5a25f67b0a2c618074f2cd9 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 66528.835186 seconds.
+  path: Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/T3_Terreno_Lvl1_T.fbx
+  artifactKey: Guid(5c6ed6ebbdd19df479f4ac6ad005edf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/T3_Terreno_Lvl1_T.fbx using Guid(5c6ed6ebbdd19df479f4ac6ad005edf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e51d365daafc0a4808e46cec129aa99b') in 0.160937 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/T4_Terreno_Lvl1_T.fbx
+  artifactKey: Guid(833bfb7a16284da47977d4fff527688a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/T4_Terreno_Lvl1_T.fbx using Guid(833bfb7a16284da47977d4fff527688a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6d101ef4ff0a9a28b43f96d74847fba') in 0.027122 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/T5_Terreno_Lvl1_T.fbx
+  artifactKey: Guid(845a9e0fd796b7d44840639637193b0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/T5_Terreno_Lvl1_T.fbx using Guid(845a9e0fd796b7d44840639637193b0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f54cfe2aebb6c853769218ecb123064') in 0.022166 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/T6_Terreno_Lvl1_T.fbx
+  artifactKey: Guid(0d4945ed48528a342bd2d4995934b5cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/T6_Terreno_Lvl1_T.fbx using Guid(0d4945ed48528a342bd2d4995934b5cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85455afe242c058aa75ff2cbc94d7d84') in 0.024600 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/P5_Terreno_Lvl1_T.fbx
+  artifactKey: Guid(fe062ba61b192b84a8804b93f139011e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/P5_Terreno_Lvl1_T.fbx using Guid(fe062ba61b192b84a8804b93f139011e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b3b36524174f4ae705e4b783c381a5c') in 0.021547 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/E5_Terreno_Lvl1_T.fbx
+  artifactKey: Guid(5c916bf6da7c214458ed2caecf111d33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 1/Platforms and terrains/E5_Terreno_Lvl1_T.fbx using Guid(5c916bf6da7c214458ed2caecf111d33) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '093f240a030de227d9da843188f86ef9') in 0.022967 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 9
+========================================================================
+Received Import Request.
+  Time since last request: 12.801133 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/LEGACY
+  artifactKey: Guid(17b8591a144ccc84f9ca331468da389a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/LEGACY using Guid(17b8591a144ccc84f9ca331468da389a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39125fe327d311f61350070fb32403ca') in 0.000880 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.342582 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs
+  artifactKey: Guid(13132f9dc39e1de4dba7fc514e41a38a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs using Guid(13132f9dc39e1de4dba7fc514e41a38a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '382e3b8b11b6e5bf938038febebda5eb') in 0.000443 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.037571 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/Señal Circulo_elementosDecorativos_T.fbx
+  artifactKey: Guid(47ff4b4fd6bb63f4ca3bbf42e7985ccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/Señal Circulo_elementosDecorativos_T.fbx using Guid(47ff4b4fd6bb63f4ca3bbf42e7985ccc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de743a008a7426081d90eae87440e3f3') in 0.019432 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 42.759099 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalBarranco_elementosDecorativos_T.fbx
+  artifactKey: Guid(009e997470d9bf74db3830cae8cadccb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalBarranco_elementosDecorativos_T.fbx using Guid(009e997470d9bf74db3830cae8cadccb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef63570e88d3fcdc220671cdead7f396') in 0.041301 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalGuardadoBufo_elementosDecorativos_T.fbx
+  artifactKey: Guid(4dea073b12ad0b941a67515dc82f2b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalGuardadoBufo_elementosDecorativos_T.fbx using Guid(4dea073b12ad0b941a67515dc82f2b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a0b688886aed9b7b2ac55046a2313b6') in 0.045444 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalPalanca_elementosDecorativos_T.fbx
+  artifactKey: Guid(2ad19e92477207a4f840f8cee6f19ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalPalanca_elementosDecorativos_T.fbx using Guid(2ad19e92477207a4f840f8cee6f19ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df3f4729f4d6f3081093f7ca4d07b53a') in 0.040611 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 4.245253 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalGuardadoBufo_elementosDecorativos_T.fbx
+  artifactKey: Guid(4dea073b12ad0b941a67515dc82f2b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalGuardadoBufo_elementosDecorativos_T.fbx using Guid(4dea073b12ad0b941a67515dc82f2b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bc49a2bf8a8ef3ac0c2dc952d44ad39') in 0.040257 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalProhibido_elementosDecorativos_T.fbx
+  artifactKey: Guid(2152a7dbb65bddc4281bf72c368c869c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalProhibido_elementosDecorativos_T.fbx using Guid(2152a7dbb65bddc4281bf72c368c869c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ee48de9f1c8e5afd6be4b804470d0f3') in 0.041868 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalPalanca_elementosDecorativos_T.fbx
+  artifactKey: Guid(2ad19e92477207a4f840f8cee6f19ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Signs/SeñalPalanca_elementosDecorativos_T.fbx using Guid(2ad19e92477207a4f840f8cee6f19ef4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b06c30aefde3f7dbc7516c1ffc8371db') in 0.041347 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 5.078943 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Houses/CasaAliron_elementosDecorativos_T.fbx
+  artifactKey: Guid(4512a231256ded449a2a6131a3f8b665) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Houses/CasaAliron_elementosDecorativos_T.fbx using Guid(4512a231256ded449a2a6131a3f8b665) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32ce1b2ef07e4b58bb0d7e39d137ae97') in 0.025252 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 17.122244 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Cartel publicitario_elementosDecorativos_T.fbx
+  artifactKey: Guid(b1823ed99e02e224eb9a83223bed9bbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Cartel publicitario_elementosDecorativos_T.fbx using Guid(b1823ed99e02e224eb9a83223bed9bbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f57f76137e04ed80fb6ab2310368a74') in 0.037851 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/PosteDestruido_elementosDecorativos_T.fbx
+  artifactKey: Guid(9ff5d7eac37adc34e8f9d6d96a681b23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/PosteDestruido_elementosDecorativos_T.fbx using Guid(9ff5d7eac37adc34e8f9d6d96a681b23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43355093cf89b443555f4ee14e9a66be') in 0.044092 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 6.484318 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Barco_elementosDecorativos_T.fbx
+  artifactKey: Guid(fdea44269b1207b4ca9c25ec9ba97339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Barco_elementosDecorativos_T.fbx using Guid(fdea44269b1207b4ca9c25ec9ba97339) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '841ee93d50085ac68a8858a8db38b191') in 0.015094 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.013626 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Cartel publicitario_elementosDecorativos_T.fbx
+  artifactKey: Guid(b1823ed99e02e224eb9a83223bed9bbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Cartel publicitario_elementosDecorativos_T.fbx using Guid(b1823ed99e02e224eb9a83223bed9bbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b7b0acb5f89a6f993ac420c9d044c5b') in 0.035334 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 16
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Poste_elementosDecorativos_T.fbx
+  artifactKey: Guid(8d53953ebf9aa544ba1b6216292f7f63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Levels/Level 2/Decorative elements/Artificial elements/Poste_elementosDecorativos_T.fbx using Guid(8d53953ebf9aa544ba1b6216292f7f63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '491c3a95ec242f5f9e19a0dc56304663') in 0.049891 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 7.400364 seconds.
+  path: Assets/Core/Scenes/Level2/NavMesh-Mapa terrenos.asset
+  artifactKey: Guid(f34353f56fd6785459042ce9dc817014) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Scenes/Level2/NavMesh-Mapa terrenos.asset using Guid(f34353f56fd6785459042ce9dc817014) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37c66dedd29c6cfb1d993a74c52dff76') in 0.001243 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000852 seconds.
+  path: Assets/Core/Scenes/Level2/NavMesh-Plataformas.asset
+  artifactKey: Guid(1182e4c754165204197760e86cd46484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Scenes/Level2/NavMesh-Plataformas.asset using Guid(1182e4c754165204197760e86cd46484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39ef7df9c70c7782b9f689b97ea90233') in 0.001713 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 2.235308 seconds.
+  path: Assets/Core/Scenes/Level2.unity
+  artifactKey: Guid(82b699bfb084b2043b73d84d55889a69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Scenes/Level2.unity using Guid(82b699bfb084b2043b73d84d55889a69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4d67e91ab55d6fbfe379808b43d7865') in 0.000455 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 12.378804 seconds.
+  path: Assets/Core/Meshes/Interactive elements/Ladrillo_elementosInteractivos_T.fbx
+  artifactKey: Guid(4621a39b036e7b645b84bc732b9f4d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Meshes/Interactive elements/Ladrillo_elementosInteractivos_T.fbx using Guid(4621a39b036e7b645b84bc732b9f4d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b18e7324972c1d4a75c104b3f9ee35b0') in 0.017797 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 74.033734 seconds.
+  path: Assets/Core/Textures/Interactive elements/Brick.mat
+  artifactKey: Guid(f059914e3cf8fe148842e46691115977) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Textures/Interactive elements/Brick.mat using Guid(f059914e3cf8fe148842e46691115977) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf4f44a1a75b1492074b0088d85592b0') in 0.010885 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 41.137517 seconds.
+  path: Assets/Core/Textures/Levels/Level 2/Decorative elements/Atlas Detalles.png
+  artifactKey: Guid(73b32591a81828b4497ae2cac15fc053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Textures/Levels/Level 2/Decorative elements/Atlas Detalles.png using Guid(73b32591a81828b4497ae2cac15fc053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1a84db70f2c1e593887ef763b3dac0a') in 0.029647 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 31.788228 seconds.
+  path: Assets/Core/Textures/Levels/Level 2/Decorative elements/AtlasDetalles.png
+  artifactKey: Guid(73b32591a81828b4497ae2cac15fc053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Textures/Levels/Level 2/Decorative elements/AtlasDetalles.png using Guid(73b32591a81828b4497ae2cac15fc053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '009a442796aeff85ece692dc31f49c43') in 0.022086 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 7.141679 seconds.
+  path: Assets/Core/Textures/Levels/Level 2/Decorative elements/New Material.mat
+  artifactKey: Guid(a8dd75caceca6104dafbb0fae0003f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Textures/Levels/Level 2/Decorative elements/New Material.mat using Guid(a8dd75caceca6104dafbb0fae0003f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c03fdc45fc207a2daeaa95b1e2cea91') in 0.006696 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 4.850621 seconds.
+  path: Assets/Core/Textures/Levels/Level 2/Decorative elements/AtlasDetalles.mat
+  artifactKey: Guid(a8dd75caceca6104dafbb0fae0003f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Textures/Levels/Level 2/Decorative elements/AtlasDetalles.mat using Guid(a8dd75caceca6104dafbb0fae0003f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '01066f21a4e5170b81e1ceca691f3331') in 0.006043 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 628.587057 seconds.
+  path: Assets/Core/Textures/Levels/Level 2/Platforms and terrains/Montania.mat
+  artifactKey: Guid(38cd4e7a7b107ef4ca6a8395e7f33d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Textures/Levels/Level 2/Platforms and terrains/Montania.mat using Guid(38cd4e7a7b107ef4ca6a8395e7f33d88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25ca8dcd7a7077b4a4c8c08613a510dd') in 0.011962 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 161.786079 seconds.
+  path: Assets/Core/Textures/Levels/Level 2/Decorative elements/AtlasDetalles.mat
+  artifactKey: Guid(a8dd75caceca6104dafbb0fae0003f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Textures/Levels/Level 2/Decorative elements/AtlasDetalles.mat using Guid(a8dd75caceca6104dafbb0fae0003f7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e800edae91b9153394b5f428ef9f67bd') in 0.258032 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 437.032635 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/CartelPequeño_elementosDecorativos_T.prefab
+  artifactKey: Guid(cf31b3cff4fc5a749953a6d427c4c013) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/CartelPequeño_elementosDecorativos_T.prefab using Guid(cf31b3cff4fc5a749953a6d427c4c013) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d52dc6eb4521a854def6f9397652eb3') in 0.013507 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.019819 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/FlorRoja_3_elementosDecorativos_T.prefab
+  artifactKey: Guid(8bf1601803836f34b8ab7c3d71a3fa74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/FlorRoja_3_elementosDecorativos_T.prefab using Guid(8bf1601803836f34b8ab7c3d71a3fa74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'addca79dc4a9405d0b7d6269bdb776da') in 0.012599 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/Hoguera_elementosDecorativos_T.prefab
+  artifactKey: Guid(877026e0149328c4fa71e88e9cb2604b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/Hoguera_elementosDecorativos_T.prefab using Guid(877026e0149328c4fa71e88e9cb2604b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '335e14512387db1497cc973078d0a2a7') in 0.014163 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 33
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/PalmeraCollider_elementosDecorativos_T.prefab
+  artifactKey: Guid(5aedf636c63905a4b902ed862a0df725) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/PalmeraCollider_elementosDecorativos_T.prefab using Guid(5aedf636c63905a4b902ed862a0df725) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42ec44bb5cfe50c17d5420b035457290') in 0.015059 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/FlorNaranja_1_elementosDecorativos_T.prefab
+  artifactKey: Guid(63283d16b0527154987f333781ae458e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/FlorNaranja_1_elementosDecorativos_T.prefab using Guid(63283d16b0527154987f333781ae458e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d54f8d5421ad4efad66805340787a21') in 0.010761 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 21.154918 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/Signs
+  artifactKey: Guid(5934f829b28b1e04c9e53fad881e2995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/Signs using Guid(5934f829b28b1e04c9e53fad881e2995) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '66edfb3624eb49411c78c97326ed0c8e') in 0.000557 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 7.477433 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/Signs/SeñalCaja_elementosDecorativos_T.prefab
+  artifactKey: Guid(dd2ade0185c71184c8fa0b4716d1fb8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/Signs/SeñalCaja_elementosDecorativos_T.prefab using Guid(dd2ade0185c71184c8fa0b4716d1fb8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18bb7f2fd769a5f1f55a06d8f0b3d556') in 0.016987 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 44
+========================================================================
+Received Import Request.
+  Time since last request: 97.079217 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/No Collider/Arbol_2_elementosDecorativos_T.prefab
+  artifactKey: Guid(76674ab3e3ca18e4d997867c6fe7c052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/No Collider/Arbol_2_elementosDecorativos_T.prefab using Guid(76674ab3e3ca18e4d997867c6fe7c052) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cbc291f1ffc42a1ede059221312185b') in 0.011198 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 48
+========================================================================
+Received Import Request.
+  Time since last request: 0.023137 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/No Collider/FlorRoja_3_elementosDecorativos_T Variant.prefab
+  artifactKey: Guid(4ba27cdbbb859f642b7869c0665dd777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/No Collider/FlorRoja_3_elementosDecorativos_T Variant.prefab using Guid(4ba27cdbbb859f642b7869c0665dd777) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '685a03de55e1f03589e37daa3a7184cf') in 0.012501 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/No Collider/Piedra_1_elementosDecorativos_T Variant.prefab
+  artifactKey: Guid(5ce32e3bf4ab72a419407918b21795e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/No Collider/Piedra_1_elementosDecorativos_T Variant.prefab using Guid(5ce32e3bf4ab72a419407918b21795e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0891a088dcebcda894aaf5ce68167450') in 0.010761 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/No Collider/FlorMorada_2_elementosDecorativos_T Variant.prefab
+  artifactKey: Guid(45027e24e40987744ac1e1591d630d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/No Collider/FlorMorada_2_elementosDecorativos_T Variant.prefab using Guid(45027e24e40987744ac1e1591d630d95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cc735538f1b19f2c38e88ee3bdeb446') in 0.016840 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/No Collider/FlorNaranja_1_elementosDecorativos_T Variant.prefab
+  artifactKey: Guid(10f9138e3e596d4409fcca65c2cadbf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/No Collider/FlorNaranja_1_elementosDecorativos_T Variant.prefab using Guid(10f9138e3e596d4409fcca65c2cadbf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f48253015d163bfacd9475b6c6bdf69d') in 0.011174 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/No Collider/HelechoNoCollider_2_elementosDecorativos_T (1) Variant.prefab
+  artifactKey: Guid(2b9e3b3fc489fa748937d9f7ce7952e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/No Collider/HelechoNoCollider_2_elementosDecorativos_T (1) Variant.prefab using Guid(2b9e3b3fc489fa748937d9f7ce7952e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7edb300acead3116a02df6e94fd41f4c') in 0.015591 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 17
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/No Collider/PiedraNoCollider_4_elementosDecorativos_T Variant.prefab
+  artifactKey: Guid(8214e16de0046f244b510aebe0008d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/No Collider/PiedraNoCollider_4_elementosDecorativos_T Variant.prefab using Guid(8214e16de0046f244b510aebe0008d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e76f981b280fe2d222e54d9ef0a9d50e') in 0.012361 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/No Collider/Piedra_3_elementosDecorativos_T Variant.prefab
+  artifactKey: Guid(c08bed557dfd4834bade6f2e246b238f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/No Collider/Piedra_3_elementosDecorativos_T Variant.prefab using Guid(c08bed557dfd4834bade6f2e246b238f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5b3cd3cb3e03f652084fa9ec01fded9') in 0.012179 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Core/Prefabs/Decorative Elements/No Collider/PalmeraNoCollider_elementosDecorativos_T Variant.prefab
+  artifactKey: Guid(3e72da0ead49b4345b2fc7816e2bd59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Core/Prefabs/Decorative Elements/No Collider/PalmeraNoCollider_elementosDecorativos_T Variant.prefab using Guid(3e72da0ead49b4345b2fc7816e2bd59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c2a8863ceb873b67f5fe5569012118b') in 0.012284 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 18
