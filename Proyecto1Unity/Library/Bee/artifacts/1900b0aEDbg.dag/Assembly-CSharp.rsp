@@ -450,6 +450,8 @@
 "Assets/Core/Scripts/SaveSystem/SaveDatabase.cs"
 "Assets/Core/Scripts/SaveSystem/SaveSystem.cs"
 "Assets/Core/Scripts/SaveSystem/SceneLoader.cs"
+"Assets/Core/Scripts/SedaSwitcher/SedaSwitcher.cs"
+"Assets/Core/Scripts/SedaSwitcher/SedaSwitcherCollider.cs"
 "Assets/Core/Scripts/UI/MainMenuUI.cs"
 "Assets/Core/Scripts/UI/OptionsUI.cs"
 "Assets/Core/Scripts/UI/SaveGameUI.cs"

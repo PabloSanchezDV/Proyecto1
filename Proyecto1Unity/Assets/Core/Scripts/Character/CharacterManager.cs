@@ -14,6 +14,9 @@ public class CharacterManager : MonoBehaviour
     private bool _canMove = true;
     public bool CanMove { get { return _canMove; } set { _canMove = value; } }
 
+    private bool _canAttack = true;
+    public bool CanAttack { get { return _canAttack; } set { _canAttack = value; } }
+
     private bool _isDragging = false;
     public bool IsDragging { get { return _isDragging; } set { _isDragging = value; } }
 
@@ -60,6 +63,7 @@ public class CharacterManager : MonoBehaviour
         _characterAbilities.enabled = true;
         _characterAnimatorController.enabled = true;
         _characterDamage.enabled = true;
+        _canAttack = true;
     }
 
     private void Start()
@@ -224,6 +228,7 @@ public class CharacterManager : MonoBehaviour
     {
         if (_characterAnimatorController != null)
             _characterAnimatorController.EndFalling();
+        _canAttack = true;
     }
     #endregion
 

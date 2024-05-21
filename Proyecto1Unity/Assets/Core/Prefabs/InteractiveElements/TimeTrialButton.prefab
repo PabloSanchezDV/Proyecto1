@@ -226,3 +226,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trialGameObjects: []
   _trialTime: 3
+  _urgentSoundMarginTime: 5

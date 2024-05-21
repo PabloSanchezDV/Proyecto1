@@ -6,9 +6,12 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject[] _trialGameObjects;
     [SerializeField] private float _trialTime;
+    [SerializeField] private float _urgentSoundMarginTime;
 
     private Animator _animator;
     private bool _isActive = false;
+    private AudioSource _normalTTAS;
+    private AudioSource _urgentTTAS;
 
     private void Start()
     {
@@ -30,7 +33,13 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
     IEnumerator TimeTrialCoroutine()
     {
         SetGameObjectsAs(true);
-        yield return new WaitForSeconds(_trialTime); 
+        _normalTTAS = AudioManager.instance.PlayTimeTrialNormal(GameManager.instance.MainCamera);
+        yield return new WaitForSeconds(_trialTime - _urgentSoundMarginTime); 
+        AudioManager.instance.StopAudioSource(_normalTTAS);
+        _urgentTTAS = AudioManager.instance.PlayTimeTrialUrgent(GameManager.instance.MainCamera);
+        yield return new WaitForSeconds(_urgentSoundMarginTime);
+        AudioManager.instance.StopAudioSource(_urgentTTAS);
+        _urgentTTAS = AudioManager.instance.PlayTimeTrialEnd(GameManager.instance.MainCamera);
         if (_animator != null)
             _animator.SetTrigger("ChangeState");
         SetGameObjectsAs(false);

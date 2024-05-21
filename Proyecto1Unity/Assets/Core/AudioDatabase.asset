@@ -54,12 +54,14 @@ MonoBehaviour:
   bananaVolume: 1
   buttonAC: {fileID: 8300000, guid: 7103dc46073270549a8478e89bf45b68, type: 3}
   buttonVolume: 1
-  timeTrialNormalAC: {fileID: 0}
-  timeTrialNormalVolume: 0
-  timeTrialUrgentAC: {fileID: 0}
-  timeTrialUrgentVolume: 0
-  timeTrialEndAC: {fileID: 0}
-  timeTrialEndVolume: 0
+  timeTrialNormalAC: {fileID: 8300000, guid: 728a8998876af644bab1ae354e06494f, type: 3}
+  timeTrialNormalVolume: 1
+  timeTrialUrgentAC: {fileID: 8300000, guid: f41f3c95af9547d4c9c029417381a7ec, type: 3}
+  timeTrialUrgentVolume: 1
+  timeTrialEndAC: {fileID: 8300000, guid: b1eb03e1b896b814aae2c8d1db41e1ab, type: 3}
+  timeTrialEndVolume: 1
+  fenceAC: {fileID: 8300000, guid: 8c6d58bea605eb74db3f4cbcbe8c8e4c, type: 3}
+  fenceVolume: 1
   cobraThrowingBrickAC: {fileID: 8300000, guid: 492210157dbfa5c4a922de4ac9ee8a90, type: 3}
   cobraThrowingBrickVolume: 1
   cobraFleeAC: {fileID: 8300000, guid: 8c6d58bea605eb74db3f4cbcbe8c8e4c, type: 3}
