@@ -156,8 +156,21 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource PlayBufoJump(GameObject go)
     {
-        _audioDatabase.bufoJumpCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoJumpVolume);
-        return CreateAudioSource(go, _audioDatabase.bufoJumpAC, _audioDatabase.bufoJumpCurrentVolume);
+        int index = UnityEngine.Random.Range(1, 4);
+        switch(index)
+        {
+            case 1:
+                _audioDatabase.bufoJump1CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoJump1Volume);
+                return CreateAudioSource(go, _audioDatabase.bufoJump1AC, _audioDatabase.bufoJump1CurrentVolume);
+            case 2:
+                _audioDatabase.bufoJump2CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoJump2Volume);
+                return CreateAudioSource(go, _audioDatabase.bufoJump2AC, _audioDatabase.bufoJump2CurrentVolume);
+            case 3:
+                _audioDatabase.bufoJump3CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoJump3Volume);
+                return CreateAudioSource(go, _audioDatabase.bufoJump3AC, _audioDatabase.bufoJump3CurrentVolume);
+            default:
+                throw new Exception("Index out of range at AudioManager.PlayBufoJump.");
+        }
     }
 
     public AudioSource PlayBufoTongueImp(GameObject go)
@@ -198,8 +211,18 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource PlayBufoDeath(GameObject go)
     {
-        _audioDatabase.bufoDeathCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoDeathVolume);
-        return CreateAudioSource(go, _audioDatabase.bufoDeathAC, _audioDatabase.bufoDeathCurrentVolume);
+        int index = UnityEngine.Random.Range(1, 3);
+        switch(index)
+        {
+            case 1:
+                _audioDatabase.bufoDeath1CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoDeath1Volume);
+                return CreateAudioSource(go, _audioDatabase.bufoDeath1AC, _audioDatabase.bufoDeath1CurrentVolume);
+            case 2:
+                _audioDatabase.bufoDeath2CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoDeath2Volume);
+                return CreateAudioSource(go, _audioDatabase.bufoDeath2AC, _audioDatabase.bufoDeath2CurrentVolume);
+            default:
+                throw new Exception("Index out of range at AudioManager.PlayBufoDeath.");
+        }        
     }
 
     public AudioSource PlayBufoBite(GameObject go)
@@ -292,6 +315,12 @@ public class AudioManager : MonoBehaviour
         _audioDatabase.timeTrialEndCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.timeTrialEndVolume);
         return CreateAudioSource(go, _audioDatabase.timeTrialEndAC, _audioDatabase.timeTrialEndCurrentVolume);
     }
+
+    public AudioSource PlayFence(GameObject go)
+    {
+        _audioDatabase.fenceCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.fenceVolume);
+        return CreateAudioSource(go, _audioDatabase.fenceAC, _audioDatabase.fenceCurrentVolume);
+    }
     #endregion
 
     #region Enemies
@@ -374,6 +403,7 @@ public class AudioManager : MonoBehaviour
         _audioDatabase.snowplowCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.snowplowVolume);
         return CreateAudioSource(go, _audioDatabase.snowplowAC, _audioDatabase.snowplowCurrentVolume, true);
     }
+    #endregion
 
 
 
@@ -388,7 +418,6 @@ public class AudioManager : MonoBehaviour
         _audioDatabase.testMusicCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.testMusicVolume);
         return CreateMusicAudioSource(_audioDatabase.testMusicAC, _audioDatabase.testMusicCurrentVolume);
     }
-    #endregion
     #endregion
 
     #region Stop Sounds Methods

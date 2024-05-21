@@ -12,9 +12,17 @@ public class AudioDatabase : ScriptableObject
          [Range(0, 1)] public float bufoTongueVolume;
          [NonSerialized] public float bufoTongueCurrentVolume;
 
-        public AudioClip bufoJumpAC;
-         [Range(0, 1)] public float bufoJumpVolume;
-         [NonSerialized] public float bufoJumpCurrentVolume;
+        public AudioClip bufoJump1AC;
+         [Range(0, 1)] public float bufoJump1Volume;
+         [NonSerialized] public float bufoJump1CurrentVolume;
+
+        public AudioClip bufoJump2AC;
+         [Range(0, 1)] public float bufoJump2Volume;
+         [NonSerialized] public float bufoJump2CurrentVolume;
+
+        public AudioClip bufoJump3AC;
+         [Range(0, 1)] public float bufoJump3Volume;
+         [NonSerialized] public float bufoJump3CurrentVolume;
 
         public AudioClip bufoTongueImpAC;
          [Range(0, 1)] public float bufoTongueImpVolume;
@@ -40,9 +48,13 @@ public class AudioDatabase : ScriptableObject
          [Range(0, 1)] public float bufoLandingVolume;
          [NonSerialized] public float bufoLandingCurrentVolume;
 
-        public AudioClip bufoDeathAC;
-         [Range(0, 1)] public float bufoDeathVolume;
-         [NonSerialized] public float bufoDeathCurrentVolume;
+        public AudioClip bufoDeath1AC;
+         [Range(0, 1)] public float bufoDeath1Volume;
+         [NonSerialized] public float bufoDeath1CurrentVolume;
+
+        public AudioClip bufoDeath2AC;
+         [Range(0, 1)] public float bufoDeath2Volume;
+         [NonSerialized] public float bufoDeath2CurrentVolume;
 
         public AudioClip bufoBiteAC;
          [Range(0, 1)] public float bufoBiteVolume;
@@ -105,6 +117,10 @@ public class AudioDatabase : ScriptableObject
         public AudioClip timeTrialEndAC;
          [Range(0, 1)] public float timeTrialEndVolume;
          [NonSerialized] public float timeTrialEndCurrentVolume;
+
+        public AudioClip fenceAC;
+         [Range(0, 1)] public float fenceVolume;
+         [NonSerialized] public float fenceCurrentVolume;
 
     [Header("Cobra AudioClips")]
 

@@ -18,6 +18,7 @@ public class ActivableFenceDoor : ActivableObject
         if (_isOpen)
             return;
 
+        AudioManager.instance.PlayFence(gameObject);
         if(_anim != null) 
         {
             _anim.SetTrigger("Open");

@@ -129,8 +129,12 @@ public class CharacterAnimatorController : MonoBehaviour
 
     private void Hit(InputAction.CallbackContext context)
     {
-        AudioManager.instance.PlayBufoBite(gameObject);
-        _anim.SetTrigger("Hit");
+        if (characterManager.CanAttack)
+        {
+            AudioManager.instance.PlayBufoBite(gameObject);
+            characterManager.CanAttack = false;
+            _anim.SetTrigger("Hit");
+        }
     }
 
     public void Hurt()

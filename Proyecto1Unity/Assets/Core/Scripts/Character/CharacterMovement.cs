@@ -99,6 +99,7 @@ public class CharacterMovement : MonoBehaviour
             if (!_isFalling)
                 StartFall();
 
+            characterManager.CanAttack = false;
             _coyoteTimeCounter -= Time.fixedDeltaTime;
             _jumpBufferCounter -= Time.fixedDeltaTime;
         }

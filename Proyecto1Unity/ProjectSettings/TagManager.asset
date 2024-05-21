@@ -9,6 +9,7 @@ TagManager:
   - VirtualCamera
   - Collectible
   - Banana
+  - Seda
   layers:
   - Default
   - TransparentFX
