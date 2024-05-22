@@ -20,43 +20,10 @@ public static class SaveSystem
 
     public static void SaveFile(Data data, int slotID)
     {
-        string dataString = ConvertDataToFile(data);
+        string dataString = JsonUtility.ToJson(data);
         string dataPath = GetPath(slotID);
         Debug.Log("Saving in path: " + dataPath);
         SaveFile(dataString, dataPath);
-    }
-
-    private static string ConvertDataToFile(Data data)
-    {
-        string dataString;
-
-        //Level
-        dataString = data.level.ToString() + '\n';
-
-        //Big collectibles
-        for (int i = 0; i < data.bigCollectibles.Length; i++)
-        {
-            if (data.bigCollectibles[i])
-                dataString += 1;
-            else
-                dataString += 0;
-        }
-        dataString += "\n";
-
-        //Bananas
-        for (int i = 0; i < data.bananas.Length; i++)
-        {
-            if (data.bananas[i])
-                dataString += 1;
-            else
-                dataString += 0;
-        }
-        dataString += "\n";
-
-        //Time stamp
-        dataString += data.timeStamp;
-
-        return dataString;
     }
 
     private static string GetPath(int slotID)
@@ -64,11 +31,11 @@ public static class SaveSystem
         switch(slotID)
         {
             case (1):
-                return Application.persistentDataPath + "/ss1.file";
+                return Application.persistentDataPath + "/ss1.json";
             case (2):
-                return Application.persistentDataPath + "/ss2.file";
+                return Application.persistentDataPath + "/ss2.json";
             case (3):
-                return Application.persistentDataPath + "/ss3.file";
+                return Application.persistentDataPath + "/ss3.json";
             default:
                 throw new UnityException("Saving path does not exist");
         }
@@ -113,28 +80,6 @@ public static class SaveSystem
 
     private static Data ConvertFileToData(string dataString)
     {
-        string[] strings = dataString.Split('\n');
-        Data data = new Data();
-        data.level = Convert.ToInt32(strings[0]);
-        data.bigCollectibles = ConvertBinaryStringToBoolArray(strings[1]);
-        data.bananas = ConvertBinaryStringToBoolArray(strings[2]);
-        data.timeStamp = strings[3];
-
-        return data;
-    }
-
-    private static bool[] ConvertBinaryStringToBoolArray(string dataString)
-    {
-        bool[] boolArray = new bool[dataString.Length];
-        for(int i = 0; i < dataString.Length; i++)
-        {
-            if (dataString[i] == '0')
-                boolArray[i] = false;
-            else if (dataString[i] == '1')
-                boolArray[i] = true;
-            else
-                throw new Exception("Trying to load corrupted data.");
-        }
-        return boolArray;
+        return JsonUtility.FromJson<Data>(dataString);
     }
 }
