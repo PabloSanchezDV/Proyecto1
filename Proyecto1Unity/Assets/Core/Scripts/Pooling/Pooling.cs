@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Pooling : MonoBehaviour
 {
-    [SerializeField] private GameObject _prefab;
+    [SerializeField] protected GameObject _prefab;
     [SerializeField] private int _poolingSize;
 
-    private Queue<GameObject> _queue;
+    protected Queue<GameObject> _queue;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Pooling : MonoBehaviour
         }
     }
 
-    private GameObject CreateGameObject()
+    protected virtual GameObject CreateGameObject()
     {
         GameObject newGameObject = Instantiate(_prefab, transform);
         newGameObject.SetActive(false);
