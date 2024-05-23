@@ -11,6 +11,7 @@ public class AudioDatabase : ScriptableObject
         public AudioClip bufoTongueAC;
          [Range(0, 1)] public float bufoTongueVolume;
          [NonSerialized] public float bufoTongueCurrentVolume;
+         [SerializeField] public float bufoTongueMaxDistance;
 
         public AudioClip bufoJump1AC;
          [Range(0, 1)] public float bufoJump1Volume;
@@ -164,6 +165,12 @@ public class AudioDatabase : ScriptableObject
              [Range(0, 1)] public float crocodileDeathVolume;
              [NonSerialized] public float crocodileDeathCurrentVolume;
 
+    [Header("Level 1 Props AudioClips")]
+
+        public AudioClip waterfallAC;
+         [Range(0, 1)] public float waterfallVolume;
+         [NonSerialized] public float waterfallCurrentVolume;
+
     [Header("Level 2 Props AudioClips")]
 
         public AudioClip campfireAC;
@@ -181,7 +188,133 @@ public class AudioDatabase : ScriptableObject
         public AudioClip snowplowAC;
          [Range(0, 1)] public float snowplowVolume;
          [NonSerialized] public float snowplowCurrentVolume;
- 
+
+    [Header("NPCs AudioClips")]
+        //Bufo
+        public AudioClip bufoDialogue1AC;
+         [Range(0, 1)] public float bufoDialogue1Volume;
+         [NonSerialized] public float bufoDialogue1CurrentVolume;
+
+        public AudioClip bufoDialogue2AC;
+         [Range(0, 1)] public float bufoDialogue2Volume;
+         [NonSerialized] public float bufoDialogue2CurrentVolume;
+
+
+        public AudioClip bufoDialogue3AC;
+         [Range(0, 1)] public float bufoDialogue3Volume;
+         [NonSerialized] public float bufoDialogue3CurrentVolume;
+
+
+        public AudioClip bufoDialogue4AC;
+         [Range(0, 1)] public float bufoDialogue4Volume;
+         [NonSerialized] public float bufoDialogue4CurrentVolume;
+
+        public AudioClip bufoDialogue5AC;
+         [Range(0, 1)] public float bufoDialogue5Volume;
+         [NonSerialized] public float bufoDialogue5CurrentVolume;
+
+        //Seda
+        public AudioClip sedaDialogue1AC;
+         [Range(0, 1)] public float sedaDialogue1Volume;
+         [NonSerialized] public float sedaDialogue1CurrentVolume;
+
+        public AudioClip sedaDialogue2AC;
+         [Range(0, 1)] public float sedaDialogue2Volume;
+         [NonSerialized] public float sedaDialogue2CurrentVolume;
+
+        public AudioClip sedaDialogue3AC;
+         [Range(0, 1)] public float sedaDialogue3Volume;
+         [NonSerialized] public float sedaDialogue3CurrentVolume;
+
+        public AudioClip sedaDialogue4AC;
+         [Range(0, 1)] public float sedaDialogue4Volume;
+         [NonSerialized] public float sedaDialogue4CurrentVolume;
+
+        public AudioClip sedaDialogue5AC;
+         [Range(0, 1)] public float sedaDialogue5Volume;
+         [NonSerialized] public float sedaDialogue5CurrentVolume;
+
+        //Komodo
+        public AudioClip komodoDialogue1AC;
+         [Range(0, 1)] public float komodoDialogue1Volume;
+         [NonSerialized] public float komodoDialogue1CurrentVolume;
+
+        public AudioClip komodoDialogue2AC;
+         [Range(0, 1)] public float komodoDialogue2Volume;
+         [NonSerialized] public float komodoDialogue2CurrentVolume;
+
+        public AudioClip komodoDialogue3AC;
+         [Range(0, 1)] public float komodoDialogue3Volume;
+         [NonSerialized] public float komodoDialogue3CurrentVolume;
+
+        public AudioClip komodoDialogue4AC;
+         [Range(0, 1)] public float komodoDialogue4Volume;
+         [NonSerialized] public float komodoDialogue4CurrentVolume;
+
+        public AudioClip komodoDialogue5AC;
+         [Range(0, 1)] public float komodoDialogue5Volume;
+         [NonSerialized] public float komodoDialogue5CurrentVolume;
+
+        //Alirón
+        public AudioClip alironDialogue1AC;
+         [Range(0, 1)] public float alironDialogue1Volume;
+         [NonSerialized] public float alironDialogue1CurrentVolume;
+
+        public AudioClip alironDialogue2AC;
+         [Range(0, 1)] public float alironDialogue2Volume;
+         [NonSerialized] public float alironDialogue2CurrentVolume;
+
+        public AudioClip alironDialogue3AC;
+         [Range(0, 1)] public float alironDialogue3Volume;
+         [NonSerialized] public float alironDialogue3CurrentVolume;
+
+        public AudioClip alironDialogue4AC;
+         [Range(0, 1)] public float alironDialogue4Volume;
+         [NonSerialized] public float alironDialogue4CurrentVolume;
+
+        public AudioClip alironDialogue5AC;
+         [Range(0, 1)] public float alironDialogue5Volume;
+         [NonSerialized] public float alironDialogue5CurrentVolume;
+
+        //Bear
+        public AudioClip bearDialogue1AC;
+         [Range(0, 1)] public float bearDialogue1Volume;
+         [NonSerialized] public float bearDialogue1CurrentVolume;
+
+        public AudioClip bearDialogue2AC;
+         [Range(0, 1)] public float bearDialogue2Volume;
+         [NonSerialized] public float bearDialogue2CurrentVolume;
+
+        public AudioClip bearDialogue3AC;
+         [Range(0, 1)] public float bearDialogue3Volume;
+         [NonSerialized] public float bearDialogue3CurrentVolume;
+
+        public AudioClip bearDialogue4AC;
+         [Range(0, 1)] public float bearDialogue4Volume;
+         [NonSerialized] public float bearDialogue4CurrentVolume;
+
+        //Toucan
+        public AudioClip toucanDialogue1AC;
+         [Range(0, 1)] public float toucanDialogue1Volume;
+         [NonSerialized] public float toucanDialogue1CurrentVolume;
+
+        public AudioClip toucanDialogue2AC;
+         [Range(0, 1)] public float toucanDialogue2Volume;
+         [NonSerialized] public float toucanDialogue2CurrentVolume;
+
+        public AudioClip toucanDialogue3AC;
+         [Range(0, 1)] public float toucanDialogue3Volume;
+         [NonSerialized] public float toucanDialogue3CurrentVolume;
+
+        public AudioClip toucanDialogue4AC;
+         [Range(0, 1)] public float toucanDialogue4Volume;
+         [NonSerialized] public float toucanDialogue4CurrentVolume;
+
+        public AudioClip toucanDialogue5AC;
+         [Range(0, 1)] public float toucanDialogue5Volume;
+         [NonSerialized] public float toucanDialogue5CurrentVolume;
+
+
     [Header("Test Dialogues AudioClips")]
      public AudioClip testDialogueAC;
       [Range(0, 1)] public float testDialogueVolume;

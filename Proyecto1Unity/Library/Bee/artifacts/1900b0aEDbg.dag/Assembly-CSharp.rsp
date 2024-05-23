@@ -383,6 +383,7 @@
 "Assets/Core/Scripts/Audio/AudioDatabase.cs"
 "Assets/Core/Scripts/Audio/AudioManager.cs"
 "Assets/Core/Scripts/Audio/MusicManager.cs"
+"Assets/Core/Scripts/Audio/PlaySoundAtStart/PlayWaterfallSoundAtStart.cs"
 "Assets/Core/Scripts/Camera/FaceToCamera.cs"
 "Assets/Core/Scripts/CameraSwitcher/CameraSwitcher.cs"
 "Assets/Core/Scripts/CameraSwitcher/PlayerCameraAsigner.cs"
