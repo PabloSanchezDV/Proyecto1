@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     private Animator _bufoAnimator;
     public Animator BufoAnimator { set { _bufoAnimator = value; } }
 
+    private AudioSource _dialogueAS;
+
     private void Awake()
     {
         if (instance == null)
@@ -58,6 +60,15 @@ public class DialogueManager : MonoBehaviour
                     animator.SetBool("isTalking", true);
                 else
                     _bufoAnimator.SetBool("isTalking", true);
+
+                try
+                {
+                    _dialogueAS = PlayDialogueSound(node.Character, animator.gameObject);
+                }
+                catch(Exception e)
+                {
+                    throw new Exception(e.Message + "\nNode values: " + node.Level.ToString() + " " + node.ID.ToString() + " " + node.Character.ToString() + " " + node.Text);
+                }
                 UIManager.instance.UpdateDialoguePanel(character, text);
                 while(!_doNextDialogue)
                     yield return null;
@@ -65,6 +76,8 @@ public class DialogueManager : MonoBehaviour
                     animator.SetBool("isTalking", false);
                 else
                     _bufoAnimator.SetBool("isTalking", false);
+                if (_dialogueAS != null)
+                    AudioManager.instance.StopAudioSource(_dialogueAS);
                 _doNextDialogue = false;
             }
             else
@@ -96,5 +109,26 @@ public class DialogueManager : MonoBehaviour
         UIManager.instance.HideDialoguePanel();
         _isInDialogue = false;
         EventHolder.instance.onEndDialogue?.Invoke();
+    }
+
+    private AudioSource PlayDialogueSound(string character, GameObject gameObject)
+    {
+        switch(character)
+        {
+            case ("Bufo"):
+                return AudioManager.instance.PlayBufoDialogue(_bufoAnimator.gameObject);
+            case ("Seda"):
+                return AudioManager.instance.PlaySedaDialogue(gameObject);
+            case ("K.O. Modo"):
+                return AudioManager.instance.PlayKomodoDialogue(gameObject);
+            case ("Alirón"):
+                return AudioManager.instance.PlayAlironDialogue(gameObject);
+            case ("Oso"):
+                return AudioManager.instance.PlayBearDialogue(gameObject);
+            case ("Tucán"):
+                return AudioManager.instance.PlayToucanDialogue(gameObject);
+            default:
+                throw new Exception("Character cannot be processed by PlayDialogueSound. Check if the name of the character is well written.");
+        }
     }
 }
