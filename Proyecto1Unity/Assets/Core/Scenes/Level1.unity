@@ -21566,6 +21566,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7251574685779430616, guid: f042ce3481818424f81d86b4ed3adade, type: 3}
+      propertyPath: _trailColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251574685779430616, guid: f042ce3481818424f81d86b4ed3adade, type: 3}
+      propertyPath: _trailColor.b
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251574685779430616, guid: f042ce3481818424f81d86b4ed3adade, type: 3}
+      propertyPath: _trailColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251574685779430616, guid: f042ce3481818424f81d86b4ed3adade, type: 3}
+      propertyPath: _trailColor.r
+      value: 0.8716577
+      objectReference: {fileID: 0}
     - target: {fileID: 8533840994718442398, guid: f042ce3481818424f81d86b4ed3adade, type: 3}
       propertyPath: m_Name
       value: TrailPooling

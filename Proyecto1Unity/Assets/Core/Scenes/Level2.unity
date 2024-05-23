@@ -16332,7 +16332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3715220962233038043, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.088133134
+      value: -0.08813314
       objectReference: {fileID: 0}
     - target: {fileID: 4225799695205205790, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_FollowOffset.y
@@ -25833,6 +25833,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7251574685779430616, guid: f042ce3481818424f81d86b4ed3adade, type: 3}
+      propertyPath: _trailColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251574685779430616, guid: f042ce3481818424f81d86b4ed3adade, type: 3}
+      propertyPath: _trailColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251574685779430616, guid: f042ce3481818424f81d86b4ed3adade, type: 3}
+      propertyPath: _trailColor.g
+      value: 0.91999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251574685779430616, guid: f042ce3481818424f81d86b4ed3adade, type: 3}
+      propertyPath: _trailColor.r
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 8533840994718442398, guid: f042ce3481818424f81d86b4ed3adade, type: 3}
       propertyPath: m_Name
       value: TrailPooling
