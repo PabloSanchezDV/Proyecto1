@@ -447,6 +447,7 @@
 "Assets/Core/Scripts/Prefs/PrefsManager.cs"
 "Assets/Core/Scripts/Respawn/Instakiller.cs"
 "Assets/Core/Scripts/Respawn/RespawnPoint.cs"
+"Assets/Core/Scripts/Respawn/RespawnPointController.cs"
 "Assets/Core/Scripts/SaveSystem/Data.cs"
 "Assets/Core/Scripts/SaveSystem/SaveDatabase.cs"
 "Assets/Core/Scripts/SaveSystem/SaveSystem.cs"

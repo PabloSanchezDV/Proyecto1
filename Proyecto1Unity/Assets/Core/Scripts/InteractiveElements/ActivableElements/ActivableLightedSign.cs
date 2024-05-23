@@ -10,7 +10,7 @@ public class ActivableLightedSign : ActivableObject
     // Start is called before the first frame update
     void Start()
     {
-        //_screen = transform.GetChild(0).gameObject;
+        _screen = transform.GetChild(1).gameObject;
     }
 
     public override void Activate()
@@ -18,8 +18,7 @@ public class ActivableLightedSign : ActivableObject
         if (!_isActive)
         {
             AudioManager.instance.PlayLightedSign(gameObject);
-            Debug.Log("Activating lighted screen");
-            //_screen.SetActive(true);
+            _screen.SetActive(true);
         }
     }
 }
