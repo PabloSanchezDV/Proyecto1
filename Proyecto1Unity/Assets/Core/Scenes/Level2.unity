@@ -17102,6 +17102,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 728278817}
     - target: {fileID: 2744389042303890546, guid: c4993dec39ba0534b8c9dd51103a35bd, type: 3}
+      propertyPath: _boxMaxDistance
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744389042303890546, guid: c4993dec39ba0534b8c9dd51103a35bd, type: 3}
       propertyPath: _isConditionComplete
       value: 0
       objectReference: {fileID: 0}

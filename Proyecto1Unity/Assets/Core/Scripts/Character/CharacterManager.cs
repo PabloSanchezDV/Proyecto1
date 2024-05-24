@@ -323,4 +323,9 @@ public class CharacterManager : MonoBehaviour
     {
         AudioManager.instance.PlayBufoDeath(gameObject);
     }
+
+    public void DettachDragableObject(GameObject dragableObject)
+    {
+        _characterAbilities.DettachDragableObject(dragableObject);
+    }
 }

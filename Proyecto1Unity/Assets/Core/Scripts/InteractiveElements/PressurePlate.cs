@@ -8,16 +8,20 @@ public class PressurePlate : MonoBehaviour
     [SerializeField] private GameObject _box;
     [SerializeField] private ActivableObject[] _activableObjects;
     [SerializeField] private ParticleSystemManager _particleSystemManager;
+    [SerializeField] private float _boxMaxDistance; 
 
     [SerializeField] private bool _isConditionComplete = false;
 
     private Animator _animator;
     private Vector3 _boxResetPosition;
+    private CharacterManager _characterManager;
 
     private void Start()
     {
         _animator = transform.parent.parent.GetComponent<Animator>();
+        _characterManager = GameManager.instance.Player.GetComponent<CharacterManager>();
         _boxResetPosition = _box.transform.position;
+        StartCoroutine(CheckBoxDistance());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -67,11 +71,28 @@ public class PressurePlate : MonoBehaviour
 
     public void ResetBox()
     {
+        if (_characterManager.IsDragging)
+        {
+            _characterManager.DettachDragableObject(_box);
+        }
         _box.transform.position = _boxResetPosition;
     }
 
     public void SetConditionCompleteAs(bool state)
     {
         _isConditionComplete = state;
+    }
+
+    IEnumerator CheckBoxDistance()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Debug.Log(Vector3.Distance(_box.transform.position, transform.position) + " > " + _boxMaxDistance);
+            if(Vector3.Distance(_box.transform.position, transform.position) > _boxMaxDistance)
+            {
+                ResetBox();
+            }
+        }
     }
 }

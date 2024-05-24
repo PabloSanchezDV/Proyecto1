@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+
+        _player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Start()
@@ -77,7 +79,6 @@ public class GameManager : MonoBehaviour
         EventHolder.instance.onBananaColleted.AddListener(AddBanana);
         EventHolder.instance.onBigCollectibleCollected.AddListener(AddBigCollectible);
 
-        _player = GameObject.FindGameObjectWithTag("Player");
         if (_player != null)
             _lastRespawnPosition = _player.transform.position;
         _currentHealth = _maxHealth;
