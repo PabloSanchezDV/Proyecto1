@@ -43,7 +43,7 @@ public class CameraSwitcher : MonoBehaviour
         }
     }
 
-    private void ResetPlayerCamera()
+    public void ResetPlayerCamera()
     {
         SwitchCamera(GameManager.instance.PlayerCamera, GameManager.instance.Player.transform);
     }
