@@ -95,10 +95,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _box: {fileID: 0}
-  _doorAnimator: {fileID: 0}
+  _activableObjects: []
   _particleSystemManager: {fileID: 2882627860154290476}
+  _boxMaxDistance: 25
   _isConditionComplete: 1
-  _canDoorOpenCompletely: 1
 --- !u!1 &1816042909406215393
 GameObject:
   m_ObjectHideFlags: 0

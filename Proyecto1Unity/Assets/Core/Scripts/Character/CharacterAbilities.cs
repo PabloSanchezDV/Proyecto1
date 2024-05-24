@@ -134,7 +134,7 @@ public class CharacterAbilities : MonoBehaviour
         DettachDragableObject(_tongueTip.GetChild(1).gameObject);
     }
 
-    private void DettachDragableObject(GameObject dragableObject)
+    public void DettachDragableObject(GameObject dragableObject)
     {
         characterManager.InputActions.Gameplay.ThrowTongue.started -= DettachDragableObjectIA;
 
@@ -152,7 +152,7 @@ public class CharacterAbilities : MonoBehaviour
     {
         if (characterManager.IsDragging)
         {
-            if ((_tongueTip.GetChild(0).transform.position - _tongueTip.transform.position).magnitude > _maxDragableObjectDistance)
+            if ((_tongueTip.GetChild(1).transform.position - _tongueTip.transform.position).magnitude > _maxDragableObjectDistance)
             {
                 DettachDragableObject(_tongueTip.GetChild(1).gameObject);
             }
