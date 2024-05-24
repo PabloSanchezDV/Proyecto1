@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ActivableFenceDoor : ActivableObject
 {
+    [SerializeField] private float _timeToActivate;
     private Animator _anim;
     private bool _isOpen;
 
@@ -18,15 +19,21 @@ public class ActivableFenceDoor : ActivableObject
         if (_isOpen)
             return;
 
-        AudioManager.instance.PlayFence(gameObject);
-        if(_anim != null) 
-        {
-            _anim.SetTrigger("Open");
-        }
+        StartCoroutine(ActivateAfterTime());
     }
 
     public void DeactivateAnimator()
     {
         _anim.enabled = false;
+    }
+
+    IEnumerator ActivateAfterTime()
+    {
+        yield return new WaitForSeconds(_timeToActivate); 
+        AudioManager.instance.PlayFence(gameObject);
+        if (_anim != null)
+        {
+            _anim.SetTrigger("Open");
+        }
     }
 }
