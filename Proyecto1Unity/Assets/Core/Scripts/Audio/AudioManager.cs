@@ -413,6 +413,32 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
+    #region Props Level 3
+    public AudioSource PlayCannonShooting(GameObject go)
+    {
+        _audioDatabase.cannonShootingCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.cannonShootingVolume);
+        return CreateAudioSource(go, _audioDatabase.cannonShootingAC, _audioDatabase.cannonShootingCurrentVolume, 500);
+    }
+
+    public AudioSource PlayCannonBulletFalling(GameObject go)
+    {
+        _audioDatabase.cannonBulletFallingCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.cannonBulletFallingVolume);
+        return CreateAudioSource(go, _audioDatabase.cannonBulletFallingAC, _audioDatabase.cannonBulletFallingCurrentVolume, 500, true);
+    }
+
+    public AudioSource PlayCannonBulletExplosion(GameObject go)
+    {
+        _audioDatabase.cannonBulletExplosionCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.cannonBulletExplosionVolume);
+        return CreateAudioSource(go, _audioDatabase.cannonBulletExplosionAC, _audioDatabase.cannonBulletExplosionCurrentVolume, 500);
+    }
+
+    public AudioSource PlayCannonBroken(GameObject go)
+    {
+        _audioDatabase.cannonBrokenCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.cannonBrokenVolume);
+        return CreateAudioSource(go, _audioDatabase.cannonBrokenAC, _audioDatabase.cannonBrokenCurrentVolume, 500);
+    }
+    #endregion
+
     #region NPCs
     public AudioSource PlayBufoDialogue(GameObject go)
     {

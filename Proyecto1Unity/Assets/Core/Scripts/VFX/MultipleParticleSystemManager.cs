@@ -6,10 +6,12 @@ public class MultipleParticleSystemManager : MonoBehaviour
 {
     [SerializeField] private float _disableAfterTime;
     private ParticleSystem[] _particleSystems;
+    private Vector3 _originalPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        _originalPosition = transform.localPosition;
         _particleSystems = transform.GetComponentsInChildren<ParticleSystem>();
         foreach (ParticleSystem p in _particleSystems)
         {
@@ -34,6 +36,29 @@ public class MultipleParticleSystemManager : MonoBehaviour
         {
             p.Stop();
             p.gameObject.SetActive(false);
+        }
+    }
+
+    public void PlayAndDettachParentWhilePlaying()
+    {
+        Transform parent = transform.parent;
+        transform.parent = null;
+        foreach (ParticleSystem p in _particleSystems)
+        {
+            p.gameObject.SetActive(true);
+            p.Play();
+        }
+        StartCoroutine(DisableAndReattachParentAfterPlaying(parent));
+    }
+
+    IEnumerator DisableAndReattachParentAfterPlaying(Transform parent)
+    {
+        yield return new WaitForSeconds(_disableAfterTime);
+        transform.parent = parent;
+        transform.localPosition = _originalPosition;
+        foreach (ParticleSystem p in _particleSystems)
+        {
+            p.Stop();
         }
     }
 }

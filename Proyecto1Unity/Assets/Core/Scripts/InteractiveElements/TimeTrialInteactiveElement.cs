@@ -16,6 +16,18 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
     private void Start()
     {
         _animator = GetComponent<Animator>();
+
+        EventHolder.instance.onRespawn.AddListener(StopTimeTrial);
+    }
+
+    private void OnEnable()
+    {
+        EventHolder.instance.onRespawn.AddListener(StopTimeTrial);
+    }
+
+    private void OnDisable()
+    {
+        EventHolder.instance.onRespawn.RemoveListener(StopTimeTrial);
     }
 
     public void Interact()
@@ -34,16 +46,22 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
     {
         SetGameObjectsAs(true);
         _normalTTAS = AudioManager.instance.PlayTimeTrialNormal(GameManager.instance.MainCamera);
-        yield return new WaitForSeconds(_trialTime - _urgentSoundMarginTime); 
-        AudioManager.instance.StopAudioSource(_normalTTAS);
-        _urgentTTAS = AudioManager.instance.PlayTimeTrialUrgent(GameManager.instance.MainCamera);
-        yield return new WaitForSeconds(_urgentSoundMarginTime);
-        AudioManager.instance.StopAudioSource(_urgentTTAS);
-        _urgentTTAS = AudioManager.instance.PlayTimeTrialEnd(GameManager.instance.MainCamera);
-        if (_animator != null)
-            _animator.SetTrigger("ChangeState");
-        SetGameObjectsAs(false);
-        _isActive = false;
+        yield return new WaitForSeconds(_trialTime - _urgentSoundMarginTime);
+        if (_isActive)
+        {
+            AudioManager.instance.StopAudioSource(_normalTTAS);
+            _urgentTTAS = AudioManager.instance.PlayTimeTrialUrgent(GameManager.instance.MainCamera);
+            yield return new WaitForSeconds(_urgentSoundMarginTime);
+            if (_isActive)
+            {
+                AudioManager.instance.StopAudioSource(_urgentTTAS);
+                AudioManager.instance.PlayTimeTrialEnd(GameManager.instance.MainCamera);
+                if (_animator != null)
+                    _animator.SetTrigger("ChangeState");
+                SetGameObjectsAs(false);
+                _isActive = false;
+            }
+        }
     }
 
     private void SetGameObjectsAs(bool setAs)
@@ -51,6 +69,21 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
         foreach(GameObject go in _trialGameObjects)
         {
             go.SetActive(setAs);
+        }
+    }
+
+    public void StopTimeTrial()
+    {
+        if (_isActive)
+        {
+            SetGameObjectsAs(false);
+            if (_normalTTAS != null)
+                AudioManager.instance.StopAudioSource(_normalTTAS);
+            if (_urgentTTAS != null)
+                AudioManager.instance.StopAudioSource(_urgentTTAS);
+            if (_animator != null)
+                _animator.SetTrigger("ChangeState");
+            _isActive = false;
         }
     }
 }

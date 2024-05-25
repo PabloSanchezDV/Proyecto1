@@ -189,6 +189,24 @@ public class AudioDatabase : ScriptableObject
          [Range(0, 1)] public float snowplowVolume;
          [NonSerialized] public float snowplowCurrentVolume;
 
+    [Header("Level 3 AudioClips")]
+
+        public AudioClip cannonShootingAC;
+         [Range(0, 1)] public float cannonShootingVolume;
+         [NonSerialized] public float cannonShootingCurrentVolume; 
+
+        public AudioClip cannonBulletFallingAC;
+         [Range(0, 1)] public float cannonBulletFallingVolume;
+         [NonSerialized] public float cannonBulletFallingCurrentVolume;
+
+        public AudioClip cannonBulletExplosionAC;
+         [Range(0, 1)] public float cannonBulletExplosionVolume;
+         [NonSerialized] public float cannonBulletExplosionCurrentVolume;
+
+        public AudioClip cannonBrokenAC;
+         [Range(0, 1)] public float cannonBrokenVolume;
+         [NonSerialized] public float cannonBrokenCurrentVolume;
+
     [Header("NPCs AudioClips")]
         //Bufo
         public AudioClip bufoDialogue1AC;
