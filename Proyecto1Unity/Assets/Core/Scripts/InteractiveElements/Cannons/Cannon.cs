@@ -68,5 +68,6 @@ public class Cannon : ActivableObject
         CameraSwitcher.instance.ResetPlayerCamera();
         GameManager.instance.Player.GetComponent<CharacterManager>().CanMove = true;
         CannonManager.instance.CanShoot = true;
+        CannonManager.instance.ResumeShooting();
     }
 }

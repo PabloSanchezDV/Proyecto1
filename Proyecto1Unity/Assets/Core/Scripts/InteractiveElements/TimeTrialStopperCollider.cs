@@ -10,9 +10,11 @@ public class TimeTrialStopperCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            AudioManager.instance.PlayTimeTrialEnd(GameManager.instance.MainCamera);
-            _timeTrial.StopTimeTrial();
-            gameObject.SetActive(false);
+            if(_timeTrial.IsActive)
+            {
+                AudioManager.instance.PlayTimeTrialEnd(GameManager.instance.MainCamera);
+                _timeTrial.StopTimeTrial();
+            }
         }
     }
 }

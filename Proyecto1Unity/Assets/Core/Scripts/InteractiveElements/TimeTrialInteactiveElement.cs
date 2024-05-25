@@ -10,8 +10,12 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
 
     private Animator _animator;
     private bool _isActive = false;
+    public bool IsActive { get { return _isActive; } }
     private AudioSource _normalTTAS;
     private AudioSource _urgentTTAS;
+
+    int usos = 0;
+    private Coroutine _activeCoroutine;
 
     private void Start()
     {
@@ -22,7 +26,8 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
 
     private void OnEnable()
     {
-        EventHolder.instance.onRespawn.AddListener(StopTimeTrial);
+        if(EventHolder.instance != null)
+            EventHolder.instance.onRespawn.AddListener(StopTimeTrial);
     }
 
     private void OnDisable()
@@ -39,29 +44,25 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
         _isActive = true;
         if(_animator != null)
             _animator.SetTrigger("ChangeState");
-        StartCoroutine(TimeTrialCoroutine());
+        _activeCoroutine = StartCoroutine(TimeTrialCoroutine());
     }
 
     IEnumerator TimeTrialCoroutine()
     {
+        usos++;
+        int uso = usos;
         SetGameObjectsAs(true);
         _normalTTAS = AudioManager.instance.PlayTimeTrialNormal(GameManager.instance.MainCamera);
-        yield return new WaitForSeconds(_trialTime - _urgentSoundMarginTime);
-        if (_isActive)
-        {
-            AudioManager.instance.StopAudioSource(_normalTTAS);
-            _urgentTTAS = AudioManager.instance.PlayTimeTrialUrgent(GameManager.instance.MainCamera);
-            yield return new WaitForSeconds(_urgentSoundMarginTime);
-            if (_isActive)
-            {
-                AudioManager.instance.StopAudioSource(_urgentTTAS);
-                AudioManager.instance.PlayTimeTrialEnd(GameManager.instance.MainCamera);
-                if (_animator != null)
-                    _animator.SetTrigger("ChangeState");
-                SetGameObjectsAs(false);
-                _isActive = false;
-            }
-        }
+        yield return new WaitForSeconds(_trialTime - _urgentSoundMarginTime); 
+        AudioManager.instance.StopAudioSource(_normalTTAS);
+        _urgentTTAS = AudioManager.instance.PlayTimeTrialUrgent(GameManager.instance.MainCamera);
+        yield return new WaitForSeconds(_urgentSoundMarginTime);
+        AudioManager.instance.StopAudioSource(_urgentTTAS);
+        AudioManager.instance.PlayTimeTrialEnd(GameManager.instance.MainCamera);
+        if (_animator != null)
+            _animator.SetTrigger("ChangeState");
+        SetGameObjectsAs(false);
+        _isActive = false;
     }
 
     private void SetGameObjectsAs(bool setAs)
@@ -76,6 +77,7 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
     {
         if (_isActive)
         {
+            StopCoroutine(_activeCoroutine);
             SetGameObjectsAs(false);
             if (_normalTTAS != null)
                 AudioManager.instance.StopAudioSource(_normalTTAS);
