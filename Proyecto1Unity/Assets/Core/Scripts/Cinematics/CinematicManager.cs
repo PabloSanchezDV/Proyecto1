@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class CinematicManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class CinematicManager : MonoBehaviour
     public static CinematicManager instance;
 
     private VideoPlayer _videoPlayer;
+    public VideoPlayer VideoPlayer { get { return _videoPlayer; } }
     private InputActions _inputActions;
 
     private void Awake()
@@ -17,21 +19,24 @@ public class CinematicManager : MonoBehaviour
         instance = this;
 
         _videoPlayer = GetComponent<VideoPlayer>();
-        _videoPlayer.clip = VideoImporter.LoadVideo(GetCinematicPath());
+        Debug.Log(GetCinematicPath(SceneTransitioner.instance.nextCinematic));
+        _videoPlayer.clip = VideoImporter.LoadVideo(GetCinematicPath(SceneTransitioner.instance.nextCinematic));
         _videoPlayer.Play();
         _inputActions = new InputActions();
     }
 
     void Start()
     {
-        _videoPlayer.loopPointReached += GoToNextScene;
-        _inputActions.Menu.SkipVideo.started += SkipCinematic;
-        _inputActions.Menu.Enable();
+        if(SceneTransitioner.instance.nextSceneIsElectionScene)
+            _videoPlayer.loopPointReached += ShowElectionUI;
+        else
+            _videoPlayer.loopPointReached += GoToNextScene;
+        _inputActions.Menu.Enable();        
     }
 
-    private string GetCinematicPath()
+    private string GetCinematicPath(Cinematic cinematic)
     {
-        switch(GameManager.instance.NextCinematic)
+        switch(cinematic)
         {
             case Cinematic.Initial:
                 return "Initial";
@@ -39,8 +44,6 @@ public class CinematicManager : MonoBehaviour
                 return "Repair";
             case Cinematic.Race:
                 return "Race";
-            case Cinematic.PreBoss:
-                return "PreBoss";
             case Cinematic.AfterBoss:
                 return "AfterBoss";
             case Cinematic.PacificEnd:
@@ -52,13 +55,32 @@ public class CinematicManager : MonoBehaviour
         }
     }
 
-    private void SkipCinematic(InputAction.CallbackContext context)
-    {
-        GameManager.instance.NextScene();
-    }
-
     private void GoToNextScene(VideoPlayer source)
     {
-        GameManager.instance.NextScene();
+        SceneTransitioner.instance.GoToNextScene();
+    }
+
+    private void ShowElectionUI(VideoPlayer source)
+    {
+        Cursor.lockState = CursorLockMode.None;
+        ElectionUI.instance.ShowElectionUI();
+    }
+
+    public void PlayGoodEndingCinematic()
+    {
+        _videoPlayer.clip = VideoImporter.LoadVideo(GetCinematicPath(Cinematic.PacificEnd));
+        _videoPlayer.Play();
+        _videoPlayer.loopPointReached += GoToNextScene;
+        SceneTransitioner.instance.nextCinematic = Cinematic.PacificEnd;
+        Debug.Log("PeacefulEnding");
+    }
+
+    public void PlayBadEndingCinematic()
+    {
+        _videoPlayer.clip = VideoImporter.LoadVideo(GetCinematicPath(Cinematic.ViolentEnd));
+        _videoPlayer.Play();
+        _videoPlayer.loopPointReached += GoToNextScene;
+        SceneTransitioner.instance.nextCinematic = Cinematic.ViolentEnd;
+        Debug.Log("ViolentEnding");
     }
 }

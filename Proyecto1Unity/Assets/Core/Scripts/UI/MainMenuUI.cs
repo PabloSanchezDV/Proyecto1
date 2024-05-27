@@ -18,7 +18,9 @@ public class MainMenuUI : MonoBehaviour
 
     public void StartNewGame()
     {
-        Debug.Log("New Game");
+        SceneTransitioner.instance.nextCinematic = Cinematic.Initial;
+        SceneTransitioner.instance.nextSceneIsElectionScene = false;
+        SceneTransitioner.instance.GoToNextScene(4);
     }
 
     public void ShowLoadGamePanel()

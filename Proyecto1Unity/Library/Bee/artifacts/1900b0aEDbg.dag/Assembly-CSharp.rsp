@@ -413,6 +413,7 @@
 "Assets/Core/Scripts/DialogueSystem/DialogueNode.cs"
 "Assets/Core/Scripts/DialogueSystem/DialogueTrigger.cs"
 "Assets/Core/Scripts/DialogueSystem/KomodoDialogueTrigger.cs"
+"Assets/Core/Scripts/DialogueSystem/SedaDialogueTrigger.cs"
 "Assets/Core/Scripts/Enemies/AI/MeleeEnemyAI.cs"
 "Assets/Core/Scripts/Enemies/AI/RangedEnemyAI.cs"
 "Assets/Core/Scripts/Enemies/Animator Controllers/EnemyAnimatorController.cs"
@@ -458,8 +459,10 @@
 "Assets/Core/Scripts/SaveSystem/SaveDatabase.cs"
 "Assets/Core/Scripts/SaveSystem/SaveSystem.cs"
 "Assets/Core/Scripts/SaveSystem/SceneLoader.cs"
+"Assets/Core/Scripts/SceneTransitioner.cs"
 "Assets/Core/Scripts/SedaSwitcher/SedaSwitcher.cs"
 "Assets/Core/Scripts/SedaSwitcher/SedaSwitcherCollider.cs"
+"Assets/Core/Scripts/UI/ElectionUI.cs"
 "Assets/Core/Scripts/UI/MainMenuUI.cs"
 "Assets/Core/Scripts/UI/OptionsUI.cs"
 "Assets/Core/Scripts/UI/SaveGameUI.cs"
@@ -502,6 +505,7 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
 "Assets/Z - TO DELETE/DELETE.cs"
+"Assets/Z - TO DELETE/GoToNextSceneTrigger.cs"
 -langversion:9.0
 
 /deterministic

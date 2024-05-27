@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [SerializeField] private Cinematic _nextCinematic;
+    [SerializeField] private bool _nextSceneIsSelectionScene;
+
     [SerializeField] private float _respawnTime;
 
     private bool _isPaused;
@@ -45,10 +48,6 @@ public class GameManager : MonoBehaviour
 
     private GameObject _player;
     public GameObject Player { get { return _player; } set { _player = value; } }
-
-    private Cinematic _nextCinematic;
-
-    public Cinematic NextCinematic { get {  return _nextCinematic; } }
 
     private CinemachineVirtualCameraBase _playerCamera;
     public CinemachineVirtualCameraBase PlayerCamera { get { return _playerCamera; } set { _playerCamera = value; } }
@@ -158,20 +157,10 @@ public class GameManager : MonoBehaviour
     #region Scene Management
     public void NextScene()
     {
+        SceneTransitioner.instance.nextSceneIsElectionScene = _nextSceneIsSelectionScene;
+        SceneTransitioner.instance.nextCinematic = _nextCinematic;
         UIManager.instance.FadeOut();
-        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-        //TODO - LoadSceneAsync always.
-        //  Show LoadingScreen when in Gameplay.
-        //  Check if the next scene is loaded once the cinematic is done.
-        //  If not, show LoadingScreen until then. 
-
-        //  Also set _nextCinematic as it should on every load
-        switch(sceneIndex)
-        {
-            default:
-                throw new NotImplementedException("GameManager Scene Management method still not available");
-        }
+        SceneTransitioner.instance.GoToNextScene(4);
     }
     #endregion
 

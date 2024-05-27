@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639343193106366939}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6015113, y: 0.3717313, z: 0.3717313, w: 0.6015113}
+  m_LocalRotation: {x: -0.6015106, y: 0.37173253, z: 0.37173253, w: 0.6015106}
   m_LocalPosition: {x: -50.827557, y: 14.390342, z: 569.2284}
   m_LocalScale: {x: 3.580788, y: 3.5807884, z: 3.5807877}
   m_ConstrainProportionsScale: 0
@@ -36,7 +36,7 @@ Transform:
   - {fileID: 4370301177070018769}
   - {fileID: 383325400525232403}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 63.432}
 --- !u!95 &2573067946047624094
 Animator:
   serializedVersion: 5
@@ -71,8 +71,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
-  _timePre: 0
-  _timePost: 0
+  _timePre: 2
+  _timePost: 2
   _shootParticleSystemManager: {fileID: 7218381463548755763}
   _brokenParticleSystemManager: {fileID: 6023339472552691620}
   _canShoot: 1
@@ -239,6 +239,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b56fd6c691a16394580a3e8c5423adac, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9b3e30bc49929db468566f7379067974, type: 2}
     - target: {fileID: 919132149155446097, guid: b56fd6c691a16394580a3e8c5423adac, type: 3}
       propertyPath: m_Name
       value: Bomba_elementosDecorativos_T

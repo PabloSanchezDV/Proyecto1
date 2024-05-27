@@ -320,15 +320,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "SkipVideo",
-                    "type": "Button",
-                    "id": "a307c157-1803-4301-83e6-04dcb7d04c43",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -373,28 +364,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "ClosePause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "edfca7e8-b1bc-42f1-bf8b-23a627996a09",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SkipVideo",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c334ff58-0395-49dc-a2d7-d24acc1506b7",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SkipVideo",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

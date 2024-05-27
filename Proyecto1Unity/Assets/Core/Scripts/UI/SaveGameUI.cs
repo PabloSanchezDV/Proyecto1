@@ -184,7 +184,7 @@ public class SaveGameUI : MonoBehaviour
             HideLoadConfirmationPopUp();
             ShowLoadedGamePopUp();
         }
-        catch(UnityException e)
+        catch
         {
             HideLoadConfirmationPopUp();
             ShowUnableToLoadPopUp();
@@ -203,7 +203,7 @@ public class SaveGameUI : MonoBehaviour
                 Data data = SaveSystem.LoadFile(_saveSlot, false);
                 UpdateLoadSlot(data.level, data.timeStamp);
                 UpdateSaveSlotOnLoad(data.level, data.timeStamp);
-            } catch(UnityException e)
+            } catch
             {
                 continue;
             }
