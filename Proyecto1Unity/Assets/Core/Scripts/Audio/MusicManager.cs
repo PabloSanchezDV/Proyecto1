@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicManager : MonoBehaviour
 {
     [NonSerialized] public static MusicManager instance;
 
-    [NonSerialized] public AudioSource testMusicAS;
+    [NonSerialized] public AudioSource musicAS;
 
     void Awake()
     {
@@ -21,26 +22,30 @@ public class MusicManager : MonoBehaviour
         }  
     }
 
-    public void PlayInGameMusic()
+    private void Start()
     {
-        testMusicAS = AudioManager.instance.TestMusic();
+        musicAS = PlayInGameMusic();
     }
 
-    public void PauseInGameMusic()
+    public AudioSource PlayInGameMusic()
     {
-        if(testMusicAS != null)
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        switch (sceneIndex)
         {
-            testMusicAS.Pause();
-        }
-    }
-
-    public void UnpauseInGameMusic()
-    {
-        testMusicAS.UnPause();
-    }
-
-    public void StopInGameMusic()
-    {
-        AudioManager.instance.StopAudioSource(testMusicAS);
+            case 0:
+                musicAS = AudioManager.instance.PlayMainThemeMusic();
+                return musicAS;
+            case 1:
+                musicAS = AudioManager.instance.PlayJungleThemeMusic();
+                return musicAS;
+            case 2:
+                musicAS = AudioManager.instance.PlayMountainThemeMusic();
+                return musicAS;
+            case 3:
+                musicAS = AudioManager.instance.PlaySwampThemeMusic();
+                return musicAS;
+            default:
+                throw new Exception("MusicManager can't process the music.");
+        }        
     }
 }

@@ -73,7 +73,7 @@ public class AudioManager : MonoBehaviour
             _isMusicEnabled = false;
         }
         PrefsManager.instance.SetBool(Pref.IsMusicEnabled, _isMusicEnabled);
-        ChangeMainTitleMusicVolume();
+        ChangeMusicVolume();
     }
 
     public void EnableDisableDialogues()
@@ -103,7 +103,7 @@ public class AudioManager : MonoBehaviour
         _musicVolumeModifier = mod;
         PrefsManager.instance.SetFloat(Pref.MusicVolume, mod);
 
-        ChangeMainTitleMusicVolume();
+        ChangeMusicVolume();
     }
 
     public void SetSoundsVolumeModifier(float mod)
@@ -136,14 +136,30 @@ public class AudioManager : MonoBehaviour
         PrefsManager.instance.SetFloat(Pref.DialoguesVolume, mod);
     }
 
-    private void ChangeMainTitleMusicVolume()
+    private void ChangeMusicVolume()
     {
-        if(MusicManager.instance.testMusicAS != null)
+        if(MusicManager.instance.musicAS != null)
         {
-            MusicManager.instance.testMusicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.testMusicVolume);
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            switch (sceneIndex)
+            {
+                case 0:
+                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.mainThemeMusicVolume);
+                    break;
+                case 1:
+                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.jungleThemeMusicVolume);
+                    break;
+                case 2:
+                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.mountainThemeMusicVolume);
+                    break;
+                case 3:
+                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.swampThemeMusicVolume);
+                    break;
+                default:
+                    throw new Exception("AudioManager can't process the music.");
+            }            
         }
     }
-
     #endregion
 
     #region Play Sounds Methods
@@ -254,8 +270,14 @@ public class AudioManager : MonoBehaviour
         }
     }
     #endregion
-    
-    #region Interactive Elements 
+
+    #region Interactive Elements
+    public AudioSource PlayCheckpoint(GameObject go)
+    {
+        _audioDatabase.checkpointCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.checkpointVolume);
+        return CreateAudioSource(go, _audioDatabase.checkpointAC, _audioDatabase.checkpointCurrentVolume, 500);
+    }
+
     public AudioSource PlayLever(GameObject go)
     {
         _audioDatabase.leverCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.leverVolume);
@@ -588,17 +610,31 @@ public class AudioManager : MonoBehaviour
     }
     #endregion
 
-    public AudioSource TestDialogue(GameObject go)
+    #region Music
+    public AudioSource PlayMainThemeMusic()
     {
-        _audioDatabase.testDialogueCurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.testDialogueVolume);
-        return CreateAudioSource(go, _audioDatabase.testDialogueAC, _audioDatabase.testDialogueCurrentVolume, 500);
+        _audioDatabase.mainThemeMusicCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.mainThemeMusicVolume);
+        return CreateMusicAudioSource(_audioDatabase.mainThemeMusicAC, _audioDatabase.mainThemeMusicCurrentVolume);
     }
 
-    public AudioSource TestMusic()
+    public AudioSource PlayJungleThemeMusic()
     {
-        _audioDatabase.testMusicCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.testMusicVolume);
-        return CreateMusicAudioSource(_audioDatabase.testMusicAC, _audioDatabase.testMusicCurrentVolume);
+        _audioDatabase.jungleThemeMusicCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.jungleThemeMusicVolume);
+        return CreateMusicAudioSource(_audioDatabase.jungleThemeMusicAC, _audioDatabase.jungleThemeMusicCurrentVolume);
     }
+
+    public AudioSource PlayMountainThemeMusic()
+    {
+        _audioDatabase.mountainThemeMusicCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.mountainThemeMusicVolume);
+        return CreateMusicAudioSource(_audioDatabase.mountainThemeMusicAC, _audioDatabase.mountainThemeMusicCurrentVolume);
+    }
+
+    public AudioSource PlaySwampThemeMusic()
+    {
+        _audioDatabase.swampThemeMusicCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.swampThemeMusicVolume);
+        return CreateMusicAudioSource(_audioDatabase.swampThemeMusicAC, _audioDatabase.swampThemeMusicCurrentVolume);
+    }
+    #endregion
     #endregion
 
     #region Stop Sounds Methods

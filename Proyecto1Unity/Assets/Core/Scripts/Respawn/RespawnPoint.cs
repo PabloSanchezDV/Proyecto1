@@ -17,6 +17,7 @@ public class RespawnPoint : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
+            AudioManager.instance.PlayCheckpoint(gameObject);
             _anim.ResetTrigger("ResetSignal");
             _anim.SetTrigger("SwapSignal");
             GameManager.instance.LastRespawnPosition = _respawnPosition;

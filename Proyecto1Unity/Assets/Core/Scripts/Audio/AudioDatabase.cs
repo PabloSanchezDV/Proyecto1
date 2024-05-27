@@ -79,6 +79,10 @@ public class AudioDatabase : ScriptableObject
 
     [Header("Interactive Elements AudioClips")]
 
+        public AudioClip checkpointAC;
+         [Range(0, 1)] public float checkpointVolume;
+         [NonSerialized] public float checkpointCurrentVolume;
+
         public AudioClip pressurePlateAC;
          [Range(0, 1)] public float pressurePlateVolume;
          [NonSerialized] public float pressurePlateCurrentVolume;
@@ -332,14 +336,20 @@ public class AudioDatabase : ScriptableObject
          [Range(0, 1)] public float toucanDialogue5Volume;
          [NonSerialized] public float toucanDialogue5CurrentVolume;
 
+    [Header("Music AudioClips")]
+     public AudioClip mainThemeMusicAC;
+      [Range(0, 1)] public float mainThemeMusicVolume;
+      [NonSerialized] public float mainThemeMusicCurrentVolume;
 
-    [Header("Test Dialogues AudioClips")]
-     public AudioClip testDialogueAC;
-      [Range(0, 1)] public float testDialogueVolume;
-      [NonSerialized] public float testDialogueCurrentVolume;
+     public AudioClip jungleThemeMusicAC;
+      [Range(0, 1)] public float jungleThemeMusicVolume;
+      [NonSerialized] public float jungleThemeMusicCurrentVolume;
 
-    [Header("Test Music AudioClips")]
-     public AudioClip testMusicAC;
-      [Range(0, 1)] public float testMusicVolume;
-      [NonSerialized] public float testMusicCurrentVolume;
+     public AudioClip mountainThemeMusicAC;
+      [Range(0, 1)] public float mountainThemeMusicVolume;
+      [NonSerialized] public float mountainThemeMusicCurrentVolume;
+
+     public AudioClip swampThemeMusicAC;
+      [Range(0, 1)] public float swampThemeMusicVolume;
+      [NonSerialized] public float swampThemeMusicCurrentVolume;
 }
