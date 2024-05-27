@@ -14,12 +14,11 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        _movementDirection = (player.transform.position + new Vector3(0, 0.25f, 0)) - transform.position;
     }
 
     private void Update()
     {
-        transform.Translate(_movementDirection.normalized * _speed * Time.deltaTime, Space.World);
+        transform.Translate(transform.forward * _speed * Time.deltaTime, Space.World);
     }
 
     private void OnEnable()
