@@ -45,7 +45,6 @@ public class SaveDatabase : MonoBehaviour
         {
             line += item + " ";
         }
-        Debug.Log(line);
     }
 
     public void AddBig(int id)
