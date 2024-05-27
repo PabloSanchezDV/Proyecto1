@@ -47,6 +47,8 @@ MonoBehaviour:
   bufoHurt3Volume: 1
   bufoHurt4AC: {fileID: 8300000, guid: db9d2778111485a499824cfa7e3b708a, type: 3}
   bufoHurt4Volume: 1
+  checkpointAC: {fileID: 8300000, guid: f7a0fd45490ba104097c9ef275d970f3, type: 3}
+  checkpointVolume: 1
   pressurePlateAC: {fileID: 8300000, guid: 695a53faa57460b4585986bbc039d3de, type: 3}
   pressurePlateVolume: 1
   pressurePlateBrokenAC: {fileID: 8300000, guid: 0af2a6bd50b4231408c1a891ea1fb6b1, type: 3}
@@ -163,7 +165,11 @@ MonoBehaviour:
   toucanDialogue4Volume: 0
   toucanDialogue5AC: {fileID: 0}
   toucanDialogue5Volume: 0
-  testDialogueAC: {fileID: 0}
-  testDialogueVolume: 0
-  testMusicAC: {fileID: 0}
-  testMusicVolume: 0
+  mainThemeMusicAC: {fileID: 8300000, guid: 8918bfc77e0726d4b847b4d583ba9100, type: 3}
+  mainThemeMusicVolume: 0.1
+  jungleThemeMusicAC: {fileID: 8300000, guid: f3ab7b3253b4d8c45aec7d8a4866b0be, type: 3}
+  jungleThemeMusicVolume: 0.1
+  mountainThemeMusicAC: {fileID: 8300000, guid: 55b2974a4517fcf4a8b821b62699c5f7, type: 3}
+  mountainThemeMusicVolume: 0.1
+  swampThemeMusicAC: {fileID: 8300000, guid: c91c6c4014141bc40a11713a9f00f064, type: 3}
+  swampThemeMusicVolume: 0.1
