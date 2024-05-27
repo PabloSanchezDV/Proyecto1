@@ -87,6 +87,6 @@ public class RangedEnemyAI : MonoBehaviour
         GameObject newProjectile = ProjectilePooling.instance.GetProjectile();
         newProjectile.SetActive(true);
         newProjectile.transform.position = _shootingPoint.position;
-        newProjectile.transform.rotation = _shootingPoint.rotation;
+        newProjectile.transform.LookAt(_player.position + new Vector3(0f, 0.5f, 0f));
     }
 }
