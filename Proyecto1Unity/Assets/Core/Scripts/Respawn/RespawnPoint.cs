@@ -7,6 +7,7 @@ public class RespawnPoint : MonoBehaviour
     [SerializeField] private Vector3 _respawnPosition;
 
     private Animator _anim;
+    private bool _isActive = false;
 
     private void Start()
     {
@@ -17,17 +18,21 @@ public class RespawnPoint : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            AudioManager.instance.PlayCheckpoint(gameObject);
-            _anim.ResetTrigger("ResetSignal");
-            _anim.SetTrigger("SwapSignal");
-            GameManager.instance.LastRespawnPosition = _respawnPosition;
-            RespawnPointController.instance.UpdateRespawnPoints(this);
-            Debug.Log("New spawn point set");
+            if (!_isActive)
+            {
+                AudioManager.instance.PlayCheckpoint(gameObject);
+                _anim.ResetTrigger("ResetSignal");
+                _anim.SetTrigger("SwapSignal");
+                _isActive = true;
+                GameManager.instance.LastRespawnPosition = _respawnPosition;
+                RespawnPointController.instance.UpdateRespawnPoints(this);
+            }
         }
     }
 
     public void ResetSignal()
     {
+        _isActive = false;
         _anim.ResetTrigger("SwapSignal");
         _anim.SetTrigger("ResetSignal");
     }
