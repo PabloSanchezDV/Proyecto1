@@ -217,7 +217,17 @@ public class UIManager : MonoBehaviour
 
     public void HidePausePanel()
     {
+        CheckAndHideAllPanels();
         _pausePanel.SetActive(false);
+    }
+
+    private void CheckAndHideAllPanels()
+    {
+        _optionsPanel.HideAudioOptionsUIPanel();
+        _optionsPanel.HideControlsOptionsUIPanel();
+        _optionsPanel.HideVideoOptionsUIPanel();
+        _saveGameUI.HideLoadGamePanel();
+        _saveGameUI.HideSaveGamePanel();
     }
 
     public void ShowOptionsPanel()

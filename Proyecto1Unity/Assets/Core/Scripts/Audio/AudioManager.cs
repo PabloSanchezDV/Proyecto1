@@ -10,23 +10,19 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     [SerializeField] private AudioDatabase _audioDatabase;
-    [NonSerialized] private float _musicVolumeModifier;
-    [NonSerialized] private float _soundsVolumeModifier;
-    [NonSerialized] private float _dialogueVolumeModifier;
-
-    //To add a new sound create an AudioSource, a Play method and a Stop method and add the Volume and Audioclip to AudioDatabase scriptableObject
-    #region AudioSources
-    [NonSerialized] public AudioSource testSoundAS;
-    [NonSerialized] public AudioSource testDialogueAS;
-    [NonSerialized] public AudioSource testMusicAS;
-    #endregion
+    private float _musicVolumeModifier = 1;
+    public float MusicVolumeModifier { get { return _musicVolumeModifier; } set { _musicVolumeModifier = value; } }
+    private float _soundsVolumeModifier = 1;
+    public float SoundsVolumeModifier { get { return _soundsVolumeModifier; } set { _soundsVolumeModifier = value; } }
+    private float _dialogueVolumeModifier = 1;
+    public float DialogueVolumeModifier { get { return _dialogueVolumeModifier; } set { _dialogueVolumeModifier = value; } }
 
     private bool _areSoundsEnabled = true;
-    public bool AreSoundsEnabled { get { return _areSoundsEnabled; } }
+    public bool AreSoundsEnabled { get { return _areSoundsEnabled; } set { _areSoundsEnabled = value; } }
     private bool _isMusicEnabled = true;
-    public bool IsMusicEnabled { get { return _isMusicEnabled;} }
+    public bool IsMusicEnabled { get { return _isMusicEnabled;} set { _isMusicEnabled = value; } }
     private bool _areDialoguesEnabled = true;
-    public bool AreDialoguesEnabled { get { return _areDialoguesEnabled; } }
+    public bool AreDialoguesEnabled { get { return _areDialoguesEnabled; } set { _areDialoguesEnabled = value; } }
 
     private List<AudioSource> aSList = new List<AudioSource>();
 
@@ -40,12 +36,6 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        //_areSoundsEnabled = PrefsManager.instance.GetBool(Pref.AreSoundsEnabled);
-        //_isMusicEnabled = PrefsManager.instance.GetBool(Pref.IsMusicEnabled);
-
-        _musicVolumeModifier = 1;
-        _soundsVolumeModifier = 1;
-        _dialogueVolumeModifier = 1;
     }
 
     #region Settings Methods
@@ -59,7 +49,6 @@ public class AudioManager : MonoBehaviour
         {
             _areSoundsEnabled = false;
         }
-        PrefsManager.instance.SetBool(Pref.AreSoundsEnabled, _areSoundsEnabled);
     }
 
     public void EnableDisableMusic()
@@ -72,7 +61,6 @@ public class AudioManager : MonoBehaviour
         {
             _isMusicEnabled = false;
         }
-        PrefsManager.instance.SetBool(Pref.IsMusicEnabled, _isMusicEnabled);
         ChangeMusicVolume();
     }
 
@@ -86,7 +74,6 @@ public class AudioManager : MonoBehaviour
         {
             _areDialoguesEnabled = false;
         }
-        PrefsManager.instance.SetBool(Pref.AreDialoguesEnabled, _areDialoguesEnabled);
     }
 
     public void SetMusicVolumeModifier(float mod)
@@ -101,7 +88,6 @@ public class AudioManager : MonoBehaviour
         }
 
         _musicVolumeModifier = mod;
-        PrefsManager.instance.SetFloat(Pref.MusicVolume, mod);
 
         ChangeMusicVolume();
     }
@@ -118,7 +104,6 @@ public class AudioManager : MonoBehaviour
         }
 
         _soundsVolumeModifier = mod;
-        PrefsManager.instance.SetFloat(Pref.SoundsVolume, mod);
     }
 
     public void SetDialogueVolumeModifier(float mod)
@@ -133,7 +118,6 @@ public class AudioManager : MonoBehaviour
         }
 
         _dialogueVolumeModifier = mod;
-        PrefsManager.instance.SetFloat(Pref.DialoguesVolume, mod);
     }
 
     private void ChangeMusicVolume()

@@ -448,8 +448,6 @@
 "Assets/Core/Scripts/Pooling/Pooling.cs"
 "Assets/Core/Scripts/Pooling/ProjectilePooling.cs"
 "Assets/Core/Scripts/Pooling/TrailPooling.cs"
-"Assets/Core/Scripts/Prefs/Pref.cs"
-"Assets/Core/Scripts/Prefs/PrefsManager.cs"
 "Assets/Core/Scripts/Projectiles/CannonBullet.cs"
 "Assets/Core/Scripts/Projectiles/Projectile.cs"
 "Assets/Core/Scripts/Respawn/Instakiller.cs"
@@ -459,7 +457,8 @@
 "Assets/Core/Scripts/SaveSystem/SaveDatabase.cs"
 "Assets/Core/Scripts/SaveSystem/SaveSystem.cs"
 "Assets/Core/Scripts/SaveSystem/SceneLoader.cs"
-"Assets/Core/Scripts/SceneTransitioner.cs"
+"Assets/Core/Scripts/SceneManagement/GoToNextSceneTrigger.cs"
+"Assets/Core/Scripts/SceneManagement/SceneTransitioner.cs"
 "Assets/Core/Scripts/SedaSwitcher/SedaSwitcher.cs"
 "Assets/Core/Scripts/SedaSwitcher/SedaSwitcherCollider.cs"
 "Assets/Core/Scripts/UI/ElectionUI.cs"
@@ -505,7 +504,6 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
 "Assets/Z - TO DELETE/DELETE.cs"
-"Assets/Z - TO DELETE/GoToNextSceneTrigger.cs"
 -langversion:9.0
 
 /deterministic

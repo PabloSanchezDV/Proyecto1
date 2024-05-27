@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,11 +19,18 @@ public class OptionsUI : MonoBehaviour
     [SerializeField] private Image _sfxMuteButtonImage;
     [SerializeField] private Image _musicMuteButtonImage;
     [SerializeField] private Image _dialoguesMuteButtonImage;
+    [SerializeField] private Image _invertXButtonImage;
+    [SerializeField] private Image _invertYButtonImage;
+
 
     [Header("Sliders")]
     [SerializeField] private Slider _sfxSlider;
     [SerializeField] private Slider _musicSlider;
     [SerializeField] private Slider _dialoguesSlider;
+    [SerializeField] private Slider _xSensitivitySlider;
+    [SerializeField] private Slider _ySensitivitySlider;
+
+    private CinemachineFreeLook playerCamera;
 
     private int _panelID = 0; //0 - audio, 1 - video, 2 - controls
 
@@ -32,6 +40,7 @@ public class OptionsUI : MonoBehaviour
         _audioOptionsUIPanel.SetActive(false);
         _videoOptionsUIPanel.SetActive(false);
         _controlsOptionsUIPanel.SetActive(false);
+        playerCamera = (CinemachineFreeLook)GameManager.instance.PlayerCamera;
     }
 
     #region Show/Hide Panels
@@ -102,7 +111,6 @@ public class OptionsUI : MonoBehaviour
     #endregion
 
     #region Audio  
-    // DO ALL BY AUDIOMANAGER BASTARD
     public void MuteUnmuteSFX()
     {
         if(AudioManager.instance.AreSoundsEnabled)
@@ -141,21 +149,67 @@ public class OptionsUI : MonoBehaviour
 
     public void MuteUnmuteDialogues()
     {
-        if (PrefsManager.instance.GetBool(Pref.AreDialoguesEnabled))
+        if (_dialoguesMuteButtonImage.sprite.Equals(_unmuteSprite))
         {
+            AudioManager.instance.AreSoundsEnabled = true;
             _dialoguesMuteButtonImage.sprite = _muteSprite;
-            PrefsManager.instance.SetBool(Pref.AreDialoguesEnabled, false);
         }
         else
         {
+            AudioManager.instance.AreSoundsEnabled = false;
             _dialoguesMuteButtonImage.sprite = _unmuteSprite;
-            PrefsManager.instance.SetBool(Pref.AreDialoguesEnabled, true);
         }
     }
 
     public void ChangeDialoguesVolume()
     {
-        PrefsManager.instance.SetFloat(Pref.DialoguesVolume, _dialoguesSlider.value);
+        AudioManager.instance.SetDialogueVolumeModifier(_sfxSlider.value);
+    }
+    #endregion
+
+    #region Inputs
+    public void CheckUncheckXInversion()
+    {
+        if (_invertXButtonImage.color.a == 100)
+        {
+            playerCamera.m_XAxis.m_InvertInput = false;
+            _invertXButtonImage.color = new Color(_invertXButtonImage.color.r, _invertXButtonImage.color.g, _invertXButtonImage.color.b, 0);
+        }
+        else
+        {
+            playerCamera.m_XAxis.m_InvertInput = true;
+            _invertXButtonImage.color = new Color(_invertXButtonImage.color.r, _invertXButtonImage.color.g, _invertXButtonImage.color.b, 100);
+        }
+    }
+
+    public void CheckUncheckYInversion()
+    {
+        if (_invertYButtonImage.color.a == 100)
+        {
+            playerCamera.m_YAxis.m_InvertInput = false;
+            _invertYButtonImage.color = new Color(_invertYButtonImage.color.r, _invertYButtonImage.color.g, _invertYButtonImage.color.b, 0);
+        }
+        else
+        {
+            playerCamera.m_YAxis.m_InvertInput = true;
+            _invertYButtonImage.color = new Color(_invertYButtonImage.color.r, _invertYButtonImage.color.g, _invertYButtonImage.color.b, 100);
+        }
+    }
+
+    public void ChangeXSensitivity()
+    {
+        if(_xSensitivitySlider.value < 0.5f)
+            playerCamera.m_XAxis.m_MaxSpeed = 200f - _xSensitivitySlider.value * 200f;
+        else
+            playerCamera.m_XAxis.m_MaxSpeed = 200f + _xSensitivitySlider.value * 100f;
+    }
+
+    public void ChangeYSensitivity()
+    {
+        if (_ySensitivitySlider.value < 0.5f)
+            playerCamera.m_YAxis.m_MaxSpeed = 1.7f - _ySensitivitySlider.value * 1.7f;
+        else
+            playerCamera.m_YAxis.m_MaxSpeed = 1.7f + _ySensitivitySlider.value * 0.85f;
     }
     #endregion
 }
