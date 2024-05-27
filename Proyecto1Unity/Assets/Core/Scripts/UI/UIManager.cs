@@ -44,6 +44,8 @@ public class UIManager : MonoBehaviour
 
     public static UIManager instance;
 
+    private Coroutine _bananasCoroutine;
+
     private void Awake()
     {
         if(instance == null)
@@ -192,11 +194,14 @@ public class UIManager : MonoBehaviour
     public void ShowBananasHUD()
     {
         _bananasHUDAnimator.SetTrigger("Show");
-        Invoke("HideBananasHUD", _hideHUDTime);
+        if (_bananasCoroutine != null)
+            StopCoroutine(_bananasCoroutine);
+        _bananasCoroutine = StartCoroutine(HideBananasHUD());
     }
 
-    public void HideBananasHUD()
+    IEnumerator HideBananasHUD()
     {
+        yield return new WaitForSeconds(_hideHUDTime);
         _bananasHUDAnimator.SetTrigger("Hide");
     }
 
