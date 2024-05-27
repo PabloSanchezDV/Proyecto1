@@ -6,6 +6,15 @@ public class SedaDialogueTrigger : DialogueTrigger
 {
     [SerializeField] private int _idAfterCompletion;
 
+    private void Start()
+    {
+        _cameraRef = transform.GetChild(0);
+        _visualPlane = transform.GetChild(2);
+        _animator = GetComponent<Animator>();
+        _cameraRefOriginalYPosition = _cameraRef.localPosition.y; 
+        EventHolder.instance.onAllCollectiblesCollected.AddListener(ChangeDialogueLines);
+    }
+
     protected override void Talk()
     {
         EventHolder.instance.onStartDialogue?.Invoke();
@@ -17,7 +26,6 @@ public class SedaDialogueTrigger : DialogueTrigger
         StartDialogue();
         if (_overwriteAtEnd)
             OverwriteAtEnd();
-        EventHolder.instance.onAllCollectiblesCollected.AddListener(ChangeDialogueLines);
     }
 
     private void ChangeDialogueLines()

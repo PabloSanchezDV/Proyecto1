@@ -193,9 +193,13 @@ public class UIManager : MonoBehaviour
 
     public void ShowBananasHUD()
     {
-        _bananasHUDAnimator.SetTrigger("Show");
         if (_bananasCoroutine != null)
+        {
+            _bananasHUDAnimator.ResetTrigger("Hide");
             StopCoroutine(_bananasCoroutine);
+        }
+        else
+            _bananasHUDAnimator.SetTrigger("Show");
         _bananasCoroutine = StartCoroutine(HideBananasHUD());
     }
 
@@ -203,6 +207,7 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(_hideHUDTime);
         _bananasHUDAnimator.SetTrigger("Hide");
+        _bananasCoroutine = null;
     }
 
     public void ShowPausePanel()

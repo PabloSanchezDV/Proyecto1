@@ -160,6 +160,11 @@ public class GameManager : MonoBehaviour
         SceneTransitioner.instance.nextSceneIsElectionScene = _nextSceneIsSelectionScene;
         SceneTransitioner.instance.nextCinematic = _nextCinematic;
         UIManager.instance.FadeOut();
+        Invoke("GoToNextSceneAfterFadeOut", 5f);
+    }
+
+    private void GoToNextSceneAfterFadeOut()
+    {
         SceneTransitioner.instance.GoToNextScene(4);
     }
     #endregion
