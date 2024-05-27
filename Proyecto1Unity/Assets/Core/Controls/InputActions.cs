@@ -342,15 +342,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SkipVideo"",
-                    ""type"": ""Button"",
-                    ""id"": ""a307c157-1803-4301-83e6-04dcb7d04c43"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -395,28 +386,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ClosePause"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""edfca7e8-b1bc-42f1-bf8b-23a627996a09"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SkipVideo"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c334ff58-0395-49dc-a2d7-d24acc1506b7"",
-                    ""path"": ""<Gamepad>/start"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SkipVideo"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -479,7 +448,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Menu_Move = m_Menu.FindAction("Move", throwIfNotFound: true);
         m_Menu_Accept = m_Menu.FindAction("Accept", throwIfNotFound: true);
         m_Menu_ClosePause = m_Menu.FindAction("ClosePause", throwIfNotFound: true);
-        m_Menu_SkipVideo = m_Menu.FindAction("SkipVideo", throwIfNotFound: true);
         // Dialogue
         m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
         m_Dialogue_NextDialogue = m_Dialogue.FindAction("NextDialogue", throwIfNotFound: true);
@@ -649,7 +617,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Menu_Move;
     private readonly InputAction m_Menu_Accept;
     private readonly InputAction m_Menu_ClosePause;
-    private readonly InputAction m_Menu_SkipVideo;
     public struct MenuActions
     {
         private @InputActions m_Wrapper;
@@ -657,7 +624,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Menu_Move;
         public InputAction @Accept => m_Wrapper.m_Menu_Accept;
         public InputAction @ClosePause => m_Wrapper.m_Menu_ClosePause;
-        public InputAction @SkipVideo => m_Wrapper.m_Menu_SkipVideo;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -676,9 +642,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @ClosePause.started += instance.OnClosePause;
             @ClosePause.performed += instance.OnClosePause;
             @ClosePause.canceled += instance.OnClosePause;
-            @SkipVideo.started += instance.OnSkipVideo;
-            @SkipVideo.performed += instance.OnSkipVideo;
-            @SkipVideo.canceled += instance.OnSkipVideo;
         }
 
         private void UnregisterCallbacks(IMenuActions instance)
@@ -692,9 +655,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @ClosePause.started -= instance.OnClosePause;
             @ClosePause.performed -= instance.OnClosePause;
             @ClosePause.canceled -= instance.OnClosePause;
-            @SkipVideo.started -= instance.OnSkipVideo;
-            @SkipVideo.performed -= instance.OnSkipVideo;
-            @SkipVideo.canceled -= instance.OnSkipVideo;
         }
 
         public void RemoveCallbacks(IMenuActions instance)
@@ -774,7 +734,6 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnAccept(InputAction.CallbackContext context);
         void OnClosePause(InputAction.CallbackContext context);
-        void OnSkipVideo(InputAction.CallbackContext context);
     }
     public interface IDialogueActions
     {

@@ -77,7 +77,8 @@ public class TimeTrialInteactiveElement : MonoBehaviour, IInteractable
     {
         if (_isActive)
         {
-            StopCoroutine(_activeCoroutine);
+            if(_activeCoroutine != null)
+                StopCoroutine(_activeCoroutine);
             SetGameObjectsAs(false);
             if (_normalTTAS != null)
                 AudioManager.instance.StopAudioSource(_normalTTAS);

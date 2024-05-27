@@ -1,2 +1,2 @@
 public enum Cinematic
-{ Initial, Repair, Race, PreBoss, AfterBoss, PacificEnd, ViolentEnd }
+{ Initial, Repair, Race, AfterBoss, PacificEnd, ViolentEnd, Credits }

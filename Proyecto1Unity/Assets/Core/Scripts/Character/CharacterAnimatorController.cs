@@ -69,6 +69,7 @@ public class CharacterAnimatorController : MonoBehaviour
 
     public void DoubleJump()
     {
+        _anim.ResetTrigger("StartFalling");
         _anim.SetTrigger("DoubleJump");
     }
 
@@ -89,6 +90,8 @@ public class CharacterAnimatorController : MonoBehaviour
 
     public void EndFalling()
     {
+        _anim.ResetTrigger("Jump");
+        _anim.ResetTrigger("EndElevating");
         _anim.ResetTrigger("StartFalling");
         _anim.ResetTrigger("Hit");
         _anim.SetTrigger("EndFalling");

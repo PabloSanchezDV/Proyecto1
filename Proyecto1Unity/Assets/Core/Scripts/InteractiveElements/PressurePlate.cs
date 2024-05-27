@@ -88,7 +88,6 @@ public class PressurePlate : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(0.5f);
-            Debug.Log(Vector3.Distance(_box.transform.position, transform.position) + " > " + _boxMaxDistance);
             if(Vector3.Distance(_box.transform.position, transform.position) > _boxMaxDistance)
             {
                 ResetBox();
