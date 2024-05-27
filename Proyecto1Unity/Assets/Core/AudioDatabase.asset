@@ -12,164 +12,164 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a797720ebb0236469cc179ab28fa726, type: 3}
   m_Name: AudioDatabase
   m_EditorClassIdentifier: 
-  bufoTongueAC: {fileID: 8300000, guid: 458975423b3a79d45834a98ae85882f3, type: 3}
-  bufoTongueVolume: 1
+  bufoTongueAC: {fileID: 8300000, guid: 84f6c0d52454354449224425fe1f2d09, type: 3}
+  bufoTongueVolume: 0.8
   bufoTongueMaxDistance: 0
-  bufoJump1AC: {fileID: 0}
-  bufoJump1Volume: 0
-  bufoJump2AC: {fileID: 0}
-  bufoJump2Volume: 0
-  bufoJump3AC: {fileID: 0}
-  bufoJump3Volume: 0
-  bufoTongueImpAC: {fileID: 8300000, guid: f8d64d52f544d3945b07e77b64a312b4, type: 3}
+  bufoJump1AC: {fileID: 8300000, guid: 7786c8b93f7c74b4aaf9a79e18605d88, type: 3}
+  bufoJump1Volume: 1
+  bufoJump2AC: {fileID: 8300000, guid: c02c15d54c8923b4193d87eab85580b5, type: 3}
+  bufoJump2Volume: 1
+  bufoJump3AC: {fileID: 8300000, guid: 60a7873813d400f40bf227e2d5fb92ff, type: 3}
+  bufoJump3Volume: 1
+  bufoTongueImpAC: {fileID: 8300000, guid: 3f6f960aab56f20428101beeef8baaaa, type: 3}
   bufoTongueImpVolume: 1
-  bufoFlutterAC: {fileID: 8300000, guid: 0dd0741abc945ac4886057b69d97b647, type: 3}
-  bufoFlutterVolume: 1
-  bufoShiftAirAC: {fileID: 8300000, guid: 64cad855c31de4343954f31a9cde5e61, type: 3}
-  bufoShiftAirVolume: 1
-  bufoStepsRightAC: {fileID: 8300000, guid: cf650fc499b21e14487d2b8d8a17e3e8, type: 3}
-  bufoStepsRightVolume: 1
-  bufoStepsLeftAC: {fileID: 8300000, guid: defc2f9f40edc394787b0baf048c8ee4, type: 3}
-  bufoStepsLeftVolume: 1
-  bufoLandingAC: {fileID: 8300000, guid: 4489f035910478e47b1c110b6f7f7aa1, type: 3}
-  bufoLandingVolume: 1
-  bufoDeath1AC: {fileID: 0}
-  bufoDeath1Volume: 0
-  bufoDeath2AC: {fileID: 0}
-  bufoDeath2Volume: 0
-  bufoBiteAC: {fileID: 8300000, guid: 2da5d3e6d8e095044aa1640108cdb9d0, type: 3}
+  bufoFlutterAC: {fileID: 8300000, guid: 57192dc9f7497d34990d0416aa831dcb, type: 3}
+  bufoFlutterVolume: 0.65
+  bufoShiftAirAC: {fileID: 8300000, guid: bfa77fa675a51f241b88ab690db2ef87, type: 3}
+  bufoShiftAirVolume: 0.45
+  bufoStepsRightAC: {fileID: 8300000, guid: 4573a6a8ad6bd19429840da5ce5cb20d, type: 3}
+  bufoStepsRightVolume: 0.7
+  bufoStepsLeftAC: {fileID: 8300000, guid: ff3a6d8968c37684ab763763d7e50bec, type: 3}
+  bufoStepsLeftVolume: 0.7
+  bufoLandingAC: {fileID: 8300000, guid: 67aa820c3900da041ace69ba7bece3a1, type: 3}
+  bufoLandingVolume: 0.5
+  bufoDeath1AC: {fileID: 8300000, guid: c8d49c5ce793c594a9a2c0f192308890, type: 3}
+  bufoDeath1Volume: 1
+  bufoDeath2AC: {fileID: 8300000, guid: 05557cdfd6ca1264e90d5eca4538bc80, type: 3}
+  bufoDeath2Volume: 1
+  bufoBiteAC: {fileID: 8300000, guid: e4a188446c8538d42a4e3ab38a2c02b6, type: 3}
   bufoBiteVolume: 1
-  bufoHurt1AC: {fileID: 8300000, guid: 539c5c0fa28c23243bc7af8e6eb3edfd, type: 3}
+  bufoHurt1AC: {fileID: 8300000, guid: 1c64f8b010a181a48aa1ff699cd7b7b8, type: 3}
   bufoHurt1Volume: 1
-  bufoHurt2AC: {fileID: 8300000, guid: baa1999e9eb9b7d458401b7278fb21c8, type: 3}
+  bufoHurt2AC: {fileID: 8300000, guid: 2c5fa1042633a4740a6c3d54d3d5b69d, type: 3}
   bufoHurt2Volume: 1
-  bufoHurt3AC: {fileID: 8300000, guid: cb0a55e6f559f0d49928e95e1b662fd9, type: 3}
+  bufoHurt3AC: {fileID: 8300000, guid: 0a206e43ca5e127428d8a36707dc2657, type: 3}
   bufoHurt3Volume: 1
-  bufoHurt4AC: {fileID: 8300000, guid: db9d2778111485a499824cfa7e3b708a, type: 3}
+  bufoHurt4AC: {fileID: 8300000, guid: 8534e79d64b785b4496b3f1b85df5223, type: 3}
   bufoHurt4Volume: 1
-  checkpointAC: {fileID: 8300000, guid: f7a0fd45490ba104097c9ef275d970f3, type: 3}
+  checkpointAC: {fileID: 8300000, guid: e903b5df080db9b4188310ff09e72237, type: 3}
   checkpointVolume: 1
-  pressurePlateAC: {fileID: 8300000, guid: 695a53faa57460b4585986bbc039d3de, type: 3}
+  pressurePlateAC: {fileID: 8300000, guid: 264737047d8d521468eb074f68dbe5ad, type: 3}
   pressurePlateVolume: 1
-  pressurePlateBrokenAC: {fileID: 8300000, guid: 0af2a6bd50b4231408c1a891ea1fb6b1, type: 3}
+  pressurePlateBrokenAC: {fileID: 8300000, guid: 1842c3b6f3f3a6049a6687c086ad57d9, type: 3}
   pressurePlateBrokenVolume: 1
-  leverAC: {fileID: 8300000, guid: 7103dc46073270549a8478e89bf45b68, type: 3}
+  leverAC: {fileID: 8300000, guid: 957f8aa082ed0e24abd08e19988dffe0, type: 3}
   leverVolume: 1
-  boxShiftAC: {fileID: 8300000, guid: c3ab09702d24d1447b509a8d2b23d2b4, type: 3}
-  boxShiftVolume: 1
-  collectableAC: {fileID: 8300000, guid: 2594263aec663c84a97914eed46e1fba, type: 3}
-  collectableVolume: 1
+  boxShiftAC: {fileID: 8300000, guid: 18f7b905f1618b6458eba1f144620f50, type: 3}
+  boxShiftVolume: 0.5
+  collectableAC: {fileID: 8300000, guid: 92e49de4991042242931e23198128a55, type: 3}
+  collectableVolume: 0.45
   bananaAC: {fileID: 8300000, guid: 2594263aec663c84a97914eed46e1fba, type: 3}
-  bananaVolume: 1
-  buttonAC: {fileID: 8300000, guid: 7103dc46073270549a8478e89bf45b68, type: 3}
+  bananaVolume: 0.45
+  buttonAC: {fileID: 8300000, guid: 92e49de4991042242931e23198128a55, type: 3}
   buttonVolume: 1
-  timeTrialNormalAC: {fileID: 8300000, guid: 728a8998876af644bab1ae354e06494f, type: 3}
-  timeTrialNormalVolume: 1
-  timeTrialUrgentAC: {fileID: 8300000, guid: f41f3c95af9547d4c9c029417381a7ec, type: 3}
-  timeTrialUrgentVolume: 1
-  timeTrialEndAC: {fileID: 8300000, guid: b1eb03e1b896b814aae2c8d1db41e1ab, type: 3}
-  timeTrialEndVolume: 1
-  fenceAC: {fileID: 8300000, guid: 8c6d58bea605eb74db3f4cbcbe8c8e4c, type: 3}
+  timeTrialNormalAC: {fileID: 8300000, guid: e274d635a75e7bc4f80c4ac8967ff701, type: 3}
+  timeTrialNormalVolume: 0.7
+  timeTrialUrgentAC: {fileID: 8300000, guid: ca36004355e5be44c893580758f112f9, type: 3}
+  timeTrialUrgentVolume: 0.7
+  timeTrialEndAC: {fileID: 8300000, guid: 0b487a1a7a3008a4a9c7c34d882e7e7a, type: 3}
+  timeTrialEndVolume: 0.5
+  fenceAC: {fileID: 8300000, guid: a261e1634554dc84e966a54367c5d0dd, type: 3}
   fenceVolume: 1
-  cobraThrowingBrickAC: {fileID: 8300000, guid: 492210157dbfa5c4a922de4ac9ee8a90, type: 3}
+  cobraThrowingBrickAC: {fileID: 8300000, guid: dc8bf65eb17fc8245a7461615acd3a6d, type: 3}
   cobraThrowingBrickVolume: 1
-  cobraFleeAC: {fileID: 8300000, guid: 8c6d58bea605eb74db3f4cbcbe8c8e4c, type: 3}
+  cobraFleeAC: {fileID: 8300000, guid: 07cfd51b24505a74881456c29feafb0b, type: 3}
   cobraFleeVolume: 1
-  cobraDetectionAC: {fileID: 8300000, guid: 127418b6238dd0b4bb27c306e932b042, type: 3}
+  cobraDetectionAC: {fileID: 8300000, guid: 6cea868a56c6339459ddc465408e9831, type: 3}
   cobraDetectionVolume: 1
-  cobraDeathAC: {fileID: 8300000, guid: 743720cdcff4ee846b75f25e71b3f579, type: 3}
-  cobraDeathVolume: 1
+  cobraDeathAC: {fileID: 8300000, guid: aa6d6e29e7347bd4ba8eb45aa51af26d, type: 3}
+  cobraDeathVolume: 0.75
   mosquitoHumAC: {fileID: 0}
   mosquitoHumVolume: 0
-  mosquitoDeathAC: {fileID: 8300000, guid: 652061b21481b414a8ca82168e903c31, type: 3}
-  mosquitoDeathVolume: 0
-  crocodileAttackAC: {fileID: 8300000, guid: 73e19bf0c4fab8e40bee345ea978c3ec, type: 3}
+  mosquitoDeathAC: {fileID: 8300000, guid: 09066012d5d8afb4ea297cc76a994a8d, type: 3}
+  mosquitoDeathVolume: 0.75
+  crocodileAttackAC: {fileID: 8300000, guid: c22a6d0b19ed62042b3f1eff4a8c0eb2, type: 3}
   crocodileAttackVolume: 1
-  crocodileDetectionAC: {fileID: 8300000, guid: f80f587755ec8474cbc8f5e7d25e7b2c, type: 3}
+  crocodileDetectionAC: {fileID: 8300000, guid: b8b1f4e5a99ff8e4d808adc3294304ae, type: 3}
   crocodileDetectionVolume: 1
-  crocodileDeathAC: {fileID: 8300000, guid: d9eb597d24eaa71419d862a3907a8e5e, type: 3}
-  crocodileDeathVolume: 1
-  waterfallAC: {fileID: 0}
-  waterfallVolume: 0
-  campfireAC: {fileID: 8300000, guid: fb684bbeaf7ac764d8eb511e35c78209, type: 3}
-  campfireVolume: 0.03
-  factoryAC: {fileID: 8300000, guid: 9a531ced16c1f6944891d259a86cbd5b, type: 3}
-  factoryVolume: 1
-  lightedSignAC: {fileID: 8300000, guid: 58f7a187477d6a74e90f730048670c6b, type: 3}
-  lightedSignVolume: 1
-  snowplowAC: {fileID: 8300000, guid: 0d62891a115500d4193433a62692dad7, type: 3}
-  snowplowVolume: 1
-  cannonShootingAC: {fileID: 8300000, guid: 3e79b18c11873e7439680a4badc7159f, type: 3}
+  crocodileDeathAC: {fileID: 8300000, guid: 607ed785d772c1e49838cb7b0b424e46, type: 3}
+  crocodileDeathVolume: 0.75
+  waterfallAC: {fileID: 8300000, guid: ecb6116cd05318142b69e437fa4b4168, type: 3}
+  waterfallVolume: 0.7
+  campfireAC: {fileID: 8300000, guid: 2cbc4cf8842526c4492b01905d8a978d, type: 3}
+  campfireVolume: 0.23
+  factoryAC: {fileID: 8300000, guid: 692ec83e98b1aea4d9f4142bf1aa9532, type: 3}
+  factoryVolume: 0.23
+  lightedSignAC: {fileID: 8300000, guid: a01fc9b4acd08b54b8dec039eb63b025, type: 3}
+  lightedSignVolume: 0.2
+  snowplowAC: {fileID: 8300000, guid: ad69f8ef61c42dc44b471ad7a9e90c74, type: 3}
+  snowplowVolume: 0.4
+  cannonShootingAC: {fileID: 8300000, guid: 133ced3823ca44d44bb8fa1ba390e9ba, type: 3}
   cannonShootingVolume: 1
-  cannonBulletFallingAC: {fileID: 8300000, guid: 239d2b6bd4933c84d860d967fc98ac61, type: 3}
+  cannonBulletFallingAC: {fileID: 8300000, guid: a0bc637d86c896f4b88d492277b727a4, type: 3}
   cannonBulletFallingVolume: 1
-  cannonBulletExplosionAC: {fileID: 8300000, guid: 144a645a0fc83db44a92fc68bb83e4c9, type: 3}
+  cannonBulletExplosionAC: {fileID: 8300000, guid: 8032b1417f586664b9139a382905a2c5, type: 3}
   cannonBulletExplosionVolume: 1
-  cannonBrokenAC: {fileID: 8300000, guid: 0af2a6bd50b4231408c1a891ea1fb6b1, type: 3}
+  cannonBrokenAC: {fileID: 8300000, guid: 1842c3b6f3f3a6049a6687c086ad57d9, type: 3}
   cannonBrokenVolume: 1
-  bufoDialogue1AC: {fileID: 0}
-  bufoDialogue1Volume: 0
-  bufoDialogue2AC: {fileID: 0}
-  bufoDialogue2Volume: 0
-  bufoDialogue3AC: {fileID: 0}
-  bufoDialogue3Volume: 0
-  bufoDialogue4AC: {fileID: 0}
-  bufoDialogue4Volume: 0
-  bufoDialogue5AC: {fileID: 0}
-  bufoDialogue5Volume: 0
-  sedaDialogue1AC: {fileID: 0}
-  sedaDialogue1Volume: 0
-  sedaDialogue2AC: {fileID: 0}
-  sedaDialogue2Volume: 0
-  sedaDialogue3AC: {fileID: 0}
-  sedaDialogue3Volume: 0
-  sedaDialogue4AC: {fileID: 0}
-  sedaDialogue4Volume: 0
-  sedaDialogue5AC: {fileID: 0}
-  sedaDialogue5Volume: 0
-  komodoDialogue1AC: {fileID: 0}
-  komodoDialogue1Volume: 0
-  komodoDialogue2AC: {fileID: 0}
-  komodoDialogue2Volume: 0
-  komodoDialogue3AC: {fileID: 0}
-  komodoDialogue3Volume: 0
-  komodoDialogue4AC: {fileID: 0}
-  komodoDialogue4Volume: 0
-  komodoDialogue5AC: {fileID: 0}
-  komodoDialogue5Volume: 0
-  alironDialogue1AC: {fileID: 0}
-  alironDialogue1Volume: 0
-  alironDialogue2AC: {fileID: 0}
-  alironDialogue2Volume: 0
-  alironDialogue3AC: {fileID: 0}
-  alironDialogue3Volume: 0
-  alironDialogue4AC: {fileID: 0}
-  alironDialogue4Volume: 0
-  alironDialogue5AC: {fileID: 0}
-  alironDialogue5Volume: 0
-  bearDialogue1AC: {fileID: 0}
-  bearDialogue1Volume: 0
-  bearDialogue2AC: {fileID: 0}
-  bearDialogue2Volume: 0
-  bearDialogue3AC: {fileID: 0}
-  bearDialogue3Volume: 0
-  bearDialogue4AC: {fileID: 0}
-  bearDialogue4Volume: 0
-  toucanDialogue1AC: {fileID: 0}
-  toucanDialogue1Volume: 0
-  toucanDialogue2AC: {fileID: 0}
-  toucanDialogue2Volume: 0
-  toucanDialogue3AC: {fileID: 0}
-  toucanDialogue3Volume: 0
-  toucanDialogue4AC: {fileID: 0}
-  toucanDialogue4Volume: 0
-  toucanDialogue5AC: {fileID: 0}
-  toucanDialogue5Volume: 0
-  mainThemeMusicAC: {fileID: 8300000, guid: 8918bfc77e0726d4b847b4d583ba9100, type: 3}
-  mainThemeMusicVolume: 0.1
-  jungleThemeMusicAC: {fileID: 8300000, guid: f3ab7b3253b4d8c45aec7d8a4866b0be, type: 3}
-  jungleThemeMusicVolume: 0.1
-  mountainThemeMusicAC: {fileID: 8300000, guid: 55b2974a4517fcf4a8b821b62699c5f7, type: 3}
-  mountainThemeMusicVolume: 0.1
-  swampThemeMusicAC: {fileID: 8300000, guid: c91c6c4014141bc40a11713a9f00f064, type: 3}
-  swampThemeMusicVolume: 0.1
+  bufoDialogue1AC: {fileID: 8300000, guid: 5d76df75528f29e4d9246cf997e11954, type: 3}
+  bufoDialogue1Volume: 1
+  bufoDialogue2AC: {fileID: 8300000, guid: d1bc2fa917e7bae4eba3a48e9415782e, type: 3}
+  bufoDialogue2Volume: 1
+  bufoDialogue3AC: {fileID: 8300000, guid: 8aadb550901875f4aa9fc4209cdb26b2, type: 3}
+  bufoDialogue3Volume: 1
+  bufoDialogue4AC: {fileID: 8300000, guid: 1d6740f5a35b655498305720d693ec73, type: 3}
+  bufoDialogue4Volume: 1
+  bufoDialogue5AC: {fileID: 8300000, guid: 25fcaa472f4c6194fb0805fb4281cd60, type: 3}
+  bufoDialogue5Volume: 1
+  sedaDialogue1AC: {fileID: 8300000, guid: d4a36bf58f6a5f04fa41719186b3e308, type: 3}
+  sedaDialogue1Volume: 1
+  sedaDialogue2AC: {fileID: 8300000, guid: 9c7c49c98f3f251499131ecea9e26ec4, type: 3}
+  sedaDialogue2Volume: 1
+  sedaDialogue3AC: {fileID: 8300000, guid: 25f64a874fa31a5469ac7f95054da561, type: 3}
+  sedaDialogue3Volume: 1
+  sedaDialogue4AC: {fileID: 8300000, guid: 0cc67ea45e927cb4891d75c238e0f856, type: 3}
+  sedaDialogue4Volume: 1
+  sedaDialogue5AC: {fileID: 8300000, guid: fde89d32cbc9db841a6fdf2870259caa, type: 3}
+  sedaDialogue5Volume: 1
+  komodoDialogue1AC: {fileID: 8300000, guid: 70f550b02af45344d96969234783fd43, type: 3}
+  komodoDialogue1Volume: 1
+  komodoDialogue2AC: {fileID: 8300000, guid: edf81c397f185084a971203556179e8f, type: 3}
+  komodoDialogue2Volume: 1
+  komodoDialogue3AC: {fileID: 8300000, guid: d13b905f9328b8d42ae852269dabe44b, type: 3}
+  komodoDialogue3Volume: 1
+  komodoDialogue4AC: {fileID: 8300000, guid: 3b31437097e5e8544a8e8cda7bb7b556, type: 3}
+  komodoDialogue4Volume: 1
+  komodoDialogue5AC: {fileID: 8300000, guid: d799dd4b03231c54fb92efec40193844, type: 3}
+  komodoDialogue5Volume: 1
+  alironDialogue1AC: {fileID: 8300000, guid: dc26328cfb3494940a10f9e34bbc77f1, type: 3}
+  alironDialogue1Volume: 1
+  alironDialogue2AC: {fileID: 8300000, guid: ed9ab52721a69664fad7dbab021569d0, type: 3}
+  alironDialogue2Volume: 1
+  alironDialogue3AC: {fileID: 8300000, guid: cb2623ae2242ab545b9ece8ee236a7e9, type: 3}
+  alironDialogue3Volume: 1
+  alironDialogue4AC: {fileID: 8300000, guid: 94c0e70e1b32fd143971c32c12a2d920, type: 3}
+  alironDialogue4Volume: 1
+  alironDialogue5AC: {fileID: 8300000, guid: 363ed30650da60348a4a81a6c843e725, type: 3}
+  alironDialogue5Volume: 1
+  bearDialogue1AC: {fileID: 8300000, guid: c37bb4337aea0f348b380c747557c537, type: 3}
+  bearDialogue1Volume: 1
+  bearDialogue2AC: {fileID: 8300000, guid: 1ad530076000c7f4482ae9bc3c0acfcf, type: 3}
+  bearDialogue2Volume: 1
+  bearDialogue3AC: {fileID: 8300000, guid: 0fdd8a885f6e4c0418dcae70caca3301, type: 3}
+  bearDialogue3Volume: 1
+  bearDialogue4AC: {fileID: 8300000, guid: af12c6ff68ebe4c42868d9bb1d901753, type: 3}
+  bearDialogue4Volume: 1
+  toucanDialogue1AC: {fileID: 8300000, guid: 6d8095c60d34fe54eb50e38b017af29e, type: 3}
+  toucanDialogue1Volume: 1
+  toucanDialogue2AC: {fileID: 8300000, guid: 66ae629a2a78692408ac911ec493ea26, type: 3}
+  toucanDialogue2Volume: 1
+  toucanDialogue3AC: {fileID: 8300000, guid: c77ca95757794ce468f09a1d8048fa6e, type: 3}
+  toucanDialogue3Volume: 1
+  toucanDialogue4AC: {fileID: 8300000, guid: d37483fd204a8ee43a8308774042dd09, type: 3}
+  toucanDialogue4Volume: 1
+  toucanDialogue5AC: {fileID: 8300000, guid: 3aa61e726b721314abe300bdf9c68718, type: 3}
+  toucanDialogue5Volume: 1
+  mainThemeMusicAC: {fileID: 8300000, guid: 81954995e518aae469aa4f84a3776230, type: 3}
+  mainThemeMusicVolume: 0.03
+  jungleThemeMusicAC: {fileID: 8300000, guid: 67eb0475cac1d834687c634fbdbc05c8, type: 3}
+  jungleThemeMusicVolume: 0.02
+  mountainThemeMusicAC: {fileID: 8300000, guid: 98bdb0827f1dd8648a3e932fa10d0842, type: 3}
+  mountainThemeMusicVolume: 0.02
+  swampThemeMusicAC: {fileID: 8300000, guid: 734730f73e4199242b42e1dff29378ae, type: 3}
+  swampThemeMusicVolume: 0.02
