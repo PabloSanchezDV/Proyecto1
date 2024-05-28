@@ -23,14 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
+        instance = this;
 
         _dialogueBST = new DialogueBST(DialogueBuilder.BuildDialogueListsList(_currentLevel));
     }
@@ -52,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         UIManager.instance.ShowDialoguePanel();
         foreach (DialogueNode node in dialogueNodes)
         {
-            if(node.Character != "*")
+            if (node.Character != "*")
             {
                 string character = node.Character;
                 string text = node.Text;

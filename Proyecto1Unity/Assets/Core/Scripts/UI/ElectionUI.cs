@@ -23,6 +23,11 @@ public class ElectionUI : MonoBehaviour
         _electionPanel.SetActive(true);
     }
 
+    public void HideElectionUI()
+    {
+        _electionPanel.SetActive(false);
+    }
+
     public void AttackButtonPressed()
     {
         _electionPanel.SetActive(false);

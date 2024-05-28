@@ -76,7 +76,8 @@ public class DialogueTrigger : MonoBehaviour
     {
         EventHolder.instance.onStartDialogue?.Invoke();
         LookAtPlayer();
-        _cameraRef.transform.localPosition = (player.transform.position - transform.position) / 2;
+        _cameraRef.transform.localPosition = new Vector3(0, _cameraRefOriginalYPosition, 0);
+        _cameraRef.transform.localPosition += (player.transform.position - transform.position) / 2;
         _cameraRef.transform.localPosition = new Vector3(_cameraRef.transform.localPosition.x,
                                                            _cameraRefOriginalYPosition,
                                                             _cameraRef.transform.localPosition.z);

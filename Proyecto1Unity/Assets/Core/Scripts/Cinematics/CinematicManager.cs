@@ -68,6 +68,7 @@ public class CinematicManager : MonoBehaviour
 
     public void PlayGoodEndingCinematic()
     {
+        ElectionUI.instance.HideElectionUI();
         _videoPlayer.clip = VideoImporter.LoadVideo(GetCinematicPath(Cinematic.PacificEnd));
         _videoPlayer.Play();
         _videoPlayer.loopPointReached += GoToNextScene;
@@ -77,6 +78,7 @@ public class CinematicManager : MonoBehaviour
 
     public void PlayBadEndingCinematic()
     {
+        ElectionUI.instance.HideElectionUI();
         _videoPlayer.clip = VideoImporter.LoadVideo(GetCinematicPath(Cinematic.ViolentEnd));
         _videoPlayer.Play();
         _videoPlayer.loopPointReached += GoToNextScene;

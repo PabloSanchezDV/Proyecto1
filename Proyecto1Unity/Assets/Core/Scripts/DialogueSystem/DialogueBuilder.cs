@@ -8,7 +8,7 @@ public static class DialogueBuilder
 {
     public static List<DialogueList> BuildDialogueListsList(int currentLevel)
     {
-        StreamReader streamReader = new StreamReader("Assets/Resources/DialogueCSV.csv", System.Text.Encoding.UTF8, false);
+        StreamReader streamReader = new StreamReader(Application.streamingAssetsPath + "/DialogueCSV.csv", System.Text.Encoding.UTF8, false);
         string csv = streamReader.ReadToEnd();
         List<string[]> parsedCSV = CSVParser.ParseCSV(csv);
         

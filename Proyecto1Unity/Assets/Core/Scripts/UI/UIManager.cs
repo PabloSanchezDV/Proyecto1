@@ -102,7 +102,7 @@ public class UIManager : MonoBehaviour
     public void UpdateHUD()
     {
         UpdateHealth();
-        _bananasText.text = GameManager.instance.Bananas + "x";
+        _bananasText.text = GameManager.instance.Bananas + " / 50";
         _collectiblesText.text = GameManager.instance.Collectibles + " / " + GameManager.instance.MaxCollectibles;
     }
 
@@ -146,6 +146,7 @@ public class UIManager : MonoBehaviour
     #region Show / Hide Panels
     public void ShowDialoguePanel()
     {
+        Debug.Log("UIManager: in ShowDialoguePanel() method.");
         _dialoguePanel.SetActive(true);
     }
 
