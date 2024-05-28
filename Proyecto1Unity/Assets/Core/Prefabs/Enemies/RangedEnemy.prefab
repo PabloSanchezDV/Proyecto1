@@ -218,8 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyManager: {fileID: 0}
-  _projectile: {fileID: 4036645053298485712, guid: 0b00953cdd4965848baaaf3982237910, type: 3}
-  _detectionRange: 30
+  _detectionRange: 20
   _distanceCheckTime: 0.25
   _fleeRange: 10
 --- !u!114 &6863990874798595709
