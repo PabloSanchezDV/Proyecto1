@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public static class DialogueBuilder
 {
     public static List<DialogueList> BuildDialogueListsList(int currentLevel)
     {
-        string csv = CSVImporter.ImportCSV("DialogueCSV");
+        StreamReader streamReader = new StreamReader("Assets/Resources/DialogueCSV.csv", System.Text.Encoding.UTF8, false);
+        string csv = streamReader.ReadToEnd();
         List<string[]> parsedCSV = CSVParser.ParseCSV(csv);
         
         List<DialogueNode> dialogueNodesList = BuildDialogueNodesList(parsedCSV);
