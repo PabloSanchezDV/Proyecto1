@@ -40,7 +40,8 @@ public class OptionsUI : MonoBehaviour
         _audioOptionsUIPanel.SetActive(false);
         _videoOptionsUIPanel.SetActive(false);
         _controlsOptionsUIPanel.SetActive(false);
-        playerCamera = (CinemachineFreeLook)GameManager.instance.PlayerCamera;
+        if (GameManager.instance != null)
+            playerCamera = (CinemachineFreeLook)GameManager.instance.PlayerCamera;
     }
 
     #region Show/Hide Panels
@@ -172,12 +173,14 @@ public class OptionsUI : MonoBehaviour
     {
         if (_invertXButtonImage.color.a == 100)
         {
-            playerCamera.m_XAxis.m_InvertInput = false;
+            if (playerCamera != null)
+                playerCamera.m_XAxis.m_InvertInput = false;
             _invertXButtonImage.color = new Color(_invertXButtonImage.color.r, _invertXButtonImage.color.g, _invertXButtonImage.color.b, 0);
         }
         else
         {
-            playerCamera.m_XAxis.m_InvertInput = true;
+            if (playerCamera != null)
+                playerCamera.m_XAxis.m_InvertInput = true;
             _invertXButtonImage.color = new Color(_invertXButtonImage.color.r, _invertXButtonImage.color.g, _invertXButtonImage.color.b, 100);
         }
     }
@@ -186,30 +189,38 @@ public class OptionsUI : MonoBehaviour
     {
         if (_invertYButtonImage.color.a == 100)
         {
-            playerCamera.m_YAxis.m_InvertInput = false;
+            if (playerCamera != null)
+                playerCamera.m_YAxis.m_InvertInput = false;
             _invertYButtonImage.color = new Color(_invertYButtonImage.color.r, _invertYButtonImage.color.g, _invertYButtonImage.color.b, 0);
         }
         else
         {
-            playerCamera.m_YAxis.m_InvertInput = true;
+            if (playerCamera != null)
+                playerCamera.m_YAxis.m_InvertInput = true;
             _invertYButtonImage.color = new Color(_invertYButtonImage.color.r, _invertYButtonImage.color.g, _invertYButtonImage.color.b, 100);
         }
     }
 
     public void ChangeXSensitivity()
     {
-        if(_xSensitivitySlider.value < 0.5f)
-            playerCamera.m_XAxis.m_MaxSpeed = 200f - _xSensitivitySlider.value * 200f;
-        else
-            playerCamera.m_XAxis.m_MaxSpeed = 200f + _xSensitivitySlider.value * 100f;
+        if (playerCamera != null)
+        {
+            if (_xSensitivitySlider.value < 0.5f)
+                playerCamera.m_XAxis.m_MaxSpeed = 200f - _xSensitivitySlider.value * 200f;
+            else
+                playerCamera.m_XAxis.m_MaxSpeed = 200f + _xSensitivitySlider.value * 100f;
+        }
     }
 
     public void ChangeYSensitivity()
     {
-        if (_ySensitivitySlider.value < 0.5f)
-            playerCamera.m_YAxis.m_MaxSpeed = 1.7f - _ySensitivitySlider.value * 1.7f;
-        else
-            playerCamera.m_YAxis.m_MaxSpeed = 1.7f + _ySensitivitySlider.value * 0.85f;
+        if (playerCamera != null)
+        {
+            if (_ySensitivitySlider.value < 0.5f)
+                playerCamera.m_YAxis.m_MaxSpeed = 1.7f - _ySensitivitySlider.value * 1.7f;
+            else
+                playerCamera.m_YAxis.m_MaxSpeed = 1.7f + _ySensitivitySlider.value * 0.85f;
+        }
     }
     #endregion
 }
