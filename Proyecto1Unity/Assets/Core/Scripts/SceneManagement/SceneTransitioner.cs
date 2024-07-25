@@ -2,12 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class SceneTransitioner : MonoBehaviour
 {
     public static SceneTransitioner instance;
+
+    #region Variables 
+
+    private bool _isLoaded = false;
+    public bool IsLoaded {  get { return _isLoaded; } set { _isLoaded = value; } }
+
+    private Data _loadedData;
+    public Data LoadedData {  get { return _loadedData; } }
 
     private AsyncOperation _nextSceneLoadOperation;
 
@@ -16,6 +25,7 @@ public class SceneTransitioner : MonoBehaviour
     
     [NonSerialized] public bool nextSceneIsElectionScene = false;
     [NonSerialized] public Cinematic nextCinematic;
+    #endregion
 
     private void Awake()
     {
@@ -67,6 +77,13 @@ public class SceneTransitioner : MonoBehaviour
     private void CheckForCinematicEndAndChangeSceneOnLoad()
     {
         StartCoroutine(CheckForCinematicEndAndChangeSceneOnLoadCoroutine());
+    }
+
+    public void LoadScene(Data data)
+    {
+        _loadedData = data;
+        _isLoaded = true;
+        SceneManager.LoadScene(data.level);
     }
 
     private int GetNextSceneIndex()

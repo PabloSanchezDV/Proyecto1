@@ -59,7 +59,7 @@ MonoBehaviour:
   boxShiftVolume: 0.5
   collectableAC: {fileID: 8300000, guid: 92e49de4991042242931e23198128a55, type: 3}
   collectableVolume: 0.45
-  bananaAC: {fileID: 8300000, guid: 2594263aec663c84a97914eed46e1fba, type: 3}
+  bananaAC: {fileID: 8300000, guid: 92e49de4991042242931e23198128a55, type: 3}
   bananaVolume: 0.45
   buttonAC: {fileID: 8300000, guid: 92e49de4991042242931e23198128a55, type: 3}
   buttonVolume: 1

@@ -59,9 +59,7 @@ public static class SaveSystem
             if(applyChangesToScene)
             {
                 SaveDatabase.instance.ApplyLoadedData(data);
-                SceneLoader.instance.LoadScene(data);
-                GameManager.instance.UpdateCollectibles(data);
-                UIManager.instance.UpdateHUD();
+                SceneTransitioner.instance.LoadScene(data);
             }
             return data;
         }

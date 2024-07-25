@@ -1,0 +1,88 @@
+1;1;Seda;Parece que alguien necesita ayuda, uki uki.
+1;1;Bufo;Maldita lagartija engreída. No sé ni donde estoy.
+1;1;Seda;Estás en la jungla, retaquillo.
+1;1;Bufo;¡Sapos y culebras! Tengo que regresar al pantano. No puedo dejar que esa sabandija lo destroce.
+1;1;Seda;Esa sabandija se llama Lamandra. Tengo una serie de cuentas pendientes con ella, uki uki.
+1;1;Bufo;Pues ya somos dos.
+1;1;Seda;En ese caso, ¿por qué no me ayudas? Así podrás vengarte. Eso sí, primero quiero comprobar tus capacidades, uki uki.
+1;1;Bufo;¿No deberías preguntarme primero si quiero ayudarte? Yo solo quiero que esa tal Lamandra deje el pantano en paz.
+1;1;Seda;Me vas a ayudar sin casi darte cuenta. ¡El daño hecho a mi humilde morada no se va a reparar solo!
+1;1;*;VC1
+1;1;Seda;¿Ves el camino que hay allí? Tráeme el tablón que se encuentra al final,  si es que eres capaz claro. Y de paso, unos platanitos, que tengo hambre.
+1;1;*;Reset
+1;1;Bufo;Me infravaloras,  uki uki.
+1;2;Seda;Efectivamente, no me equivocaba, uki uki.
+1;2;Bufo;…
+1;2;Seda;Bien, ahora necesito que consigas cinco tablones más. Con eso podré cerrar mis asuntos aquí y podremos viajar a otros lugares en busca de Lamandra y patearla el trasero, ¡uki uki! 
+1;2;Bufo;Ya te dije que yo solo quiero que deje tranquilo mi hogar.
+1;2;Seda;¿Acaso tienes un plan mejor?
+1;2;Bufo;Sabes que no. En fin, veré que puedo hacer.
+1;3;Seda;¡Buen trabajo, Bufo!
+1;3;Bufo;No ha sido gran cosa.
+1;3;Seda;Ya veo. Estás hecho todo un funambulista, uki uki.
+1;3;Bufo;¿Qué deberíamos hacer ahora?
+1;3;Seda;Deberías ir a la montaña. Ha llegado a mis oídos que Mander S.A. está causando problemas allí. Quizá puedas averiguar algo.
+1;3;Bufo;¿Y tú que harás?
+1;3;Seda;Te acompañaré en caso de que requieras ayuda de una simia modista.
+1;3;Bufo;Vaya, encima no me vas a dejar en paz.
+1;3;Seda;¿Dijiste algo?
+1;3;Bufo;Nada, nada. Que espero que no haga mucho frío. En fin, hora de partir.
+1;4;Tucán;¡Anda, una cara nueva! ¿Sabías que puedes lanzar tu lengua pulsando el botón derecho del mando o el click izquierdo del ratón?
+1;5;Tucán;Estas señales raras las trajo Mander S.A. Al parecer sirven como 'plan de riesgos'. Oí que solo puedes usar una a la vez.
+1;6;Tucán;Estos de la ciudad otra vez a invadirnos. Ni que tuviésemos playa…
+1;7;Tucán;La tranquilidad es lo que más se busca. Lástima que desapareció al llegar Mander S.A.
+1;8;Tucán;¿Vienen los de Mander S.A.? Todo fuera eso…
+1;9;Seda;Todavía te faltan tablones, amigo Bufo. Veo que la lengua se te da bien, pero las matemáticas no tanto...Háblame cuando tengas seis.
+1;10;Seda;¡Venga, lánzate a la jungla! Así no puedo evaluar tus aptitudes, batracín.
+1;11;Seda;Buena intuición, Don Sapo. Y encima ahora estarás limpio para la misión, uki uki.
+1;12;Seda;¡Vamos, retaquillo! ¡Que el tablón no está tan lejos!
+1;13;Seda;Vaya vaya, excelente técnica con la que has llegado hasta aquí. Ahora habrá que ver qué tal se te da trepar árboles.
+1;14;Tucán;¡Pero qué bonita está mi cascada hoy! Lástima que vengan a ensuciarnos las vistas.
+1;15;Tucán;Espero que no me suban el tuki-alquiler…
+2;1;Seda;Venga señor batracio, pon en práctica lo entrenado para ayudarles. Mientras tanto, te apoyaré desde aquí.
+2;1;Bufo;Será vaga...
+2;2;Bufo;Oye, ¿qué ha pasado aquí? Parece que las cosas no van bien.
+2;2;Alirón;…¿Me hablas a mí?
+2;2;Bufo;No, le hablo a la pared.
+2;2;Alirón;Ah. Vale, perdón.
+2;2;Bufo;Era una broma. ¿Acaso ves a alguien más por aquí?
+2;2;Alirón;Oh, llevas razón. ¿Qué te trae por aquí? Si vienes por la carrera lo siento mucho, pero se canceló.
+2;2;Bufo;¿Qué carrera?
+2;2;Alirón;Normalmente por estas fechas se celebra una carrera en la montaña. Desde que los de Mander S.A. están aquí todo se fue al traste.
+2;2;Bufo;Un segundo, ¿has dicho Mander S.A.?
+2;2;Alirón;Si. ¿Por?
+2;2;Bufo;Digamos que también nos han causado problemas. Vinimos aquí buscándolos.
+2;2;Alirón;En ese caso, ¿podríais ayudarnos a recuperar la carrera? Es muy importante para mí.
+2;2;Bufo;Supongo que me acercará a mi objetivo.  Está bien, te ayudaré.  Además seguro que si Seda me escuchara me reñiría si no le ayudo. ¿Por dónde debería empezar?
+2;2;Alirón;Primero tendrás ir a buscar a un tal K.O. Modo. Es el jefe aquí. Ha instalado una fábrica. 
+2;2;*;VC1
+2;2;Alirón;Deberías poder llegar a ella si rodeas la montaña. Ten cuidado, es un tipo muy agresivo y da miedete...
+2;2;*;Reset
+2;2;Bufo;Ir hasta allí no va a ser divertido con este frío.  En fin, voy a ver qué puedo hacer. 'Chao pescao'.
+2;2;Alirón;Pero si soy un lirón.
+2;2;Bufo;Es una forma de hablar. Te avisaré si consigo algo. Hasta luego.
+2;3;Bufo;Tú debes de ser el tal K.O. Modo, ¿no?
+2;3;K.O. Modo;¿Quién te has creído que eres, renacuajo?
+2;3;Bufo;Tu empresa no para de causar problemas allá por donde pasa. Ya no pueden ni celebrar su carrera en paz.
+2;3;K.O. Modo;¡¿Quieres pelea o qué?!
+2;3;Bufo;No, no. ¿No podríamos solucionarlo de manera pacífica?
+2;3;K.O. Modo;Bueno, ya sabes lo que dicen. Todo tiene un precio en esta vida…
+2;3;Bufo;Si está en mi mano…
+2;3;K.O. Modo;Seguro que una ranita tan 'habilidosa' como tú es capaz.
+2;3;Bufo;Pfff… Soy un sapo. Dime, ¿qué necesitas?
+2;3;K.O. Modo;Si me ayudas a hacer funcionar las diferentes instalaciones eléctricas que hemos construido altruistamente desde Mander S.A., tu amiguito podrá correr todo lo que quiera. Creo que es una generosa oferta.
+2;3;Bufo;Espero que cumplas con tu palabra.
+2;3;K.O. Modo;¡Por supuesto! Yo soy un reptil de fiar.
+2;3;Bufo;Veremos cómo acaba esto…
+2;4;K.O. Modo;No olvides traer a tu diminuto amigo. Y ten cuidado de que no se quede dormido.
+2;4;Bufo;Lagarto ladrador, poco mordedor.
+2;4;K.O. Modo;No serás tan gracioso cuando te haya aplastado.
+2;5;Oso; ¡No! ¡Mi casa tío! ¡Me la han vallado!
+2;6;Oso;A este paso hasta las hogueras nos quitan estos de Mander…
+2;7;Oso;Antes todo esto era nieve… Ahora está lleno de camiones.
+2;8;Oso;Desde aquí la carrera se vería genial. Lástima que este año no nos dejen hacerla…
+2;9;Oso;¡Estos de Mander no respetan ni la hora de la siesta!
+2;10;Seda;Uki, uki. ¡Cómo refresca! Te dejo a ti lo de jugar con la nieve, yo te cubro desde aquí.
+2;11;Alirón;Ten cuidado con K.O. Modo, que es muy peligroso y te puede tirar montaña abajo como una bola de nieve...
+2;12;Alirón;Parece que la discusión ha ido bien y no ha habido pelea. Confío en ti para recuperar la carrera, Bufo.
+2;13;K.O. Modo;Ejem, creo que habíamos negociado una cantidad de seis fajos de billetes. Espero que no vuelvas para vacilar.

@@ -53,6 +53,7 @@ public class SaveGameUI : MonoBehaviour
             _saveGamePanel.SetActive(false);
         }
         _loadGamePanel.SetActive(false);
+        UpdateAllSlots();
     }
 
     #region Show/Hide panels
@@ -292,8 +293,6 @@ public class SaveGameUI : MonoBehaviour
                 return _level2Sprite;
             case 3:
                 return _level3Sprite;
-            case 4:
-                return _bossSprite;
             default:
                 return _defaultSprite;
         }
@@ -309,8 +308,6 @@ public class SaveGameUI : MonoBehaviour
                 return "Mundo 2";
             case 3:
                 return "Mundo 3";
-            case 4:
-                return "Batalla final";
             default:
                 return "...";
         }

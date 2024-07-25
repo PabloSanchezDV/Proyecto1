@@ -277,9 +277,12 @@ public class CharacterMovement : MonoBehaviour
 
     private void DoJump()
     {
-        AudioManager.instance.PlayBufoJump(gameObject);
-        _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
-        _forceDirection += Vector3.up * _jumpForce;
+        if (!_rb.isKinematic)
+        {
+            AudioManager.instance.PlayBufoJump(gameObject);
+            _rb.velocity = new Vector3(_rb.velocity.x, 0, _rb.velocity.z);
+            _forceDirection += Vector3.up * _jumpForce;
+        }
     }
 
     public void JumpOnHomingAttack()

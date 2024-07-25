@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -18,9 +19,21 @@ public class SceneLoader : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        if (SceneTransitioner.instance.IsLoaded)
+        {
+            SceneTransitioner.instance.IsLoaded = false;
+            LoadScene(SceneTransitioner.instance.LoadedData);
+        }
+    }
+
     public void LoadScene(Data data)
     {
+        SaveDatabase.instance.ApplyLoadedData(data);
         UpdateCollectibles(data);
+        GameManager.instance.UpdateCollectibles(data);
+        UIManager.instance.UpdateHUD();
     }
 
     private void UpdateCollectibles(Data data)

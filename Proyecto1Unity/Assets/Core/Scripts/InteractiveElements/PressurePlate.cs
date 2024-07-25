@@ -16,12 +16,14 @@ public class PressurePlate : MonoBehaviour
     private Vector3 _boxResetPosition;
     private CharacterManager _characterManager;
 
+    private Coroutine _checkCoroutine;
+
     private void Start()
     {
         _animator = transform.parent.parent.GetComponent<Animator>();
         _characterManager = GameManager.instance.Player.GetComponent<CharacterManager>();
         _boxResetPosition = _box.transform.position;
-        StartCoroutine(CheckBoxDistance());
+        _checkCoroutine = StartCoroutine(CheckBoxDistance());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -90,8 +92,20 @@ public class PressurePlate : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
             if(Vector3.Distance(_box.transform.position, transform.position) > _boxMaxDistance)
             {
+                Debug.Log("Checking: " + _box.gameObject.name);
                 ResetBox();
             }
         }
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(_checkCoroutine);
+        _checkCoroutine = null;
+    }
+
+    private void OnEnable()
+    {
+        _checkCoroutine = StartCoroutine(CheckBoxDistance());
     }
 }

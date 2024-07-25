@@ -15,13 +15,12 @@ public class OptionsUI : MonoBehaviour
     [SerializeField] private Sprite _muteSprite;
     [SerializeField] private Sprite _unmuteSprite;
 
-    [Header("Buttons")]
+    [Header("Button Images")]
     [SerializeField] private Image _sfxMuteButtonImage;
     [SerializeField] private Image _musicMuteButtonImage;
     [SerializeField] private Image _dialoguesMuteButtonImage;
     [SerializeField] private Image _invertXButtonImage;
     [SerializeField] private Image _invertYButtonImage;
-
 
     [Header("Sliders")]
     [SerializeField] private Slider _sfxSlider;
@@ -30,7 +29,13 @@ public class OptionsUI : MonoBehaviour
     [SerializeField] private Slider _xSensitivitySlider;
     [SerializeField] private Slider _ySensitivitySlider;
 
-    private CinemachineFreeLook playerCamera;
+    [Header("Buttons")]
+    [SerializeField] private Button _prevAudioButton;
+    [SerializeField] private Button _nextAudioButton;
+    [SerializeField] private Button _prevVideoButton;
+    [SerializeField] private Button _nextVideoButton;
+    [SerializeField] private Button _prevControlsButton;
+    [SerializeField] private Button _nextControlsButton;
 
     private int _panelID = 0; //0 - audio, 1 - video, 2 - controls
 
@@ -40,7 +45,7 @@ public class OptionsUI : MonoBehaviour
         _audioOptionsUIPanel.SetActive(false);
         _videoOptionsUIPanel.SetActive(false);
         _controlsOptionsUIPanel.SetActive(false);
-        playerCamera = (CinemachineFreeLook)GameManager.instance.PlayerCamera;
+        UpdateUIValuesToSettingsValues();
     }
 
     #region Show/Hide Panels
@@ -72,7 +77,7 @@ public class OptionsUI : MonoBehaviour
         if(_panelID > 2)
             _panelID = 0;
 
-        ShowPanelByID(_panelID);
+        ShowPanelByID(_panelID, false);
     }
 
     public void PrevPanel()
@@ -82,10 +87,10 @@ public class OptionsUI : MonoBehaviour
         if (_panelID < 0)
             _panelID = 2;
 
-        ShowPanelByID(_panelID);
+        ShowPanelByID(_panelID, true);
     }
 
-    private void ShowPanelByID(int id)
+    private void ShowPanelByID(int id, bool isPrev)
     {
         switch (_panelID)
         {
@@ -93,16 +98,28 @@ public class OptionsUI : MonoBehaviour
                 _audioOptionsUIPanel.SetActive(true);
                 _videoOptionsUIPanel.SetActive(false);
                 _controlsOptionsUIPanel.SetActive(false);
+                if (isPrev)
+                    _prevAudioButton.Select();
+                else
+                    _nextAudioButton.Select();
                 break;
             case 1:
                 _audioOptionsUIPanel.SetActive(false);
                 _videoOptionsUIPanel.SetActive(true);
                 _controlsOptionsUIPanel.SetActive(false);
+                if (isPrev)
+                    _prevVideoButton.Select();
+                else
+                    _nextVideoButton.Select();
                 break;
             case 2:
                 _audioOptionsUIPanel.SetActive(false);
                 _videoOptionsUIPanel.SetActive(false);
                 _controlsOptionsUIPanel.SetActive(true);
+                if (isPrev)
+                    _prevControlsButton.Select();
+                else
+                    _nextControlsButton.Select();
                 break;
             default:
                 throw new System.Exception("Panel ID is out of bounds. Panel ID: " + _panelID);
@@ -113,7 +130,7 @@ public class OptionsUI : MonoBehaviour
     #region Audio  
     public void MuteUnmuteSFX()
     {
-        if(AudioManager.instance.AreSoundsEnabled)
+        if(SettingsManager.instance.AreSoundsEnabled)
         {
             _sfxMuteButtonImage.sprite = _muteSprite;
         }
@@ -121,17 +138,17 @@ public class OptionsUI : MonoBehaviour
         {
             _sfxMuteButtonImage.sprite = _unmuteSprite;
         }
-        AudioManager.instance.EnableDisableSounds();
+        SettingsManager.instance.EnableDisableSounds();
     }
 
     public void ChangeSFXVolume()
     {
-        AudioManager.instance.SetSoundsVolumeModifier(_sfxSlider.value);
+        SettingsManager.instance.SetSoundsVolumeModifier(_sfxSlider.value);
     }
 
     public void MuteUnmuteMusic()
     {
-        if (AudioManager.instance.IsMusicEnabled)
+        if (SettingsManager.instance.IsMusicEnabled)
         {
             _musicMuteButtonImage.sprite = _muteSprite;
         }
@@ -139,31 +156,30 @@ public class OptionsUI : MonoBehaviour
         {
             _musicMuteButtonImage.sprite = _unmuteSprite;
         }
-        AudioManager.instance.EnableDisableMusic();
+        SettingsManager.instance.EnableDisableMusic();
     }
 
     public void ChangeMusicVolume()
     {
-        AudioManager.instance.SetMusicVolumeModifier(_musicSlider.value);
+        SettingsManager.instance.SetMusicVolumeModifier(_musicSlider.value);
     }
 
     public void MuteUnmuteDialogues()
     {
         if (_dialoguesMuteButtonImage.sprite.Equals(_unmuteSprite))
         {
-            AudioManager.instance.AreSoundsEnabled = true;
             _dialoguesMuteButtonImage.sprite = _muteSprite;
         }
         else
         {
-            AudioManager.instance.AreSoundsEnabled = false;
             _dialoguesMuteButtonImage.sprite = _unmuteSprite;
         }
+        SettingsManager.instance.EnableDisableDialogues();
     }
 
     public void ChangeDialoguesVolume()
     {
-        AudioManager.instance.SetDialogueVolumeModifier(_sfxSlider.value);
+        SettingsManager.instance.SetDialogueVolumeModifier(_dialoguesSlider.value);
     }
     #endregion
 
@@ -172,12 +188,12 @@ public class OptionsUI : MonoBehaviour
     {
         if (_invertXButtonImage.color.a == 100)
         {
-            playerCamera.m_XAxis.m_InvertInput = false;
+            SettingsManager.instance.SwitchXInversion(false);
             _invertXButtonImage.color = new Color(_invertXButtonImage.color.r, _invertXButtonImage.color.g, _invertXButtonImage.color.b, 0);
         }
         else
         {
-            playerCamera.m_XAxis.m_InvertInput = true;
+            SettingsManager.instance.SwitchXInversion(true);
             _invertXButtonImage.color = new Color(_invertXButtonImage.color.r, _invertXButtonImage.color.g, _invertXButtonImage.color.b, 100);
         }
     }
@@ -186,30 +202,120 @@ public class OptionsUI : MonoBehaviour
     {
         if (_invertYButtonImage.color.a == 100)
         {
-            playerCamera.m_YAxis.m_InvertInput = false;
+            SettingsManager.instance.SwitchYInversion(false);
             _invertYButtonImage.color = new Color(_invertYButtonImage.color.r, _invertYButtonImage.color.g, _invertYButtonImage.color.b, 0);
         }
         else
         {
-            playerCamera.m_YAxis.m_InvertInput = true;
+            SettingsManager.instance.SwitchYInversion(true);
             _invertYButtonImage.color = new Color(_invertYButtonImage.color.r, _invertYButtonImage.color.g, _invertYButtonImage.color.b, 100);
         }
     }
 
     public void ChangeXSensitivity()
     {
-        if(_xSensitivitySlider.value < 0.5f)
-            playerCamera.m_XAxis.m_MaxSpeed = 200f - _xSensitivitySlider.value * 200f;
-        else
-            playerCamera.m_XAxis.m_MaxSpeed = 200f + _xSensitivitySlider.value * 100f;
+        SettingsManager.instance.SetXSensitivity(_xSensitivitySlider.value);
     }
 
     public void ChangeYSensitivity()
     {
-        if (_ySensitivitySlider.value < 0.5f)
-            playerCamera.m_YAxis.m_MaxSpeed = 1.7f - _ySensitivitySlider.value * 1.7f;
+        SettingsManager.instance.SetYSensitivity(_ySensitivitySlider.value);
+    }
+    #endregion
+
+    #region UpdateUIValues
+    private void UpdateUIValuesToSettingsValues()
+    {
+        UpdateSFXMuteUnmuteButtonToSettingsValue();
+        UpdateDialoguesMuteUnmuteButtonToSettingsValue();
+        UpdateMusicMuteUnmuteButtonToSettingsValue();
+
+        UpdateSFXSliderToSettingsValue();
+        UpdateDialoguesSliderToSettingsValue();
+        UpdateMusicSliderToSettingsValue();
+
+        UpdateInvertXButtonToSettingsValue();
+        UpdateInvertYButtonToSettingsValue();
+
+        UpdateXSensitivitySliderToSettingsValue();
+        UpdateYSensitivitySliderToSettingsValue();
+    }
+
+    private void UpdateSFXMuteUnmuteButtonToSettingsValue()
+    {
+        if (SettingsManager.instance.AreSoundsEnabled)
+        {
+            _sfxMuteButtonImage.sprite = _unmuteSprite;
+        }
         else
-            playerCamera.m_YAxis.m_MaxSpeed = 1.7f + _ySensitivitySlider.value * 0.85f;
+        {
+            _sfxMuteButtonImage.sprite = _muteSprite;
+        }
+    }
+
+    private void UpdateDialoguesMuteUnmuteButtonToSettingsValue()
+    {
+        if (SettingsManager.instance.AreDialoguesEnabled)
+        {
+            _dialoguesMuteButtonImage.sprite = _unmuteSprite;
+        }
+        else
+        {
+            _dialoguesMuteButtonImage.sprite = _muteSprite;
+        }
+    }
+
+    private void UpdateMusicMuteUnmuteButtonToSettingsValue()
+    {
+        if (SettingsManager.instance.IsMusicEnabled)
+        {
+            _musicMuteButtonImage.sprite = _unmuteSprite;
+        }
+        else
+        {
+            _musicMuteButtonImage.sprite = _muteSprite;
+        }
+    }
+
+    private void UpdateSFXSliderToSettingsValue()
+    {
+        _sfxSlider.value = SettingsManager.instance.SoundsVolumeModifier;
+    }
+
+    private void UpdateDialoguesSliderToSettingsValue()
+    {
+        _dialoguesSlider.value = SettingsManager.instance.DialogueVolumeModifier;
+    }
+
+    private void UpdateMusicSliderToSettingsValue()
+    {
+        _musicSlider.value = SettingsManager.instance.MusicVolumeModifier;
+    }
+
+    private void UpdateInvertXButtonToSettingsValue()
+    {
+        if (SettingsManager.instance.IsXInputInverted)
+            _invertXButtonImage.color = new Color(_invertXButtonImage.color.r, _invertXButtonImage.color.g, _invertXButtonImage.color.b, 100);
+        else
+            _invertXButtonImage.color = new Color(_invertXButtonImage.color.r, _invertXButtonImage.color.g, _invertXButtonImage.color.b, 0);
+    }
+
+    private void UpdateInvertYButtonToSettingsValue()
+    {
+        if (SettingsManager.instance.IsYInputInverted)
+            _invertYButtonImage.color = new Color(_invertYButtonImage.color.r, _invertYButtonImage.color.g, _invertYButtonImage.color.b, 100);
+        else
+            _invertYButtonImage.color = new Color(_invertYButtonImage.color.r, _invertYButtonImage.color.g, _invertYButtonImage.color.b, 0);
+    }
+
+    private void UpdateXSensitivitySliderToSettingsValue()
+    {
+        _xSensitivitySlider.value = SettingsManager.instance.GetXSensitivityUIValue();
+    }
+
+    private void UpdateYSensitivitySliderToSettingsValue()
+    {
+        _ySensitivitySlider.value = SettingsManager.instance.GetYSensitivityUIValue();
     }
     #endregion
 }
