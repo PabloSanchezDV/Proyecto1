@@ -27,28 +27,40 @@ public class MeleeEnemyAI : MonoBehaviour
     IEnumerator CheckDistance()
     {
         yield return new WaitForSeconds(_distanceCheckTime);
-        float distance = Vector3.Distance(_player.position, transform.position);
 
-        if (distance <= _detectionRange)
+        if(!DialogueManager.instance.IsInDialogue) 
         {
-            if (!_inDetectionRange)
+            float distance = Vector3.Distance(_player.position, transform.position);
+
+            if (distance <= _detectionRange)
             {
-                AudioManager.instance.PlayCrocodileDetection(gameObject);
-                _inDetectionRange = true;
-                enemyManager.Detect();
-            }
-            else if(distance <= _attackRange)
-            {
-                if(!_isAttacking)
+                if (!_inDetectionRange)
                 {
-                    AudioManager.instance.PlayCrocodileAttack(gameObject);
-                    enemyManager.Attack();
-                    _isAttacking = true;
+                    AudioManager.instance.PlayCrocodileDetection(gameObject);
+                    _inDetectionRange = true;
+                    enemyManager.Detect();
+                }
+                else if(distance <= _attackRange)
+                {
+                    if(!_isAttacking)
+                    {
+                        AudioManager.instance.PlayCrocodileAttack(gameObject);
+                        enemyManager.Attack();
+                        _isAttacking = true;
+                    }
+                }
+                else
+                {
+                    enemyManager.ContinueMove();
                 }
             }
             else
             {
-                enemyManager.ContinueMove();
+                if (_inDetectionRange)
+                {
+                    _inDetectionRange = false;
+                    enemyManager.EndDetect();
+                }
             }
         }
         else

@@ -18,6 +18,7 @@ public class EventHolder : MonoBehaviour
     [NonSerialized] public UnityEvent onBananaColleted;
     [NonSerialized] public UnityEvent onBigCollectibleCollected;
     [NonSerialized] public UnityEvent onAllCollectiblesCollected;
+    [NonSerialized] public UnityEvent onShowingCompleteHUD;
 
     void Awake()
     {
@@ -39,5 +40,7 @@ public class EventHolder : MonoBehaviour
         onBananaColleted = new UnityEvent();
         onBigCollectibleCollected = new UnityEvent();
         onAllCollectiblesCollected = new UnityEvent();
+
+        onShowingCompleteHUD = new UnityEvent();
     }
 }

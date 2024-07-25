@@ -69,6 +69,7 @@ public class CharacterManager : MonoBehaviour
     private void Start()
     {
         _inputActions.Gameplay.Pause.started += Pause;
+        _inputActions.Gameplay.ShowHUD.started += ShowCompleteHUD;
         _inputActions.Menu.ClosePause.started += UnpauseByInput;
         _inputActions.Dialogue.NextDialogue.started += NextDialogue;
         
@@ -91,6 +92,7 @@ public class CharacterManager : MonoBehaviour
     {
         _inputActions.Gameplay.Pause.started += Pause;
         _inputActions.Menu.ClosePause.started += UnpauseByInput;
+        _inputActions.Gameplay.ShowHUD.started += ShowCompleteHUD;
         _inputActions.Dialogue.NextDialogue.started += NextDialogue;
         if (EventHolder.instance != null)
         {
@@ -112,6 +114,7 @@ public class CharacterManager : MonoBehaviour
     {
         _inputActions.Gameplay.Pause.started -= Pause;
         _inputActions.Menu.ClosePause.started -= UnpauseByInput;
+        _inputActions.Gameplay.ShowHUD.started -= ShowCompleteHUD;
         _inputActions.Dialogue.NextDialogue.started -= NextDialogue;
         EventHolder.instance.onUnpause.RemoveListener(Unpause);
         EventHolder.instance.onHurt.RemoveListener(ActivateHurt);
@@ -143,6 +146,11 @@ public class CharacterManager : MonoBehaviour
     {
         Unpause();
         EventHolder.instance.onUnpause?.Invoke();
+    }
+
+    private void ShowCompleteHUD(InputAction.CallbackContext context)
+    {
+        EventHolder.instance.onShowingCompleteHUD?.Invoke();
     }
 
     private void ResumeMovement()

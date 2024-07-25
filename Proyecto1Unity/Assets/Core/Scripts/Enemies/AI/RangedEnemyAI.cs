@@ -30,15 +30,50 @@ public class RangedEnemyAI : MonoBehaviour
     IEnumerator CheckDistance()
     {
         yield return new WaitForSeconds(_distanceCheckTime);
-        float distance = Vector3.Distance(_player.position, transform.position);
 
-        if (distance <= _detectionRange)
+        if(!DialogueManager.instance.IsInDialogue)
         {
-            if (!_inAttackingRange)
+            float distance = Vector3.Distance(_player.position, transform.position);
+
+            if (distance <= _detectionRange)
             {
-                _inAttackingRange = true;
-                AudioManager.instance.PlayCobraDetection(gameObject);
-                enemyManager.Detect();
+                if (!_inAttackingRange)
+                {
+                    _inAttackingRange = true;
+                    AudioManager.instance.PlayCobraDetection(gameObject);
+                    enemyManager.Detect();
+                }
+            }
+            else
+            {
+                if (_inAttackingRange)
+                {
+                    _inAttackingRange = false;
+                    enemyManager.EndDetect();
+                }
+            }
+
+            if (distance <= _fleeRange)
+            {
+                if (!_inFleeingRange)
+                {
+                    AudioManager.instance.PlayCobraFlee(gameObject);
+                    _inFleeingRange = true;
+                    enemyManager.Flee();
+                }
+            }
+            else
+            {
+                if (_inFleeingRange)
+                {
+                    _inFleeingRange = false;
+                    enemyManager.EndFlee();
+                }
+            }
+
+            if(_inAttackingRange && !_inFleeingRange)
+            {
+                Attack();
             }
         }
         else
@@ -48,29 +83,6 @@ public class RangedEnemyAI : MonoBehaviour
                 _inAttackingRange = false;
                 enemyManager.EndDetect();
             }
-        }
-
-        if (distance <= _fleeRange)
-        {
-            if (!_inFleeingRange)
-            {
-                AudioManager.instance.PlayCobraFlee(gameObject);
-                _inFleeingRange = true;
-                enemyManager.Flee();
-            }
-        }
-        else
-        {
-            if (_inFleeingRange)
-            {
-                _inFleeingRange = false;
-                enemyManager.EndFlee();
-            }
-        }
-
-        if(_inAttackingRange && !_inFleeingRange)
-        {
-            Attack();
         }
 
         StartCoroutine(CheckDistance());

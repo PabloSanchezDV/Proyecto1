@@ -70,18 +70,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Unpause();
         Cursor.lockState = CursorLockMode.Locked;
         EventHolder.instance.onPause.AddListener(Pause);
         EventHolder.instance.onUnpause.AddListener(Unpause);
         EventHolder.instance.onDeath.AddListener(Respawn);
+        EventHolder.instance.onShowingCompleteHUD.AddListener(ShowCompleteHUD);
 
         EventHolder.instance.onBananaColleted.AddListener(AddBanana);
         EventHolder.instance.onBigCollectibleCollected.AddListener(AddBigCollectible);
 
+        SettingsManager.instance.PlayerCamera = (CinemachineFreeLook)_playerCamera;
+
         if (_player != null)
             _lastRespawnPosition = _player.transform.position;
         _currentHealth = _maxHealth;
-        _levelID = 2;
+        SetLevelID();
         SetMaxCollectiblesAmount();
         SetMaxBananasAmount();
         SaveDatabase.instance.CreateNewData();
@@ -149,12 +153,18 @@ public class GameManager : MonoBehaviour
         _player.GetComponent<Collider>().enabled = true;
         _player.transform.position = LastRespawnPosition;
         _currentHealth = _maxHealth;
+        CameraSwitcher.instance.ResetPlayerCamera();
         UIManager.instance.UpdateHUD();
         EventHolder.instance.onRespawn?.Invoke();
     }
     #endregion
 
     #region Scene Management
+    private void SetLevelID()
+    {
+        _levelID = SceneManager.GetActiveScene().buildIndex;
+    }
+
     public void NextScene()
     {
         SceneTransitioner.instance.nextSceneIsElectionScene = _nextSceneIsSelectionScene;
@@ -170,6 +180,11 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Collectibles
+    private void ShowCompleteHUD()
+    {
+        UIManager.instance.ShowCompleteHUD();
+    }
+
     private void AddBanana()
     {
         _bananas++;

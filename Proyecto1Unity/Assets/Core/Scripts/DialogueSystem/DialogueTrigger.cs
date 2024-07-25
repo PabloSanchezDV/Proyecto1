@@ -49,10 +49,7 @@ public class DialogueTrigger : MonoBehaviour
                 Talk();
                 _requiresInput = true;
             }
-            else
-            {
-                player.ActivateTalkInput(this);
-            }
+             player.ActivateTalkInput(this);
         }
     }
 
@@ -60,10 +57,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (_requiresInput)
-            {
-                player.DeactivateTalkInput(this); 
-            }
+            player.DeactivateTalkInput(this); 
         }
     }
 

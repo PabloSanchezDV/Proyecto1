@@ -368,6 +368,7 @@
 "Assets/Core/Scripts/Enemies/RangedEnemyManager.cs"
 "Assets/Core/Scripts/Global/EventHolder.cs"
 "Assets/Core/Scripts/Global/GameManager.cs"
+"Assets/Core/Scripts/Global/SettingsManager.cs"
 "Assets/Core/Scripts/InteractiveElements/ActivableElements/ActivableFactory.cs"
 "Assets/Core/Scripts/InteractiveElements/ActivableElements/ActivableFenceDoor.cs"
 "Assets/Core/Scripts/InteractiveElements/ActivableElements/ActivableLightedSign.cs"
@@ -444,7 +445,6 @@
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexShakeB.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/VertexZoom.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/WarpTextExample.cs"
-"Assets/Z - TO DELETE/DELETE.cs"
 -langversion:9.0
 
 /deterministic

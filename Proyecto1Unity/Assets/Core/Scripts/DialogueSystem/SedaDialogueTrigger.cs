@@ -5,6 +5,7 @@ using UnityEngine;
 public class SedaDialogueTrigger : DialogueTrigger
 {
     [SerializeField] private int _idAfterCompletion;
+    [SerializeField] private bool _isFinalSeda;
 
     private void Start()
     {
@@ -23,6 +24,8 @@ public class SedaDialogueTrigger : DialogueTrigger
                                                            -0.5f,
                                                             -_cameraRef.transform.localPosition.z);
         CameraSwitcher.instance.SwitchCamera(_virtualCamera, _cameraRef);
+        if(_id == _idAfterCompletion)
+            EventHolder.instance.onEndDialogue.AddListener(GameManager.instance.NextScene);
         StartDialogue();
         if (_overwriteAtEnd)
             OverwriteAtEnd();
@@ -31,6 +34,5 @@ public class SedaDialogueTrigger : DialogueTrigger
     private void ChangeDialogueLines()
     {
         _id = _idAfterCompletion;
-        EventHolder.instance.onEndDialogue.AddListener(GameManager.instance.NextScene);
     }
 }

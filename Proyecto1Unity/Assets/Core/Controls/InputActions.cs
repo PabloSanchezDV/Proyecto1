@@ -98,6 +98,15 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ShowHUD"",
+                    ""type"": ""Button"",
+                    ""id"": ""92ce6236-36eb-4c1f-8c5c-8ef3af2b2abc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -309,6 +318,39 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Talk"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a10d7db5-73bd-407b-9a71-2b80725fa9bd"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShowHUD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2bf7bb4e-1a9f-4372-a9fe-3753b1986276"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShowHUD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a27af3e1-8ec4-45f5-8f9f-7f4029f10fcc"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShowHUD"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -443,6 +485,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Gameplay_Bite = m_Gameplay.FindAction("Bite", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         m_Gameplay_Talk = m_Gameplay.FindAction("Talk", throwIfNotFound: true);
+        m_Gameplay_ShowHUD = m_Gameplay.FindAction("ShowHUD", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Move = m_Menu.FindAction("Move", throwIfNotFound: true);
@@ -520,6 +563,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Bite;
     private readonly InputAction m_Gameplay_Pause;
     private readonly InputAction m_Gameplay_Talk;
+    private readonly InputAction m_Gameplay_ShowHUD;
     public struct GameplayActions
     {
         private @InputActions m_Wrapper;
@@ -532,6 +576,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @Bite => m_Wrapper.m_Gameplay_Bite;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
         public InputAction @Talk => m_Wrapper.m_Gameplay_Talk;
+        public InputAction @ShowHUD => m_Wrapper.m_Gameplay_ShowHUD;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -565,6 +610,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Talk.started += instance.OnTalk;
             @Talk.performed += instance.OnTalk;
             @Talk.canceled += instance.OnTalk;
+            @ShowHUD.started += instance.OnShowHUD;
+            @ShowHUD.performed += instance.OnShowHUD;
+            @ShowHUD.canceled += instance.OnShowHUD;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -593,6 +641,9 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Talk.started -= instance.OnTalk;
             @Talk.performed -= instance.OnTalk;
             @Talk.canceled -= instance.OnTalk;
+            @ShowHUD.started -= instance.OnShowHUD;
+            @ShowHUD.performed -= instance.OnShowHUD;
+            @ShowHUD.canceled -= instance.OnShowHUD;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -728,6 +779,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnBite(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnTalk(InputAction.CallbackContext context);
+        void OnShowHUD(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {

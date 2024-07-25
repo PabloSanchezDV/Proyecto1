@@ -17,6 +17,8 @@ public class KomodoDialogueTrigger : DialogueTrigger
                                                            -0.5f,
                                                             -_cameraRef.transform.localPosition.z);
         CameraSwitcher.instance.SwitchCamera(_virtualCamera, _cameraRef);
+        if (_id == _idAfterCompletion)
+            EventHolder.instance.onEndDialogue.AddListener(GameManager.instance.NextScene);
         StartDialogue();
         if (_overwriteAtEnd)
             OverwriteAtEnd();
@@ -44,6 +46,5 @@ public class KomodoDialogueTrigger : DialogueTrigger
     private void ChangeDialogueLines()
     {
         _id = _idAfterCompletion;
-        EventHolder.instance.onEndDialogue.AddListener(GameManager.instance.NextScene);
     }
 }

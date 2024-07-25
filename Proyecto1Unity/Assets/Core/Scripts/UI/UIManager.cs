@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -41,10 +42,11 @@ public class UIManager : MonoBehaviour
     private OptionsUI _optionsPanel;
     private SaveGameUI _saveGameUI;
 
-
     public static UIManager instance;
 
     private Coroutine _bananasCoroutine;
+    private Coroutine _healthCoroutine;
+    private Coroutine _collectiblesCoroutine;
 
     private void Awake()
     {
@@ -146,7 +148,6 @@ public class UIManager : MonoBehaviour
     #region Show / Hide Panels
     public void ShowDialoguePanel()
     {
-        Debug.Log("UIManager: in ShowDialoguePanel() method.");
         _dialoguePanel.SetActive(true);
     }
 
@@ -157,39 +158,47 @@ public class UIManager : MonoBehaviour
 
     public void ShowCompleteHUD()
     {
-        _healthHUDAnimator.SetTrigger("Show");
-        _bananasHUDAnimator.SetTrigger("Show");
-        _collectiblesHUDAnimator.SetTrigger("Show");
-        Invoke("HideHUD", _hideHUDTime);
-    }
-
-    public void HideHUD()
-    {
-        _healthHUDAnimator.SetTrigger("Hide");
-        _bananasHUDAnimator.SetTrigger("Hide");
-        _collectiblesHUDAnimator.SetTrigger("Hide");
+        ShowHealthHUD();
+        ShowCollectiblesHUD();
+        ShowBananasHUD();
     }
 
     public void ShowHealthHUD()
     {
-        _healthHUDAnimator.SetTrigger("Show");
-        Invoke("HideHealthHUD", _hideHUDTime);
+        if (_healthCoroutine != null)
+        {
+            _healthHUDAnimator.ResetTrigger("Hide");
+            StopCoroutine(_healthCoroutine);
+        }
+        else
+            _healthHUDAnimator.SetTrigger("Show");
+        _healthCoroutine = StartCoroutine(HideHealthHUD());
     }
 
-    public void HideHealthHUD()
+    IEnumerator HideHealthHUD()
     {
+        yield return new WaitForSeconds(_hideHUDTime);
         _healthHUDAnimator.SetTrigger("Hide");
+        _healthCoroutine = null;
     }
 
     public void ShowCollectiblesHUD()
     {
-        _collectiblesHUDAnimator.SetTrigger("Show");
-        Invoke("HideCollectiblesHUD", _hideHUDTime);
+        if (_collectiblesCoroutine != null)
+        {
+            _collectiblesHUDAnimator.ResetTrigger("Hide");
+            StopCoroutine(_collectiblesCoroutine);
+        }
+        else
+            _collectiblesHUDAnimator.SetTrigger("Show");
+        _collectiblesCoroutine = StartCoroutine(HideCollectiblesHUD());
     }
 
-    public void HideCollectiblesHUD()
+    IEnumerator HideCollectiblesHUD()
     {
+        yield return new WaitForSeconds(_hideHUDTime);
         _collectiblesHUDAnimator.SetTrigger("Hide");
+        _collectiblesCoroutine = null;
     }
 
     public void ShowBananasHUD()
@@ -298,8 +307,7 @@ public class UIManager : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        //SceneManager.LoadScene("MainMenu");
-        Debug.Log("Going to main menu...");
+        SceneManager.LoadScene(0);
     }
 
     public void QuitGame()

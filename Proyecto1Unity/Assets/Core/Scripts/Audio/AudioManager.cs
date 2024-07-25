@@ -10,19 +10,6 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
 
     [SerializeField] private AudioDatabase _audioDatabase;
-    private float _musicVolumeModifier = 1;
-    public float MusicVolumeModifier { get { return _musicVolumeModifier; } set { _musicVolumeModifier = value; } }
-    private float _soundsVolumeModifier = 1;
-    public float SoundsVolumeModifier { get { return _soundsVolumeModifier; } set { _soundsVolumeModifier = value; } }
-    private float _dialogueVolumeModifier = 1;
-    public float DialogueVolumeModifier { get { return _dialogueVolumeModifier; } set { _dialogueVolumeModifier = value; } }
-
-    private bool _areSoundsEnabled = true;
-    public bool AreSoundsEnabled { get { return _areSoundsEnabled; } set { _areSoundsEnabled = value; } }
-    private bool _isMusicEnabled = true;
-    public bool IsMusicEnabled { get { return _isMusicEnabled;} set { _isMusicEnabled = value; } }
-    private bool _areDialoguesEnabled = true;
-    public bool AreDialoguesEnabled { get { return _areDialoguesEnabled; } set { _areDialoguesEnabled = value; } }
 
     private List<AudioSource> aSList = new List<AudioSource>();
 
@@ -37,114 +24,6 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    #region Settings Methods
-    public void EnableDisableSounds()
-    {
-        if (!_areSoundsEnabled)
-        {
-            _areSoundsEnabled = true;
-        }
-        else
-        {
-            _areSoundsEnabled = false;
-        }
-    }
-
-    public void EnableDisableMusic()
-    {
-        if (!_isMusicEnabled)
-        {
-            _isMusicEnabled = true;
-        }
-        else
-        {
-            _isMusicEnabled = false;
-        }
-        ChangeMusicVolume();
-    }
-
-    public void EnableDisableDialogues()
-    {
-        if (!_areDialoguesEnabled)
-        {
-            _areDialoguesEnabled = true;
-        }
-        else
-        {
-            _areDialoguesEnabled = false;
-        }
-    }
-
-    public void SetMusicVolumeModifier(float mod)
-    {
-        if(mod < 0)
-        {
-            mod = 0;
-        }
-        else if(mod > 1)
-        {
-            mod = 1;
-        }
-
-        _musicVolumeModifier = mod;
-
-        ChangeMusicVolume();
-    }
-
-    public void SetSoundsVolumeModifier(float mod)
-    {
-        if (mod < 0)
-        {
-            mod = 0;
-        }
-        else if (mod > 1)
-        {
-            mod = 1;
-        }
-
-        _soundsVolumeModifier = mod;
-    }
-
-    public void SetDialogueVolumeModifier(float mod)
-    {
-        if (mod < 0)
-        {
-            mod = 0;
-        }
-        else if (mod > 1)
-        {
-            mod = 1;
-        }
-
-        _dialogueVolumeModifier = mod;
-    }
-
-    private void ChangeMusicVolume()
-    {
-        if(MusicManager.instance.musicAS != null)
-        {
-            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            switch (sceneIndex)
-            {
-                case 0:
-                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.mainThemeMusicVolume);
-                    break;
-                case 1:
-                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.jungleThemeMusicVolume);
-                    break;
-                case 2:
-                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.mountainThemeMusicVolume);
-                    break;
-                case 3:
-                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.swampThemeMusicVolume);
-                    break;
-                default:
-                    throw new Exception("AudioManager can't process the music.");
-            }            
-        }
-    }
-    #endregion
 
     #region Play Sounds Methods
     #region Player Movement
@@ -429,7 +308,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource PlayCannonBulletFalling(GameObject go)
     {
         _audioDatabase.cannonBulletFallingCurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.cannonBulletFallingVolume);
-        return CreateAudioSource(go, _audioDatabase.cannonBulletFallingAC, _audioDatabase.cannonBulletFallingCurrentVolume, 500, true);
+        return CreateAudioSource(go, _audioDatabase.cannonBulletFallingAC, _audioDatabase.cannonBulletFallingCurrentVolume, 500);
     }
 
     public AudioSource PlayCannonBulletExplosion(GameObject go)
@@ -452,19 +331,19 @@ public class AudioManager : MonoBehaviour
         switch(index)
         {
             case 1:
-                _audioDatabase.bufoDialogue1CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoDialogue1Volume);
+                _audioDatabase.bufoDialogue1CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.bufoDialogue1Volume);
                 return CreateAudioSource(go, _audioDatabase.bufoDialogue1AC, _audioDatabase.bufoDialogue1CurrentVolume, 500);
             case 2:
-                _audioDatabase.bufoDialogue2CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoDialogue2Volume);
+                _audioDatabase.bufoDialogue2CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.bufoDialogue2Volume);
                 return CreateAudioSource(go, _audioDatabase.bufoDialogue2AC, _audioDatabase.bufoDialogue2CurrentVolume, 500);
             case 3:
-                _audioDatabase.bufoDialogue3CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoDialogue3Volume);
+                _audioDatabase.bufoDialogue3CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.bufoDialogue3Volume);
                 return CreateAudioSource(go, _audioDatabase.bufoDialogue3AC, _audioDatabase.bufoDialogue3CurrentVolume, 500);
             case 4:
-                _audioDatabase.bufoDialogue4CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoDialogue4Volume);
+                _audioDatabase.bufoDialogue4CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.bufoDialogue4Volume);
                 return CreateAudioSource(go, _audioDatabase.bufoDialogue4AC, _audioDatabase.bufoDialogue4CurrentVolume, 500);
             case 5:
-                _audioDatabase.bufoDialogue5CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bufoDialogue5Volume);
+                _audioDatabase.bufoDialogue5CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.bufoDialogue5Volume);
                 return CreateAudioSource(go, _audioDatabase.bufoDialogue5AC, _audioDatabase.bufoDialogue5CurrentVolume, 500);
             default:
                 throw new Exception("Index out of range at AudioManager.PlayBufoDialogue.");
@@ -477,19 +356,19 @@ public class AudioManager : MonoBehaviour
         switch (index)
         {
             case 1:
-                _audioDatabase.sedaDialogue1CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.sedaDialogue1Volume);
+                _audioDatabase.sedaDialogue1CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.sedaDialogue1Volume);
                 return CreateAudioSource(go, _audioDatabase.sedaDialogue1AC, _audioDatabase.sedaDialogue1CurrentVolume, 500);
             case 2:
-                _audioDatabase.sedaDialogue2CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.sedaDialogue2Volume);
+                _audioDatabase.sedaDialogue2CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.sedaDialogue2Volume);
                 return CreateAudioSource(go, _audioDatabase.sedaDialogue2AC, _audioDatabase.sedaDialogue2CurrentVolume, 500);
             case 3:
-                _audioDatabase.sedaDialogue3CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.sedaDialogue3Volume);
+                _audioDatabase.sedaDialogue3CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.sedaDialogue3Volume);
                 return CreateAudioSource(go, _audioDatabase.sedaDialogue3AC, _audioDatabase.sedaDialogue3CurrentVolume, 500);
             case 4:
-                _audioDatabase.sedaDialogue4CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.sedaDialogue4Volume);
+                _audioDatabase.sedaDialogue4CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.sedaDialogue4Volume);
                 return CreateAudioSource(go, _audioDatabase.sedaDialogue4AC, _audioDatabase.sedaDialogue4CurrentVolume, 500);
             case 5:
-                _audioDatabase.sedaDialogue5CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.sedaDialogue5Volume);
+                _audioDatabase.sedaDialogue5CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.sedaDialogue5Volume);
                 return CreateAudioSource(go, _audioDatabase.sedaDialogue5AC, _audioDatabase.sedaDialogue5CurrentVolume, 500);
             default:
                 throw new Exception("Index out of range at AudioManager.PlaySedaDialogue.");
@@ -502,19 +381,19 @@ public class AudioManager : MonoBehaviour
         switch (index)
         {
             case 1:
-                _audioDatabase.komodoDialogue1CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.komodoDialogue1Volume);
+                _audioDatabase.komodoDialogue1CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.komodoDialogue1Volume);
                 return CreateAudioSource(go, _audioDatabase.komodoDialogue1AC, _audioDatabase.komodoDialogue1CurrentVolume, 500);
             case 2:
-                _audioDatabase.komodoDialogue2CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.komodoDialogue2Volume);
+                _audioDatabase.komodoDialogue2CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.komodoDialogue2Volume);
                 return CreateAudioSource(go, _audioDatabase.komodoDialogue2AC, _audioDatabase.komodoDialogue2CurrentVolume, 500);
             case 3:
-                _audioDatabase.komodoDialogue3CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.komodoDialogue3Volume);
+                _audioDatabase.komodoDialogue3CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.komodoDialogue3Volume);
                 return CreateAudioSource(go, _audioDatabase.komodoDialogue3AC, _audioDatabase.komodoDialogue3CurrentVolume, 500);
             case 4:
-                _audioDatabase.komodoDialogue4CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.komodoDialogue4Volume);
+                _audioDatabase.komodoDialogue4CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.komodoDialogue4Volume);
                 return CreateAudioSource(go, _audioDatabase.komodoDialogue4AC, _audioDatabase.komodoDialogue4CurrentVolume, 500);
             case 5:
-                _audioDatabase.komodoDialogue5CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.komodoDialogue5Volume);
+                _audioDatabase.komodoDialogue5CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.komodoDialogue5Volume);
                 return CreateAudioSource(go, _audioDatabase.komodoDialogue5AC, _audioDatabase.komodoDialogue5CurrentVolume, 500);
             default:
                 throw new Exception("Index out of range at AudioManager.PlayKomodoDialogue.");
@@ -527,19 +406,19 @@ public class AudioManager : MonoBehaviour
         switch (index)
         {
             case 1:
-                _audioDatabase.alironDialogue1CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.alironDialogue1Volume);
+                _audioDatabase.alironDialogue1CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.alironDialogue1Volume);
                 return CreateAudioSource(go, _audioDatabase.alironDialogue1AC, _audioDatabase.alironDialogue1CurrentVolume, 500);
             case 2:
-                _audioDatabase.alironDialogue2CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.alironDialogue2Volume);
+                _audioDatabase.alironDialogue2CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.alironDialogue2Volume);
                 return CreateAudioSource(go, _audioDatabase.alironDialogue2AC, _audioDatabase.alironDialogue2CurrentVolume, 500);
             case 3:
-                _audioDatabase.alironDialogue3CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.alironDialogue3Volume);
+                _audioDatabase.alironDialogue3CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.alironDialogue3Volume);
                 return CreateAudioSource(go, _audioDatabase.alironDialogue3AC, _audioDatabase.alironDialogue3CurrentVolume, 500);
             case 4:
-                _audioDatabase.alironDialogue4CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.alironDialogue4Volume);
+                _audioDatabase.alironDialogue4CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.alironDialogue4Volume);
                 return CreateAudioSource(go, _audioDatabase.alironDialogue4AC, _audioDatabase.alironDialogue4CurrentVolume, 500);
             case 5:
-                _audioDatabase.alironDialogue5CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.alironDialogue5Volume);
+                _audioDatabase.alironDialogue5CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.alironDialogue5Volume);
                 return CreateAudioSource(go, _audioDatabase.alironDialogue5AC, _audioDatabase.alironDialogue5CurrentVolume, 500);
             default:
                 throw new Exception("Index out of range at AudioManager.PlayAlironDialogue.");
@@ -552,16 +431,16 @@ public class AudioManager : MonoBehaviour
         switch (index)
         {
             case 1:
-                _audioDatabase.bearDialogue1CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bearDialogue1Volume);
+                _audioDatabase.bearDialogue1CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.bearDialogue1Volume);
                 return CreateAudioSource(go, _audioDatabase.bearDialogue1AC, _audioDatabase.bearDialogue1CurrentVolume, 500);
             case 2:
-                _audioDatabase.bearDialogue2CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bearDialogue2Volume);
+                _audioDatabase.bearDialogue2CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.bearDialogue2Volume);
                 return CreateAudioSource(go, _audioDatabase.bearDialogue2AC, _audioDatabase.bearDialogue2CurrentVolume, 500);
             case 3:
-                _audioDatabase.bearDialogue3CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bearDialogue3Volume);
+                _audioDatabase.bearDialogue3CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.bearDialogue3Volume);
                 return CreateAudioSource(go, _audioDatabase.bearDialogue3AC, _audioDatabase.bearDialogue3CurrentVolume, 500);
             case 4:
-                _audioDatabase.bearDialogue4CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.bearDialogue4Volume);
+                _audioDatabase.bearDialogue4CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.bearDialogue4Volume);
                 return CreateAudioSource(go, _audioDatabase.bearDialogue4AC, _audioDatabase.bearDialogue4CurrentVolume, 500);
             default:
                 throw new Exception("Index out of range at AudioManager.PlayBearDialogue.");
@@ -574,19 +453,19 @@ public class AudioManager : MonoBehaviour
         switch (index)
         {
             case 1:
-                _audioDatabase.toucanDialogue1CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.toucanDialogue1Volume);
+                _audioDatabase.toucanDialogue1CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.toucanDialogue1Volume);
                 return CreateAudioSource(go, _audioDatabase.toucanDialogue1AC, _audioDatabase.toucanDialogue1CurrentVolume, 500);
             case 2:
-                _audioDatabase.toucanDialogue2CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.toucanDialogue2Volume);
+                _audioDatabase.toucanDialogue2CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.toucanDialogue2Volume);
                 return CreateAudioSource(go, _audioDatabase.toucanDialogue2AC, _audioDatabase.toucanDialogue2CurrentVolume, 500);
             case 3:
-                _audioDatabase.toucanDialogue3CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.toucanDialogue3Volume);
+                _audioDatabase.toucanDialogue3CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.toucanDialogue3Volume);
                 return CreateAudioSource(go, _audioDatabase.toucanDialogue3AC, _audioDatabase.toucanDialogue3CurrentVolume, 500);
             case 4:
-                _audioDatabase.toucanDialogue4CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.toucanDialogue4Volume);
+                _audioDatabase.toucanDialogue4CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.toucanDialogue4Volume);
                 return CreateAudioSource(go, _audioDatabase.toucanDialogue4AC, _audioDatabase.toucanDialogue4CurrentVolume, 500);
             case 5:
-                _audioDatabase.toucanDialogue5CurrentVolume = ChangeSoundsVolumeAsPerModifier(_audioDatabase.toucanDialogue5Volume);
+                _audioDatabase.toucanDialogue5CurrentVolume = ChangeDialoguesVolumeAsPerModifier(_audioDatabase.toucanDialogue5Volume);
                 return CreateAudioSource(go, _audioDatabase.toucanDialogue5AC, _audioDatabase.toucanDialogue5CurrentVolume, 500);
             default:
                 throw new Exception("Index out of range at AudioManager.PlayToucanDialogue.");
@@ -641,23 +520,36 @@ public class AudioManager : MonoBehaviour
     #endregion
 
     #region Private Methods
-    private float ChangeMusicVolumeAsPerModifier(float originalVolume)
+    public void ChangeMusicVolume()
     {
-        if (_isMusicEnabled)
+        if (MusicManager.instance.musicAS != null)
         {
-            return originalVolume * _musicVolumeModifier;
-        }
-        else
-        {
-            return 0;
+            int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            switch (sceneIndex)
+            {
+                case 0:
+                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.mainThemeMusicVolume);
+                    break;
+                case 1:
+                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.jungleThemeMusicVolume);
+                    break;
+                case 2:
+                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.mountainThemeMusicVolume);
+                    break;
+                case 3:
+                    MusicManager.instance.musicAS.volume = ChangeMusicVolumeAsPerModifier(_audioDatabase.swampThemeMusicVolume);
+                    break;
+                default:
+                    throw new Exception("AudioManager can't process the music.");
+            }
         }
     }
 
     private float ChangeSoundsVolumeAsPerModifier(float originalVolume)
     {
-        if (_areSoundsEnabled)
+        if (SettingsManager.instance.AreSoundsEnabled)
         {
-            return originalVolume * _soundsVolumeModifier;
+            return originalVolume * SettingsManager.instance.SoundsVolumeModifier;
         }
         else
         {
@@ -667,9 +559,21 @@ public class AudioManager : MonoBehaviour
 
     private float ChangeDialoguesVolumeAsPerModifier(float originalVolume)
     {
-        if (_areSoundsEnabled)
+        if (SettingsManager.instance.AreDialoguesEnabled)
         {
-            return originalVolume * _dialogueVolumeModifier;
+            return originalVolume * SettingsManager.instance.DialogueVolumeModifier;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+
+    private float ChangeMusicVolumeAsPerModifier(float originalVolume)
+    {
+        if (SettingsManager.instance.IsMusicEnabled)
+        {
+            return originalVolume * SettingsManager.instance.MusicVolumeModifier;
         }
         else
         {
@@ -682,7 +586,7 @@ public class AudioManager : MonoBehaviour
         AudioSource aS = gameObject.AddComponent<AudioSource>();
         aS.clip = audioclip;
         aS.ignoreListenerPause = true;
-        if (_isMusicEnabled)
+        if (SettingsManager.instance.IsMusicEnabled)
         {
             aS.volume = volume;
         }
@@ -701,9 +605,17 @@ public class AudioManager : MonoBehaviour
         AudioSource aS = go.AddComponent<AudioSource>();
         aS.clip = audioClip;
         aS.maxDistance = maxDistance;
-        if (!loop)
+        if (SettingsManager.instance.AreSoundsEnabled)
         {
-            if (_areSoundsEnabled)
+            aS.volume = volume;
+        }
+        else
+        {
+            aS.volume = 0;
+        }
+        /*if (!loop)
+        {
+            if (SettingsManager.instance.AreSoundsEnabled)
             {
                 aS.volume = volume;
             }
@@ -714,7 +626,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            if (_isMusicEnabled)
+            if (SettingsManager.instance.IsMusicEnabled)
             {
                 aS.volume = volume;
             }
@@ -722,7 +634,7 @@ public class AudioManager : MonoBehaviour
             {
                 aS.volume = 0;
             }
-        }
+        }*/
 
         aS.spatialBlend = 1;
         aS.loop = loop;
@@ -750,10 +662,6 @@ public class AudioManager : MonoBehaviour
                     isPlaying = false;
                 }
             }
-            /*if(GameManager.Instance.HasSceneChanged())
-            {
-                break;
-            }*/
 
             yield return null;
         }
@@ -765,20 +673,6 @@ public class AudioManager : MonoBehaviour
         catch(Exception e)
         {
             Debug.Log(audioSource.name + " cannot be found and cannot be destroyed. " + e.Message);
-        }
-    }
-
-    IEnumerator LoopMusicAC(AudioSource audioSource, AudioClip[] audioClips)
-    {
-        while (audioSource != null)
-        {
-            if (!audioSource.isPlaying)
-            {
-                int i = UnityEngine.Random.Range(0, audioClips.Length);
-                audioSource.clip = audioClips[i];
-                audioSource.Play();
-            }
-            yield return null;
         }
     }
     #endregion
