@@ -6,13 +6,28 @@ public class MosquitoAnimatorController : EnemyAnimatorController
 {
     [SerializeField] private float _timeToRespawn;
     [SerializeField] private ParticleSystemManager _particleSystemManager;
+    private Coroutine _antiStuckCoroutine;
 
     public void DisableOnDeath()
     {
+        if( _antiStuckCoroutine != null )
+            StopCoroutine(_antiStuckCoroutine);
         _particleSystemManager.PlayParticleSystem();
         SetComponentsAs(false);
         StartCoroutine(RespawnAfter());
     }
+
+    public void PlayDeathAfter()
+    {
+        _antiStuckCoroutine = StartCoroutine(PlayDeathAfterCoroutine());
+    }
+
+    IEnumerator PlayDeathAfterCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Death();
+    }
+
 
     IEnumerator RespawnAfter()
     {
