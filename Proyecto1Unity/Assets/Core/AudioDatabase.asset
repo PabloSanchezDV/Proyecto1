@@ -166,10 +166,10 @@ MonoBehaviour:
   toucanDialogue5AC: {fileID: 8300000, guid: 3aa61e726b721314abe300bdf9c68718, type: 3}
   toucanDialogue5Volume: 1
   mainThemeMusicAC: {fileID: 8300000, guid: 81954995e518aae469aa4f84a3776230, type: 3}
-  mainThemeMusicVolume: 0.03
+  mainThemeMusicVolume: 0.07
   jungleThemeMusicAC: {fileID: 8300000, guid: 67eb0475cac1d834687c634fbdbc05c8, type: 3}
-  jungleThemeMusicVolume: 0.02
+  jungleThemeMusicVolume: 0.07
   mountainThemeMusicAC: {fileID: 8300000, guid: 98bdb0827f1dd8648a3e932fa10d0842, type: 3}
-  mountainThemeMusicVolume: 0.02
+  mountainThemeMusicVolume: 0.07
   swampThemeMusicAC: {fileID: 8300000, guid: 734730f73e4199242b42e1dff29378ae, type: 3}
-  swampThemeMusicVolume: 0.02
+  swampThemeMusicVolume: 0.07
