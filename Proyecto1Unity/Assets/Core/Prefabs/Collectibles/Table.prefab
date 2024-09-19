@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2241830744595083021}
   - component: {fileID: 2432263852427862645}
   - component: {fileID: 3508923996308420884}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Table
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 3924199214037440423}
   - component: {fileID: 1505637122207758339}
   - component: {fileID: 6866045991372292242}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TableVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5782890041276079046}
   - component: {fileID: 2454616970646547667}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

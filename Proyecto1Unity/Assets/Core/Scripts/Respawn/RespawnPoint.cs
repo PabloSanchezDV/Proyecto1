@@ -8,6 +8,8 @@ public class RespawnPoint : MonoBehaviour
 
     private Animator _anim;
     private bool _isActive = false;
+    public bool IsActive { get { return _isActive; } }
+    
 
     private void Start()
     {
