@@ -1,35 +1,36 @@
 1;1;Seda;Parece que alguien necesita ayuda, uki uki.
-1;1;Bufo;Maldita lagartija engreída. No sé ni donde estoy.
+1;1;Bufo;Maldita lagartija engreída. No sé ni dónde estoy.
 1;1;Seda;Estás en la jungla, retaquillo.
 1;1;Bufo;¡Sapos y culebras! Tengo que regresar al pantano. No puedo dejar que esa sabandija lo destroce.
 1;1;Seda;Esa sabandija se llama Lamandra. Tengo una serie de cuentas pendientes con ella, uki uki.
 1;1;Bufo;Pues ya somos dos.
-1;1;Seda;En ese caso, ¿por qué no me ayudas? Así podrás vengarte. Eso sí, primero quiero comprobar tus capacidades, uki uki.
-1;1;Bufo;¿No deberías preguntarme primero si quiero ayudarte? Yo solo quiero que esa tal Lamandra deje el pantano en paz.
-1;1;Seda;Me vas a ayudar sin casi darte cuenta. ¡El daño hecho a mi humilde morada no se va a reparar solo!
+1;1;Seda;En ese caso, ¿por qué no me ayudas? Así podrás vengarte junto a mí. Eso sí, primero quiero comprobar tus capacidades, uki uki.
+1;1;Bufo;Me da igual lo que pretendas hacer conmigo, yo solo quiero que esa tal Lamandra deje el pantano en paz.
+1;1;Seda;Tranquilo, me vas a ayudar sin casi darte cuenta. ¡El daño hecho a mi humilde morada no se va a reparar solo!
 1;1;*;VC1
-1;1;Seda;¿Ves el camino que hay allí? Tráeme el tablón que se encuentra al final,  si es que eres capaz claro. Y de paso, unos platanitos, que tengo hambre.
+1;1;Seda;¿Ves el camino que hay allí al frente? Síguelo y tráeme el tablón que se encuentra al final, si es que eres capaz. Y ya de paso, tráeme también unos platanitos, que tengo hambre.
 1;1;*;Reset
-1;1;Bufo;Me infravaloras,  uki uki.
+1;1;Bufo;Me infravaloras, uki uki.
 1;2;Seda;Efectivamente, no me equivocaba, uki uki.
 1;2;Bufo;…
-1;2;Seda;Bien, ahora necesito que consigas cinco tablones más. Con eso podré cerrar mis asuntos aquí y podremos viajar a otros lugares en busca de Lamandra y patearla el trasero, ¡uki uki! 
+1;2;Seda;Bien, ahora necesito que consigas otros cinco tablones más. Creo que están repartidos a lo largo y ancho de la jungla. Con ellos podremos reparar mi casa, despedirnos de este verde sitio y viajar a otros lugares en busca de Lamandra y patearla el trasero, ¡uki uki!  
 1;2;Bufo;Ya te dije que yo solo quiero que deje tranquilo mi hogar.
 1;2;Seda;¿Acaso tienes un plan mejor?
 1;2;Bufo;Sabes que no. En fin, veré que puedo hacer.
 1;3;Seda;¡Buen trabajo, Bufo!
 1;3;Bufo;No ha sido gran cosa.
 1;3;Seda;Ya veo. Estás hecho todo un funambulista, uki uki.
+1;3;Bufo;...
 1;3;Bufo;¿Qué deberíamos hacer ahora?
 1;3;Seda;Deberías ir a la montaña. Ha llegado a mis oídos que Mander S.A. está causando problemas allí. Quizá puedas averiguar algo.
 1;3;Bufo;¿Y tú que harás?
 1;3;Seda;Te acompañaré en caso de que requieras ayuda de una simia modista.
-1;3;Bufo;Vaya, encima no me vas a dejar en paz.
+1;3;Bufo;Vaya, bastante tengo con Mander S.A. que encima me va a costar que me dejes en paz.
 1;3;Seda;¿Dijiste algo?
 1;3;Bufo;Nada, nada. Que espero que no haga mucho frío. En fin, hora de partir.
-1;4;Tucán;¡Anda, una cara nueva! ¿Sabías que puedes lanzar tu lengua pulsando el botón derecho del mando o el click izquierdo del ratón?
-1;5;Tucán;Estas señales raras las trajo Mander S.A. Al parecer sirven como 'plan de riesgos'. Oí que solo puedes usar una a la vez.
-1;6;Tucán;Estos de la ciudad otra vez a invadirnos. Ni que tuviésemos playa…
+1;4;Tucán;¡Tuki! ¡Una cara nueva! ¿Sabías que puedes lanzar tu lengua pulsando el botón derecho del mando o el click izquierdo del ratón? ¡Además puedes engancharte a los enemigos y mecanismos con ella!
+1;5;Tucán;Estas señales las trajo Mander S.A. Al parecer sirven como seguro de vida si te acercas a ellas, aunque solo se puede activar una al mismo tiempo. Intenta no tuki-caerte mucho.
+1;6;Tucán;Estos de la ciudad viniendo otra vez a invadirnos. Ni que tuviésemos playa…
 1;7;Tucán;La tranquilidad es lo que más se busca. Lástima que desapareció al llegar Mander S.A.
 1;8;Tucán;¿Vienen los de Mander S.A.? Todo fuera eso…
 1;9;Seda;Todavía te faltan tablones, amigo Bufo. Veo que la lengua se te da bien, pero las matemáticas no tanto...Háblame cuando tengas seis.
@@ -53,24 +54,24 @@
 2;2;Alirón;Si. ¿Por?
 2;2;Bufo;Digamos que también nos han causado problemas. Vinimos aquí buscándolos.
 2;2;Alirón;En ese caso, ¿podríais ayudarnos a recuperar la carrera? Es muy importante para mí.
-2;2;Bufo;Supongo que me acercará a mi objetivo.  Está bien, te ayudaré.  Además seguro que si Seda me escuchara me reñiría si no le ayudo. ¿Por dónde debería empezar?
-2;2;Alirón;Primero tendrás ir a buscar a un tal K.O. Modo. Es el jefe aquí. Ha instalado una fábrica. 
+2;2;Bufo;Supongo que me acercará a mi objetivo. Está bien, te ayudaré. Además seguro que si Seda me escuchara me reñiría si no te ayudo. ¿Por dónde debería empezar?
+2;2;Alirón;Primero deberías ir a buscar a un tal K.O. Modo. Es el jefe aquí y ha instalado una fábrica.
 2;2;*;VC1
-2;2;Alirón;Deberías poder llegar a ella si rodeas la montaña. Ten cuidado, es un tipo muy agresivo y da miedete...
+2;2;Alirón;Deberías poder llegar hasta ella si rodeas la montaña. Pero ten cuidado, es un tipo muy agresivo y da miedete...
 2;2;*;Reset
-2;2;Bufo;Ir hasta allí no va a ser divertido con este frío.  En fin, voy a ver qué puedo hacer. 'Chao pescao'.
+2;2;Bufo;Ir hasta allí no va a ser divertido con este frío. En fin, voy a ver qué puedo hacer. 'Chao pescao'.
 2;2;Alirón;Pero si soy un lirón.
 2;2;Bufo;Es una forma de hablar. Te avisaré si consigo algo. Hasta luego.
 2;3;Bufo;Tú debes de ser el tal K.O. Modo, ¿no?
 2;3;K.O. Modo;¿Quién te has creído que eres, renacuajo?
 2;3;Bufo;Tu empresa no para de causar problemas allá por donde pasa. Ya no pueden ni celebrar su carrera en paz.
-2;3;K.O. Modo;¡¿Quieres pelea o qué?!
+2;3;K.O. Modo;¿¡Quieres pelea o qué!?
 2;3;Bufo;No, no. ¿No podríamos solucionarlo de manera pacífica?
 2;3;K.O. Modo;Bueno, ya sabes lo que dicen. Todo tiene un precio en esta vida…
 2;3;Bufo;Si está en mi mano…
-2;3;K.O. Modo;Seguro que una ranita tan 'habilidosa' como tú es capaz.
+2;3;K.O. Modo;Seguro que una ranita tan habilidosa como tú es capaz.
 2;3;Bufo;Pfff… Soy un sapo. Dime, ¿qué necesitas?
-2;3;K.O. Modo;Si me ayudas a hacer funcionar las diferentes instalaciones eléctricas que hemos construido altruistamente desde Mander S.A., tu amiguito podrá correr todo lo que quiera. Creo que es una generosa oferta.
+2;3;K.O. Modo;Si me ayudas a hacer funcionar las instalaciones eléctricas de Mander S.A. y encuentras la cantidad de seis fajos de billetes para financiar la carrera, tu amiguito podrá correr todo lo que quiera. Creo que es una generosa oferta de parte de Mander S.A.
 2;3;Bufo;Espero que cumplas con tu palabra.
 2;3;K.O. Modo;¡Por supuesto! Yo soy un reptil de fiar.
 2;3;Bufo;Veremos cómo acaba esto…
