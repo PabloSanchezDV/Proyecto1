@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.28529817, g: 0.71879375, b: 0.8307639, a: 1}
+  m_IndirectSpecularColor: {r: 0.28529835, g: 0.71879375, b: 0.8307639, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -651,6 +651,14 @@ PrefabInstance:
     - target: {fileID: 1991078438206119781, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
       propertyPath: m_Name
       value: Valla_elementosDecorativos_T (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Size.z
+      value: 16.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Center.z
+      value: 7.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19284,6 +19292,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla_elementosDecorativos_T
       objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Size.z
+      value: 16.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Center.z
+      value: 7.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28185,19 +28201,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6459893212270161343, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.51835495
+      value: 0.5183549
       objectReference: {fileID: 0}
     - target: {fileID: 6459893212270161343, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.02451347
+      value: 0.024513472
       objectReference: {fileID: 0}
     - target: {fileID: 6459893212270161343, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.85385984
+      value: 0.8538599
       objectReference: {fileID: 0}
     - target: {fileID: 6459893212270161343, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0403798
+      value: -0.040379807
       objectReference: {fileID: 0}
     - target: {fileID: 7339003277644500169, guid: fe652c5df3945064baa09cea34e92a58, type: 3}
       propertyPath: m_FollowOffset.y
@@ -38961,6 +38977,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla_elementosDecorativos_T (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Size.z
+      value: 16.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Center.z
+      value: 7.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -40557,6 +40581,14 @@ PrefabInstance:
     - target: {fileID: 1991078438206119781, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
       propertyPath: m_Name
       value: Valla_elementosDecorativos_T (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Size.z
+      value: 16.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Center.z
+      value: 7.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -44391,6 +44423,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valla_elementosDecorativos_T (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Size.z
+      value: 16.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Center.z
+      value: 7.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -46242,6 +46282,14 @@ PrefabInstance:
     - target: {fileID: 1991078438206119781, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
       propertyPath: m_Name
       value: Valla_elementosDecorativos_T (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Size.z
+      value: 16.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 6200450591059808090, guid: ac05a9f21db4a724d813861b94e232be, type: 3}
+      propertyPath: m_Center.z
+      value: 7.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
