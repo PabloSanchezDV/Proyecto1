@@ -110,15 +110,15 @@ public class DialogueManager : MonoBehaviour
         {
             case ("Bufo"):
                 return AudioManager.instance.PlayBufoDialogue(_bufoAnimator.gameObject);
-            case ("Seda"):
+            case ("Knits"):
                 return AudioManager.instance.PlaySedaDialogue(gameObject);
             case ("K.O. Modo"):
                 return AudioManager.instance.PlayKomodoDialogue(gameObject);
-            case ("Alirón"):
+            case ("Dormount"):
                 return AudioManager.instance.PlayAlironDialogue(gameObject);
-            case ("Oso"):
+            case ("Polar bear"):
                 return AudioManager.instance.PlayBearDialogue(gameObject);
-            case ("Tucán"):
+            case ("Toucan"):
                 return AudioManager.instance.PlayToucanDialogue(gameObject);
             default:
                 throw new Exception("Character cannot be processed by PlayDialogueSound. Check if the name of the character is well written.");

@@ -303,11 +303,11 @@ public class SaveGameUI : MonoBehaviour
         switch(level)
         {
             case 1:
-                return "Mundo 1";
+                return "World 1";
             case 2:
-                return "Mundo 2";
+                return "World 2";
             case 3:
-                return "Mundo 3";
+                return "World 3";
             default:
                 return "...";
         }
